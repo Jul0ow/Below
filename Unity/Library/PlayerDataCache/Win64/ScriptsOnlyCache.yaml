@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
@@ -89,39 +90,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 12248}
+      Script: {instanceID: 12238}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12306}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12348}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12390}
     - Class: 114
-      Script: {instanceID: 12424}
+      Script: {instanceID: 12414}
     - Class: 114
-      Script: {instanceID: 12912}
+      Script: {instanceID: 12902}
     - Class: 114
-      Script: {instanceID: 12956}
+      Script: {instanceID: 12946}
     - Class: 114
-      Script: {instanceID: 13036}
+      Script: {instanceID: 13026}
     - Class: 114
-      Script: {instanceID: 13176}
+      Script: {instanceID: 13166}
     - Class: 114
-      Script: {instanceID: 13520}
+      Script: {instanceID: 13510}
     - Class: 114
-      Script: {instanceID: 13576}
+      Script: {instanceID: 13568}
     - Class: 114
-      Script: {instanceID: 13644}
+      Script: {instanceID: 13636}
     - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 13646}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -184,53 +185,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11268}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11582}
+      Script: {instanceID: 11572}
     - Class: 114
-      Script: {instanceID: 11698}
+      Script: {instanceID: 11688}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11794}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 12032}
     - Class: 114
-      Script: {instanceID: 12080}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12348}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12390}
     - Class: 114
-      Script: {instanceID: 12614}
+      Script: {instanceID: 12604}
     - Class: 114
-      Script: {instanceID: 12676}
+      Script: {instanceID: 12666}
     - Class: 114
-      Script: {instanceID: 12830}
+      Script: {instanceID: 12820}
     - Class: 114
-      Script: {instanceID: 12846}
+      Script: {instanceID: 12836}
     - Class: 114
-      Script: {instanceID: 13018}
+      Script: {instanceID: 13008}
     - Class: 114
-      Script: {instanceID: 13102}
+      Script: {instanceID: 13092}
     - Class: 114
-      Script: {instanceID: 13176}
+      Script: {instanceID: 13166}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 13344}
     - Class: 114
-      Script: {instanceID: 13368}
+      Script: {instanceID: 13358}
     - Class: 114
-      Script: {instanceID: 13520}
+      Script: {instanceID: 13510}
     - Class: 114
-      Script: {instanceID: 13522}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13606}
+      Script: {instanceID: 13518}
     - Class: 114
-      Script: {instanceID: 19992}
+      Script: {instanceID: 13598}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1084,7 +1085,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 23e3d4ddd48246e09c574126e53945cb
+      Hash: 92aaa62eec5ad9796a769a10690e0aa3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Launcher
@@ -1148,6 +1149,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
+  - hash:
+      serializedVersion: 2
+      Hash: e0766a0e8938b34dbdc572ce4b274d5c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerListItem
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1268,14 +1275,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: e0766a0e8938b34dbdc572ce4b274d5c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerListItem
   platform: 19
   scenePathNames:
   - Assets/scene/Menu.unity
   - Assets/scene/Level.unity
-  playerPath: C:/matthieu/matthieu epita/projet S2/build/v0.3/New Unity Project.exe
+  playerPath: C:/matthieu/matthieu epita/projet S2/build/v0.42/New Unity Project.exe
