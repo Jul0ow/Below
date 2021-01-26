@@ -6,11 +6,16 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    public float speed = 6f;
+    public float WalkSpeed = 6f;
+    public float RunSpeed = 16f;
+    public float speed;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
-
+    void Start()
+    {
+        float speed = WalkSpeed;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -20,15 +25,15 @@ public class Movement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            if (Input.GetKey("w") & speed <= 16f)
+            if (Input.GetKey("w"))
             {
-                speed += 10f;
+                speed = RunSpeed;
             }
             else
             {
-                if (speed >= 6f)
+                if (speed >= WalkSpeed)
                 {
-                    speed = 6f;
+                    speed = WalkSpeed;
                 }
             }
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;

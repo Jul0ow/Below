@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* public class EntityScript : MonoBehaviour
+/*public class EntityScript : MonoBehaviour
 {
 	public class Entity : EntityScript
     {
@@ -29,6 +29,24 @@ using UnityEngine;
 			PV = 10f;
         	speed = 6f;
         	power = 1f;
+		}
+	}
+
+	public class Monster : Entity
+	{
+		protected string name;
+
+		abstract void behavior();
+	}
+
+	public class Chest : Entity
+	{
+		protected bool opened;
+		protected int loot;
+
+		void Start()
+		{
+			opened = false;
 		}
 	}
 } */
