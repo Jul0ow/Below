@@ -10,7 +10,6 @@ public class Locomotion : MonoBehaviour
     Vector2 input;
     Movement movement;
     Jump jump;
-    int NeedToLand = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,47 +22,49 @@ public class Locomotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        jump = GetComponent<Jump>();
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
-
+        animator.SetBool("Grounded", jump.IsGrounded);
         animator.SetFloat("InputX", input.x);
         animator.SetFloat("InputY", input.y);
-        jump = GetComponent<Jump>();
-        if (jump.IsGrounded == false)
+        if ((animator.GetCurrentAnimatorStateInfo(0).IsName("Falling") |
+             animator.GetCurrentAnimatorStateInfo(0).IsName("JumpStart"))
+            & jump.IsGrounded & rb.useGravity)
         {
-            animator.Play("Falling");
-            NeedToLand = 50;
+            animator.Play("Landing");
+            return;
         }
-        else
-        {
-            if (NeedToLand != 0)
+        if (jump.IsGrounded == false & jump.jumping == false)
             {
-                animator.Play("Landing");
-                NeedToLand -= 1;
+                animator.Play("Falling");
             }
             else
             {
                 if (jump.jumping == false)
-                {
-                    if (Input.GetKeyDown("space"))
                     {
-                        animator.Play("JumpStart");
-                    }
-                    else
-                    {
-                        movement = GetComponent<Movement>();
-                        if (Input.GetKey("w") & movement.speed == movement.RunSpeed)
+                        if (Input.GetKeyDown("space"))
                         {
-                            animator.Play("Run");
-                            movement.speed = movement.WalkSpeed;
+                            animator.Play("JumpStart");
                         }
                         else
                         {
-                            animator.Play("Locomotion");
+                            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Landing") == false)
+                            {
+                                movement = GetComponent<Movement>();
+                                if (Input.GetKey("w") & movement.speed > movement.WalkSpeed)
+                                {
+                                    animator.Play("Run");
+                                    movement.speed = movement.WalkSpeed;
+                                }
+                                else
+                                {
+                                    animator.Play("Locomotion");
+                                }
+                            }
                         }
                     }
-                }
+                
             }
-        }
     }
 }

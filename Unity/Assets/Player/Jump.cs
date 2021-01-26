@@ -21,7 +21,7 @@ public class Jump : MonoBehaviour
     {
         float DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
  
-        IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround + 0.1f);
+        IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround);
         
         animator.SetFloat("JumpHeight", jumpHeight);
         
@@ -30,6 +30,7 @@ public class Jump : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
                 jumping = true;
+                
             }
         }
         if (jumping)
