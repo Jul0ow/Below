@@ -11,10 +11,13 @@ public class Launcher : MonoBehaviourPunCallbacks
     
     [SerializeField] TMP_InputField roomNameInputField;
 
-    [SerializeField] private TMP_Text errorText;
-    [SerializeField] private TMP_Text roomNameText;
-    [SerializeField] private Transform roomListContent;
-    [SerializeField] private GameObject roomListItemPrefab;
+    [SerializeField]  TMP_Text errorText;
+    [SerializeField]  TMP_Text roomNameText;
+    [SerializeField]  Transform roomListContent;
+    [SerializeField]  GameObject roomListItemPrefab;
+    [SerializeField]  Transform playerListContent;
+    [SerializeField]  GameObject PlayerListItemPrefab;
+    
 
     void Awake()
     {
@@ -37,6 +40,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         MenuManager.Instance.OpenMenu("title");
         Debug.Log("joined Lobby");
+        PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //donne un pseudo aléatoire de type "Player xxxx"
     }
     
     // Update is called once per frame
@@ -55,6 +59,11 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         MenuManager.Instance.OpenMenu("room");
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+        Player[] players = PhotonNetwork.PlayerList;
+        for (int i = 0; i < players.Length ; i++)
+        {
+            Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
+        }
     }
 
     public override void OnCreateRoomFailed(short returncode, string message)
@@ -91,5 +100,9 @@ public class Launcher : MonoBehaviourPunCallbacks
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
         }
     }
-    
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+    }
 }

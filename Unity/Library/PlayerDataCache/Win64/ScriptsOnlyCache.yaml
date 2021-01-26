@@ -3,10 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Jump
     - Launcher
+    - LifeScript
     - Locomotion
     - Menu
     - MenuManager
     - Movement
+    - PlayerListItem
     - RoomListItem
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -44,6 +46,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/scene/Level.unity:
@@ -86,29 +89,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 12300}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 12368}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 12410}
+      Script: {instanceID: 12248}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12476}
+      Script: {instanceID: 12358}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 12400}
     - Class: 114
-      Script: {instanceID: 13010}
+      Script: {instanceID: 12424}
     - Class: 114
-      Script: {instanceID: 13088}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 13570}
+      Script: {instanceID: 12956}
     - Class: 114
-      Script: {instanceID: 13626}
+      Script: {instanceID: 13036}
+    - Class: 114
+      Script: {instanceID: 13176}
+    - Class: 114
+      Script: {instanceID: 13520}
+    - Class: 114
+      Script: {instanceID: 13576}
+    - Class: 114
+      Script: {instanceID: 13644}
+    - Class: 114
+      Script: {instanceID: 13654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -122,6 +135,14 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/scene/Menu.unity:
     - Class: 1
@@ -161,53 +182,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11268}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11750}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 11856}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 12094}
+      Script: {instanceID: 11804}
     - Class: 114
-      Script: {instanceID: 12132}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12410}
+      Script: {instanceID: 12080}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 12358}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12400}
     - Class: 114
-      Script: {instanceID: 12668}
+      Script: {instanceID: 12614}
     - Class: 114
-      Script: {instanceID: 12730}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12830}
     - Class: 114
-      Script: {instanceID: 12900}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 13152}
+      Script: {instanceID: 13018}
     - Class: 114
-      Script: {instanceID: 13226}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13404}
+      Script: {instanceID: 13176}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13570}
+      Script: {instanceID: 13368}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 13656}
+      Script: {instanceID: 13522}
     - Class: 114
-      Script: {instanceID: 23020}
+      Script: {instanceID: 13606}
+    - Class: 114
+      Script: {instanceID: 19992}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -231,6 +254,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -761,12 +790,6 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 5f1752ed2092162f016c19510c28a8b9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
-  - hash:
-      serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -935,6 +958,12 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
+      Hash: e0766a0e8938b34dbdc572ce4b274d5c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomListItem
+  - hash:
+      serializedVersion: 2
       Hash: 6225eb0973ab0af667bc5f9d1b1b18de
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1055,7 +1084,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 36a872a9d07093129fd2c3905282f693
+      Hash: 23e3d4ddd48246e09c574126e53945cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Launcher
@@ -1217,6 +1246,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 5dadfcc4039a3f7ffc98e4890ad60be0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LifeScript
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1238,7 +1273,7 @@ ScriptsOnlyBuild:
       Hash: e0766a0e8938b34dbdc572ce4b274d5c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: RoomListItem
+    className: PlayerListItem
   platform: 19
   scenePathNames:
   - Assets/scene/Menu.unity
