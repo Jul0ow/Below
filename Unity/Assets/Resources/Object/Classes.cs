@@ -96,17 +96,14 @@ public class ItemScript : MonoBehaviour
             this.description = description;
         }
     }
-
-    /*public static Dictionary<uint, Item> AllItems()
-    {
-        Dictionary<uint, Item> AllItem = new Dictionary<uint,Item>();
-    }*/
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Dictionary<uint, Item>[] AllItem = new Dictionary<uint, Item>[4]; //0: common | 1: rare | 2:epic | 3:relique 
+        ///AllItem[0].Add(CreateItem());
     }
 
     // Update is called once per frame
