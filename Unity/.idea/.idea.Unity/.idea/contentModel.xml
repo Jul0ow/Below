@@ -17,8 +17,6 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
-        <e p="Menu.cs" t="Include" />
-        <e p="MenuManager.cs" t="Include" />
         <e p="NewtowrkController.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
@@ -198,15 +196,19 @@
           <e p="Locomotion.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
         </e>
-        <e p="PlayerListItem.cs" t="Include" />
         <e p="Resources" t="Include">
           <e p="Object" t="Include">
             <e p="Classes.cs" t="Include" />
           </e>
         </e>
-        <e p="RoomListItem.cs" t="Include" />
+        <e p="RoomManager.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Launcher.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
+          <e p="MenuManager.cs" t="Include" />
+          <e p="PlayerListItem.cs" t="Include" />
+          <e p="PlayerManager.cs" t="Include" />
+          <e p="RoomListItem.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
