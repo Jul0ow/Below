@@ -96,7 +96,13 @@ public class ItemScript : MonoBehaviour
             this.description = description;
         }
     }
-    
+    /*public static Dictionary<uint, Item> CreateDico()
+    {
+        spriteList = GetComponent<SpirteList>();
+        Dictionary<uint, Item>[] AllItem = new Dictionary<uint, Item>[4]; //0: common | 1: rare | 2:epic | 3:relique 
+        AllItem[0].Add(0,Item.CreateItem("Botte de Pégaz", 10f,  0f,  0f,  "Ça me botte !", spriteList.BottePegSprite,  true,  false,  0f));
+        return AllItem;
+    }*/
     
 
     // Start is called before the first frame update
