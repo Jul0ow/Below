@@ -26,22 +26,25 @@ public class ShootingSystem : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public TextMeshProUGUI ammunitionDisplay;
 
+    public TextMeshProUGUI textAmmo;
+    
     public bool allowInvoke = true;
 
     private void Awake()
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        textAmmo = Instantiate(ammunitionDisplay,new Vector3(0,400,0),Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 
     private void Update()
     {
         MyInput();
-        if (ammunitionDisplay != null)
+        if (textAmmo != null)
             if (bulletsLeft != 0)
-                ammunitionDisplay.SetText("Fireballs : " + bulletsLeft + " / " + magazineSize);
+                textAmmo.SetText("Fireballs : " + bulletsLeft + " / " + magazineSize);
             else
-                ammunitionDisplay.SetText("Reloading...");
+                textAmmo.SetText("Reloading...");
     }
 
     private void MyInput()

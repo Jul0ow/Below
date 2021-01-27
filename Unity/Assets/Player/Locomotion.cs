@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using  Photon.Pun;
 
 public class Locomotion : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Locomotion : MonoBehaviour
     Vector2 input;
     Movement movement;
     Jump jump;
+    private PhotonView PV;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,16 @@ public class Locomotion : MonoBehaviour
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
         jump = GetComponent<Jump>();
+        PV = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!PV.IsMine)
+        {
+            return;
+        }
         jump = GetComponent<Jump>();
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
