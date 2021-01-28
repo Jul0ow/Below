@@ -29,6 +29,12 @@ public class Locomotion : MonoBehaviour
         {
             return;
         }
+        if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
+            return;
+        if (Input.GetButtonDown("Fire2"))
+        {
+            animator.Play("Contact attack");
+        }
         jump = GetComponent<Jump>();
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");

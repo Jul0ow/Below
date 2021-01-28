@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\matthieu\matthieu epita\projet S2\Test\Below\Unity" t="IncludeRecursive">
+    <e p="C:\Users\Edgar\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Edgar\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Unity.1054152129.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Edgar\Desktop\Below\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Gamecontroller.cs" t="Include" />
-        <e p="Kevin Iglesias" t="Include">
-          <e p="3DCharacterDummy" t="Include">
-            <e p="readme.txt" t="Include" />
-          </e>
-        </e>
         <e p="NewtowrkController.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
@@ -183,7 +180,6 @@
           </e>
         </e>
         <e p="Player" t="Include">
-          <e p="Entities.cs" t="Include" />
           <e p="Jump.cs" t="Include" />
           <e p="LifeScript.cs" t="Include" />
           <e p="Locomotion.cs" t="Include" />
@@ -197,6 +193,50 @@
               <e p="Scripts" t="Include">
                 <e p="LightImprove.cs" t="Include" />
               </e>
+            </e>
+          </e>
+          <e p="ExplosiveLLC" t="Include">
+            <e p="SuperCharacterController" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Gravity.cs" t="Include" />
+                <e p="PlayerCamera.cs" t="Include" />
+                <e p="PlayerInputController.cs" t="Include" />
+                <e p="PlayerMachine.cs" t="Include" />
+                <e p="PlayerMachineDebug.cs" t="Include" />
+                <e p="SimpleStateMachine.cs" t="Include" />
+              </e>
+              <e p="SuperCharacterController" t="Include">
+                <e p="Core" t="Include">
+                  <e p="BruteForceMesh.cs" t="Include" />
+                  <e p="BSPTree.cs" t="Include" />
+                  <e p="SuperCharacterController.cs" t="Include" />
+                  <e p="SuperCollider.cs" t="Include" />
+                  <e p="SuperCollisionType.cs" t="Include" />
+                  <e p="SuperMath.cs" t="Include" />
+                  <e p="SuperStateMachine.cs" t="Include" />
+                </e>
+                <e p="DebugDraw.cs" t="Include" />
+                <e p="Math3d.cs" t="Include" />
+                <e p="readme.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Warrior" t="Include">
+              <e p="Code" t="Include">
+                <e p="AnimatorParentMove.cs" t="Include" />
+                <e p="CameraController.cs" t="Include" />
+                <e p="GUIControlsFREE.cs" t="Include" />
+                <e p="IKHands.cs" t="Include" />
+                <e p="WarriorAnimatorEvents.cs" t="Include" />
+                <e p="WarriorControllerFREE.cs" t="Include" />
+                <e p="WarriorInputControllerFREE.cs" t="Include" />
+                <e p="WarriorMovementControllerFREE.cs" t="Include" />
+                <e p="WarriorTimingFREE.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Kevin Iglesias" t="Include">
+            <e p="3DCharacterDummy" t="Include">
+              <e p="readme.txt" t="Include" />
             </e>
           </e>
           <e p="Object" t="Include">
@@ -264,7 +304,5 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\benco\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\benco\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Unity.-368999792.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -34,7 +34,7 @@ public class ShootingSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
-        textAmmo = Instantiate(ammunitionDisplay,new Vector3(0,400,0),Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
+        textAmmo = Instantiate(ammunitionDisplay,new Vector3(0,900,0),Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 
     private void Update()

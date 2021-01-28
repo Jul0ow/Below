@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    Animator animator;
     public float WalkSpeed = 6f;
     public float RunSpeed = 16f;
     public float speed;
@@ -16,6 +17,7 @@ public class Movement : MonoBehaviour
     private PhotonView PV;
     void Start()
     {
+        animator = GetComponent<Animator>();
         float speed = WalkSpeed;
         PV = GetComponent<PhotonView>();
     }
@@ -26,6 +28,8 @@ public class Movement : MonoBehaviour
         {
             return;
         }
+        if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
+            return;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
