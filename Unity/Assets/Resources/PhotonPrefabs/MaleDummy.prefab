@@ -216,6 +216,53 @@ Transform:
   m_Father: {fileID: 7341409449426624697}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1065308381331478478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6684056271414811464}
+  - component: {fileID: 7354903816675214623}
+  m_Layer: 0
+  m_Name: AttackFrom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6684056271414811464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065308381331478478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.13, z: -0.009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4233860908325875458}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7354903816675214623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065308381331478478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea9880090b74eb4f985becbd54b333b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  damage: 0
+  power: 1600
+  animator: {fileID: 2256975887899826775}
 --- !u!1 &1133797215193834744
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +616,7 @@ GameObject:
   - component: {fileID: 3547110029383098961}
   m_Layer: 9
   m_Name: Dummy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,7 +1062,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.064034335, y: -0.5674463, z: 0.044327416, w: 0.8197192}
+  m_LocalRotation: {x: 0.060310386, y: -0.5676418, z: 0.041749522, w: 0.8200016}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1092,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -1.0000001, y: 0.14997508, z: 0.83986145}
+  m_LocalPosition: {x: -1, y: 0.14998212, z: 0.8399038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -1137,13 +1184,13 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.7626379
+    Value: 0.8874881
     m_SpeedMode: 0
     m_MaxSpeed: 4
     m_AccelTime: 0.02
     m_DecelTime: 0.02
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: -0.05
+    m_InputAxisValue: 0
     m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
@@ -1305,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4.31244, z: -5.0561357}
+  m_FollowOffset: {x: 0, y: 4.7704253, z: -5.05792}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
@@ -1397,7 +1444,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.03421582, y: -0.56868196, z: 0.023685707, w: 0.8215042}
+  m_LocalRotation: {x: 0.030484073, y: -0.5687837, z: 0.021102414, w: 0.82165116}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1473,8 +1520,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: 0.19074196, y: -0.18426232, z: 0.03647796, w: 0.96350104}
-  m_LocalPosition: {x: 3.0926113, y: 4.493767, z: -5.109174}
+  m_LocalRotation: {x: 0.23458798, y: 0.0027250366, z: -0.0006576144, w: 0.97209084}
+  m_LocalPosition: {x: 0.94314986, y: 5.0200186, z: -5.8791084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906616770539}
@@ -1590,7 +1637,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.049113475, y: -0.5681586, z: 0.03399853, w: 0.82074827}
+  m_LocalRotation: {x: 0.045385018, y: -0.5683072, z: 0.03141751, w: 0.82096285}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1701,6 +1748,7 @@ MonoBehaviour:
   ammunitionDisplay: {fileID: 7035520143805422143, guid: 91bd60101aaeb8846913fb416ac52e44,
     type: 3}
   textAmmo: {fileID: 0}
+  textAmmoposition: {x: 0, y: 800, z: 0}
   allowInvoke: 1
 --- !u!1 &4233860908060833107
 GameObject:
@@ -1760,7 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4.31244, z: -5.0561357}
+  m_FollowOffset: {x: 0, y: 4.7704253, z: -5.05792}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
@@ -1846,6 +1894,7 @@ GameObject:
   - component: {fileID: 4233860908194137034}
   - component: {fileID: 5223354545073206812}
   - component: {fileID: 3363514738266324428}
+  - component: {fileID: 4470656391683113298}
   m_Layer: 9
   m_Name: MaleDummy
   m_TagString: Player
@@ -1869,6 +1918,7 @@ Transform:
   - {fileID: 6922351851566087276}
   - {fileID: 4233860908400421916}
   - {fileID: 4233860907775482701}
+  - {fileID: 6684056271414811464}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2027,6 +2077,25 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &4470656391683113298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233860908194137075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2cc436319ac3e4caef899612cdc7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4233860908194137036}
+  LifeBarFab: {fileID: 3924513829068907341, guid: 08587a1b05b5abe42b10cb9f0d976fa0,
+    type: 3}
+  LifeBarposition: {x: 40, y: 860, z: 0}
+  MaxHP: 100
+  HP: 0
+  Alive: 1
 --- !u!1 &4233860908590128593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +2154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4.31244, z: -5.0561357}
+  m_FollowOffset: {x: 0, y: 4.7704253, z: -5.05792}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0

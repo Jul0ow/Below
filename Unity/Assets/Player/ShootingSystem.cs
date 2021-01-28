@@ -27,6 +27,7 @@ public class ShootingSystem : MonoBehaviour
     public TextMeshProUGUI ammunitionDisplay;
 
     public TextMeshProUGUI textAmmo;
+    public Vector3 textAmmoposition;
     
     public bool allowInvoke = true;
 
@@ -34,7 +35,7 @@ public class ShootingSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
-        textAmmo = Instantiate(ammunitionDisplay,new Vector3(0,900,0),Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
+        textAmmo = Instantiate(ammunitionDisplay,textAmmoposition,Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 
     private void Update()

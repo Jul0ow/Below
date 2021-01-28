@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class LifeScript : MonoBehaviour
 {
     public Rigidbody rb;
-    public int MaxHP = 100;
-    private int HP;
+    public int MaxHP;
+    public int HP;
     public Slider slider;
 
     public void SetMaxHealth(int health)

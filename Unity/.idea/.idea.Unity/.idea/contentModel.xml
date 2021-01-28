@@ -180,6 +180,8 @@
           </e>
         </e>
         <e p="Player" t="Include">
+          <e p="Attack.cs" t="Include" />
+          <e p="CharacterThings.cs" t="Include" />
           <e p="Jump.cs" t="Include" />
           <e p="LifeScript.cs" t="Include" />
           <e p="Locomotion.cs" t="Include" />

@@ -56,18 +56,15 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
             }
-
             Invoke("Delay", 0.05f);
-            StartCoroutine(WaitThenDestroy(currentexplosion));
+            Invoke("DelayBoom(currentexplosion)", 0.5f);
         }
     }
-
-    private IEnumerator WaitThenDestroy(GameObject boom)
+    
+    private void DelayBoom(GameObject boom)
     {
-        yield return new WaitForSecondsRealtime(2);
         Destroy(boom);
     }
-
     private void Delay()
     {
         Destroy(gameObject);

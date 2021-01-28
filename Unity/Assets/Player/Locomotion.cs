@@ -42,20 +42,22 @@ public class Locomotion : MonoBehaviour
         animator.SetFloat("InputX", input.x);
         animator.SetFloat("InputY", input.y);
         if ((animator.GetCurrentAnimatorStateInfo(0).IsName("Falling") |
-             animator.GetCurrentAnimatorStateInfo(0).IsName("JumpStart"))
-            & jump.IsGrounded & rb.useGravity)
+             animator.GetCurrentAnimatorStateInfo(0).IsName("JumpStart")))
         {
-            animator.Play("Landing");
-            return;
+            if (jump.IsGrounded & rb.useGravity)
+            {
+                animator.Play("Landing");
+                return;
+            }
         }
         if (jump.IsGrounded == false & jump.jumping == false)
-            {
+        {
                 animator.Play("Falling");
-            }
-            else
+        }
+        else
+        {
+            if (jump.jumping == false)
             {
-                if (jump.jumping == false)
-                    {
                         if (Input.GetKeyDown("space"))
                         {
                             animator.Play("JumpStart");
@@ -76,8 +78,8 @@ public class Locomotion : MonoBehaviour
                                 }
                             }
                         }
-                    }
-                
             }
+                
+        }
     }
 }
