@@ -12,7 +12,7 @@ public class HideMenu : MonoBehaviour
     public void Print(Classes.Item item)
     {
         changingText.text = item.Getdescription();
-        image.sprite = item.sprite;
+        image.sprite = item.Sprite;
         StartCoroutine(Wait());
     }
 

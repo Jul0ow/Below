@@ -1,106 +1,84 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Classes : MonoBehaviour
 {
     public Sprite BottePeg;
-    
-    public class Item
+    public abstract class Item
     {
-        protected float speed;
-        protected float power;
-        protected float pv;
-        protected string name;
-        protected string description;
-        public Sprite sprite;
-        
-        public static Item CreateItem(string name, float speed, float power, float pv, string description,Sprite sprite, bool isPassive, bool isKnife, float range)
+        protected string Name;
+        protected string Description;
+        public Sprite Sprite;
+        public Func<GameObject,int> Effect;
+        public GameObject Joueur;
+
+        public static Item CreateItem(string name,string description,Sprite sprite, Func<GameObject,int> effect, bool isPassive, bool isKnife)
         {
             if (!isPassive)
             {
                 if (isKnife)
                 {
-                    return new knife(name, speed, power, pv, description,sprite,range);
+                    return new knife(name, description,sprite,effect);
                 }
-                else
-                {
-                    return new gun(name, speed, power, pv, description,sprite,range);
-                }
+                return new gun(name,description,sprite,effect);
             }
-            else
-            {
-                return new passive(name, speed, power, pv, description,sprite);
-            }
+            return new passive(name, description,sprite,effect);
         }
         public string Getname()
         {
-            return name;
-        }
-        public float Getpower()
-        {
-            return power;
-        }
-        public float Getpv()
-        {
-            return pv;
+            return Name;
         }
         public string Getdescription()
         {
-            return description;
+            return Description;
         }
-        public float Getspeed()
+
+        public void AppliedEffect()
         {
-            return speed;
+            Effect(Joueur);
         }
     }
 
     public class passive : Item
     {
-        public passive(string name, float speed, float power, float pv, string description,Sprite sprite)
+        public passive(string name, string description,Sprite sprite, Func<GameObject,int> effect)
         {
-            this.name = name;
-            this.speed = speed;
-            this.power = power;
-            this.pv = pv;
-            this.description = description;
-            this.sprite = sprite;
+            Name = name;
+            Description = description;
+            Sprite = sprite;
+            Effect = effect;
         }
     }
     public class knife : Item
     {
-        public float range;
-        public bool equiped;
-        
-        public knife(string name, float speed, float power, float pv, string description, Sprite sprite, float range)
+        public float Range;
+        public bool Equiped;
+        public knife(string name, string description, Sprite sprite,  Func<GameObject,int> effect)
         {
-            this.range = range;
-            this.equiped = true;
-            this.name = name;
-            this.speed = speed;
-            this.power = power;
-            this.pv = pv;
-            this.description = description;
-            this.sprite = sprite;
+            Equiped = true;
+            Name = name;
+            Description = description;
+            Sprite = sprite;
+            Effect = effect;
         }
     }
 
     public class gun : Item
     {
-        public float range;
-        public bool equiped;
+        public bool Equiped;
         
-        public gun(string name, float speed, float power, float pv, string description, Sprite sprite,float range)
+        public gun(string name, string description, Sprite sprite,Func<GameObject,int> effect)
         {
-            this.range = range;
-            equiped = true;
-            this.name = name;
-            this.speed = speed;
-            this.power = power;
-            this.pv = pv;
-            this.description = description;
-            this.sprite = sprite;
+            Equiped = true;
+            Name = name;
+            Description = description;
+            Sprite = sprite;
+            Effect = effect;
         }
+        
     }
 
     public static Dictionary<uint, Item> Common = new Dictionary<uint, Item>();
@@ -115,10 +93,10 @@ public class Classes : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        AllItem[0].Add(1,Item.CreateItem("Botte de Pégaz", 10f,  0f,  0f,  "À fonds les gaz, ça me botte !", BottePeg,  true,  false,  0f));
-        AllItem[1].Add(1,Item.CreateItem("Botte de Pégaz", 10f,  0f,  0f,  "Ça me botte !", BottePeg,  true,  false,  0f));
-        AllItem[2].Add(1,Item.CreateItem("Botte de Pégaz", 10f,  0f,  0f,  "Ça me botte !", BottePeg,  true,  false,  0f));
-        AllItem[3].Add(1,Item.CreateItem("Botte de Pégaz", 10f, 0f, 0f, "Ça me botte !", BottePeg, true, false, 0f));
+        AllItem[0].Add(1,Item.CreateItem("Botte de Pégaz", "À fonds les gaz, ça me botte !", BottePeg,Effect.Peg,  true,  false));
+        AllItem[1].Add(1,Item.CreateItem("Botte de Pégaz",   "Ça me botte !", BottePeg,Effect.Peg,  true,  false));
+        AllItem[2].Add(1,Item.CreateItem("Botte de Pégaz",  "Ça me botte !", BottePeg,Effect.Peg,  true,  false));
+        AllItem[3].Add(1,Item.CreateItem("Botte de Pégaz",  "Ça me botte !", BottePeg, Effect.Peg,true, false));
     }
 
     // Update is called once per frame
