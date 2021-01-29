@@ -35,6 +35,11 @@ public class Classes : MonoBehaviour
         {
             return Description;
         }
+        
+        public Sprite Getsprite()
+        {
+            return Sprite;
+        }
 
         public void AppliedEffect()
         {

@@ -33,6 +33,7 @@ public class ShootingSystem : MonoBehaviour
     public Vector3 textAmmoposition;
     
     public bool allowInvoke = true;
+    public Animator animator;
     private PhotonView PV;
 
     private void Awake()
@@ -68,7 +69,7 @@ public class ShootingSystem : MonoBehaviour
         
         if(Input.GetKeyDown("r") && bulletsLeft < magazineSize && !reloading) Reload();
         if(readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack"))
         {
             BulletsShot = 0;
             Shoot();
