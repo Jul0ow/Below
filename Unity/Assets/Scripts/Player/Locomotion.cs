@@ -20,6 +20,11 @@ public class Locomotion : MonoBehaviour
         movement = GetComponent<Movement>();
         jump = GetComponent<Jump>();
         PV = GetComponent<PhotonView>();
+
+        if (!PV.IsMine)
+        {
+            Destroy(GetComponentInChildren<Camera>().gameObject);
+        }
     }
 
     // Update is called once per frame

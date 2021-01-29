@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Photon.Pun;
+using Random = UnityEngine.Random;
 
 public class ShootingSystem : MonoBehaviour
 {
@@ -30,6 +33,7 @@ public class ShootingSystem : MonoBehaviour
     public Vector3 textAmmoposition;
     
     public bool allowInvoke = true;
+    private PhotonView PV;
 
     private void Awake()
     {
@@ -38,8 +42,17 @@ public class ShootingSystem : MonoBehaviour
         textAmmo = Instantiate(ammunitionDisplay,textAmmoposition,Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 
+    private void Start()
+    {
+        PV = GetComponent<PhotonView>();
+    }
+
     private void Update()
     {
+        if (!PV.IsMine)
+        {
+            return;
+        }
         MyInput();
         if (textAmmo != null)
             if (bulletsLeft != 0)

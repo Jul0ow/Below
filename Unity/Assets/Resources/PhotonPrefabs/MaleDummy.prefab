@@ -1062,7 +1062,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.060310386, y: -0.5676418, z: 0.041749522, w: 0.8200016}
+  m_LocalRotation: {x: 0.06031038, y: -0.5676418, z: 0.041749556, w: 0.8200015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1139,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -1, y: 0.14998212, z: 0.8399038}
+  m_LocalPosition: {x: -1.0000001, y: 0.14998206, z: 0.83990365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -1444,7 +1444,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.030484073, y: -0.5687837, z: 0.021102414, w: 0.82165116}
+  m_LocalRotation: {x: 0.030484078, y: -0.5687837, z: 0.021102449, w: 0.8216511}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1506,6 +1506,7 @@ GameObject:
   - component: {fileID: 4233860907641024819}
   - component: {fileID: 4233860907641024818}
   - component: {fileID: 4233860907641024821}
+  - component: {fileID: 494332337241871644}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1520,8 +1521,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: 0.23458798, y: 0.0027250366, z: -0.0006576144, w: 0.97209084}
-  m_LocalPosition: {x: 0.94314986, y: 5.0200186, z: -5.8791084}
+  m_LocalRotation: {x: 0.23458801, y: 0.0027250347, z: -0.000657614, w: 0.97209084}
+  m_LocalPosition: {x: 0.9431499, y: 5.0200186, z: -5.8791084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906616770539}
@@ -1613,6 +1614,28 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &494332337241871644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233860907641024820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4233860907770663527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1660,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.045385018, y: -0.5683072, z: 0.03141751, w: 0.82096285}
+  m_LocalRotation: {x: 0.045385014, y: -0.5683073, z: 0.031417545, w: 0.82096285}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1697,6 +1720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4233860907775482701}
   - component: {fileID: 4233860907775482698}
+  - component: {fileID: 1352516822495420803}
   m_Layer: 9
   m_Name: ShootFrom
   m_TagString: Untagged
@@ -1750,6 +1774,28 @@ MonoBehaviour:
   textAmmo: {fileID: 0}
   textAmmoposition: {x: 0, y: 800, z: 0}
   allowInvoke: 1
+--- !u!114 &1352516822495420803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233860907775482700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4233860908060833107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,8 +1939,8 @@ GameObject:
   - component: {fileID: 6093952674217891615}
   - component: {fileID: 4233860908194137034}
   - component: {fileID: 5223354545073206812}
-  - component: {fileID: 3363514738266324428}
   - component: {fileID: 4470656391683113298}
+  - component: {fileID: 4706868061707904613}
   m_Layer: 9
   m_Name: MaleDummy
   m_TagString: Player
@@ -2057,26 +2103,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 3363514738266324428}
+  - {fileID: 4706868061707904613}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3363514738266324428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4233860908194137075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &4470656391683113298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,6 +2126,39 @@ MonoBehaviour:
   MaxHP: 100
   HP: 0
   Alive: 1
+--- !u!114 &4706868061707904613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233860908194137075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 0
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &4233860908590128593
 GameObject:
   m_ObjectHideFlags: 0

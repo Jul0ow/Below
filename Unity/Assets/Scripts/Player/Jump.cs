@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Jump : MonoBehaviour
 {
@@ -11,14 +12,20 @@ public class Jump : MonoBehaviour
     public Rigidbody rb;
     public int JumpCount = 80;
     public CharacterController controller;
+    private PhotonView PV;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        PV = GetComponent<PhotonView>();
     }
 
     void Update()
     {
+        if (!PV.IsMine)
+        {
+            return;
+        }
         float DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
  
         IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround);
