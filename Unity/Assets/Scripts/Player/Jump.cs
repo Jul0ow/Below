@@ -31,7 +31,7 @@ public class Jump : MonoBehaviour
         IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround-0.818f);
         if (!IsGrounded && !jumping)
         {
-            controller.Move(Vector3.up * -jumpHeight / 2);
+            controller.Move(Vector3.up * -jumpHeight / 10);
             return;
         }
         animator.SetFloat("JumpHeight", jumpHeight);

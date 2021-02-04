@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HideMenu : MonoBehaviour
 {
     public static GameObject menu;
-    public static Text changingText;
+    public static TextMeshProUGUI changingText;
     public static Image image;
     private static MonoBehaviour singleton;
     public static void Print(Classes.Item item)
@@ -28,7 +29,7 @@ public class HideMenu : MonoBehaviour
     {
         singleton = this;
         menu = GameObject.Find("menu");
-        changingText = GameObject.Find("description").GetComponent<Text>();
+        changingText = GameObject.Find("description").GetComponent<TextMeshProUGUI>();
         image = GameObject.Find("printsprite").GetComponent<Image>();
         menu.gameObject.SetActive(false);
     }
