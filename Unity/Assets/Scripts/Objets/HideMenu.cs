@@ -8,37 +8,33 @@ public class HideMenu : MonoBehaviour
     public static GameObject menu;
     public static Text changingText;
     public static Image image;
-
+    private static MonoBehaviour singleton;
     public static void Print(Classes.Item item)
     {
         changingText.text = item.Getdescription();
-        image.sprite = item.Getsprite();
-        menu.gameObject.SetActive(true);
+        image.sprite = item.Sprite;
+        singleton.StartCoroutine(Wait());
     }
-
-
-    private static IEnumerator Wait()
+    static IEnumerator Wait()
     {
-        if(menu.activeSelf)
-        {
-            menu.gameObject.SetActive(true);
-            yield return new WaitForSeconds(3);
-            menu.gameObject.SetActive(false);
-        }
+        menu.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        menu.gameObject.SetActive(false);
     }
-    
+        
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        menu = gameObject;
-        changingText = GameObject.Find("Text").GetComponent<Text>();
-        image = GameObject.Find("Image").GetComponent<Image>();
+        singleton = this;
+        menu = GameObject.Find("menu");
+        changingText = GameObject.Find("description").GetComponent<Text>();
+        image = GameObject.Find("printsprite").GetComponent<Image>();
         menu.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        Wait();
+        
     }
 }

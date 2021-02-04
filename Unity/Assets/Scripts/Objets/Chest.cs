@@ -29,11 +29,13 @@ public class Chest : MonoBehaviour
                     content.Joueur = getters[i].gameObject;
                     content.AppliedEffect();
                     getters[i].GetComponent<CharacterThings>().Inventory.Add(content);
-                    HideMenu.Print(content);
+                    HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
                     OpenedChest.enabled = true;
                     ClosedChest.enabled = false;
                     Opened = true;
                 }
         }
     }
+    
+    
 }
