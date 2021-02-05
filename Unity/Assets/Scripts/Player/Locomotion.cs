@@ -34,57 +34,28 @@ public class Locomotion : MonoBehaviour
         {
             return;
         }
-        if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Current attack"))
             return;
-        if (Input.GetButtonDown("Fire2"))
-        {
-            animator.Play("Contact attack");
-        }
-        jump = GetComponent<Jump>();
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
-        animator.SetBool("Grounded", jump.IsGrounded);
         animator.SetFloat("InputX", input.x);
         animator.SetFloat("InputY", input.y);
-        if ((animator.GetCurrentAnimatorStateInfo(0).IsName("Falling") |
-             animator.GetCurrentAnimatorStateInfo(0).IsName("JumpStart")))
+        if (Input.GetKey("left shift") & movement.speed > movement.WalkSpeed)
         {
-            if (jump.IsGrounded & rb.useGravity)
-            {
-                animator.Play("Landing");
-                return;
-            }
-        }
-        if (jump.IsGrounded == false & jump.jumping == false)
-        {
-                animator.Play("Falling");
+            animator.SetBool("Running", true);
         }
         else
         {
-            if (jump.jumping == false)
-            {
-                        if (Input.GetKeyDown("space"))
-                        {
-                            animator.Play("JumpStart");
-                        }
-                        else
-                        {
-                            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Landing") == false)
-                            {
-                                movement = GetComponent<Movement>();
-                                if (Input.GetKey("left shift") & movement.speed > movement.WalkSpeed)
-                                {
-                                    animator.Play("Run");
-                                    movement.speed = movement.WalkSpeed;
-                                }
-                                else
-                                {
-                                    animator.Play("Locomotion");
-                                }
-                            }
-                        }
-            }
-                
+            animator.SetBool("Running", false);
         }
+        animator.SetBool("Grounded", jump.IsGrounded);
+        animator.SetBool("Falling", jump.Falling);
+        animator.SetBool("Jumping", jump.jumping);
+        if (Input.GetButton("Fire2"))
+            animator.SetBool("Attacking", true);
+        else
+            animator.SetBool("Attacking", false);
     }
+    
 }

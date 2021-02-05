@@ -8,6 +8,7 @@ public class Jump : MonoBehaviour
     Animator animator;
     public float jumpHeight;
     public bool IsGrounded = false;
+    public bool Falling = false;
     public bool jumping = false;
     public Rigidbody rb;
     public int JumpCount = 80;
@@ -31,11 +32,12 @@ public class Jump : MonoBehaviour
         IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround-0.818f);
         if (!IsGrounded && !jumping)
         {
+            Falling = true;
             controller.Move(Vector3.up * -jumpHeight / 10);
             return;
         }
-        animator.SetFloat("JumpHeight", jumpHeight);
-        
+        else
+            Falling = false;
         if (IsGrounded)
         {
             if (Input.GetKeyDown("space"))
