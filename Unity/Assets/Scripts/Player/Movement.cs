@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            if (Input.GetKey("w"))
+            if (Input.GetKey("left shift"))
             {
                 speed = RunSpeed;
             }

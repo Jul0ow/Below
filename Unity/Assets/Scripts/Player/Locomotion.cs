@@ -72,7 +72,7 @@ public class Locomotion : MonoBehaviour
                             if(animator.GetCurrentAnimatorStateInfo(0).IsName("Landing") == false)
                             {
                                 movement = GetComponent<Movement>();
-                                if (Input.GetKey("w") & movement.speed > movement.WalkSpeed)
+                                if (Input.GetKey("left shift") & movement.speed > movement.WalkSpeed)
                                 {
                                     animator.Play("Run");
                                     movement.speed = movement.WalkSpeed;

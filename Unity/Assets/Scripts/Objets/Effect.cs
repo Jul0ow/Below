@@ -6,7 +6,8 @@ public class Effect : MonoBehaviour
 {
     public static int Peg(GameObject Joueur)
     {
-        Joueur.GetComponent<Movement>().RunSpeed += 30;
+        Joueur.GetComponent<Movement>().WalkSpeed += 10;
+        Joueur.GetComponent<Movement>().RunSpeed += 10;
         return 1;
     }
 }
