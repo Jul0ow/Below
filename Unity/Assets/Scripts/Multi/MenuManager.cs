@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MenuManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class MenuManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+    }
+
+    void Start()
+    {
+        Screen.fullScreen = true;
     }
 
     public void OpenMenu(string menuName)
@@ -41,5 +47,15 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu(Menu menu)
     {
         menu.Close();
+    }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
+    public void options()
+    {
+        PhotonNetwork.LoadLevel(3);
     }
 }

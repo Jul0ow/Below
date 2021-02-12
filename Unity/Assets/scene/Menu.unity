@@ -727,7 +727,6 @@ GameObject:
   - component: {fileID: 188476266}
   - component: {fileID: 188476265}
   - component: {fileID: 188476264}
-  - component: {fileID: 188476267}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -798,7 +797,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 188476267}
+      - m_Target: {fileID: 176696086}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -846,18 +845,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188476262}
   m_CullTransparentMesh: 0
---- !u!114 &188476267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188476262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412d975e992b36e4187b082fc116f578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &202677141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &429351708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2266,7 +2253,6 @@ GameObject:
   - component: {fileID: 1006728156}
   - component: {fileID: 1006728155}
   - component: {fileID: 1006728154}
-  - component: {fileID: 1006728153}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -2291,21 +2277,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 990.37, y: -375.44}
+  m_AnchoredPosition: {x: 953, y: -329}
   m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.49999997, y: 0.49999997}
---- !u!114 &1006728153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006728151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412d975e992b36e4187b082fc116f578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!114 &1006728154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2349,7 +2323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1006728153}
+      - m_Target: {fileID: 176696086}
         m_MethodName: options
         m_Mode: 1
         m_Arguments:
