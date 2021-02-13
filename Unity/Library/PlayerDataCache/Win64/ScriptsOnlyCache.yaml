@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - Menu
     - MenuManager
     - Movement
+    - Options
     - PlayerInputController
     - PlayerListItem
     - PlayerMachine
@@ -39,9 +40,6 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachineVirtualCamera
     - CinemachineCameraOffset
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonAnimatorViewEditor
-    - Photon.Pun.PhotonTransformViewEditor
-    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -61,11 +59,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -76,11 +71,17 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/scene/Level.unity:
@@ -113,29 +114,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11292}
-    - Class: 114
       Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 11568}
     - Class: 114
-      Script: {instanceID: 12282}
+      Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 12418}
+      Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12424}
     - Class: 114
-      Script: {instanceID: 13146}
+      Script: {instanceID: 12870}
     - Class: 114
-      Script: {instanceID: 13222}
+      Script: {instanceID: 13152}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 13228}
     - Class: 114
-      Script: {instanceID: 13626}
+      Script: {instanceID: 13580}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13634}
+    - Class: 114
+      Script: {instanceID: 13670}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -182,7 +183,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 13580}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -241,109 +242,123 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11272}
     - Class: 114
-      Script: {instanceID: 11284}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11358}
     - Class: 114
-      Script: {instanceID: 11394}
-    - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11400}
     - Class: 114
       Script: {instanceID: 11468}
     - Class: 114
-      Script: {instanceID: 11530}
+      Script: {instanceID: 11474}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11514}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 11602}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 11702}
+      Script: {instanceID: 11568}
     - Class: 114
-      Script: {instanceID: 11704}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11706}
+      Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 11812}
+      Script: {instanceID: 11708}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 11992}
+      Script: {instanceID: 11712}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 11818}
     - Class: 114
-      Script: {instanceID: 12092}
+      Script: {instanceID: 11910}
     - Class: 114
-      Script: {instanceID: 12232}
+      Script: {instanceID: 11940}
     - Class: 114
-      Script: {instanceID: 12264}
+      Script: {instanceID: 11998}
     - Class: 114
-      Script: {instanceID: 12308}
+      Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 12334}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12376}
+      Script: {instanceID: 12238}
     - Class: 114
-      Script: {instanceID: 12418}
+      Script: {instanceID: 12270}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12588}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 12642}
+      Script: {instanceID: 12382}
     - Class: 114
-      Script: {instanceID: 12696}
+      Script: {instanceID: 12424}
     - Class: 114
-      Script: {instanceID: 12706}
+      Script: {instanceID: 12448}
     - Class: 114
-      Script: {instanceID: 12828}
+      Script: {instanceID: 12488}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12648}
     - Class: 114
-      Script: {instanceID: 12948}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 12712}
+    - Class: 114
+      Script: {instanceID: 12834}
+    - Class: 114
+      Script: {instanceID: 12870}
+    - Class: 114
+      Script: {instanceID: 12886}
+    - Class: 114
+      Script: {instanceID: 12954}
     - Class: 114
       Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13080}
+      Script: {instanceID: 13068}
     - Class: 114
-      Script: {instanceID: 13146}
+      Script: {instanceID: 13086}
     - Class: 114
-      Script: {instanceID: 13192}
+      Script: {instanceID: 13152}
     - Class: 114
-      Script: {instanceID: 13222}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 13226}
+      Script: {instanceID: 13228}
     - Class: 114
-      Script: {instanceID: 13406}
+      Script: {instanceID: 13232}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 13412}
     - Class: 114
-      Script: {instanceID: 13572}
+      Script: {instanceID: 13426}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 13532}
     - Class: 114
       Script: {instanceID: 13580}
     - Class: 114
-      Script: {instanceID: 13626}
+      Script: {instanceID: 13582}
     - Class: 114
-      Script: {instanceID: 13632}
+      Script: {instanceID: 13588}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13634}
     - Class: 114
-      Script: {instanceID: 13664}
+      Script: {instanceID: 13640}
     - Class: 114
-      Script: {instanceID: 13710}
+      Script: {instanceID: 13652}
+    - Class: 114
+      Script: {instanceID: 13670}
+    - Class: 114
+      Script: {instanceID: 13672}
+    - Class: 114
+      Script: {instanceID: 13690}
+    - Class: 114
+      Script: {instanceID: 13718}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -379,6 +394,91 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    Assets/scene/Options.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11270}
+    - Class: 114
+      Script: {instanceID: 11272}
+    - Class: 114
+      Script: {instanceID: 11304}
+    - Class: 114
+      Script: {instanceID: 11514}
+    - Class: 114
+      Script: {instanceID: 11516}
+    - Class: 114
+      Script: {instanceID: 11568}
+    - Class: 114
+      Script: {instanceID: 11940}
+    - Class: 114
+      Script: {instanceID: 12060}
+    - Class: 114
+      Script: {instanceID: 12296}
+    - Class: 114
+      Script: {instanceID: 12870}
+    - Class: 114
+      Script: {instanceID: 13152}
+    - Class: 114
+      Script: {instanceID: 13228}
+    - Class: 114
+      Script: {instanceID: 13532}
+    - Class: 114
+      Script: {instanceID: 13652}
+    - Class: 114
+      Script: {instanceID: 13670}
+    - Class: 114
+      Script: {instanceID: 13690}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1409,6 +1509,12 @@ ScriptsOnlyBuild:
     className: OnEscapeQuit
   - hash:
       serializedVersion: 2
+      Hash: eb4ccbadff4149439e6ccc3c03fe71a3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Options
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1439,7 +1545,7 @@ ScriptsOnlyBuild:
     className: PhotonView
   - hash:
       serializedVersion: 2
-      Hash: 1fe1944c83853aceb615156976f31470
+      Hash: 6c4ab1b4390720aeaf3fe736d7e398e5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -1586,4 +1692,5 @@ ScriptsOnlyBuild:
   - Assets/scene/Menu.unity
   - Assets/scene/Level.unity
   - Assets/scene/LevelMulti.unity
-  playerPath: C:/matthieu/matthieu epita/projet S2/build/v0.51/New Unity Project.exe
+  - Assets/scene/Options.unity
+  playerPath: D:/buildBelow/New Unity Project.exe
