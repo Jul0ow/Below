@@ -7,6 +7,9 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     [SerializeField] private Menu[] menus;
+    public GameObject titleMenu;
+    public GameObject optionsMenu;
+    public GameObject engrenages;
 
     void Awake()
     {
@@ -56,6 +59,8 @@ public class MenuManager : MonoBehaviour
     
     public void options()
     {
-        PhotonNetwork.LoadLevel(3);
+        titleMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        engrenages.SetActive(false);
     }
 }

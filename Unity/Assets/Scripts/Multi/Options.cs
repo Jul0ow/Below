@@ -12,6 +12,8 @@ public class Options : MonoBehaviour
     public AudioMixer master;
     public GameObject graphicOptions;
     public Dropdown ResolutionDropdown;
+    public GameObject titleMenu;
+    public GameObject engrenages;
 
     private Resolution[] resolutions;
 
@@ -19,8 +21,9 @@ public class Options : MonoBehaviour
 
     public void returnmenu()
     {
-        PhotonNetwork.LoadLevel(0);
-        PhotonNetwork.Disconnect();
+        titleMenu.SetActive(true);
+        principalOptions.SetActive(false);
+        engrenages.SetActive(true);
     }
 
     public void returnsoundoption()
