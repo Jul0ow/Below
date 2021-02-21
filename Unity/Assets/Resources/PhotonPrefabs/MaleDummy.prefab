@@ -2126,9 +2126,9 @@ MonoBehaviour:
   rb: {fileID: 4233860908194137036}
   LifeBarFab: {fileID: 3924513829068907341, guid: 08587a1b05b5abe42b10cb9f0d976fa0,
     type: 3}
-  LifeBarposition: {x: 40, y: 860, z: 0}
+  LifeBarposition: {x: 50, y: 860, z: 0}
   MaxHP: 100
-  HP: 0
+  HP: 100
   Alive: 1
 --- !u!114 &-7410615817413464383
 MonoBehaviour:

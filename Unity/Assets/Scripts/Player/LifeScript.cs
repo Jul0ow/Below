@@ -20,30 +20,9 @@ public class LifeScript : MonoBehaviour
     {
         slider.value = health;
     }
-
-    void Start()
-    {
-        HP = MaxHP;
-        SetMaxHealth(MaxHP);
-    }
+    
     void Update()
     {
-        if (Input.GetKeyDown("k"))
-        {
-            HP -= 1;
-        }
-        if (Input.GetKeyDown("l"))
-        {
-            HP -= 10;
-        }
-        if (rb.position.y < -10f)
-        {
-            HP = 0;
-        }
         SetHealth(HP);
-        if (HP <= 0)
-        {
-            /* Do Something */
-        }
     }
 }

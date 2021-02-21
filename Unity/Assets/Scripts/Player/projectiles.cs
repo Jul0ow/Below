@@ -53,7 +53,7 @@ public class projectiles : MonoBehaviour
             for (int i = 0; i < enemies.Length; i++)
             {
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
-                if (enemies[i].GetComponent<Rigidbody>())
+                if (enemies[i].GetComponent<Rigidbody>() && !enemies[i].GetComponent<EnnemyIA>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
             }
             Invoke("Delay", 0.05f);

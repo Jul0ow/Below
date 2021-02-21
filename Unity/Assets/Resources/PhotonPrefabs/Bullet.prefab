@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1742921456624939137}
   - component: {fileID: 1742921456624939136}
-  - component: {fileID: 1742921456624939143}
   - component: {fileID: 1742921456624939138}
+  - component: {fileID: 1742921456624939143}
   - component: {fileID: 3602586938789321394}
   - component: {fileID: 6373783806760254691}
   m_Layer: 8
@@ -52,6 +52,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!135 &1742921456624939138
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742921456624939142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1742921456624939143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +83,7 @@ MonoBehaviour:
     type: 3}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   bouciness: 0
   useGravity: 0
   explosionDamage: 30
@@ -79,19 +92,6 @@ MonoBehaviour:
   maxCollisions: 1
   maxLifeTime: 10
   explodeOnTouche: 1
---- !u!135 &1742921456624939138
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742921456624939142}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3602586938789321394
 MonoBehaviour:
   m_ObjectHideFlags: 0
