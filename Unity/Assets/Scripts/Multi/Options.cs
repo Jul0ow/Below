@@ -14,6 +14,8 @@ public class Options : MonoBehaviour
     public Dropdown ResolutionDropdown;
     public GameObject titleMenu;
     public GameObject engrenages;
+    public GameObject ControlsOptions;
+
 
     private Resolution[] resolutions;
 
@@ -37,11 +39,22 @@ public class Options : MonoBehaviour
         principalOptions.SetActive(true);
         graphicOptions.SetActive(false);
     }
+    public void returnControlsoption()
+    {
+        principalOptions.SetActive(true);
+        ControlsOptions.SetActive(false);
+    }
 
     public void graphics()
     {
         principalOptions.SetActive(false);
         graphicOptions.SetActive(true);
+    }
+    
+    public void controls()
+    {
+        principalOptions.SetActive(false);
+        ControlsOptions.SetActive(true);
     }
     
     public void sound()

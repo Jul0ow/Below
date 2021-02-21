@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
+using Slider = UnityEngine.UI.Slider;
 
 public class OptionsEnJeu : MonoBehaviour
 {
     public GameObject principalOptions;
     public GameObject soundOptions;
+    public GameObject ControlsOptions;
     public AudioMixer master;
     public GameObject graphicOptions;
     public Dropdown ResolutionDropdown;
@@ -16,7 +20,11 @@ public class OptionsEnJeu : MonoBehaviour
     public Slider soundSlide;
     private float soundValue;
 
-        public void closeOptions()
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void closeOptions()
     {
         menuOpen = false;
         Cursor.visible = false;
@@ -32,6 +40,12 @@ public class OptionsEnJeu : MonoBehaviour
         soundOptions.SetActive(false);
     }
     
+    public void returnControlsoption()
+    {
+        principalOptions.SetActive(true);
+        ControlsOptions.SetActive(false);
+    }
+    
     public void returngraphicsoption()
     {
         principalOptions.SetActive(true);
@@ -42,6 +56,12 @@ public class OptionsEnJeu : MonoBehaviour
     {
         principalOptions.SetActive(false);
         graphicOptions.SetActive(true);
+    }
+    
+    public void controls()
+    {
+        principalOptions.SetActive(false);
+        ControlsOptions.SetActive(true);
     }
     
     public void sound()
