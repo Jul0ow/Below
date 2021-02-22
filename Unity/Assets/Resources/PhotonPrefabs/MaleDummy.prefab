@@ -1062,7 +1062,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.068468995, y: -0.5671981, z: 0.047397297, w: 0.8193606}
+  m_LocalRotation: {x: 0.068468995, y: -0.5671981, z: 0.047397293, w: 0.8193606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1139,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -1, y: 0.14998348, z: 0.83990246}
+  m_LocalPosition: {x: -1, y: 0.14998348, z: 0.8399025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -1521,7 +1521,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: 0.12850556, y: -0.047229387, z: 0.006127049, w: 0.9905646}
+  m_LocalRotation: {x: 0.12850556, y: -0.047229372, z: 0.0061270474, w: 0.9905646}
   m_LocalPosition: {x: 1.5330671, y: 3.6648045, z: -5.747715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1660,7 +1660,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.05355392, y: -0.5679664, z: 0.037072413, w: 0.8204706}
+  m_LocalRotation: {x: 0.053553924, y: -0.5679664, z: 0.03707241, w: 0.8204706}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2130,6 +2130,12 @@ MonoBehaviour:
   MaxHP: 100
   HP: 0
   Alive: 1
+  armor: 100
+  theRing: 0
+  basketpeg: 0
+  OneUp: 0
+  luck: 0
+  savon: 0
 --- !u!114 &-7410615817413464383
 MonoBehaviour:
   m_ObjectHideFlags: 0

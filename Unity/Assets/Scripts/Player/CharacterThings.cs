@@ -11,6 +11,12 @@ public class CharacterThings : MonoBehaviour
     public int MaxHP = 100;
     public int HP;
     public bool Alive = true;
+    public int armor = 100;
+    public bool theRing = false;
+    public bool basketpeg = false;
+    public bool OneUp = false;
+    public int luck = 0;
+    public bool savon = false;
     
     
     void Start()
