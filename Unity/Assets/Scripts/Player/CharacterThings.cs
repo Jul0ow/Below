@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterThings : MonoBehaviour
 {
     public Rigidbody rb;
     public List<Classes.Item> Inventory;
-    public GameObject LifeBarFab;
+    private GameObject LifeBarFab;
     private GameObject LifeBarObject;
     public Vector3 LifeBarposition;
     public int MaxHP = 100;
@@ -19,6 +20,7 @@ public class CharacterThings : MonoBehaviour
     
     void Awake()
     {
+        LifeBarFab = GameObject.Find("Health");
         lifeBarObjetct = Instantiate(LifeBarFab,LifeBarposition,Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
         LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
         Inventory = new List<Classes.Item>();
@@ -26,6 +28,13 @@ public class CharacterThings : MonoBehaviour
         LifeBar.MaxHP = MaxHP;
         LifeBar.HP = HP;
     }
+    
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
+        Debug.Log(HP);
+        if(HP<=0) Destroy(gameObject);
+    } 
 
     // Update is called once per frame
     void Update()
@@ -38,5 +47,6 @@ public class CharacterThings : MonoBehaviour
             LifeBar.HP = 0;
         }
         LifeBar.HP = HP;
+        if (HP <= 0) Application.Quit();
     }
 }

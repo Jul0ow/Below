@@ -31,6 +31,12 @@ public class Attack : MonoBehaviour
                     EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
                     IA.TakeDamage(Damage);
                 }
+                if (enemies[i].CompareTag("Player"))
+                {
+                    CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
+                    if(victim != enemies[i].GetComponentInParent<CharacterThings>())
+                        victim.TakeDamage(Damage);
+                }
             }
         }
     }

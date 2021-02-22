@@ -55,6 +55,13 @@ public class projectiles : MonoBehaviour
                     EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
                     IA.TakeDamage(Damage);
                 }
+
+                if (enemies[i].CompareTag("Player"))
+                {
+                    CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
+                    if(victim != enemies[i].GetComponentInParent<CharacterThings>())
+                        victim.TakeDamage(Damage);
+                }
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
 
@@ -75,7 +82,7 @@ public class projectiles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Player")) 
+        if (collision.gameObject.transform.parent == gameObject.transform.parent)
             return;
         //collisions++;
         //if(collision.collider.CompareTag("Enemy") && explodeOnTouche) 
