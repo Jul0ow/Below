@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  damage: 0
+  Damage: 50
   power: 1600
   animator: {fileID: 2256975887899826775}
 --- !u!1 &1133797215193834744
@@ -1723,7 +1723,7 @@ GameObject:
   - component: {fileID: 1352516822495420803}
   m_Layer: 9
   m_Name: ShootFrom
-  m_TagString: Untagged
+  m_TagString: Cible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

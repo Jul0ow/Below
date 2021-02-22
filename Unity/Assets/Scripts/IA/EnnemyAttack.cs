@@ -27,7 +27,6 @@ public class EnnemyAttack : MonoBehaviour
         gameObject.transform.LookAt(victim.transform);
         Rigidbody currentbullet =
             Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-        
         currentbullet.AddForce(transform.forward * shootForce,ForceMode.Impulse);
     }
 }

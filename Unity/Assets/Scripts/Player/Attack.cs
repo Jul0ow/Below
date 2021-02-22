@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public float range;
-    public float damage;
+    public int Damage;
     public float power;
     public Animator animator;
 
@@ -26,6 +26,11 @@ public class Attack : MonoBehaviour
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
                 if (enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(power, transform.position, range);
+                if (enemies[i].CompareTag("Ennemy"))
+                {
+                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
+                    IA.TakeDamage(Damage);
+                }
             }
         }
     }

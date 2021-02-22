@@ -23,24 +23,18 @@ public class EnnemyIA : MonoBehaviour
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Cible");
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Cible");
         agent.speed = 3.5f;
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
-        if(!playerInSightRange && !playerInAttackRange)
-        {
-            Patroling();
-            return;
-        }
-        if(playerInSightRange && !playerInAttackRange)
-        {
-            Chaseplayer();
-            return;
-        }
+        if(!playerInSightRange && !playerInAttackRange) Patroling();
+        if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         if(playerInAttackRange && playerInSightRange) Attackplayer();
     }
     
@@ -69,6 +63,7 @@ public class EnnemyIA : MonoBehaviour
     private void Chaseplayer()
     {
         agent.SetDestination(player.transform.position);
+        transform.LookAt(player.transform);
     }
     
     private void Attackplayer()
@@ -89,10 +84,11 @@ public class EnnemyIA : MonoBehaviour
     }
 
     public void TakeDamage(int damage)
-    {
-        Health -= damage;
-        if(Health<=0) Invoke(nameof(DestroyEnemy), 0.5f);
-    }
+         {
+             Health -= damage;
+             Debug.Log(Health);
+             if(Health<=0) Destroy(gameObject);
+         } 
 
     private void DestroyEnemy()
     {

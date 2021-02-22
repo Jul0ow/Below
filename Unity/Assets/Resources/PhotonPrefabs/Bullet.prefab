@@ -77,21 +77,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e393fd0afff055f4fad6cb91beb4a466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awake: 0
+  awake: 1
   rb: {fileID: 4233860908194137036, guid: b047c335beaf9cb408d980699ae4e7a2, type: 3}
   explosion: {fileID: 6496343108181880183, guid: 51969b3f0ab3020418c424cd09c5cd6d,
     type: 3}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 2048
   bouciness: 0
   useGravity: 0
-  explosionDamage: 30
-  explosionRange: 15
+  Damage: 25
+  explosionRange: 5
   explosionForce: 800
   maxCollisions: 1
   maxLifeTime: 10
-  explodeOnTouche: 1
 --- !u!114 &3602586938789321394
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,19 +9,17 @@ public class projectiles : MonoBehaviour
     public bool awake = false;
     public Rigidbody rb;
     public GameObject explosion;
-    public LayerMask whatIsEnemies;
     [Range(0f,1f)]
     public float bouciness;
 
     public bool useGravity;
 
-    public int explosionDamage;
+    public int Damage;
     public float explosionRange;
     public float explosionForce;
-
+    
     public int maxCollisions;
     public float maxLifeTime;
-    public bool explodeOnTouche = true;
 
     private int collisions;
     private PhysicMaterial physics_mat;
@@ -52,9 +50,14 @@ public class projectiles : MonoBehaviour
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {
-                // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
-                if (enemies[i].GetComponent<Rigidbody>() && !enemies[i].GetComponent<EnnemyIA>())
+                if (enemies[i].CompareTag("Ennemy"))
+                {
+                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
+                    IA.TakeDamage(Damage);
+                }
+                if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
+
             }
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
