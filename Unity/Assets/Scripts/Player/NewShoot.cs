@@ -31,6 +31,7 @@ public class NewShoot : MonoBehaviour
             nextfire = Time.time + fireRate;
             GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/" + bulletprefab.name, shootFrom.transform.position,
                 Quaternion.identity, 0);
+            bullet.GetComponent<projectiles>().owner = transform.parent.gameObject;
             
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5f, 0));
             RaycastHit hit;
@@ -51,6 +52,9 @@ public class NewShoot : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            fire();
+        }
     }
 }

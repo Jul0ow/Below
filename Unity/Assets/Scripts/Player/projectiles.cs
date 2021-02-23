@@ -26,13 +26,13 @@ public class projectiles : MonoBehaviour
     private int collisions;
     private PhysicMaterial physics_mat;
     
-    private PhotonView PV;
+    public GameObject owner;
 
 
     private void Start()
     {
         Setup();
-        PV = GetComponent<PhotonView>();
+        //PV = GetComponent<PhotonView>();
     }
 
     private void Update()
@@ -88,13 +88,7 @@ public class projectiles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        PhotonView ownerView = collision.collider.gameObject.GetPhotonView();
-        
-
-        if ( ownerView == null || ownerView != PV.IsMine)
-        {
-            Explode();
-        }
+        if(collision.collider.gameObject != owner) Explode();
     }
     
     private void Setup()
