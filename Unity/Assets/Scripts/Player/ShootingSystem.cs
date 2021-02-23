@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class ShootingSystem : MonoBehaviour
 {
-    public GameObject bullet;
+    /*public GameObject bullet;
 
     public float shootForce, upwardForce;
 
@@ -127,5 +127,5 @@ public class ShootingSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         reloading = false;
-    }
+    }*/
 }
