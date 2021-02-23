@@ -86,7 +86,6 @@ public class EnnemyIA : MonoBehaviour
     public void TakeDamage(int damage)
          {
              Health -= damage;
-             Debug.Log(Health);
              if(Health<=0) Destroy(gameObject);
          } 
 

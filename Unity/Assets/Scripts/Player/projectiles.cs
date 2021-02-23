@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using ExitGames.Client.Photon.Encryption;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 public class projectiles : MonoBehaviour
 {
@@ -23,10 +25,14 @@ public class projectiles : MonoBehaviour
 
     private int collisions;
     private PhysicMaterial physics_mat;
+    
+    private PhotonView PV;
+
 
     private void Start()
     {
         Setup();
+        PV = GetComponent<PhotonView>();
     }
 
     private void Update()
@@ -82,8 +88,13 @@ public class projectiles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!collision.collider.CompareTag("Player")) 
+        PhotonView ownerView = collision.collider.gameObject.GetPhotonView();
+        
+
+        if ( ownerView == null || ownerView != PV.IsMine)
+        {
             Explode();
+        }
     }
     
     private void Setup()
