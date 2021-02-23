@@ -238,16 +238,18 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="IA" t="Include">
+            <e p="EnnemyAttack.cs" t="Include" />
+            <e p="EnnemyIA.cs" t="Include" />
+            <e p="EnnemyShot.cs" t="Include" />
+          </e>
           <e p="Multi" t="Include">
-            <e p="bulletDeath.cs" t="Include" />
             <e p="Gamecontroller.cs" t="Include" />
             <e p="Launcher.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
-            <e p="Mouse.cs" t="Include" />
             <e p="NewtowrkController.cs" t="Include" />
             <e p="Options.cs" t="Include" />
-            <e p="OptionsEnJeu.cs" t="Include" />
             <e p="PlayerListItem.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
             <e p="RoomListItem.cs" t="Include" />
@@ -266,7 +268,6 @@
             <e p="LifeScript.cs" t="Include" />
             <e p="Locomotion.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
-            <e p="NewShoot.cs" t="Include" />
             <e p="projectiles.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
           </e>
