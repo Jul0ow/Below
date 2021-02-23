@@ -13,7 +13,7 @@ public class EnnemyAttack : MonoBehaviour
 
     private void Awake()
     {
-        IA = GetComponent<EnnemyIA>();
+        IA = GetComponentInParent<EnnemyIA>();
     }
 
 

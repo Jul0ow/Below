@@ -82,11 +82,8 @@ public class projectiles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.transform.parent == gameObject.transform.parent)
-            return;
-        //collisions++;
-        //if(collision.collider.CompareTag("Enemy") && explodeOnTouche) 
-        Explode();
+        if(!collision.collider.CompareTag("Player")) 
+            Explode();
     }
     
     private void Setup()

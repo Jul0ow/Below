@@ -1062,7 +1062,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.068468995, y: -0.5671981, z: 0.047397293, w: 0.8193606}
+  m_LocalRotation: {x: 0.068468995, y: -0.5671981, z: 0.047397297, w: 0.8193606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1139,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -1, y: 0.14998348, z: 0.8399025}
+  m_LocalPosition: {x: -1, y: 0.14998348, z: 0.83990246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -1444,7 +1444,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.038660575, y: -0.56854546, z: 0.026762567, w: 0.821307}
+  m_LocalRotation: {x: 0.03866057, y: -0.56854546, z: 0.026762567, w: 0.821307}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1521,7 +1521,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: 0.12850556, y: -0.047229372, z: 0.0061270474, w: 0.9905646}
+  m_LocalRotation: {x: 0.12850556, y: -0.047229387, z: 0.006127049, w: 0.9905646}
   m_LocalPosition: {x: 1.5330671, y: 3.6648045, z: -5.747715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1660,7 +1660,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.053553924, y: -0.5679664, z: 0.03707241, w: 0.8204706}
+  m_LocalRotation: {x: 0.05355392, y: -0.5679664, z: 0.037072413, w: 0.8204706}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1742921456624939142, guid: fbf9ae6b7d17a874690d0adf8cb309bd, type: 3}
-  shootForce: 300
+  shootForce: 30
   upwardForce: 0
   timeBetweenShooting: 1
   timeBetweenShot: 0
@@ -2793,7 +2793,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e029514464efe8f43b075aa28037ffb9, type: 2}
+  - {fileID: 2100000, guid: abae8196bbe4c5949a592353159baac1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
