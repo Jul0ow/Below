@@ -239,6 +239,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Multi" t="Include">
+            <e p="bulletDeath.cs" t="Include" />
             <e p="Gamecontroller.cs" t="Include" />
             <e p="Launcher.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
@@ -265,6 +266,7 @@
             <e p="LifeScript.cs" t="Include" />
             <e p="Locomotion.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
+            <e p="NewShoot.cs" t="Include" />
             <e p="projectiles.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
           </e>
