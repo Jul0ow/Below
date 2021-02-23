@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1742921456624939137}
   - component: {fileID: 1742921456624939136}
+  - component: {fileID: 1742921456624939138}
   - component: {fileID: 1742921456624939143}
   - component: {fileID: 1742921456624939138}
   - component: {fileID: -8854775125005563629}
@@ -53,6 +54,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!135 &1742921456624939138
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742921456624939142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1742921456624939143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,17 +79,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e393fd0afff055f4fad6cb91beb4a466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awake: 0
+  awake: 1
   rb: {fileID: 4233860908194137036, guid: b047c335beaf9cb408d980699ae4e7a2, type: 3}
   explosion: {fileID: 6496343108181880183, guid: 51969b3f0ab3020418c424cd09c5cd6d,
     type: 3}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 0
   bouciness: 0
   useGravity: 0
-  explosionDamage: 30
-  explosionRange: 15
+  Damage: 25
+  explosionRange: 5
   explosionForce: 800
   maxCollisions: 1
   maxLifeTime: 10
@@ -217,6 +228,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b85934f3ab9f88409e04178ece71a05, type: 3}
+--- !u!1 &1744771014712008871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884747205189362, guid: 1b85934f3ab9f88409e04178ece71a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1742921456362634837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1747384250394673887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4483135165545610, guid: 1b85934f3ab9f88409e04178ece71a05,

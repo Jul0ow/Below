@@ -53,16 +53,14 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
-                    //IA.TakeDamage(Damage);
+                    IA.TakeDamage(Damage);
                 }
 
                 if (enemies[i].CompareTag("Player"))
                 {
                     CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
-                    if (victim != enemies[i].GetComponentInParent<CharacterThings>())
-                    {
-                        //victim.TakeDamage(Damage);
-                    }
+                    if(victim != enemies[i].GetComponentInParent<CharacterThings>())
+                        victim.TakeDamage(Damage);
                 }
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
