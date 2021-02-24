@@ -9,7 +9,7 @@ public class NewShoot : MonoBehaviour
 {
     private GameObject shootFrom;
     public GameObject bulletprefab;
-    private float coeffForce = 3000f;
+    private float coeffForce = 4000f;
     public float fireRate;
     private float nextfire;
     public Camera cam;
@@ -31,21 +31,24 @@ public class NewShoot : MonoBehaviour
             nextfire = Time.time + fireRate;
             GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/" + bulletprefab.name, shootFrom.transform.position,
                 Quaternion.identity, 0);
-            bullet.GetComponent<projectiles>().owner = transform.parent.gameObject;
-            
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5f, 0));
-            RaycastHit hit;
-            Vector3 targetpoint;
-            if (Physics.Raycast(ray, out hit))
-                targetpoint = hit.point;
-            else
-                targetpoint = ray.GetPoint(75);
-            
-            Vector3 directionWithoutSpread = targetpoint - attackpoint.position;
+            bullet.GetComponent<projectiles>().owner = transform.root.gameObject;
 
-            Rigidbody body = bullet.GetComponent<Rigidbody>();
-            shootFrom.transform.forward = directionWithoutSpread;
-            body.AddForce(shootFrom.transform.forward * coeffForce);
+            if (cam != null)
+            {
+                Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5f, 0));
+                RaycastHit hit;
+                Vector3 targetpoint;
+                if (Physics.Raycast(ray, out hit))
+                    targetpoint = hit.point;
+                else
+                    targetpoint = ray.GetPoint(75);
+                
+                Vector3 directionWithoutSpread = targetpoint - attackpoint.position;
+
+                Rigidbody body = bullet.GetComponent<Rigidbody>();
+                shootFrom.transform.forward = directionWithoutSpread;
+                body.AddForce(shootFrom.transform.forward * coeffForce);
+            }
         }
     }
     

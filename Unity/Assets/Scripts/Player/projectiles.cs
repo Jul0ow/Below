@@ -47,7 +47,7 @@ public class projectiles : MonoBehaviour
         }
     }
 
-    private void Explode()
+    void Explode()
     {
         if (explosion != null)
         {
@@ -85,10 +85,17 @@ public class projectiles : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    private void OnCollisionEnter(Collision collision)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.collider.gameObject != owner) Explode();
+        if (other.gameObject == owner)
+        {
+            Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
+        }
+        else
+        {
+            Explode();
+        }
     }
     
     private void Setup()
