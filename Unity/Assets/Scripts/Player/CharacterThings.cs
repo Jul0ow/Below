@@ -22,6 +22,9 @@ public class CharacterThings : MonoBehaviour
     public (int, char) Room;
     private GameObject lifeBarObjetct;
     private LifeScript LifeBar;
+    private bool invulnerable;
+    private float tookDamage;
+    private float invinviblityTime = 0.25f;
     
     
     void Awake()
@@ -37,9 +40,14 @@ public class CharacterThings : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
-        HP -= damage;
-        Debug.Log(HP);
-        if(HP<=0) Destroy(gameObject);
+        if (!invulnerable)
+        {
+            HP -= damage;
+            Debug.Log(HP);
+            if(HP<=0) Destroy(gameObject);
+            invulnerable = true;
+            tookDamage = Time.time;
+        }
     } 
 
     // Update is called once per frame
@@ -53,6 +61,15 @@ public class CharacterThings : MonoBehaviour
             LifeBar.HP = 0;
         }
         LifeBar.HP = HP;
-        if (HP <= 0) Application.Quit();
+        if (HP <= 0)
+        {
+            Time.timeScale = 0;
+        }
+
+        if (Time.time > tookDamage + invinviblityTime)
+        {
+            invulnerable = false;
+        }
+        
     }
 }

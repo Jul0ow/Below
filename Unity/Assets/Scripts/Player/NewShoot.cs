@@ -14,12 +14,13 @@ public class NewShoot : MonoBehaviour
     private float nextfire;
     public Camera cam;
     public Transform attackpoint;
+    private PhotonView PV;
 
 
 
     private void Start()
     {
-        
+        PV = GetComponent<PhotonView>();
     }
 
     public void fire()
@@ -55,7 +56,7 @@ public class NewShoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)&& PV.IsMine)
         {
             fire();
         }

@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class EnnemyIA : MonoBehaviour
 {
@@ -29,7 +31,16 @@ public class EnnemyIA : MonoBehaviour
 
     private void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Cible");
+        float distance = float.MaxValue;
+        foreach (var joueur in GameObject.FindGameObjectsWithTag("Cible"))
+        {
+            float newDistance = Vector3.Distance(joueur.transform.position, this.transform.position);
+            if (newDistance<distance)
+            {
+                distance = newDistance;
+                player = joueur;
+            }
+        }
         agent.speed = 3.5f;
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);

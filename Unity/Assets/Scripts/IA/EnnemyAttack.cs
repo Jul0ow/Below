@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class EnnemyAttack : MonoBehaviour
@@ -26,7 +27,7 @@ public class EnnemyAttack : MonoBehaviour
     {
         gameObject.transform.LookAt(victim.transform);
         Rigidbody currentbullet =
-            Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            PhotonNetwork.Instantiate("PhotonPrefabs/" + bullet.name, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
         currentbullet.AddForce(transform.forward * shootForce,ForceMode.Impulse);
     }
 }
