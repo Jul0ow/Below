@@ -21,6 +21,7 @@ public class EnnemyIA : MonoBehaviour
     public int Health;
     public (int,char) Room;
     public EnnemyAttack attack;
+    public AudioClip death;
 
 
     private void Awake()
@@ -97,7 +98,11 @@ public class EnnemyIA : MonoBehaviour
     public void TakeDamage(int damage)
          {
              Health -= damage;
-             if(Health<=0) Destroy(gameObject);
+             if (Health <= 0)
+             {
+                 AudioSource.PlayClipAtPoint(death, GetComponent<Transform>().position);
+                 Destroy(gameObject);
+             }
          } 
 
     private void DestroyEnemy()
