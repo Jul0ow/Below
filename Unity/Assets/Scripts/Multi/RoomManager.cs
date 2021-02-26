@@ -8,6 +8,7 @@ using System.IO;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
+    public GameObject lice;
 
     void Awake()
     { //Make sure that there is only one roomManager
@@ -38,6 +39,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
                 Quaternion.identity);
+            PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + lice.name, new Vector3(100, 0, 100), Quaternion.identity);
         }
     }
 }

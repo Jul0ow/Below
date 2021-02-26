@@ -34,7 +34,7 @@ public class EnnemyShot : MonoBehaviour
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().HP -= 10;
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(10);
                 }
             }
             Invoke("Delay", 0.05f);

@@ -115,6 +115,7 @@ MonoBehaviour:
   explosionForce: 30
   maxCollisions: 0
   maxLifeTime: 1000
+  owner: {fileID: 0}
 --- !u!114 &8736138535951152483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742921456624939142}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1

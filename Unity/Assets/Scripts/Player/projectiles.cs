@@ -26,13 +26,13 @@ public class projectiles : MonoBehaviour
     private int collisions;
     private PhysicMaterial physics_mat;
     
-    private PhotonView PV;
+    public GameObject owner;
 
 
     private void Start()
     {
         Setup();
-        PV = GetComponent<PhotonView>();
+        //PV = GetComponent<PhotonView>();
     }
 
     private void Update()
@@ -47,7 +47,7 @@ public class projectiles : MonoBehaviour
         }
     }
 
-    private void Explode()
+    void Explode()
     {
         if (explosion != null)
         {
@@ -64,9 +64,15 @@ public class projectiles : MonoBehaviour
 
                 if (enemies[i].CompareTag("Player"))
                 {
-                    CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
+                    /*CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
                     if(victim != enemies[i].GetComponentInParent<CharacterThings>())
-                        victim.TakeDamage(Damage);
+                        victim.TakeDamage(Damage);*/
+                    if (enemies[i].gameObject != owner)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(Damage);
+                    }
+
+                    
                 }
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
@@ -85,13 +91,14 @@ public class projectiles : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    private void OnCollisionEnter(Collision collision)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        PhotonView ownerView = collision.collider.gameObject.GetPhotonView();
-        
-
-        if ( ownerView == null || ownerView != PV.IsMine)
+        if (other.gameObject == owner)
+        {
+            Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
+        }
+        else
         {
             Explode();
         }
