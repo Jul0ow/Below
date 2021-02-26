@@ -14,12 +14,16 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Rarity = Random.Range(0,Classes.AllItem.Length);
+        int RarityGenerator = Random.Range(1, 100);
+        if (RarityGenerator <= 49) Rarity = 0;
+            else if (RarityGenerator <= 88) Rarity = 1;
+                    else if (RarityGenerator <= 99) Rarity = 2;
+                            else Rarity = 3;
+        
         ItemReference = (uint) Random.Range(0, Classes.AllItem[Rarity].Count);
         content = Classes.AllItem[Rarity][ItemReference];
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(!Opened)
