@@ -1190,7 +1190,7 @@ MonoBehaviour:
     m_AccelTime: 0.02
     m_DecelTime: 0.02
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0
+    m_InputAxisValue: 0.7
     m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
@@ -2050,8 +2050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4233860908194137038}
   cam: {fileID: 4233860907641024816}
-  WalkSpeed: 6
-  RunSpeed: 16
+  WalkSpeed: 4
+  RunSpeed: 13
   speed: 6
   turnSmoothTime: 0.1
 --- !u!114 &4233860908194137034
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef8c40b3d76ab04291682fa2a8623c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
+  jumpHeight: 1
   IsGrounded: 0
   Falling: 0
   jumping: 0
