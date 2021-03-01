@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     [SerializeField] private Menu[] menus;
+    public GameObject titleMenu;
+    public GameObject optionsMenu;
+    public GameObject engrenages;
 
     void Awake()
     {
         Instance = this;
+    }
+
+    void Start()
+    {
+        Screen.fullScreen = true;
     }
 
     public void OpenMenu(string menuName)
@@ -41,5 +50,17 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu(Menu menu)
     {
         menu.Close();
+    }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
+    public void options()
+    {
+        titleMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        engrenages.SetActive(false);
     }
 }

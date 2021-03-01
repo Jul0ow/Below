@@ -1,34 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using ExitGames.Client.Photon.Encryption;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 public class projectiles : MonoBehaviour
 {
     public bool awake = false;
     public Rigidbody rb;
     public GameObject explosion;
-    public LayerMask whatIsEnemies;
     [Range(0f,1f)]
     public float bouciness;
 
     public bool useGravity;
 
-    public int explosionDamage;
+    public int Damage;
     public float explosionRange;
     public float explosionForce;
-
+    
     public int maxCollisions;
     public float maxLifeTime;
-    public bool explodeOnTouche = true;
 
     private int collisions;
     private PhysicMaterial physics_mat;
+    
+    public GameObject owner;
+
 
     private void Start()
     {
         Setup();
+        //PV = GetComponent<PhotonView>();
     }
 
     private void Update()
@@ -43,7 +47,7 @@ public class projectiles : MonoBehaviour
         }
     }
 
-    private void Explode()
+    void Explode()
     {
         if (explosion != null)
         {
@@ -52,9 +56,27 @@ public class projectiles : MonoBehaviour
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {
-                // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
-                if (enemies[i].GetComponent<Rigidbody>())
+                if (enemies[i].CompareTag("Ennemy"))
+                {
+                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
+                    IA.TakeDamage(Damage);
+                }
+
+                if (enemies[i].CompareTag("Player"))
+                {
+                    /*CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
+                    if(victim != enemies[i].GetComponentInParent<CharacterThings>())
+                        victim.TakeDamage(Damage);*/
+                    if (enemies[i].gameObject != owner)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(Damage);
+                    }
+
+                    
+                }
+                if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
+
             }
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
@@ -69,14 +91,17 @@ public class projectiles : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    private void OnCollisionEnter(Collision collision)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Player")) 
-            return;
-        //collisions++;
-        //if(collision.collider.CompareTag("Enemy") && explodeOnTouche) 
-        Explode();
+        if (other.gameObject == owner)
+        {
+            Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
+        }
+        else
+        {
+            Explode();
+        }
     }
     
     private void Setup()

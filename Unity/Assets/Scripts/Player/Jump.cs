@@ -11,14 +11,18 @@ public class Jump : MonoBehaviour
     public bool Falling = false;
     public bool jumping = false;
     public Rigidbody rb;
-    public int JumpCount = 80;
+    public int JumpCount = 50;
     public CharacterController controller;
     private PhotonView PV;
+    private float fallspeed;
+    private float jumpheightref;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         PV = GetComponent<PhotonView>();
+        fallspeed = jumpHeight/2;
+        jumpheightref = jumpHeight;
     }
 
     void Update()
@@ -29,15 +33,19 @@ public class Jump : MonoBehaviour
         }
         float DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
  
-        IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround-0.818f);
+        IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround-0.8f);
         if (!IsGrounded && !jumping)
         {
             Falling = true;
-            controller.Move(Vector3.up * -jumpHeight / 10);
+            controller.Move(Vector3.up * -fallspeed / 10);
+            fallspeed += 0.03f;
             return;
         }
         else
+        {
             Falling = false;
+            fallspeed = jumpHeight/2;
+        }
         if (IsGrounded)
         {
             if (Input.GetKeyDown("space"))
@@ -48,16 +56,14 @@ public class Jump : MonoBehaviour
         }
         if (jumping)
         {
-            rb.useGravity = false;
             controller.Move(Vector3.up * (jumpHeight/10));
             jumpHeight -= 0.02f;
             JumpCount -= 1;
             if (JumpCount == 0)
             {
                 jumping = false;
-                rb.useGravity = true;
-                JumpCount = 80;
-                jumpHeight = 1f;
+                JumpCount = 50;
+                jumpHeight = jumpheightref;
             }
         }
     }

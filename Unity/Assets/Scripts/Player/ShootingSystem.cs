@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class ShootingSystem : MonoBehaviour
 {
-    public GameObject bullet;
+    /*public GameObject bullet;
 
     public float shootForce, upwardForce;
 
@@ -27,7 +27,7 @@ public class ShootingSystem : MonoBehaviour
     public Transform attackpoint;
 
     public ParticleSystem muzzleFlash;
-    public TextMeshProUGUI ammunitionDisplay;
+    private TextMeshProUGUI ammunitionDisplay;
 
     public TextMeshProUGUI textAmmo;
     public Vector3 textAmmoposition;
@@ -40,6 +40,7 @@ public class ShootingSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        ammunitionDisplay = GameObject.Find("Ammo").GetComponent<TextMeshProUGUI>();
         textAmmo = Instantiate(ammunitionDisplay,textAmmoposition,Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 
@@ -127,5 +128,5 @@ public class ShootingSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         reloading = false;
-    }
+    }*/
 }

@@ -10,14 +10,20 @@ public class Chest : MonoBehaviour
     public MeshRenderer OpenedChest;
     public MeshRenderer ClosedChest;
     public Classes.Item content;
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        int RarityGenerator = Random.Range(1, 100);
+        if (RarityGenerator <= 49) Rarity = 0;
+            else if (RarityGenerator <= 88) Rarity = 1;
+                    else if (RarityGenerator <= 99) Rarity = 2;
+                            else Rarity = 3;
+        
+        ItemReference = (uint) Random.Range(0, Classes.AllItem[Rarity].Count);
         content = Classes.AllItem[Rarity][ItemReference];
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(!Opened)
@@ -26,16 +32,20 @@ public class Chest : MonoBehaviour
             for (int i = 0; i < getters.Length; i++)
                 if (getters[i].GetComponent<CharacterThings>() && Input.GetKeyDown("e"))
                 {
+                    if (getters[i].GetComponent<CharacterThings>().luck != 0 && Rarity < 3)
+                    {
+                        Rarity += 1;
+                        ItemReference = (uint) Random.Range(0, Classes.AllItem[Rarity].Count);
+                        content = Classes.AllItem[Rarity][ItemReference];
+                    }
                     content.Joueur = getters[i].gameObject;
                     content.AppliedEffect();
                     getters[i].GetComponent<CharacterThings>().Inventory.Add(content);
-                    HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
+                    HideMenu.Print(Classes.AllItem[Rarity][ItemReference]); 
                     OpenedChest.enabled = true;
                     ClosedChest.enabled = false;
                     Opened = true;
                 }
         }
     }
-    
-    
 }

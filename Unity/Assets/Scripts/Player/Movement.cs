@@ -14,22 +14,23 @@ public class Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+
     private PhotonView PV;
     void Start()
     {
         animator = GetComponent<Animator>();
         float speed = WalkSpeed;
         PV = GetComponent<PhotonView>();
+
     }
     // Update is called once per frame
     void Update()
     {
+        //TODO
         if (!PV.IsMine)
-        {
             return;
-        }
         if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
-            return;
+                return;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
@@ -54,5 +55,6 @@ public class Movement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+        
     }
 }

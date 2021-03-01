@@ -4,6 +4,11 @@
     <e p="C:\matthieu\matthieu epita\projet S2\Test\Below\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Low Poly Fruits" t="Include">
+          <e p="Resources" t="Include">
+            <e p="fruits_tester.cs" t="Include" />
+          </e>
+        </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -177,6 +182,12 @@
         </e>
         <e p="Resources" t="Include">
           <e p="BrokenVector" t="Include">
+            <e p="Fences" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DoorController.cs" t="Include" />
+                <e p="DoorToggle.cs" t="Include" />
+              </e>
+            </e>
             <e p="UltimateDungeonPack" t="Include">
               <e p="Scripts" t="Include">
                 <e p="LightImprove.cs" t="Include" />
@@ -236,12 +247,21 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="IA" t="Include">
+            <e p="EnnemyAttack.cs" t="Include" />
+            <e p="EnnemyIA.cs" t="Include" />
+            <e p="EnnemyShot.cs" t="Include" />
+          </e>
           <e p="Multi" t="Include">
+            <e p="bulletDeath.cs" t="Include" />
             <e p="Gamecontroller.cs" t="Include" />
             <e p="Launcher.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
+            <e p="Mouse.cs" t="Include" />
             <e p="NewtowrkController.cs" t="Include" />
+            <e p="Options.cs" t="Include" />
+            <e p="OptionsEnJeu.cs" t="Include" />
             <e p="PlayerListItem.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
             <e p="RoomListItem.cs" t="Include" />
@@ -260,6 +280,7 @@
             <e p="LifeScript.cs" t="Include" />
             <e p="Locomotion.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
+            <e p="NewShoot.cs" t="Include" />
             <e p="projectiles.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
           </e>

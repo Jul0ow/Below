@@ -9,6 +9,8 @@ TagManager:
   - FxTemporaire
   - Bullet
   - Canvas
+  - Ennemy
+  - Cible
   layers:
   - Default
   - TransparentFX
@@ -20,9 +22,9 @@ TagManager:
   - 
   - WhatIsBullet
   - Player
-  - 
-  - 
-  - 
+  - Ground
+  - Ennemies
+  - EnnemyBullet
   - 
   - 
   - 
