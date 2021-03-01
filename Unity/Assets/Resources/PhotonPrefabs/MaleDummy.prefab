@@ -1062,8 +1062,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.064106666, y: -0.5674425, z: 0.044377476, w: 0.81971335}
-  m_LocalPosition: {x: 0.000000083942325, y: -3.5527137e-15, z: 0.00000022315268}
+  m_LocalRotation: {x: 0.06949315, y: -0.5671457, z: 0.04810392, w: 0.8192695}
+  m_LocalPosition: {x: -0.00000065187214, y: -0.00000011669566, z: -0.0000005826571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908590128430}
@@ -1139,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -0.99999994, y: -0.19996677, z: 0.14997482}
+  m_LocalPosition: {x: -0.99992937, y: -0.20887917, z: 0.20539802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -1184,13 +1184,13 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.76021355
+    Value: 0.55467546
     m_SpeedMode: 0
     m_MaxSpeed: 4
     m_AccelTime: 0.02
     m_DecelTime: 0.02
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0.7
+    m_InputAxisValue: 0
     m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
@@ -1238,12 +1238,12 @@ MonoBehaviour:
   m_BindingMode: 5
   m_SplineCurvature: 0
   m_Orbits:
-  - m_Height: 3
-    m_Radius: 1
-  - m_Height: 0.8
+  - m_Height: 2.5
     m_Radius: 3
-  - m_Height: -0.1
-    m_Radius: 3
+  - m_Height: 1.5
+    m_Radius: 4
+  - m_Height: 1
+    m_Radius: 4
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 4233860906524597435}
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.0262458, z: -1.965415}
+  m_FollowOffset: {x: 0, y: 1.6083037, z: -3.9197545}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
@@ -1444,8 +1444,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.034288302, y: -0.5686799, z: 0.023735879, w: 0.82150114}
-  m_LocalPosition: {x: 0.00000016788465, y: -7.1054274e-15, z: 0.00000044630536}
+  m_LocalRotation: {x: 0.040430192, y: -0.5684865, z: 0.02798757, w: 0.82122177}
+  m_LocalPosition: {x: 0.050195094, y: 0.016462516, z: -0.01897559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860907184745145}
@@ -1521,8 +1521,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: -0.021448975, y: 0.7053988, z: 0.021365227, w: 0.7081638}
-  m_LocalPosition: {x: -2.1231723, y: 2.2167697, z: -0.9778576}
+  m_LocalRotation: {x: -0.031083185, y: 0.9192284, z: 0.07413129, w: 0.3854317}
+  m_LocalPosition: {x: -3.6214805, y: 1.7816703, z: 2.1641724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906616770539}
@@ -1660,8 +1660,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.049185887, y: -0.56815577, z: 0.03404865, w: 0.8207439}
-  m_LocalPosition: {x: 0.000000083942325, y: -3.5527137e-15, z: 0.00000022315268}
+  m_LocalRotation: {x: 0.05457957, y: -0.56792694, z: 0.037779875, w: 0.82039803}
+  m_LocalPosition: {x: -0.00000065187214, y: -0.00000011669566, z: -0.0000005826571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908060833104}
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.0262458, z: -1.965415}
+  m_FollowOffset: {x: 0, y: 1.6083037, z: -3.9197545}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
@@ -2233,7 +2233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.0262458, z: -1.965415}
+  m_FollowOffset: {x: 0, y: 1.6083037, z: -3.9197545}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
