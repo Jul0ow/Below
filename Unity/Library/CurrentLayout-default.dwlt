@@ -115,7 +115,11 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 471}
   m_MaxSize: {x: 14001, y: 14021}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 27894
+=======
+  controlID: 35205
+>>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +144,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 27847
+=======
+  controlID: 35096
+>>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +173,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 27848
+=======
+  controlID: 35097
+>>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,9 +405,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: a07c0000
       m_LastClickedID: 0
       m_ExpandedIDs: 10d5daffd226dbff144bddffa295ddff1c28deff3c28deff4231deffba31deffd200dfff4210ffff3411ffffa811ffff2c12ffff7e12fffff412ffff2c13ffffaa1fffff8e20ffff5a7d00009a81040036820400
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 7c6f01009a6f0100
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -448,16 +466,22 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 88b3c08dbc0a8fd4fb5968a339e2ce00
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: -21.852177, y: 6.6241665, z: -69.42751}
     speed: 2
     m_Value: {x: -21.852177, y: 6.6241665, z: -69.42751}
+=======
+    m_Target: {x: -4.4116173, y: -4.920862, z: -27.869112}
+    speed: 2
+    m_Value: {x: -4.4116173, y: -4.920862, z: -27.869112}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -470,7 +494,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -503,6 +527,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< Updated upstream
     m_Target: {x: 0.20804505, y: 0.45057446, z: -0.108852945, w: 0.8613285}
     speed: 2
     m_Value: {x: 0.20804507, y: 0.4505745, z: -0.108852945, w: 0.86132854}
@@ -510,6 +535,15 @@ MonoBehaviour:
     m_Target: 9.48032
     speed: 2
     m_Value: 9.48032
+=======
+    m_Target: {x: -0.007125488, y: 0.9885844, z: -0.14214693, w: -0.049538832}
+    speed: 2
+    m_Value: {x: -0.007125488, y: 0.9885844, z: -0.14214693, w: -0.049538836}
+  m_Size:
+    m_Target: 16.187077
+    speed: 2
+    m_Value: 15.490025
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -599,20 +633,27 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/scene
+    - Assets/Resources/PhotonPrefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/scene
+  - Assets/Resources/PhotonPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\matthieu\matthieu epita\projet S2\Test\Below\Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 618}
     m_SelectedIDs: 607c0000
     m_LastClickedID: 31840
     m_ExpandedIDs: 00000000507c0000527c0000547c0000567c0000587c00005a7c00005c7c00005e7c0000607c00006c7c0000727c00008cdc000092dc00009cdc0000acdc000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 964b0000
+    m_LastClickedID: 19350
+    m_ExpandedIDs: 000000006e4b0000704b0000724b0000744b0000764b0000784b00007a4b00007c4b00007e4b000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,7 +681,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000507c0000527c0000547c0000567c0000587c00005a7c00005c7c00005e7c0000607c00006c7c0000727c00008cdc000092dc00009cdc0000acdc000000ca9a3b
+=======
+    m_ExpandedIDs: 000000006e4b0000704b0000724b0000744b0000764b0000784b00007a4b00007c4b00007e4b000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

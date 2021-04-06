@@ -58,7 +58,7 @@ public class projectiles : MonoBehaviour
             {
                 if (enemies[i].CompareTag("Ennemy"))
                 {
-                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
+                    EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
                     IA.TakeDamage(Damage);
                 }
 

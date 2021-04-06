@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\matthieu\matthieu epita\projet S2\Test\Below\Unity" t="IncludeRecursive">
+    <e p="C:\Users\Edgar\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Edgar\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Unity.1054152129.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Edgar\Desktop\Below\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Low Poly Fruits" t="Include">
@@ -250,7 +252,11 @@
           <e p="IA" t="Include">
             <e p="EnnemyAttack.cs" t="Include" />
             <e p="EnnemyIA.cs" t="Include" />
+            <e p="EnnemyLife.cs" t="Include" />
             <e p="EnnemyShot.cs" t="Include" />
+            <e p="QueenLiceIA.cs" t="Include" />
+            <e p="RushIA.cs" t="Include" />
+            <e p="TourelleIA.cs" t="Include" />
           </e>
           <e p="Multi" t="Include">
             <e p="bulletDeath.cs" t="Include" />
@@ -329,7 +335,5 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\benco\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\benco\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Unity.-368999792.00" t="ExcludeRecursive" />
   </component>
 </project>

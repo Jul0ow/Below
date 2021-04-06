@@ -28,7 +28,7 @@ public class Attack : MonoBehaviour
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(power, transform.position, range);
                 if (enemies[i].CompareTag("Ennemy"))
                 {
-                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
+                    EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
                     IA.TakeDamage(Damage);
                 }
                 if (enemies[i].CompareTag("Player"))

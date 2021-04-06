@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea9880090b74eb4f985becbd54b333b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  Damage: 50
+  range: 3
+  Damage: 30
   power: 1600
   animator: {fileID: 2256975887899826775}
 --- !u!1 &1133797215193834744
@@ -1062,8 +1062,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.06949315, y: -0.5671457, z: 0.04810392, w: 0.8192695}
-  m_LocalPosition: {x: -0.00000065187214, y: -0.00000011669566, z: -0.0000005826571}
+  m_LocalRotation: {x: 0.057144344, y: -0.56779873, z: 0.03955787, w: 0.82022816}
+  m_LocalPosition: {x: 0.00000017538991, y: 0.0000000017169715, z: 0.00000012507104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908590128430}
@@ -1139,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -0.99992937, y: -0.20887917, z: 0.20539802}
+  m_LocalPosition: {x: -0.9999999, y: -0.19999821, z: 0.14999866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -1184,7 +1184,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.55467546
+    Value: 0.9936028
     m_SpeedMode: 0
     m_MaxSpeed: 4
     m_AccelTime: 0.02
@@ -1208,7 +1208,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 64.50144
     m_SpeedMode: 0
     m_MaxSpeed: 600
     m_AccelTime: 0.02
@@ -1235,7 +1235,7 @@ MonoBehaviour:
     m_RecenteringTime: 2
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
-  m_BindingMode: 5
+  m_BindingMode: 0
   m_SplineCurvature: 0
   m_Orbits:
   - m_Height: 2.5
@@ -1351,9 +1351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 1.6083037, z: -3.9197545}
-  m_XDamping: 1
+  m_BindingMode: 0
+  m_FollowOffset: {x: 0, y: 2.4923167, z: -3.0088472}
+  m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
   m_AngularDampingMode: 0
@@ -1372,7 +1372,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 64.50144
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1444,8 +1444,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.040430192, y: -0.5684865, z: 0.02798757, w: 0.82122177}
-  m_LocalPosition: {x: 0.050195094, y: 0.016462516, z: -0.01897559}
+  m_LocalRotation: {x: 0.027311869, y: -0.56886095, z: 0.018906495, w: 0.8217626}
+  m_LocalPosition: {x: 0.00000027261387, y: 0.000000009954544, z: 0.0000002158632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860907184745145}
@@ -1521,8 +1521,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: -0.031083185, y: 0.9192284, z: 0.07413129, w: 0.3854317}
-  m_LocalPosition: {x: -3.6214805, y: 1.7816703, z: 2.1641724}
+  m_LocalRotation: {x: 0.053564746, y: 0.52726036, z: -0.033330128, w: 0.8473585}
+  m_LocalPosition: {x: -2.3849053, y: 2.7096114, z: -2.247013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906616770539}
@@ -1660,8 +1660,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.05457957, y: -0.56792694, z: 0.037779875, w: 0.82039803}
-  m_LocalPosition: {x: -0.00000065187214, y: -0.00000011669566, z: -0.0000005826571}
+  m_LocalRotation: {x: 0.042215355, y: -0.5684244, z: 0.029223353, w: 0.82113194}
+  m_LocalPosition: {x: 0.00000017538991, y: 0.0000000017169715, z: 0.00000012507104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908060833104}
@@ -1838,9 +1838,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 1.6083037, z: -3.9197545}
-  m_XDamping: 1
+  m_BindingMode: 0
+  m_FollowOffset: {x: 0, y: 2.4923167, z: -3.0088472}
+  m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
   m_AngularDampingMode: 0
@@ -1859,7 +1859,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 64.50144
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -2232,9 +2232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 1.6083037, z: -3.9197545}
-  m_XDamping: 1
+  m_BindingMode: 0
+  m_FollowOffset: {x: 0, y: 2.4923167, z: -3.0088472}
+  m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
   m_AngularDampingMode: 0
@@ -2253,7 +2253,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 64.50144
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1

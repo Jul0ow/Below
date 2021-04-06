@@ -26,7 +26,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TODO
         if (!PV.IsMine)
             return;
         if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
@@ -38,16 +37,10 @@ public class Movement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             if (Input.GetKey("left shift"))
-            {
                 speed = RunSpeed;
-            }
             else
-            {
                 if (speed >= WalkSpeed)
-                {
                     speed = WalkSpeed;
-                }
-            }
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
                 turnSmoothTime);
