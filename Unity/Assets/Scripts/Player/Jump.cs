@@ -11,7 +11,7 @@ public class Jump : MonoBehaviour
     public bool Falling = false;
     public bool jumping = false;
     public Rigidbody rb;
-    public int JumpCount = 50;
+    public int JumpCount;
     public CharacterController controller;
     private PhotonView PV;
     private float fallspeed;
@@ -21,7 +21,7 @@ public class Jump : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         PV = GetComponent<PhotonView>();
-        fallspeed = jumpHeight/2;
+        fallspeed = 1;
         jumpheightref = jumpHeight;
     }
 
@@ -44,7 +44,7 @@ public class Jump : MonoBehaviour
         else
         {
             Falling = false;
-            fallspeed = jumpHeight/2;
+            fallspeed = 1;
         }
         if (IsGrounded)
         {
@@ -62,7 +62,7 @@ public class Jump : MonoBehaviour
             if (JumpCount == 0)
             {
                 jumping = false;
-                JumpCount = 50;
+                JumpCount = 20;
                 jumpHeight = jumpheightref;
             }
         }

@@ -10,8 +10,7 @@ public class Chest : MonoBehaviour
     public MeshRenderer OpenedChest;
     public MeshRenderer ClosedChest;
     public Classes.Item content;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         int RarityGenerator = Random.Range(1, 100);

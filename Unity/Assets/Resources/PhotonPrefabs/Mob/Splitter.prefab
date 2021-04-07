@@ -133,8 +133,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   walkpoint: {x: 0, y: 0, z: 0}
+  walkpointSet: 0
   walkpointrange: 10
   timeBetweenAttacks: 1
+  alreadyAttacked: 0
   sightRange: 40
   attackRange: 2
   playerInSightRange: 0

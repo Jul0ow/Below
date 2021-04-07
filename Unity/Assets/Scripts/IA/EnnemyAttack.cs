@@ -15,6 +15,7 @@ public class EnnemyAttack : MonoBehaviour
     private void Awake()
     {
         IA = GetComponentInParent<EnnemyIA>();
+        victim = IA.player;
     }
 
 
