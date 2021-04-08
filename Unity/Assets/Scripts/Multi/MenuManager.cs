@@ -8,9 +8,9 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     [SerializeField] private Menu[] menus;
     public GameObject titleMenu;
+    public GameObject NewgameMenu;
+    public GameObject MultiplayerMenu;
     public GameObject optionsMenu;
-    public GameObject engrenages;
-
     void Awake()
     {
         Instance = this;
@@ -61,6 +61,5 @@ public class MenuManager : MonoBehaviour
     {
         titleMenu.SetActive(false);
         optionsMenu.SetActive(true);
-        engrenages.SetActive(false);
     }
 }
