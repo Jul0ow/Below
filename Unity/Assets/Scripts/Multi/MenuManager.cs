@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -61,5 +62,34 @@ public class MenuManager : MonoBehaviour
     {
         titleMenu.SetActive(false);
         optionsMenu.SetActive(true);
+    }
+
+    public void Newgame2Menu()
+    {
+        NewgameMenu.SetActive(false);
+        titleMenu.SetActive(true);
+    }
+
+    public void NewMulti2Multi()
+    {
+        NewgameMenu.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+
+    public void NewSolo2Solo()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Title2New()
+    {
+        NewgameMenu.SetActive(true);
+        titleMenu.SetActive(false);
+    }
+
+    public void Multi2New()
+    {
+        MultiplayerMenu.SetActive(false);
+        NewgameMenu.SetActive(true);
     }
 }
