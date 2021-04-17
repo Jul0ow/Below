@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour
     public GameObject NewgameMenu;
     public GameObject MultiplayerMenu;
     public GameObject optionsMenu;
+    public GameObject Findroom;
+    public GameObject CreateRoom;
+    public GameObject Errormenu;
     void Awake()
     {
         Instance = this;
@@ -92,4 +95,35 @@ public class MenuManager : MonoBehaviour
         MultiplayerMenu.SetActive(false);
         NewgameMenu.SetActive(true);
     }
+
+    public void Multi2Create()
+    {
+        MultiplayerMenu.SetActive(false);
+        CreateRoom.SetActive(true);
+    }
+
+    public void Multi2Find()
+    {
+        Findroom.SetActive(true);
+        MultiplayerMenu.SetActive(false);
+    }
+
+    public void Find2mult()
+    {
+        Findroom.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+
+    public void create2Mult()
+    {
+        CreateRoom.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+
+    public void Error2Mult()
+    {
+        Errormenu.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+    
 }
