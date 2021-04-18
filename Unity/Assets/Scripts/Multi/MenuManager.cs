@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -8,9 +9,12 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     [SerializeField] private Menu[] menus;
     public GameObject titleMenu;
+    public GameObject NewgameMenu;
+    public GameObject MultiplayerMenu;
     public GameObject optionsMenu;
-    public GameObject engrenages;
-
+    public GameObject Findroom;
+    public GameObject CreateRoom;
+    public GameObject Errormenu;
     void Awake()
     {
         Instance = this;
@@ -61,6 +65,65 @@ public class MenuManager : MonoBehaviour
     {
         titleMenu.SetActive(false);
         optionsMenu.SetActive(true);
-        engrenages.SetActive(false);
     }
+
+    public void Newgame2Menu()
+    {
+        NewgameMenu.SetActive(false);
+        titleMenu.SetActive(true);
+    }
+
+    public void NewMulti2Multi()
+    {
+        NewgameMenu.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+
+    public void NewSolo2Solo()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Title2New()
+    {
+        NewgameMenu.SetActive(true);
+        titleMenu.SetActive(false);
+    }
+
+    public void Multi2New()
+    {
+        MultiplayerMenu.SetActive(false);
+        NewgameMenu.SetActive(true);
+    }
+
+    public void Multi2Create()
+    {
+        MultiplayerMenu.SetActive(false);
+        CreateRoom.SetActive(true);
+    }
+
+    public void Multi2Find()
+    {
+        Findroom.SetActive(true);
+        MultiplayerMenu.SetActive(false);
+    }
+
+    public void Find2mult()
+    {
+        Findroom.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+
+    public void create2Mult()
+    {
+        CreateRoom.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+
+    public void Error2Mult()
+    {
+        Errormenu.SetActive(false);
+        MultiplayerMenu.SetActive(true);
+    }
+    
 }
