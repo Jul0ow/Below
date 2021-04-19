@@ -56,6 +56,10 @@ public class NewShoot : MonoBehaviour
 
     private void Update()
     {
+        if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0)&& PV.IsMine)
         {
             fire();

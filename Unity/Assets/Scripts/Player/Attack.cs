@@ -18,6 +18,10 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire2"))
         {
             Collider[] enemies = Physics.OverlapSphere(transform.position, range);

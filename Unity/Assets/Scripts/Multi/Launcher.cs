@@ -112,7 +112,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public override void OnLeftRoom()
     {
-        findRoom.SetActive(true);
         RoomMenu.SetActive(false);
     }
 

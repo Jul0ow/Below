@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using Photon.Pun;
 
@@ -13,6 +14,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+    public Component freeLook;
 
 
     private PhotonView PV;
@@ -31,6 +33,14 @@ public class Movement : MonoBehaviour
             return;
         if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
                 return;
+        
+        if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
+        {
+            freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+            return;
+        }
+        freeLook.GetComponent<CinemachineFreeLook>().enabled = true;
+        
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
