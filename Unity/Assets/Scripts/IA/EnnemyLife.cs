@@ -21,6 +21,7 @@ public class EnnemyLife : MonoBehaviour
     protected virtual void DestroyEnemy()
     {
         if(IA is BlobIA ia) ia.Deathrattle();
+        else if(IA is MimiqueIA ia2) ia2.Deathrattle();
         else Destroy(gameObject);
     }
 }

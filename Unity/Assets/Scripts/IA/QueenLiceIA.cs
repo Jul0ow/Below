@@ -22,4 +22,5 @@ public class QueenLiceIA : EnnemyIA
         }
     }
     
+    
 }

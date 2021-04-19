@@ -42,7 +42,7 @@ public class EnnemyIA : MonoBehaviour
                 player = joueur;
             }
         }
-        agent.speed = 4f;
+        agent.speed = speed;
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
         if(!playerInSightRange && !playerInAttackRange) Patroling();
