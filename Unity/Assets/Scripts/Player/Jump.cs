@@ -31,6 +31,11 @@ public class Jump : MonoBehaviour
         {
             return;
         }
+        
+        if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
+        {
+            return;
+        }
         float DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
  
         IsGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround-0.8f);

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 using Slider = UnityEngine.UI.Slider;
+using Toggle = UnityEngine.UI.Toggle;
 
 public class OptionsEnJeu : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class OptionsEnJeu : MonoBehaviour
     public GameObject graphicOptions;
     public Dropdown ResolutionDropdown;
     private Resolution[] resolutions;
-    private bool menuOpen = false;
+    public bool menuOpen = false;
     public Slider soundSlide;
     private float soundValue;
 
