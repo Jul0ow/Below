@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnnemyLife : MonoBehaviour
 {
+    public EnnemyIA IA;
     public AudioClip death;
     public int Health;
     
@@ -13,12 +14,13 @@ public class EnnemyLife : MonoBehaviour
         if (Health <= 0)
         {
             AudioSource.PlayClipAtPoint(death, GetComponent<Transform>().position);
-            Destroy(gameObject);
+            DestroyEnemy();
         }
     }
 
     protected virtual void DestroyEnemy()
     {
-        Destroy(gameObject);
+        if(IA is BlobIA ia) ia.Deathrattle();
+        else Destroy(gameObject);
     }
 }

@@ -250,6 +250,8 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="IA" t="Include">
+            <e p="BlobIA.cs" t="Include" />
+            <e p="BoomIA.cs" t="Include" />
             <e p="EnnemyAttack.cs" t="Include" />
             <e p="EnnemyIA.cs" t="Include" />
             <e p="EnnemyLife.cs" t="Include" />

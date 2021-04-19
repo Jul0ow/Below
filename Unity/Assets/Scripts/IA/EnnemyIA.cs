@@ -15,6 +15,8 @@ public class EnnemyIA : MonoBehaviour
     public bool walkpointSet;
     public float walkpointrange;
     public float timeBetweenAttacks;
+    public float speed;
+    public int damage;
     public bool alreadyAttacked = false;
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -91,5 +93,6 @@ public class EnnemyIA : MonoBehaviour
     {
         alreadyAttacked = false;
     }
+    
     
 }

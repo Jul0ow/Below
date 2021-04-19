@@ -62,6 +62,8 @@ MonoBehaviour:
   walkpointSet: 0
   walkpointrange: 5
   timeBetweenAttacks: 1
+  speed: 3.5
+  damage: 20
   alreadyAttacked: 0
   sightRange: 80
   attackRange: 60
@@ -154,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66fa334933d48544a4cc63f748ed24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IA: {fileID: 3594347818949032031}
   death: {fileID: 8300000, guid: 98056c9dd94fcdb4f9641bc594d5f8b3, type: 3}
   Health: 150
 --- !u!1 &4149970638762359424
