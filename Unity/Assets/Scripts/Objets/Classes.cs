@@ -22,7 +22,11 @@ public class Classes : MonoBehaviour
     public Sprite trefle;
     public Sprite savon;
     public Sprite plume;
-
+    public Sprite Bouclier;
+    public Sprite Cape;
+    public Sprite Maille;
+    public Sprite Poulet;
+    public Sprite Vampire;
 
 
 
@@ -137,16 +141,21 @@ public class Classes : MonoBehaviour
         AllItem[0].Add(2,Item.CreateItem("Oeil de Lynx", "L'oeil du lynx, la grâce du chamoix et la force de la loutre",CommonImage, lynx,Effect.Lynx,  true,  false));
         AllItem[0].Add(3,Item.CreateItem("Cecite", "Il vous vient une soudaine envie de jouer de la trompette",CommonImage, blindness,Effect.cécité,  true,  false));
         AllItem[0].Add(4,Item.CreateItem("Chaussures en savon", "Si je t'attrape toi...",CommonImage, savon,Effect.savon,  true,  false));
+        AllItem[0].Add(5,Item.CreateItem("Poulet rôti", "L'aile ou la cuisse ?",CommonImage, Poulet, Effect.poulet,true,  false));
+        AllItem[0].Add(6,Item.CreateItem("Plume de vent",  "Vous vouliez une plume de Phœnix ? Dommage",CommonImage, plume, Effect.plume,true, false));
 
-        
-        
+
         AllItem[1].Add(0,Item.CreateItem("Amour du Sang",   "Le sang, tu l'aimes ou tu le quittes",RareImage, bloodLove,Effect.BloodLove,  true,  false));
-        AllItem[1].Add(1,Item.CreateItem("Trefle à quatre",   "Il finira probablement dans l'herbier de votre grand-mère",RareImage, trefle,Effect.trèfle,  true,  false));
+        AllItem[1].Add(1,Item.CreateItem("Trefle à quatre feuille",   "Il finira probablement dans l'herbier de votre grand-mère",RareImage, trefle,Effect.trèfle,  true,  false));
         AllItem[1].Add(2,Item.CreateItem("Elixir de vie",  "Vous ne voulez pas savoir de quoi c'est fait, croyez-moi",RareImage, elixir, Effect.OneUp,true, false));
+        AllItem[1].Add(3, Item.CreateItem("Maille", "Il n'y a que la maille qui m'aille",RareImage,Maille, Effect.Maille, true, false));
+        AllItem[1].Add(4, Item.CreateItem("Vampirisme", " il ne vous manque plus que les poulets rôtis", RareImage,Vampire, Effect.Vampirisme,true, false));
 
 
         AllItem[2].Add(0,Item.CreateItem("L'anneau unique",  "Attention à ne pas attirer le mauvais œil",EpicImage, theRing, Effect.theRing,  true,  false));
         AllItem[2].Add(1,Item.CreateItem("Dard","Omae wa mou shindeiru",EpicImage, Dard,Effect.Dard,  true,  false));
+        AllItem[2].Add(2,Item.CreateItem("Dernier rempart", "la meilleure défense c'est quand même la défense", EpicImage, Bouclier, Effect.Bouclier, true, false));
+        AllItem[2].Add(3,Item.CreateItem("Cape", "Tu es invisible Harry",EpicImage, Cape, Effect.Cape, true, false));
 
         
         AllItem[3].Add(0,Item.CreateItem("Ticket de loterie",  "Beaucoup d'espoir, peu de résultats",ReliqueImage, ticket, Effect.Ticket,true, false));

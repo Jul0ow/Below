@@ -91,5 +91,48 @@ public class Effect : MonoBehaviour
         Joueur.GetComponent<CharacterThings>().savon = true;
         return 1;
     }
-    
+
+    public static int plume(GameObject Joueur)
+    {
+        Joueur.GetComponent<Jump>().ReduceFallSpeed();
+        return 1;
+    }
+
+    public static int poulet(GameObject Joueur)
+    {
+        if (Joueur.GetComponent<LifeScript>().HP == Joueur.GetComponent<LifeScript>().MaxHP)
+        {
+            Joueur.GetComponent<LifeScript>().MaxHP += 25;
+        }
+        else
+        {
+            Joueur.GetComponent<LifeScript>().HP = Joueur.GetComponent<LifeScript>().MaxHP;
+        }
+        return 1;
+    }
+
+    public static int Maille(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().armor += 10;
+        return 1;
+    }
+
+    public static int Bouclier(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().armor += 20;
+        return 1;
+    }
+
+    public static int Vampirisme(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().vampire = true;
+        return 1;
+    }
+
+    public static int Cape(GameObject Joueur)
+    {
+        Joueur.tag = "Caped";
+        return 1;
+    }
+
 }

@@ -13,12 +13,13 @@ public class CharacterThings : MonoBehaviour
     public int MaxHP = 100;
     public int HP;
     public bool Alive = true;
-    public int armor = 100;
+    public int armor = 0;
     public bool theRing = false;
     public bool basketpeg = false;
     public bool OneUp = false;
     public int luck = 0;
     public bool savon = false;
+    public bool vampire = false;
     public (int, char) Room;
     private GameObject lifeBarObjetct;
     private LifeScript LifeBar;
@@ -42,8 +43,15 @@ public class CharacterThings : MonoBehaviour
     {
         if (!invulnerable)
         {
-            HP -= damage;
-            Debug.Log(HP);
+            if (damage > armor)
+            {
+                HP -= damage-armor;
+            }
+
+            else
+            {
+                HP -= 1;
+            }
             if(HP<=0) Destroy(gameObject);
             invulnerable = true;
             tookDamage = Time.time;
