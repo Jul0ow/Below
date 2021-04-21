@@ -60,6 +60,10 @@ public class projectiles : MonoBehaviour
                 {
                     EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
                     IA.TakeDamage(Damage);
+                    if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
+                    {
+                        owner.GetComponent<CharacterThings>().HP += 10;
+                    }
                 }
 
                 if (enemies[i].CompareTag("Player"))

@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     public Component freeLook;
+    public bool savon = false;
 
 
     private PhotonView PV;

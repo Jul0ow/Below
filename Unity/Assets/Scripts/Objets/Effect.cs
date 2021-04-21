@@ -14,7 +14,7 @@ public class Effect : MonoBehaviour
     public static int BloodLove(GameObject Joueur)
     {
         Joueur.GetComponentInChildren<Attack>().Damage *=3;
-        Joueur.GetComponent<CharacterThings>().armor /= 5;
+        Joueur.GetComponent<CharacterThings>().bloodLove = true;
         return 1;
     }
 
@@ -88,7 +88,7 @@ public class Effect : MonoBehaviour
 
     public static int savon(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().savon = true;
+        Joueur.GetComponent<Movement>().savon = true;
         return 1;
     }
 
