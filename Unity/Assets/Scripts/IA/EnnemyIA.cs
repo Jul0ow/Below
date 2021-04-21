@@ -12,25 +12,25 @@ public class EnnemyIA : MonoBehaviour
     public GameObject player;
     public LayerMask whatIsGround, whatIsplayer;
     public Vector3 walkpoint;
-    private bool walkpointSet;
+    public bool walkpointSet;
     public float walkpointrange;
     public float timeBetweenAttacks;
-    private bool alreadyAttacked;
+    public float speed;
+    public int damage;
+    public bool alreadyAttacked = false;
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
-    public int Health;
     public (int,char) Room;
     public EnnemyAttack attack;
-    public AudioClip death;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Cible");
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         float distance = float.MaxValue;
         foreach (var joueur in GameObject.FindGameObjectsWithTag("Cible"))
@@ -42,17 +42,16 @@ public class EnnemyIA : MonoBehaviour
                 player = joueur;
             }
         }
-        agent.speed = 3.5f;
+        agent.speed = speed;
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
         if(!playerInSightRange && !playerInAttackRange) Patroling();
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         if(playerInAttackRange && playerInSightRange) Attackplayer();
     }
-    
-    
 
-    private void Patroling()
+
+    protected virtual void Patroling()
     {
         if (!walkpointSet) SearchWalkpoint();
         if(walkpointSet)
@@ -63,7 +62,7 @@ public class EnnemyIA : MonoBehaviour
             walkpointSet = false;
     }
 
-    private void SearchWalkpoint()
+    protected virtual void SearchWalkpoint()
     {
         float randomZ = Random.Range(-walkpointrange, walkpointrange);
         float randomX = Random.Range(-walkpointrange, walkpointrange);
@@ -71,14 +70,14 @@ public class EnnemyIA : MonoBehaviour
         if (Physics.Raycast(walkpoint, -transform.up, 2f, whatIsGround))
             walkpointSet = true;
     }
-    
-    private void Chaseplayer()
+
+    protected virtual void Chaseplayer()
     {
         agent.SetDestination(player.transform.position);
         transform.LookAt(player.transform);
     }
-    
-    private void Attackplayer()
+
+    protected virtual void Attackplayer()
     {
         agent.SetDestination(transform.position);
         transform.LookAt(player.transform);
@@ -90,23 +89,10 @@ public class EnnemyIA : MonoBehaviour
         }
     }
 
-    private void ResetAttack()
+    protected virtual void ResetAttack()
     {
         alreadyAttacked = false;
     }
-
-    public void TakeDamage(int damage)
-         {
-             Health -= damage;
-             if (Health <= 0)
-             {
-                 AudioSource.PlayClipAtPoint(death, GetComponent<Transform>().position);
-                 Destroy(gameObject);
-             }
-         } 
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
-    }
+    
+    
 }

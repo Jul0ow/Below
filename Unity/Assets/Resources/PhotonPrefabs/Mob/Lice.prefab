@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8368651571811615162}
   - component: {fileID: 7772124901102552400}
   - component: {fileID: -5666642740888264234}
+  - component: {fileID: -4552605821014291051}
   m_Layer: 11
   m_Name: Lice
   m_TagString: Ennemy
@@ -89,15 +90,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   walkpoint: {x: 0, y: 0, z: 0}
+  walkpointSet: 0
   walkpointrange: 5
   timeBetweenAttacks: 1
-  sightRange: 40
-  attackRange: 20
+  speed: 3.5
+  damage: 20
+  alreadyAttacked: 0
+  sightRange: 80
+  attackRange: 60
   playerInSightRange: 0
   playerInAttackRange: 0
-  Health: 100
   attack: {fileID: 5804020693441839860}
-  death: {fileID: 8300000, guid: 98056c9dd94fcdb4f9641bc594d5f8b3, type: 3}
 --- !u!195 &4755825375382134281
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -172,6 +175,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-4552605821014291051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849246153576093302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66fa334933d48544a4cc63f748ed24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IA: {fileID: 3594347818949032031}
+  death: {fileID: 8300000, guid: 98056c9dd94fcdb4f9641bc594d5f8b3, type: 3}
+  Health: 150
 --- !u!1 &4149970638762359424
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3092848859993577290, guid: 1909c227320f0f742abd4f7e20212666, type: 3}
   shootForce: 15
+  damage: 15
 --- !u!1 &4952915634092961430
 GameObject:
   m_ObjectHideFlags: 0
