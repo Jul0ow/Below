@@ -15,8 +15,11 @@ public class EnnemyList : MonoBehaviour
         MonsterList.Add("Lice");
         MonsterList.Add("Buried Lice");
         MonsterList.Add("Splitter");
+        MonsterList.Add("Gout");
+        MonsterList.Add("Kamikaze Splitter");
         
         EliteList.Add("QueenLice");
+        EliteList.Add("Goutausorus");
     }
 
     public string pickennemy()

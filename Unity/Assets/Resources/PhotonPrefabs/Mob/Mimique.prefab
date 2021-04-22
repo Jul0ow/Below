@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e4cb10e37807d4d8dcf481c00a1525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsElite: 0
   agent: {fileID: 4755825375382134281}
   player: {fileID: 4233860908194137075, guid: b047c335beaf9cb408d980699ae4e7a2, type: 3}
   whatIsGround:

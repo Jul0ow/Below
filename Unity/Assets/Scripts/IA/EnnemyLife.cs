@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class EnnemyLife : MonoBehaviour
@@ -20,6 +21,7 @@ public class EnnemyLife : MonoBehaviour
 
     protected virtual void DestroyEnemy()
     {
+        if(IA.IsElite) PhotonNetwork.Instantiate("PhotonPrefabs/Chest", transform.position, Quaternion.identity);
         if(IA is BlobIA ia) ia.Deathrattle();
         else if(IA is MimiqueIA ia2) ia2.Deathrattle();
         else Destroy(gameObject);

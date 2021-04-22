@@ -9,6 +9,7 @@ public class LifeScript : MonoBehaviour
     public int MaxHP;
     public int HP;
     public Slider slider;
+    public GameObject owner;
 
     public void SetMaxHealth(int health)
     {

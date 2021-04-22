@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class EnnemyIA : MonoBehaviour
 {
+    public bool IsElite = false;
     public NavMeshAgent agent;
     public GameObject player;
     public LayerMask whatIsGround, whatIsplayer;

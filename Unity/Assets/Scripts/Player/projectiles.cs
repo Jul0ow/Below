@@ -25,7 +25,6 @@ public class projectiles : MonoBehaviour
 
     private int collisions;
     private PhysicMaterial physics_mat;
-    
     public GameObject owner;
 
 
@@ -61,22 +60,11 @@ public class projectiles : MonoBehaviour
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
                     IA.TakeDamage(Damage);
                 }
-
                 if (enemies[i].CompareTag("Player"))
-                {
-                    /*CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
-                    if(victim != enemies[i].GetComponentInParent<CharacterThings>())
-                        victim.TakeDamage(Damage);*/
                     if (enemies[i].gameObject != owner)
-                    {
                         enemies[i].GetComponent<CharacterThings>().TakeDamage(Damage);
-                    }
-
-                    
-                }
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
-
             }
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
@@ -94,13 +82,11 @@ public class projectiles : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == owner)
+        if(awake)
         {
-            Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
-        }
-        else
-        {
-            Explode();
+            if (other.gameObject != owner)
+                //Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
+                Explode();
         }
     }
     

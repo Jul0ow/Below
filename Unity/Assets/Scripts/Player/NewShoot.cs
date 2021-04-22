@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class NewShoot : MonoBehaviour
 {
+    public GameObject player;
     private GameObject shootFrom;
     public GameObject bulletprefab;
     private float coeffForce = 4000f;
@@ -20,6 +21,7 @@ public class NewShoot : MonoBehaviour
 
     private void Start()
     {
+        player = gameObject;
         PV = GetComponent<PhotonView>();
     }
 
@@ -32,7 +34,8 @@ public class NewShoot : MonoBehaviour
             nextfire = Time.time + fireRate;
             GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/" + bulletprefab.name, shootFrom.transform.position,
                 Quaternion.identity, 0);
-            bullet.GetComponent<projectiles>().owner = transform.root.gameObject;
+            bullet.GetComponent<projectiles>().owner = player;
+            bullet.GetComponent<projectiles>().awake = true;
 
             if (cam != null)
             {

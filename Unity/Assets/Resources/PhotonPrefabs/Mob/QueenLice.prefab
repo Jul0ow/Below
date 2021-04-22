@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e556ba2085e3cb4db9f043319b9bc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsElite: 1
   agent: {fileID: 4755825375382134281}
   player: {fileID: 4233860908194137075, guid: b047c335beaf9cb408d980699ae4e7a2, type: 3}
   whatIsGround:
@@ -206,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3092848859993577290, guid: 1909c227320f0f742abd4f7e20212666, type: 3}
   shootForce: 15
+  damage: 0
 --- !u!1 &7646771007842219929
 GameObject:
   m_ObjectHideFlags: 0
