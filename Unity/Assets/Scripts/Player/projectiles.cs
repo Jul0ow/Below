@@ -54,7 +54,16 @@ public class projectiles : MonoBehaviour
             int tmp = Damage;
             if (owner.GetComponent<CharacterThings>().dard)
             {
-                Damage = 9999;
+                tmp = 9999;
+            }
+            if (owner.GetComponent<CharacterThings>().killer)
+            {
+                tmp *= 3;
+            }
+
+            if (owner.GetComponent<CharacterThings>().bloodLove)
+            {
+                tmp *= 2;
             }
             GameObject currentexplosion;
             currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
@@ -64,7 +73,7 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
-                    IA.TakeDamage(Damage);
+                    IA.TakeDamage(tmp);
                     if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
                     {
                         owner.GetComponent<CharacterThings>().HP += 10;
@@ -78,7 +87,7 @@ public class projectiles : MonoBehaviour
                         victim.TakeDamage(Damage);*/
                     if (enemies[i].gameObject != owner)
                     {
-                        enemies[i].GetComponent<CharacterThings>().TakeDamage(Damage);
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(tmp);
                     }
 
                     
@@ -91,7 +100,6 @@ public class projectiles : MonoBehaviour
             Invoke("DelayBoom(currentexplosion)", 0.5f);
             if (owner.GetComponent<CharacterThings>().dard)
             {
-                Damage = tmp;
                 owner.GetComponent<CharacterThings>().dard = false;
             }
         }

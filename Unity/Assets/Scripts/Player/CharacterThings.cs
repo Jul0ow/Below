@@ -15,6 +15,7 @@ public class CharacterThings : MonoBehaviour
     public bool Alive = true;
     public int armor = 0;
     public bool ring;
+    public bool killer;
     public bool cape = false;
     public bool dard = false;
     public bool basketpeg = false;

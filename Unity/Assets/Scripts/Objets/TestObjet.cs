@@ -35,7 +35,7 @@ public class TestObjet : MonoBehaviour
                     content.Joueur = getters[i].gameObject;
                     content.AppliedEffect();
                     getters[i].GetComponent<CharacterThings>().Inventory.Add(content);
-                    HideMenu.Print(Classes.AllItem[1][0]);
+                    HideMenu.Print(Classes.AllItem[0][2]);
                     OpenedChest.enabled = true;
                     ClosedChest.enabled = false;
                     Opened = true;

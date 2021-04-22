@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5438545314058163629}
-  - component: {fileID: 3013001187857409068}
+  - component: {fileID: -8480749607376802363}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 121.33201, z: 0}
---- !u!114 &3013001187857409068
+--- !u!114 &-8480749607376802363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 969521309505710154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf0dbd0f46bed7440862e3315658cf49, type: 3}
+  m_Script: {fileID: 11500000, guid: 82788ef3c58d46f408f67329d57c03e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rarity: 0
-  ItemReference: 0
+  Rarity: 3
+  ItemReference: 1
   OpenedChest: {fileID: 6807529596528274241}
   ClosedChest: {fileID: 3751233589347963052}
 --- !u!1001 &3751233589350123724

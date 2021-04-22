@@ -13,8 +13,6 @@ public class Effect : MonoBehaviour
 
     public static int BloodLove(GameObject Joueur)
     {
-        Joueur.GetComponentInChildren<Attack>().Damage *=3;
-        Joueur.GetComponentInChildren<projectiles>().Damage *= 3;
         Joueur.GetComponent<CharacterThings>().bloodLove = true;
         return 1;
     }
@@ -60,8 +58,7 @@ public class Effect : MonoBehaviour
 
     public static int KillerInstinct(GameObject Joueur)
     {
-        Joueur.GetComponentInChildren<projectiles>().Damage *= 3;
-        Joueur.GetComponentInChildren<Attack>().Damage *=3;
+        Joueur.GetComponent<CharacterThings>().killer = true;
         return 1;
     }
 
