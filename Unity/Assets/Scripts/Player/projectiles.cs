@@ -50,6 +50,20 @@ public class projectiles : MonoBehaviour
     {
         if (explosion != null)
         {
+            int tmp = Damage;
+            if (owner.GetComponent<CharacterThings>().dard)
+            {
+                tmp = 9999;
+            }
+            if (owner.GetComponent<CharacterThings>().killer)
+            {
+                tmp *= 3;
+            }
+
+            if (owner.GetComponent<CharacterThings>().bloodLove)
+            {
+                tmp *= 2;
+            }
             GameObject currentexplosion;
             currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
@@ -58,7 +72,11 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.TakeDamage(Damage);
+                    IA.TakeDamage(tmp);
+                    if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
+                    {
+                        owner.GetComponent<CharacterThings>().HP += 10;
+                    }
                 }
                 if (enemies[i].CompareTag("Player"))
                     if (enemies[i].gameObject != owner)
@@ -68,6 +86,10 @@ public class projectiles : MonoBehaviour
             }
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
+            if (owner.GetComponent<CharacterThings>().dard)
+            {
+                owner.GetComponent<CharacterThings>().dard = false;
+            }
         }
     }
     

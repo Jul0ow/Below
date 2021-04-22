@@ -18,19 +18,26 @@ public class CharacterThings : MonoBehaviour
     public int MaxHP = 100;
     public int HP;
     public bool Alive = true;
-    public int armor = 100;
-    public bool theRing = false;
+    public int armor = 0;
+    public bool ring;
+    public bool killer;
+    public bool cape = false;
+    public bool dard = false;
     public bool basketpeg = false;
+    public bool runningInThe90s;
+    public float basket = 3f;
     public bool OneUp = false;
     public int luck = 0;
-    public bool savon = false;
+    public bool vampire = false;
+    public bool bloodLove;
     public (int, char) Room;
     private GameObject lifeBarObjetct;
     private LifeScript LifeBar;
     private bool invulnerable;
     private float tookDamage;
-    private float invinviblityTime = 0.25f;
     public PhotonView PV;
+    private float invisibilityTime = 2f;
+    private float invinciblityTime = 0.25f;
     
     
     void Awake()
@@ -54,9 +61,33 @@ public class CharacterThings : MonoBehaviour
         if(!PV.IsMine) return;
         if (!invulnerable)
         {
-            HP -= damage;
-            Debug.Log(HP);
-            //if(HP<=0) Destroy(gameObject);
+            if (bloodLove)
+            {
+                damage *= 2;
+            }
+
+            if (cape)
+            {
+                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+            }
+            
+            
+            if (damage > armor)
+            {
+                HP -= damage-armor;
+            }
+
+            else
+            {
+                HP -= 1;
+            }
+            if(HP<=0) Destroy(gameObject);
+            if (basketpeg && !runningInThe90s)
+            {
+                runningInThe90s = true;
+                GetComponent<Movement>().WalkSpeed += 15;
+                GetComponent<Movement>().RunSpeed += 15;
+            }
             invulnerable = true;
             tookDamage = Time.time;
         }
@@ -68,7 +99,6 @@ public class CharacterThings : MonoBehaviour
         if(!PV.IsMine) return;
         LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
         if (HP > MaxHP) HP = MaxHP;
-        if (Input.GetKeyDown("k")) HP -= 10;
         if (rb.position.y < -10f)
         {
             LifeBar.HP = 0;
@@ -79,10 +109,22 @@ public class CharacterThings : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (Time.time > tookDamage + invinviblityTime)
+        if (Time.time > tookDamage + invinciblityTime)
         {
             invulnerable = false;
         }
-        
+
+        if (cape && Time.time > tookDamage + invisibilityTime)
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+        }
+
+        if (runningInThe90s && Time.time > tookDamage + basket)
+        {
+            GetComponent<Movement>().WalkSpeed -= 15;
+            GetComponent<Movement>().RunSpeed -= 15;
+            runningInThe90s = false;
+        }
+
     }
 }

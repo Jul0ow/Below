@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Attack
     - BSPTree
+<<<<<<< HEAD
     - BlobIA
     - BoomIA
     - ButtonHitbox
@@ -14,6 +15,14 @@ ScriptsOnlyBuild:
     - EnnemyIA
     - EnnemyLife
     - EnnemyList
+=======
+    - ButtonHitbox
+    - CameraController
+    - CharacterThings
+    - Classes
+    - EnnemyAttack
+    - EnnemyIA
+>>>>>>> ajoutdernier_item
     - EnnemyShot
     - HideMenu
     - Jump
@@ -22,7 +31,10 @@ ScriptsOnlyBuild:
     - Locomotion
     - Menu
     - MenuManager
+<<<<<<< HEAD
     - MimiqueIA
+=======
+>>>>>>> ajoutdernier_item
     - Mouse
     - Movement
     - NewShoot
@@ -33,6 +45,7 @@ ScriptsOnlyBuild:
     - PlayerMachine
     - PlayerMachineDebug
     - PlayerManager
+<<<<<<< HEAD
     - QueenLiceIA
     - RoomListItem
     - RoomManager
@@ -40,6 +53,12 @@ ScriptsOnlyBuild:
     - SummonEnnemy
     - SuperCharacterController
     - TourelleIA
+=======
+    - RoomListItem
+    - RoomManager
+    - SuperCharacterController
+    - TestObjet
+>>>>>>> ajoutdernier_item
     - WarriorAnimsFREE.GUIControlsFREE
     - WarriorAnimsFREE.IKHands
     - WarriorAnimsFREE.WarriorControllerFREE
@@ -156,6 +175,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11304}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11306}
     - Class: 114
       Script: {instanceID: 11364}
@@ -307,6 +327,141 @@ ScriptsOnlyBuild:
       Script: {instanceID: 22318}
     - Class: 114
       Script: {instanceID: 22808}
+=======
+      Script: {instanceID: 11362}
+    - Class: 114
+      Script: {instanceID: 11404}
+    - Class: 114
+      Script: {instanceID: 11422}
+    - Class: 114
+      Script: {instanceID: 11478}
+    - Class: 114
+      Script: {instanceID: 11484}
+    - Class: 114
+      Script: {instanceID: 11524}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11546}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11600}
+    - Class: 114
+      Script: {instanceID: 11618}
+    - Class: 114
+      Script: {instanceID: 11720}
+    - Class: 114
+      Script: {instanceID: 11722}
+    - Class: 114
+      Script: {instanceID: 11724}
+    - Class: 114
+      Script: {instanceID: 11832}
+    - Class: 114
+      Script: {instanceID: 11908}
+    - Class: 114
+      Script: {instanceID: 11928}
+    - Class: 114
+      Script: {instanceID: 11932}
+    - Class: 114
+      Script: {instanceID: 11960}
+    - Class: 114
+      Script: {instanceID: 12078}
+    - Class: 114
+      Script: {instanceID: 12090}
+    - Class: 114
+      Script: {instanceID: 12106}
+    - Class: 114
+      Script: {instanceID: 12130}
+    - Class: 114
+      Script: {instanceID: 12276}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12352}
+    - Class: 114
+      Script: {instanceID: 12378}
+    - Class: 114
+      Script: {instanceID: 12422}
+    - Class: 114
+      Script: {instanceID: 12442}
+    - Class: 114
+      Script: {instanceID: 12468}
+    - Class: 114
+      Script: {instanceID: 12494}
+    - Class: 114
+      Script: {instanceID: 12534}
+    - Class: 114
+      Script: {instanceID: 12642}
+    - Class: 114
+      Script: {instanceID: 12696}
+    - Class: 114
+      Script: {instanceID: 12752}
+    - Class: 114
+      Script: {instanceID: 12762}
+    - Class: 114
+      Script: {instanceID: 12886}
+    - Class: 114
+      Script: {instanceID: 12924}
+    - Class: 114
+      Script: {instanceID: 12940}
+    - Class: 114
+      Script: {instanceID: 12952}
+    - Class: 114
+      Script: {instanceID: 12958}
+    - Class: 114
+      Script: {instanceID: 13014}
+    - Class: 114
+      Script: {instanceID: 13050}
+    - Class: 114
+      Script: {instanceID: 13062}
+    - Class: 114
+      Script: {instanceID: 13068}
+    - Class: 114
+      Script: {instanceID: 13134}
+    - Class: 114
+      Script: {instanceID: 13152}
+    - Class: 114
+      Script: {instanceID: 13224}
+    - Class: 114
+      Script: {instanceID: 13270}
+    - Class: 114
+      Script: {instanceID: 13302}
+    - Class: 114
+      Script: {instanceID: 13306}
+    - Class: 114
+      Script: {instanceID: 13496}
+    - Class: 114
+      Script: {instanceID: 13512}
+    - Class: 114
+      Script: {instanceID: 13620}
+    - Class: 114
+      Script: {instanceID: 13664}
+    - Class: 114
+      Script: {instanceID: 13666}
+    - Class: 114
+      Script: {instanceID: 13672}
+    - Class: 114
+      Script: {instanceID: 13724}
+    - Class: 114
+      Script: {instanceID: 13736}
+    - Class: 114
+      Script: {instanceID: 13754}
+    - Class: 114
+      Script: {instanceID: 13756}
+    - Class: 114
+      Script: {instanceID: 13774}
+    - Class: 114
+      Script: {instanceID: 13804}
+    - Class: 114
+      Script: {instanceID: 164210}
+    - Class: 114
+      Script: {instanceID: 164214}
+    - Class: 114
+      Script: {instanceID: 164634}
+>>>>>>> ajoutdernier_item
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -388,6 +543,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+<<<<<<< HEAD
+=======
+    - Class: 90
+      Script: {instanceID: 0}
+>>>>>>> ajoutdernier_item
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -403,6 +563,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11276}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11298}
     - Class: 114
       Script: {instanceID: 11306}
@@ -450,6 +611,95 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13770}
     - Class: 114
       Script: {instanceID: 13790}
+=======
+      Script: {instanceID: 11288}
+    - Class: 114
+      Script: {instanceID: 11298}
+    - Class: 114
+      Script: {instanceID: 11304}
+    - Class: 114
+      Script: {instanceID: 11422}
+    - Class: 114
+      Script: {instanceID: 11478}
+    - Class: 114
+      Script: {instanceID: 11524}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11546}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11724}
+    - Class: 114
+      Script: {instanceID: 11908}
+    - Class: 114
+      Script: {instanceID: 11928}
+    - Class: 114
+      Script: {instanceID: 11932}
+    - Class: 114
+      Script: {instanceID: 11960}
+    - Class: 114
+      Script: {instanceID: 12074}
+    - Class: 114
+      Script: {instanceID: 12090}
+    - Class: 114
+      Script: {instanceID: 12106}
+    - Class: 114
+      Script: {instanceID: 12276}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12326}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12378}
+    - Class: 114
+      Script: {instanceID: 12422}
+    - Class: 114
+      Script: {instanceID: 12442}
+    - Class: 114
+      Script: {instanceID: 12468}
+    - Class: 114
+      Script: {instanceID: 12476}
+    - Class: 114
+      Script: {instanceID: 12494}
+    - Class: 114
+      Script: {instanceID: 12886}
+    - Class: 114
+      Script: {instanceID: 12924}
+    - Class: 114
+      Script: {instanceID: 12952}
+    - Class: 114
+      Script: {instanceID: 12958}
+    - Class: 114
+      Script: {instanceID: 13014}
+    - Class: 114
+      Script: {instanceID: 13050}
+    - Class: 114
+      Script: {instanceID: 13068}
+    - Class: 114
+      Script: {instanceID: 13152}
+    - Class: 114
+      Script: {instanceID: 13224}
+    - Class: 114
+      Script: {instanceID: 13302}
+    - Class: 114
+      Script: {instanceID: 13620}
+    - Class: 114
+      Script: {instanceID: 13664}
+    - Class: 114
+      Script: {instanceID: 13724}
+    - Class: 114
+      Script: {instanceID: 13736}
+    - Class: 114
+      Script: {instanceID: 13754}
+    - Class: 114
+      Script: {instanceID: 13774}
+    - Class: 114
+      Script: {instanceID: 13804}
+>>>>>>> ajoutdernier_item
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -458,12 +708,24 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
+<<<<<<< HEAD
+=======
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+>>>>>>> ajoutdernier_item
     - Class: 154
       Script: {instanceID: 0}
     - Class: 156
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+<<<<<<< HEAD
+=======
+    - Class: 195
+      Script: {instanceID: 0}
+>>>>>>> ajoutdernier_item
     - Class: 196
       Script: {instanceID: 0}
     - Class: 198
@@ -518,7 +780,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 13678}
+=======
+      Script: {instanceID: 13664}
+>>>>>>> ajoutdernier_item
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -566,12 +832,15 @@ ScriptsOnlyBuild:
     className: PunTeams
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: a5d30f8b630a3a285cd973ecc2780dc0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MimiqueIA
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -632,7 +901,11 @@ ScriptsOnlyBuild:
     className: PhotonStatsGui
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 2efb0b7301e8d5f31b39bfd42ea8dfc7
+=======
+      Hash: 940ad4a034cc77ea5ebc694ea8bfc45c
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewShoot
@@ -800,12 +1073,15 @@ ScriptsOnlyBuild:
     className: CinemachineStoryboard
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: f9373dce92269ab4b82229923131d619
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BoomIA
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -818,12 +1094,15 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 847b448d8330527eabed5d9b1ddd97e6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: QueenLiceIA
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: 6f51c7b3a651b2494223b61cc2e3b6fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -860,12 +1139,15 @@ ScriptsOnlyBuild:
     className: BruteForceMesh
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: d393da9691e62e0deb4e4283924af525
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SummonEnnemy
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: 11df54cb47bd74c537f3c732a94ea97d
     assemblyName: PhotonUnityNetworking.dll
     namespaceName: Photon.Pun
@@ -914,7 +1196,11 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: d621cd17c30a843642862d468693669e
+=======
+      Hash: 63a2aa6d18a655442d3c3c9f19220ce6
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyIA
@@ -926,6 +1212,15 @@ ScriptsOnlyBuild:
     className: CinemachineFreeLook
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
+=======
+      Hash: 9f16cd46d9a93756449e19cc6ba2a241
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TestObjet
+  - hash:
+      serializedVersion: 2
+>>>>>>> ajoutdernier_item
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -938,12 +1233,15 @@ ScriptsOnlyBuild:
     className: PhotonRigidbody2DView
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 1964a811a86beab5a7acf14b1ca82c91
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyLife
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -986,12 +1284,15 @@ ScriptsOnlyBuild:
     className: OnClickRpc
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: d621cd17c30a843642862d468693669e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RushIA
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -1034,7 +1335,11 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 7c9737a5466d5a93917c868cbfb11d8f
+=======
+      Hash: 5a74603393da5d1aa56fb0b3167427af
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyAttack
@@ -1082,7 +1387,11 @@ ScriptsOnlyBuild:
     className: CinemachinePOV
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 781c444100dfd4dfc6deb6ba84c14d4f
+=======
+      Hash: 9d1e3a6838dd26a121faf504868825cb
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterThings
@@ -1100,7 +1409,11 @@ ScriptsOnlyBuild:
     className: CinemachineOrbitalTransposer
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 29d3b10f20304306ec9259b095b84d49
+=======
+      Hash: 227e5b6f785082416e05822f3abb8692
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Classes
@@ -1154,7 +1467,11 @@ ScriptsOnlyBuild:
     className: PhotonRigidbodyView
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: ea87ac67faabc544e1bd4a1dd163a0ae
+=======
+      Hash: 0d3f16a535cd64fb3b3c79d71508c261
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Movement
@@ -1250,7 +1567,11 @@ ScriptsOnlyBuild:
     className: PlayerCamera
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 9d20f45a4a39a0f387f5018fae00aaf3
+=======
+      Hash: 131b42c69070a5c1226e8f5f5e3de2a7
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RoomManager
@@ -1340,7 +1661,11 @@ ScriptsOnlyBuild:
     className: InputField
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 29b0e17f191e628419d62fd32be56b13
+=======
+      Hash: 39e72941eed452fec70c6d8ffca2d92c
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: projectiles
@@ -1412,7 +1737,11 @@ ScriptsOnlyBuild:
     className: ButtonHitbox
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: dfdcd17b0a66c90a15beaa23cc6673d4
+=======
+      Hash: 8be048d4e54f5658469bfca9befebb6f
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyShot
@@ -1526,12 +1855,15 @@ ScriptsOnlyBuild:
     className: PlayerMachineDebug
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: d621cd17c30a843642862d468693669e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TourelleIA
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1634,12 +1966,15 @@ ScriptsOnlyBuild:
     className: PhotonTeamsManager
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 9a8461bed6c64fa3518644db5740c67f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BlobIA
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1736,12 +2071,15 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyList
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> ajoutdernier_item
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1760,7 +2098,11 @@ ScriptsOnlyBuild:
     className: PlayerNumbering
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 335d04e37007465d07013fad5f29f702
+=======
+      Hash: 9f16cd46d9a93756449e19cc6ba2a241
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Chest
@@ -1832,7 +2174,11 @@ ScriptsOnlyBuild:
     className: CinemachineClearShot
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 0027b6baa98ced8a11eafe759d355f01
+=======
+      Hash: 5a2ea428a3ab41b43c3b39ecd2d0930f
+>>>>>>> ajoutdernier_item
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LifeScript
@@ -1865,4 +2211,8 @@ ScriptsOnlyBuild:
   - Assets/scene/BeauMenu.unity
   - Assets/scene/Level.unity
   - Assets/scene/LevelMulti.unity
+<<<<<<< HEAD
   playerPath: C:/Users/Edgar/Desktop/build/New Unity Project.exe
+=======
+  playerPath: C:/Users/diazj/Documents/buildbelow/New Unity Project.exe
+>>>>>>> ajoutdernier_item

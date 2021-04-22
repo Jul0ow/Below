@@ -72,5 +72,10 @@ public class Jump : MonoBehaviour
             }
         }
     }
+
+    public void ReduceFallSpeed()
+    {
+        fallspeed /= 1.5f;
+    }
     
 }

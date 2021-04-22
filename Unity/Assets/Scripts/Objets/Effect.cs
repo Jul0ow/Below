@@ -13,14 +13,13 @@ public class Effect : MonoBehaviour
 
     public static int BloodLove(GameObject Joueur)
     {
-        Joueur.GetComponentInChildren<Attack>().Damage *=3;
-        Joueur.GetComponent<CharacterThings>().armor /= 5;
+        Joueur.GetComponent<CharacterThings>().bloodLove = true;
         return 1;
     }
 
     public static int theRing(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().theRing = true;
+        Joueur.GetComponent<CharacterThings>().ring = true;
         return 1;
     }
 
@@ -53,12 +52,13 @@ public class Effect : MonoBehaviour
 
     public static int Dard(GameObject Joueur)
     {
+        Joueur.GetComponent<CharacterThings>().dard = true;
         return 1;
     }
 
     public static int KillerInstinct(GameObject Joueur)
     {
-        Joueur.GetComponentInChildren<Attack>().Damage *=3;
+        Joueur.GetComponent<CharacterThings>().killer = true;
         return 1;
     }
 
@@ -88,8 +88,51 @@ public class Effect : MonoBehaviour
 
     public static int savon(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().savon = true;
+        Joueur.GetComponent<Movement>().savon = true;
         return 1;
     }
-    
+
+    public static int plume(GameObject Joueur)
+    {
+        Joueur.GetComponent<Jump>().ReduceFallSpeed();
+        return 1;
+    }
+
+    public static int poulet(GameObject Joueur)
+    {
+        if (Joueur.GetComponent<LifeScript>().HP == Joueur.GetComponent<LifeScript>().MaxHP)
+        {
+            Joueur.GetComponent<LifeScript>().MaxHP += 25;
+        }
+        else
+        {
+            Joueur.GetComponent<LifeScript>().HP = Joueur.GetComponent<LifeScript>().MaxHP;
+        }
+        return 1;
+    }
+
+    public static int Maille(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().armor += 10;
+        return 1;
+    }
+
+    public static int Bouclier(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().armor += 20;
+        return 1;
+    }
+
+    public static int Vampirisme(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().vampire = true;
+        return 1;
+    }
+
+    public static int Cape(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().cape = true;
+        return 1;
+    }
+
 }

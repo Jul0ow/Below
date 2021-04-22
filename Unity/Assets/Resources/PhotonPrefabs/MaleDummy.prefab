@@ -1047,6 +1047,7 @@ MonoBehaviour:
   speed: 6
   turnSmoothTime: 0.1
   freeLook: {fileID: 4233860906616770539}
+  savon: 0
 --- !u!114 &4233860908194137034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,11 +1107,18 @@ MonoBehaviour:
   MaxHP: 100
   HP: 100
   Alive: 1
-  armor: 100
-  theRing: 0
+  armor: 0
+  ring: 0
+  killer: 0
+  cape: 0
+  dard: 0
   basketpeg: 0
+  runningInThe90s: 0
+  basket: 3
   OneUp: 0
   luck: 0
+  vampire: 0
+  bloodLove: 0
   savon: 0
   PV: {fileID: 0}
 --- !u!114 &-7410615817413464383
