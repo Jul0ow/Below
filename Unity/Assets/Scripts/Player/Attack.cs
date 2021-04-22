@@ -25,6 +25,20 @@ public class Attack : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             Collider[] enemies = Physics.OverlapSphere(transform.position, range);
+            int tmp = Damage;
+            if (GetComponentInParent<CharacterThings>().dard)
+            {
+                tmp = 9999;
+            }
+            if (GetComponentInParent<CharacterThings>().killer)
+            {
+                tmp *= 3;
+            }
+
+            if (GetComponentInParent<CharacterThings>().bloodLove)
+            {
+                tmp *= 2;
+            }
             for (int i = 0; i < enemies.Length; i++)
             {
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
@@ -33,13 +47,13 @@ public class Attack : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.TakeDamage(Damage);
+                    IA.TakeDamage(tmp);
                 }
                 if (enemies[i].CompareTag("Player"))
                 {
                     CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
                     if(victim != enemies[i].GetComponentInParent<CharacterThings>())
-                        victim.TakeDamage(Damage);
+                        victim.TakeDamage(tmp);
                 }
             }
         }

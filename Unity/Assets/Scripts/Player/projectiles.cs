@@ -80,7 +80,7 @@ public class projectiles : MonoBehaviour
                 }
                 if (enemies[i].CompareTag("Player"))
                     if (enemies[i].gameObject != owner)
-                        enemies[i].GetComponent<CharacterThings>().TakeDamage(Damage);
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(tmp);
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
             }
