@@ -1,0 +1,118 @@
+*, ::before, ::after{
+  box-sizinf: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family: 'Jost',sans-serif;
+}
+body{
+  background: #333; /* couleur du back ground*/
+}
+h1{
+  text-align: center;
+  padding: 240px 0;
+  color: #f1f1f1; /* couleur du titre au premier plan */
+}
+.box-timeline{
+  width: 100%;
+  height: 1500px;
+  background: #f1f1f1;
+  position: relative;
+  padding: 80px 0 250px 0; /* haut droite  bas gauche*/
+  margin-bottom: 100px; /* crée le bandeau noir en bas de la page*/
+}
+.ligne{ /*ligne de verticale la timeline*/
+  height: 1000px;
+  width: 8px;
+  margin: 0 auto ; /*centre */
+  background: #333;
+}
+.rond{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* transforme en rond*/
+  background: #333;
+  position: absolute;
+  border: 3px solid #000;
+  left: 50%;
+  transform: translate(-50%); /* centre un élement en postion absolue */
+  display:  flex;
+  justify-content: center;
+  align-items: center; /* aligne les emojis au centre des ronds */
+  font-size: 40px; /* 40 car la taille des emojis est de 40px*/
+}
+.r1{top: 80px;
+  border: 5px solid green;
+  color: green;
+}/* ; place le premier rond à 80px 0= en haut de la box blanche et à la verticale*/
+.r2{top: 386px;
+border: 5px solid red;
+  color: red;}
+.r3{top: 692px;
+border: 5px solid red;
+  color: red;}
+.r4{top: 1000px;
+border: 5px solid red;
+  color: red;}
+
+.box{
+  color: #333;
+  width: 400px;
+  min-height: 200px;/* hauteur minimun*/
+  padding: 20px;
+  border-radius: 3px;
+  height: auto;
+  background: #f1f1f1;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.5); /* flou de 15px*/
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%); /*on les place au milieu */
+
+}
+.b1{ /* box 1*/
+  top : 80px ;
+  left: calc(50% - 270px);
+}
+.b2{ /* box 1*/
+  top : 386px ;
+  left: calc(50% + 270px);
+}
+.b3{ /* box 1*/
+  top : 692px ;
+  left: calc(50% - 270px);
+}
+.b4{ /* box 1*/
+  top : 1000px ;
+  left: calc(50% + 270px);
+}
+
+.box p {  /*style des paragraphes*/
+  line-height: 20px;
+  font-size: 18px;
+  margin: 10px 0 20px 0;
+}
+.btn{
+  display: block;
+  background: midnightblue;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+  color: #f1f1f1;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1000px){ /*pour tout les excran à partir de 1000px faire :*/
+  .ligne{
+    position: relative;
+    left: 200px;
+  }
+  .rond{
+    left: calc(50% + 200px);
+  }
+  .box{
+    left: calc(50% - 50px);
+  }
+}
