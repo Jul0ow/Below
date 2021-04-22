@@ -14,7 +14,9 @@ public class CharacterThings : MonoBehaviour
     public int HP;
     public bool Alive = true;
     public int armor = 0;
-    public bool theRing = false;
+    public bool ring;
+    public bool cape = false;
+    public bool dard = false;
     public bool basketpeg = false;
     public bool runningInThe90s;
     public float basket = 3f;
@@ -27,6 +29,7 @@ public class CharacterThings : MonoBehaviour
     private LifeScript LifeBar;
     private bool invulnerable;
     private float tookDamage;
+    private float invisibilityTime = 2f;
     private float invinciblityTime = 0.25f;
     
     
@@ -49,6 +52,13 @@ public class CharacterThings : MonoBehaviour
             {
                 damage *= 2;
             }
+
+            if (cape)
+            {
+                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+            }
+            
+            
             if (damage > armor)
             {
                 HP -= damage-armor;
@@ -88,6 +98,11 @@ public class CharacterThings : MonoBehaviour
         if (Time.time > tookDamage + invinciblityTime)
         {
             invulnerable = false;
+        }
+
+        if (cape && Time.time > tookDamage + invisibilityTime)
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
         }
 
         if (runningInThe90s && Time.time > tookDamage + basket)

@@ -51,6 +51,11 @@ public class projectiles : MonoBehaviour
     {
         if (explosion != null)
         {
+            int tmp = Damage;
+            if (owner.GetComponent<CharacterThings>().dard)
+            {
+                Damage = 9999;
+            }
             GameObject currentexplosion;
             currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
@@ -84,6 +89,11 @@ public class projectiles : MonoBehaviour
             }
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
+            if (owner.GetComponent<CharacterThings>().dard)
+            {
+                Damage = tmp;
+                owner.GetComponent<CharacterThings>().dard = false;
+            }
         }
     }
     

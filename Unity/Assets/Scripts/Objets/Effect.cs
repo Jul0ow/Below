@@ -14,13 +14,14 @@ public class Effect : MonoBehaviour
     public static int BloodLove(GameObject Joueur)
     {
         Joueur.GetComponentInChildren<Attack>().Damage *=3;
+        Joueur.GetComponentInChildren<projectiles>().Damage *= 3;
         Joueur.GetComponent<CharacterThings>().bloodLove = true;
         return 1;
     }
 
     public static int theRing(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().theRing = true;
+        Joueur.GetComponent<CharacterThings>().ring = true;
         return 1;
     }
 
@@ -53,11 +54,13 @@ public class Effect : MonoBehaviour
 
     public static int Dard(GameObject Joueur)
     {
+        Joueur.GetComponent<CharacterThings>().dard = true;
         return 1;
     }
 
     public static int KillerInstinct(GameObject Joueur)
     {
+        Joueur.GetComponentInChildren<projectiles>().Damage *= 3;
         Joueur.GetComponentInChildren<Attack>().Damage *=3;
         return 1;
     }
@@ -131,7 +134,7 @@ public class Effect : MonoBehaviour
 
     public static int Cape(GameObject Joueur)
     {
-        Joueur.tag = "Caped";
+        Joueur.GetComponent<CharacterThings>().cape = true;
         return 1;
     }
 

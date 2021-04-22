@@ -43,8 +43,8 @@ public class EnnemyIA : MonoBehaviour
             }
         }
         agent.speed = 3.5f;
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
+        playerInSightRange = !player.GetComponentInParent<CharacterThings>().ring && Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
+        playerInAttackRange = !player.GetComponentInParent<CharacterThings>().ring && Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
         if(!playerInSightRange && !playerInAttackRange) Patroling();
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         if(playerInAttackRange && playerInSightRange) Attackplayer();
