@@ -6,6 +6,35 @@
 html{
   font-family: 'Jost',sans-serif;
 }
+/*****************/
+nav {
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);/*rgb(31, 13, 48);*/
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+}
+header li {
+  float: right;
+  font-size: 1.2em;
+}
+header li a {
+  text-decoration: none;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  padding: 18px 16px;
+  color: rgba(234, 109, 109, 0.79);
+}
+#logo {
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  float: left;
+  color: rgba(87, 2, 2, 0.795);
+} /****/
+
+
 body{
   background: #333; /* couleur du back ground*/
 }
@@ -16,14 +45,14 @@ h1{
 }
 .box-timeline{
   width: 100%;
-  height: 1500px;
+  height: 1600px;/*1500*/
   background: #f1f1f1;
   position: relative;
   padding: 80px 0 250px 0; /* haut droite  bas gauche*/
   margin-bottom: 100px; /* crée le bandeau noir en bas de la page*/
 }
 .ligne{ /*ligne de verticale la timeline*/
-  height: 1000px;
+  height: 1306px;/* 1000*/
   width: 8px;
   margin: 0 auto ; /*centre */
   background: #333;
@@ -55,6 +84,9 @@ border: 5px solid red;
 .r4{top: 1000px;
 border: 5px solid red;
   color: red;}
+.r5{top: 1306px;
+  border: 5px solid red;
+  color: red;}
 
 .box{
   color: #333;
@@ -64,6 +96,7 @@ border: 5px solid red;
   border-radius: 3px;
   height: auto;
   background: #f1f1f1;
+  border: 3px solid red;
   box-shadow: 0 10px 15px rgba(0,0,0,0.5); /* flou de 15px*/
   position: absolute;
   left: 50%;
@@ -71,6 +104,7 @@ border: 5px solid red;
 
 }
 .b1{ /* box 1*/
+  border: 3px solid green;
   top : 80px ;
   left: calc(50% - 270px);
 }
@@ -82,9 +116,13 @@ border: 5px solid red;
   top : 692px ;
   left: calc(50% - 270px);
 }
-.b4{ /* box 1*/
+.b4{ /* box 4*/
   top : 1000px ;
   left: calc(50% + 270px);
+}
+.b5{ /* box 5*/
+  top : 1306px ;
+  left: calc(50% - 270px);
 }
 
 .box p {  /*style des paragraphes*/
