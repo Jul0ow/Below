@@ -262,6 +262,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="IA" t="Include">
+            <e p="BigCafardIA.cs" t="Include" />
             <e p="BlobIA.cs" t="Include" />
             <e p="BoomIA.cs" t="Include" />
             <e p="EnnemyAttack.cs" t="Include" />
@@ -269,6 +270,7 @@
             <e p="EnnemyLife.cs" t="Include" />
             <e p="EnnemyList.cs" t="Include" />
             <e p="EnnemyShot.cs" t="Include" />
+            <e p="EnnemyShotTox.cs" t="Include" />
             <e p="MimiqueIA.cs" t="Include" />
             <e p="QueenLiceIA.cs" t="Include" />
             <e p="RushIA.cs" t="Include" />
@@ -298,6 +300,7 @@
             <e p="Classes.cs" t="Include" />
             <e p="Effect.cs" t="Include" />
             <e p="HideMenu.cs" t="Include" />
+            <e p="TestObjet.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Attack.cs" t="Include" />

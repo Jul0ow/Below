@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class CharacterThings : MonoBehaviour
@@ -17,6 +18,8 @@ public class CharacterThings : MonoBehaviour
     private GameObject HealthRef;
     public int MaxHP = 100;
     public int HP;
+    public bool poisoned = false;
+    private bool tox = false;
     public bool Alive = true;
     public int armor = 0;
     public bool ring;
@@ -53,7 +56,7 @@ public class CharacterThings : MonoBehaviour
         LifeBar.MaxHP = MaxHP;
         LifeBar.HP = HP;
         Inventory = new List<Classes.Item>();
-        
+
     }
     
     public void TakeDamage(int damage)
@@ -99,6 +102,7 @@ public class CharacterThings : MonoBehaviour
         if(!PV.IsMine) return;
         LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
         if (HP > MaxHP) HP = MaxHP;
+        if (poisoned) poison();
         if (rb.position.y < -10f)
         {
             LifeBar.HP = 0;
@@ -126,5 +130,23 @@ public class CharacterThings : MonoBehaviour
             runningInThe90s = false;
         }
 
+    }
+
+    private void poison()
+    {
+        poisoned = false;
+        tox = true;
+        while (tox)
+        {
+            StartCoroutine(waitpoison());
+        }
+    }
+
+    private IEnumerator waitpoison()
+    {
+        TakeDamage(5);
+        int rnd = Random.Range(0, 6);
+        if (rnd == 2) tox = false;
+        yield return new WaitForSeconds(1);
     }
 }
