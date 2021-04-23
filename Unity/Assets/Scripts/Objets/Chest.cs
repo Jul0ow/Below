@@ -35,6 +35,7 @@ public class Chest : MonoBehaviour
             for (int i = 0; i < getters.Length; i++)
                 if (getters[i].GetComponent<CharacterThings>() && Input.GetKeyDown("e"))
                 {
+                    Opened = true;
                     int IsMimique = Random.Range(1, 100);
                     if(IsMimique > 6)
                     {
@@ -44,7 +45,7 @@ public class Chest : MonoBehaviour
                             ItemReference = (uint) Random.Range(0, Classes.AllItem[Rarity].Count);
                             content = Classes.AllItem[Rarity][ItemReference];
                         }
-
+                        
                         content.Joueur = getters[i].gameObject;
                         content.AppliedEffect();
                         getters[i].GetComponent<CharacterThings>().Inventory.Add(content);
@@ -53,7 +54,6 @@ public class Chest : MonoBehaviour
                         ClosedChest.enabled = true;
                         ClosedChestTop.enabled = true;
                         light.enabled = true;
-                        Opened = true;
                     }
                     else
                     {

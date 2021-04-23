@@ -64,6 +64,7 @@ public class Effect : MonoBehaviour
 
     public static int Lynx(GameObject Joueur)
     {
+        Joueur.GetComponentInChildren<Light>().enabled = true;
         Screen.brightness += 0.3f;
         return 1;
     }
@@ -100,13 +101,13 @@ public class Effect : MonoBehaviour
 
     public static int poulet(GameObject Joueur)
     {
-        if (Joueur.GetComponent<LifeScript>().HP == Joueur.GetComponent<LifeScript>().MaxHP)
+        if (Joueur.GetComponent<CharacterThings>().HP == Joueur.GetComponent<CharacterThings>().MaxHP)
         {
-            Joueur.GetComponent<LifeScript>().MaxHP += 25;
+            Joueur.GetComponent<CharacterThings>().MaxHP += 25;
         }
         else
         {
-            Joueur.GetComponent<LifeScript>().HP = Joueur.GetComponent<LifeScript>().MaxHP;
+            Joueur.GetComponent<CharacterThings>().HP = Joueur.GetComponent<CharacterThings>().MaxHP;
         }
         return 1;
     }
