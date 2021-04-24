@@ -3512,7 +3512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1026286257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3890,7 +3890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e14ac71fea125fc4298b378dbd41de4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70cb23ca57f7eb44182ffd60cd58ddf8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7015,12 +7015,22 @@ PrefabInstance:
     - target: {fileID: 414632997889834137, guid: 0de025943128f334c9834cd8d15ac960,
         type: 3}
       propertyPath: m_Text
-      value: B A C K
+      value: Q U I T  G A M E
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364969595095176886, guid: 0de025943128f334c9834cd8d15ac960,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 821.0482
       objectReference: {fileID: 0}
     - target: {fileID: 3364969595095176886, guid: 0de025943128f334c9834cd8d15ac960,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 296
+      value: 142.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364969595095176886, guid: 0de025943128f334c9834cd8d15ac960,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 188
       objectReference: {fileID: 0}
     - target: {fileID: 5100921939047243827, guid: 0de025943128f334c9834cd8d15ac960,
         type: 3}
@@ -7115,7 +7125,7 @@ PrefabInstance:
     - target: {fileID: 5634318689589462433, guid: 0de025943128f334c9834cd8d15ac960,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: closeOptions
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 5634318689589462433, guid: 0de025943128f334c9834cd8d15ac960,
         type: 3}
@@ -7125,7 +7135,7 @@ PrefabInstance:
     - target: {fileID: 6640472344821069089, guid: 0de025943128f334c9834cd8d15ac960,
         type: 3}
       propertyPath: m_Name
-      value: BackB
+      value: QuitB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0de025943128f334c9834cd8d15ac960, type: 3}
