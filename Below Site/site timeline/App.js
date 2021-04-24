@@ -13,7 +13,7 @@ allboxes.forEach(box => {
         reverse: false /* ne disparait pas quand on scroll vers le haut*/
       })
         .setTween(tween)
-        .addIndicators() /*ajout des indications sur la droite*/
+        //.addIndicators() /*ajout des indications sur la droite*/
         .addTo(controller)
     }
   }

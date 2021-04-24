@@ -40,22 +40,23 @@ body{
 }
 h1{
   text-align: center;
-  padding: 240px 0;
+  padding: 100px 0;
   color: #f1f1f1; /* couleur du titre au premier plan */
 }
 .box-timeline{
   width: 100%;
-  height: 1600px;/*1500*/
+  height: 3600px;/*1500*/
   background: #f1f1f1;
   position: relative;
   padding: 80px 0 250px 0; /* haut droite  bas gauche*/
   margin-bottom: 100px; /* crée le bandeau noir en bas de la page*/
 }
 .ligne{ /*ligne de verticale la timeline*/
-  height: 1306px;/* 1000*/
+  height: 3142px;/* 1000*/
   width: 8px;
   margin: 0 auto ; /*centre */
   background: #333;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
 }
 .rond{
   width: 80px;
@@ -70,21 +71,43 @@ h1{
   justify-content: center;
   align-items: center; /* aligne les emojis au centre des ronds */
   font-size: 40px; /* 40 car la taille des emojis est de 40px*/
+  box-shadow: 0 10px 15px green/*rgba(0,0,0,0.5);*/ /* flou de 15px*/
 }
 .r1{top: 80px;
   border: 5px solid green;
   color: green;
 }/* ; place le premier rond à 80px 0= en haut de la box blanche et à la verticale*/
 .r2{top: 386px;
-border: 5px solid red;
-  color: red;}
+border: 5px solid green;
+  color: green;}
 .r3{top: 692px;
-border: 5px solid red;
-  color: red;}
+border: 5px solid green;
+  color: green;}
 .r4{top: 1000px;
-border: 5px solid red;
-  color: red;}
+border: 5px solid green;
+  color: green;}
 .r5{top: 1306px;
+  border: 5px solid green;
+  color: green;}
+.r6{top: 1612px;
+  border: 5px solid green;
+  color: green;}
+.r7{top: 1918px;
+  border: 5px solid green;
+  color: green;}
+.r8{top: 2224px;
+  border: 5px solid green;
+  color: green;}
+.r9{top: 2530px;
+  box-shadow: 0 10px 15px red;
+  border: 5px solid red;
+  color: red;}
+.r10{top: 2836px;
+  box-shadow: 0 10px 15px red;
+  border: 5px solid red;
+  color: red;}
+.r11{top: 3142px;
+  box-shadow: 0 10px 15px red;
   border: 5px solid red;
   color: red;}
 
@@ -109,19 +132,50 @@ border: 5px solid red;
   left: calc(50% - 270px);
 }
 .b2{ /* box 1*/
+  border: 3px solid green;
   top : 386px ;
   left: calc(50% + 270px);
 }
 .b3{ /* box 1*/
+  border: 3px solid green;
   top : 692px ;
   left: calc(50% - 270px);
 }
 .b4{ /* box 4*/
+  border: 3px solid green;
   top : 1000px ;
   left: calc(50% + 270px);
 }
 .b5{ /* box 5*/
+  border: 3px solid green;
   top : 1306px ;
+  left: calc(50% - 270px);
+}
+.b6{ /* box 5*/
+  border: 3px solid green;
+  top : 1606px ;
+  left: calc(50% + 270px);
+}
+.b7{ /* box 5*/
+  border: 3px solid green;
+  top : 1918px ;
+  left: calc(50% - 270px);
+}
+.b8{ /* box 5*/
+  border: 3px solid green;
+  top : 2224px ;
+  left: calc(50% + 270px);
+}
+.b9{ /* box 5*/
+  top : 2530px ;
+  left: calc(50% - 270px);
+}
+.b10{ /* box 5*/
+  top : 2836px ;
+  left: calc(50% + 270px);
+}
+.b11{ /* box 5*/
+  top : 3142px ;
   left: calc(50% - 270px);
 }
 
