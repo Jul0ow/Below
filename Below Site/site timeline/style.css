@@ -120,10 +120,11 @@ border: 5px solid green;
   height: auto;
   background: #f1f1f1;
   border: 3px solid red;
-  box-shadow: 0 10px 15px rgba(0,0,0,0.5); /* flou de 15px*/
+  /*box-shadow: 0 10px 15px rgba(0,0,0,0.5); /* flou de 15px*/
   position: absolute;
   left: 50%;
   transform: translate(-50%); /*on les place au milieu */
+  box-shadow: 0 10px 15px green;/*rgba(0,0,0,0.5);*/ /* flou de 15px*/
 
 }
 .b1{ /* box 1*/
@@ -169,14 +170,17 @@ border: 5px solid green;
 .b9{ /* box 5*/
   top : 2530px ;
   left: calc(50% - 270px);
+  box-shadow: 0 10px 15px red;
 }
 .b10{ /* box 5*/
   top : 2836px ;
   left: calc(50% + 270px);
+  box-shadow: 0 10px 15px red;
 }
 .b11{ /* box 5*/
   top : 3142px ;
   left: calc(50% - 270px);
+  box-shadow: 0 10px 15px red;
 }
 
 .box p {  /*style des paragraphes*/
