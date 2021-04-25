@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
 *, ::before, ::after{
   box-sizinf: border-box;
   margin: 0;
@@ -20,18 +21,18 @@ header li {
 }
 header li a {
   text-decoration: none;
-  font-family: 'Lobster', cursive;
+  font-family: 'Volkhov', serif;
   font-weight: bold;
   display: block;
   text-align: center;
   padding: 18px 16px;
-  color: rgba(234, 109, 109, 0.79);
+  color: rgba(234, 16, 16, 0.79);
 }
 #logo {
-  font-family: 'Lobster', cursive;
+  font-family: 'Volkhov', serif;
   font-weight: bold;
   float: left;
-  color: rgba(87, 2, 2, 0.795);
+  color: rgba(241, 26, 26, 0.79);
 } /****/
 
 

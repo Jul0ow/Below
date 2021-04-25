@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Advent+Pro|Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Volkhov', serif;
 }
 
 body {
@@ -41,15 +43,13 @@ header li {
 }
 header li a {
   text-decoration: none;
-  font-family: 'Lobster', cursive;
   font-weight: bold;
   display: block;
   text-align: center;
   padding: 18px 16px;
-  color: rgba(234, 109, 109, 0.79);
+  color: rgba(239, 22, 22, 0.79);
 }
 #logo {
-  font-family: 'Lobster', cursive;
   font-weight: bold;
   float: left;
   color: rgba(87, 2, 2, 0.795);
@@ -57,14 +57,13 @@ header li a {
 /* **************** IMAGE PRINCIPALE ************* */
 #imagePrincipale {
   padding-top: 60px;
-  background: url(media/Ecrandaccueil.png) no-repeat fixed 50% 50%;
+  background: url(media/Fond_decran.png) no-repeat fixed 50% 50%;
   background-size: cover;
   height: 799px;
 }
 h1 {
-  font-family: 'Dancing Script', cursive;
   text-align: center;
-  color: rgba(87, 2, 2, 0.795);
+  color: rgba(92, 158, 187, 0.79);
   font-size: 10em;
   margin-top: 100px;
   text-shadow: 1px 3px 2px black;
@@ -73,32 +72,37 @@ h1 {
   height: 10px;
   width: 25%;
   margin: -3px auto;
-  background-color: rgba(87, 2, 2, 0.795);
+  background-color: rgba(92, 158, 187, 0.79);
   box-shadow: 1px 3px 2px black;
 }
+p{
+  font-size: 1.8em;
+}
 h3 {
-  font-family: 'Lobster', cursive;
   text-align: center;
-  color:rgba(87, 2, 2, 0.795);
+  color:rgba(92, 158, 187, 0.79);
   font-size: 3em;
   text-shadow: 1px 3px 2px black;
 }
 /* *************** PRESENTATION ********************** */
 #presentation {
+  text-align: center;
   background-color: rgb(49, 53, 92);
   padding: 10px 0px 100px 0;
 }
+
 #texteIntro {
   padding: 0px 20%;
 }
 #prestations {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px 10%;  
 }
+
 .imagesPrestations h4 {
-  font-family: 'Dancing Script', cursive;
   text-align: center;
   font-size: 1.8em;
   margin: 15px;
@@ -120,7 +124,6 @@ h3 {
   padding: 1px 2%;
 }
 #tourisme h2 {
-  font-family: 'Dancing Script', cursive;
   padding-top: 60px;
 }
 #ocean {
