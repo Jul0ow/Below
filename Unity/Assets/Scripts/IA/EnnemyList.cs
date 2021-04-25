@@ -20,6 +20,7 @@ public class EnnemyList : MonoBehaviour
         
         EliteList.Add("QueenLice");
         EliteList.Add("Goutausorus");
+        EliteList.Add("Mauricio");
     }
 
     public string pickennemy()

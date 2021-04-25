@@ -39,7 +39,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
                 Quaternion.identity);
-            PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + monster.name, new Vector3(100, 0, 100), Quaternion.identity);
         }
     }
 }

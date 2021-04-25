@@ -21,9 +21,9 @@ public class EnnemyShot : MonoBehaviour
     {
         Setup();
     }
-    
 
-    private void Explode()
+
+    public virtual void Explode()
     {
         if (explosion != null)
         {
