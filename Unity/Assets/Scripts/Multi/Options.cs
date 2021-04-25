@@ -13,7 +13,6 @@ public class Options : MonoBehaviour
     public GameObject graphicOptions;
     public Dropdown ResolutionDropdown;
     public GameObject titleMenu;
-    public GameObject engrenages;
     public GameObject ControlsOptions;
 
 
@@ -25,7 +24,6 @@ public class Options : MonoBehaviour
     {
         titleMenu.SetActive(true);
         principalOptions.SetActive(false);
-        engrenages.SetActive(true);
     }
 
     public void returnsoundoption()

@@ -18,6 +18,12 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField]  Transform playerListContent;
     [SerializeField]  GameObject PlayerListItemPrefab;
     [SerializeField] private GameObject startgameButton;
+    public GameObject titlemenu;
+    public GameObject RoomMenu;
+    public GameObject findRoom;
+    public GameObject createRoom;
+    public GameObject error;
+    public GameObject loading;
     
 
     void Awake()
@@ -40,7 +46,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        MenuManager.Instance.OpenMenu("title");
+        titlemenu.SetActive(true);
+        loading.SetActive(false);
         Debug.Log("joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //donne un pseudo aléatoire de type "Player xxxx"
     }
@@ -54,12 +61,16 @@ public class Launcher : MonoBehaviourPunCallbacks
             return;
         }
         PhotonNetwork.CreateRoom(roomNameInputField.text);
-        MenuManager.Instance.OpenMenu("loading");
+        loading.SetActive(true);
+        loading.SetActive(true);
+        createRoom.SetActive(false);
     }
 
     public override void OnJoinedRoom()
     {
-        MenuManager.Instance.OpenMenu("room");
+        RoomMenu.SetActive(true);
+        loading.SetActive(false);
+        findRoom.SetActive(false);
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
         Player[] players = PhotonNetwork.PlayerList;
         foreach (Transform child in playerListContent)
@@ -88,23 +99,27 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short returncode, string message)
     {
         errorText.text = "Room Creation Failed: " + message;
-        MenuManager.Instance.OpenMenu("error");
+        createRoom.SetActive(false);
+        error.SetActive(true);
+        loading.SetActive(false);
     }
 
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
-        MenuManager.Instance.OpenMenu("loading");
+        loading.SetActive(true);
+        //MenuManager.Instance.OpenMenu("loading");
     }
 
     public void JoinRoom(RoomInfo info)
     {
         PhotonNetwork.JoinRoom(info.Name);
-        MenuManager.Instance.OpenMenu("loading");
+        loading.SetActive(true);
     }
     public override void OnLeftRoom()
     {
-        MenuManager.Instance.OpenMenu("title");
+        RoomMenu.SetActive(false);
+        loading.SetActive(false);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)

@@ -13,6 +13,7 @@ public class EnnemyShot : MonoBehaviour
     public bool useGravity;
     
     public float explosionRange;
+    public int damage = 1;
     
     private PhysicMaterial physics_mat;
 
@@ -20,9 +21,9 @@ public class EnnemyShot : MonoBehaviour
     {
         Setup();
     }
-    
 
-    private void Explode()
+
+    public virtual void Explode()
     {
         if (explosion != null)
         {
@@ -34,7 +35,7 @@ public class EnnemyShot : MonoBehaviour
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(10);
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage);
                 }
             }
             Invoke("Delay", 0.05f);

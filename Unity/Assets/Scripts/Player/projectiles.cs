@@ -25,7 +25,6 @@ public class projectiles : MonoBehaviour
 
     private int collisions;
     private PhysicMaterial physics_mat;
-    
     public GameObject owner;
 
 
@@ -51,6 +50,20 @@ public class projectiles : MonoBehaviour
     {
         if (explosion != null)
         {
+            int tmp = Damage;
+            if (owner.GetComponent<CharacterThings>().dard)
+            {
+                tmp = 9999;
+            }
+            if (owner.GetComponent<CharacterThings>().killer)
+            {
+                tmp *= 3;
+            }
+
+            if (owner.GetComponent<CharacterThings>().bloodLove)
+            {
+                tmp *= 2;
+            }
             GameObject currentexplosion;
             currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
@@ -58,28 +71,25 @@ public class projectiles : MonoBehaviour
             {
                 if (enemies[i].CompareTag("Ennemy"))
                 {
-                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
-                    IA.TakeDamage(Damage);
-                }
-
-                if (enemies[i].CompareTag("Player"))
-                {
-                    /*CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
-                    if(victim != enemies[i].GetComponentInParent<CharacterThings>())
-                        victim.TakeDamage(Damage);*/
-                    if (enemies[i].gameObject != owner)
+                    EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
+                    IA.TakeDamage(tmp);
+                    if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
                     {
-                        enemies[i].GetComponent<CharacterThings>().TakeDamage(Damage);
+                        owner.GetComponent<CharacterThings>().HP += 10;
                     }
-
-                    
                 }
+                if (enemies[i].CompareTag("Player"))
+                    if (enemies[i].gameObject != owner)
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(tmp);
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
-
             }
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
+            if (owner.GetComponent<CharacterThings>().dard)
+            {
+                owner.GetComponent<CharacterThings>().dard = false;
+            }
         }
     }
     
@@ -94,13 +104,11 @@ public class projectiles : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == owner)
+        if(awake)
         {
-            Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
-        }
-        else
-        {
-            Explode();
+            if (other.gameObject != owner)
+                //Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
+                Explode();
         }
     }
     

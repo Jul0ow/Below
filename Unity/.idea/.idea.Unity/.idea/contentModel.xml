@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\matthieu\matthieu epita\projet S2\Test\Below\Unity" t="IncludeRecursive">
+    <e p="C:\Users\JulOow\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\JulOow\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Unity.-2075838772.00" t="ExcludeRecursive" />
+    <e p="D:\Below\Below\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Low Poly Fruits" t="Include">
@@ -188,6 +190,9 @@
                 <e p="DoorToggle.cs" t="Include" />
               </e>
             </e>
+            <e p="GreekPack1Lite" t="Include">
+              <e p="readme.txt" t="Include" />
+            </e>
             <e p="UltimateDungeonPack" t="Include">
               <e p="Scripts" t="Include">
                 <e p="LightImprove.cs" t="Include" />
@@ -233,24 +238,47 @@
               </e>
             </e>
           </e>
+          <e p="Hovl Studio" t="Include">
+            <e p="Procedural fire" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="FireSphere.shader" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Kevin Iglesias" t="Include">
             <e p="3DCharacterDummy" t="Include">
               <e p="readme.txt" t="Include" />
             </e>
           </e>
-          <e p="particles" t="Include">
-            <e p="Assets" t="Include">
-              <e p="Shaders" t="Include">
-                <e p="GradientBackgroundShader.shader" t="Include" />
+          <e p="PhotonPrefabs" t="Include">
+            <e p="particles" t="Include">
+              <e p="Assets" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="GradientBackgroundShader.shader" t="Include" />
+                </e>
               </e>
             </e>
           </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="IA" t="Include">
+            <e p="BigCafardIA.cs" t="Include" />
+            <e p="BlobIA.cs" t="Include" />
+            <e p="BoomIA.cs" t="Include" />
             <e p="EnnemyAttack.cs" t="Include" />
             <e p="EnnemyIA.cs" t="Include" />
+            <e p="EnnemyLife.cs" t="Include" />
+            <e p="EnnemyList.cs" t="Include" />
             <e p="EnnemyShot.cs" t="Include" />
+            <e p="EnnemyShotTox.cs" t="Include" />
+            <e p="MimiqueIA.cs" t="Include" />
+            <e p="QueenLiceIA.cs" t="Include" />
+            <e p="RushIA.cs" t="Include" />
+            <e p="SummonEnnemy.cs" t="Include" />
+            <e p="TourelleIA.cs" t="Include" />
+          </e>
+          <e p="Menu" t="Include">
+            <e p="ButtonHitbox.cs" t="Include" />
           </e>
           <e p="Multi" t="Include">
             <e p="bulletDeath.cs" t="Include" />
@@ -272,6 +300,7 @@
             <e p="Classes.cs" t="Include" />
             <e p="Effect.cs" t="Include" />
             <e p="HideMenu.cs" t="Include" />
+            <e p="TestObjet.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -283,6 +312,10 @@
             <e p="NewShoot.cs" t="Include" />
             <e p="projectiles.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
+          </e>
+          <e p="Room" t="Include">
+            <e p="Lava.cs" t="Include" />
+            <e p="openingdoor.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
@@ -318,7 +351,7 @@
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
       <e p="PhotonChat.csproj" t="IncludeRecursive" />
       <e p="PhotonRealtime.csproj" t="IncludeRecursive" />
       <e p="PhotonUnityNetworking.csproj" t="IncludeRecursive" />
@@ -329,7 +362,5 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\benco\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\benco\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Unity.-368999792.00" t="ExcludeRecursive" />
   </component>
 </project>

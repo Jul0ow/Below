@@ -18,9 +18,27 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire2"))
         {
             Collider[] enemies = Physics.OverlapSphere(transform.position, range);
+            int tmp = Damage;
+            if (GetComponentInParent<CharacterThings>().dard)
+            {
+                tmp = 9999;
+            }
+            if (GetComponentInParent<CharacterThings>().killer)
+            {
+                tmp *= 3;
+            }
+
+            if (GetComponentInParent<CharacterThings>().bloodLove)
+            {
+                tmp *= 2;
+            }
             for (int i = 0; i < enemies.Length; i++)
             {
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
@@ -28,14 +46,14 @@ public class Attack : MonoBehaviour
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(power, transform.position, range);
                 if (enemies[i].CompareTag("Ennemy"))
                 {
-                    EnnemyIA IA = enemies[i].GetComponent<EnnemyIA>();
-                    IA.TakeDamage(Damage);
+                    EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
+                    IA.TakeDamage(tmp);
                 }
                 if (enemies[i].CompareTag("Player"))
                 {
                     CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
                     if(victim != enemies[i].GetComponentInParent<CharacterThings>())
-                        victim.TakeDamage(Damage);
+                        victim.TakeDamage(tmp);
                 }
             }
         }
