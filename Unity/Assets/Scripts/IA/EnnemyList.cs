@@ -30,10 +30,20 @@ public class EnnemyList : MonoBehaviour
         return MonsterList[x];
     }
     
+    public string pickennemy(int x)
+    {
+        return MonsterList[x];
+    }
+    
     public string pickelite()
     {
         System.Random random = new System.Random();
         int x = random.Next(EliteList.Count);
+        return EliteList[x];
+    }
+    
+    public string pickelite(int x)
+    {
         return EliteList[x];
     }
 

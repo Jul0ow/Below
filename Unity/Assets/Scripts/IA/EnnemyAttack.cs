@@ -20,12 +20,12 @@ public class EnnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        if(IA!=null)victim = IA.player;
+        if(IA!=null) victim = IA.player;
     }
     
     public void Shoot()
     {
-        if(victim==null)
+        if(victim==null) return;
         gameObject.transform.LookAt(victim.transform);
         Rigidbody currentbullet =
             PhotonNetwork.Instantiate("PhotonPrefabs/" + bullet.name, transform.position, Quaternion.identity).GetComponent<Rigidbody>();

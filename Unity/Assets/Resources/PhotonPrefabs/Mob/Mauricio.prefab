@@ -155,8 +155,8 @@ MonoBehaviour:
   speed: 8
   damage: 1
   alreadyAttacked: 0
-  sightRange: 150
-  attackRange: 50
+  sightRange: 20
+  attackRange: 30
   playerInSightRange: 0
   playerInAttackRange: 0
   attack: {fileID: 1244815141336760216}
