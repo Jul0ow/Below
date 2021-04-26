@@ -71,7 +71,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.07784168, y: -0.5666185, z: 0.053885467, w: 0.8185233}
+  m_LocalRotation: {x: 0.07784167, y: -0.5666185, z: 0.05388546, w: 0.81852335}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -669,7 +669,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.06294026, y: -0.567505, z: 0.043570034, w: 0.81980383}
+  m_LocalRotation: {x: 0.062940255, y: -0.567505, z: 0.043570023, w: 0.81980383}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1105,8 +1105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4233860908194137036}
-  MaxHP: 100
-  HP: 100
+  MaxHP: 2000
+  HP: 2000
   poisoned: 0
   Alive: 1
   armor: 0

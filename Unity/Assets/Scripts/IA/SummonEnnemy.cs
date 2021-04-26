@@ -8,10 +8,10 @@ using System.IO;
 public class SummonEnnemy : MonoBehaviour
 {
     public bool elite = false;
-    private static EnnemyList list;
 
     void Awake()
     {
+        EnnemyList list = new EnnemyList();
         list = GetComponent<EnnemyList>();
         list.Creat();
         if (elite)
