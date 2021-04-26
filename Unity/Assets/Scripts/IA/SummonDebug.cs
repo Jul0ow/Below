@@ -8,9 +8,12 @@ public class SummonDebug : MonoBehaviour
     public bool elite = false;
     public int x;
 
+    /*public GameObject client;*/
     // Update is called once per frame
-    void Update()
+    void Start()
     {
+        if (!PhotonNetwork.IsMasterClient)
+            Destroy(gameObject);
         EnnemyList list = new EnnemyList();
         list = GetComponent<EnnemyList>();
         list.Creat();
