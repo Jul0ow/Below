@@ -14,17 +14,18 @@ public class EnnemyAttack : MonoBehaviour
     private void Awake()
     {
         IA = GetComponentInParent<EnnemyIA>();
-        victim = IA.player;
+        if(IA!=null) victim = IA.player;
     }
 
 
     private void Update()
     {
-        victim = IA.player;
+        if(IA!=null)victim = IA.player;
     }
     
     public void Shoot()
     {
+        if(victim==null)
         gameObject.transform.LookAt(victim.transform);
         Rigidbody currentbullet =
             PhotonNetwork.Instantiate("PhotonPrefabs/" + bullet.name, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
