@@ -1,13 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 *, ::before, ::after{
   box-sizinf: border-box;
   margin: 0;
   padding: 0;
 }
+
 html{
   font-family: 'Jost',sans-serif;
 }
 /*****************/
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
 nav {
   overflow: hidden;
   background-color: rgb(0, 0, 0);/*rgb(31, 13, 48);*/
@@ -16,12 +30,13 @@ nav {
   opacity: 0.9;
 }
 header li {
+  font-family: 'Advent Pro', sans-serif;
   float: right;
-  font-size: 1.2em;
+  font-size: 1.0em;
 }
 header li a {
+  font-family: 'Advent Pro', sans-serif;
   text-decoration: none;
-  font-family: 'Volkhov', serif;
   font-weight: bold;
   display: block;
   text-align: center;
@@ -29,7 +44,7 @@ header li a {
   color: rgba(234, 16, 16, 0.79);
 }
 #logo {
-  font-family: 'Volkhov', serif;
+  font-family: 'Advent Pro', sans-serif;
   font-weight: bold;
   float: left;
   color: rgba(241, 26, 26, 0.79);
