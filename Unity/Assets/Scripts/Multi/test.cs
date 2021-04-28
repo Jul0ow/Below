@@ -14,7 +14,7 @@ public class test : MonoBehaviour
         {
             return;
         }
-        PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + mob.name, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate("PhotonPrefabs/" + mob.name, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
