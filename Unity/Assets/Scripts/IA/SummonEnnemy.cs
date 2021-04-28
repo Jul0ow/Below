@@ -11,6 +11,10 @@ public class SummonEnnemy : MonoBehaviour
 
     void Awake()
     {
+    }
+    
+    public void Summon()
+    {
         EnnemyList list = new EnnemyList();
         list = GetComponent<EnnemyList>();
         list.Creat();

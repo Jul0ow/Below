@@ -8,7 +8,7 @@ using System.IO;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
-    public GameObject monster;
+    public GameObject Summoner;
 
     void Awake()
     { //Make sure that there is only one roomManager
@@ -39,6 +39,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
                 Quaternion.identity);
+            foreach (var x in scene.GetRootGameObjects())
+                foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
+                    summoner.Summon();
         }
     }
+    
 }
