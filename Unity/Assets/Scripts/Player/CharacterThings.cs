@@ -36,7 +36,7 @@ public class CharacterThings : MonoBehaviour
     public (int, char) Room;
     private GameObject lifeBarObjetct;
     private LifeScript LifeBar;
-    private bool invulnerable;
+    public bool invulnerable;
     private float tookDamage;
     public PhotonView PV;
     private float invisibilityTime = 2f;
@@ -59,9 +59,9 @@ public class CharacterThings : MonoBehaviour
 
     }
     
+    [PunRPC]
     public void TakeDamage(int damage)
     {
-        if(!PV.IsMine) return;
         if (!invulnerable)
         {
             if (bloodLove)
@@ -84,7 +84,7 @@ public class CharacterThings : MonoBehaviour
             {
                 HP -= 1;
             }
-            if(HP<=0) Destroy(gameObject);
+            if(HP<=0) PhotonNetwork.Destroy(gameObject);
             if (basketpeg && !runningInThe90s)
             {
                 runningInThe90s = true;
@@ -99,6 +99,10 @@ public class CharacterThings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.time > tookDamage + invinciblityTime)
+        {
+            invulnerable = false;
+        }
         if(!PV.IsMine) return;
         LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
         if (HP > MaxHP) HP = MaxHP;
@@ -111,11 +115,6 @@ public class CharacterThings : MonoBehaviour
         if (HP <= 0)
         {
             Time.timeScale = 0;
-        }
-
-        if (Time.time > tookDamage + invinciblityTime)
-        {
-            invulnerable = false;
         }
 
         if (cape && Time.time > tookDamage + invisibilityTime)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class EnnemyShot : MonoBehaviour
@@ -28,7 +29,7 @@ public class EnnemyShot : MonoBehaviour
         if (explosion != null)
         {
             GameObject currentexplosion;
-            currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
+            currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {

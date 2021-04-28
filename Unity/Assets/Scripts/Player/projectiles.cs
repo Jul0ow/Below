@@ -65,7 +65,7 @@ public class projectiles : MonoBehaviour
                 tmp *= 2;
             }
             GameObject currentexplosion;
-            currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
+            currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {
@@ -80,7 +80,7 @@ public class projectiles : MonoBehaviour
                 }
                 if (enemies[i].CompareTag("Player"))
                     if (enemies[i].gameObject != owner)
-                        enemies[i].GetComponent<CharacterThings>().TakeDamage(tmp);
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp);
                 if(enemies[i].GetComponent<Rigidbody>())
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
             }
@@ -99,7 +99,7 @@ public class projectiles : MonoBehaviour
     }
     private void Delay()
     {
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
     
     private void OnTriggerEnter(Collider other)
