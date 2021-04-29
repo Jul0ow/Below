@@ -126,13 +126,13 @@ public class Classes : MonoBehaviour
         
     }
 
-    public static Dictionary<uint, Item> Common = new Dictionary<uint, Item>();
-    public static Dictionary<uint, Item> Rare = new Dictionary<uint, Item>();
-    public static Dictionary<uint, Item> Epic = new Dictionary<uint, Item>();
-    public static Dictionary<uint, Item> Relique = new Dictionary<uint, Item>();
+    public static Dictionary<int, Item> Common = new Dictionary<int, Item>();
+    public static Dictionary<int, Item> Rare = new Dictionary<int, Item>();
+    public static Dictionary<int, Item> Epic = new Dictionary<int, Item>();
+    public static Dictionary<int, Item> Relique = new Dictionary<int, Item>();
 
     
-    public static Dictionary<uint, Item>[] AllItem = {Common,Rare,Epic,Relique}; //0: common | 1: rare | 2: epic | 3: relique 
+    public static Dictionary<int, Item>[] AllItem = {Common,Rare,Epic,Relique}; //0: common | 1: rare | 2: epic | 3: relique 
     
     void Awake()
     {

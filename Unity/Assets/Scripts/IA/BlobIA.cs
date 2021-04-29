@@ -92,8 +92,8 @@ public class BlobIA : EnnemyIA
             GameObject blob2 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
             blob1.GetComponent<BlobIA>().lifes = lifes-0.5f;
             blob2.GetComponent<BlobIA>().lifes = lifes-0.5f;
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
 }
