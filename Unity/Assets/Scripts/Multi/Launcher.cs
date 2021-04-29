@@ -35,6 +35,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connecting To Master");
         PhotonNetwork.ConnectUsingSettings();
+        titlemenu.SetActive(true);
+        loading.SetActive(false);
     }
 
     public override void OnConnectedToMaster()
@@ -46,8 +48,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        titlemenu.SetActive(true);
-        loading.SetActive(false);
+       
         Debug.Log("joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //donne un pseudo aléatoire de type "Player xxxx"
     }
@@ -108,6 +109,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LeaveRoom();
         loading.SetActive(true);
+        titlemenu.SetActive(true);
+        loading.SetActive(false);
         //MenuManager.Instance.OpenMenu("loading");
     }
 
