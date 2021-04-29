@@ -94,7 +94,7 @@ public class BoomIA : RushIA
             {
                 enemies[i].GetComponent<CharacterThings>().TakeDamage(damage);
             }
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }

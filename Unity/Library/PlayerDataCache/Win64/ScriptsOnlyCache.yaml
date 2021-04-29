@@ -62,8 +62,6 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachineVirtualCamera
     - CinemachineCameraOffset
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonTransformViewEditor
-    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -82,6 +80,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -320,11 +326,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13842}
     - Class: 114
-      Script: {instanceID: 23210}
+      Script: {instanceID: 129316}
     - Class: 114
-      Script: {instanceID: 23214}
+      Script: {instanceID: 129320}
     - Class: 114
-      Script: {instanceID: 23704}
+      Script: {instanceID: 129740}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -642,7 +648,7 @@ ScriptsOnlyBuild:
     className: PunTeams
   - hash:
       serializedVersion: 2
-      Hash: 408c594803926f6e05d6f3331b4b36ef
+      Hash: 6518e7a377c53b22a779b12f725235d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MimiqueIA
@@ -1632,7 +1638,7 @@ ScriptsOnlyBuild:
     className: CinemachineVolumeSettings
   - hash:
       serializedVersion: 2
-      Hash: 2045a5a4aca7673db713383fcf3e8ea2
+      Hash: 02a01be94fd640ac677fb0e72c2abea7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DebugChest
@@ -1878,7 +1884,7 @@ ScriptsOnlyBuild:
     className: PlayerNumbering
   - hash:
       serializedVersion: 2
-      Hash: 335d04e37007465d07013fad5f29f702
+      Hash: 6167c258758ef17968ae3749d150b771
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Chest

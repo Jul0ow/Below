@@ -7,25 +7,29 @@ public class Chest : MonoBehaviour
 {
     private bool Opened = false;
     public int Rarity;
-    public uint ItemReference;
+    public int ItemReference;
     public MeshRenderer OpenedChest;
     public MeshRenderer ClosedChest;
     public MeshRenderer ClosedChestTop;
     public Light light;
     public Classes.Item content;
     public GameObject mimique;
+    private Animator anim;
     
     void Start()
     {
-        int RarityGenerator = Random.Range(1, 100);
-        if (RarityGenerator <= 49) Rarity = 0;
-            else if (RarityGenerator <= 88) Rarity = 1;
-                    else if (RarityGenerator <= 99) Rarity = 2;
-                            else Rarity = 3;
-        
-        ItemReference = (uint) Random.Range(0, Classes.AllItem[Rarity].Count);
+        anim = GetComponent<Animator>();
+        //GetComponent<PhotonView>().RPC("Start_chest", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void Start_chest(int rar, int refer)
+    {
+        Rarity = rar;
+        ItemReference = refer;
         content = Classes.AllItem[Rarity][ItemReference];
     }
+    
 
     [PunRPC]
     void OpeningChest(int view)
@@ -38,18 +42,11 @@ public class Chest : MonoBehaviour
             if (player.GetComponent<CharacterThings>().luck != 0 && Rarity < 3)
             {
                 Rarity += 1;
-                ItemReference = (uint) Random.Range(0, Classes.AllItem[Rarity].Count);
+                ItemReference = (int) Random.Range(0, Classes.AllItem[Rarity].Count);
                 content = Classes.AllItem[Rarity][ItemReference];
             }
-                    
-            content.Joueur = player.gameObject;
+            content.Joueur = player;
             content.AppliedEffect();
-            player.GetComponent<CharacterThings>().Inventory.Add(content);
-            HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
-            OpenedChest.enabled = false;
-            ClosedChest.enabled = true;
-            ClosedChestTop.enabled = true;
-            light.enabled = true;
         }
         else
         {
@@ -70,7 +67,12 @@ public class Chest : MonoBehaviour
             Collider[] getters = Physics.OverlapSphere(transform.position, 5);
             for (int i = 0; i < getters.Length; i++)
                 if (getters[i].GetComponent<CharacterThings>() && Input.GetKeyDown("e"))
+                {
+                    anim.SetBool("IsOpened",true);
                     GetComponent<PhotonView>().RPC("OpeningChest", RpcTarget.All, getters[i].GetComponent<PhotonView>().ViewID);
+                    HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
+                    getters[i].GetComponent<CharacterThings>().Inventory.Add(content);
+                }
         }
     }
 }

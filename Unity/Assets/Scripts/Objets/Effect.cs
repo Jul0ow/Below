@@ -34,7 +34,7 @@ public class Effect : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Classes.Item content;
-            uint ItemReference = (uint) Random.Range(0, Classes.AllItem[i].Count);
+            int ItemReference = Random.Range(0, Classes.AllItem[i].Count);
             content = Classes.AllItem[i][ItemReference];
             if (content is Classes.passive)
             {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class MimiqueIA : EnnemyIA
@@ -7,7 +8,7 @@ public class MimiqueIA : EnnemyIA
     public Classes.Item content;
     public GameObject Getter;
     public int Rarity;
-    public uint ItemReference;
+    public int ItemReference;
     
     protected override void Update()
     {
@@ -52,6 +53,6 @@ public class MimiqueIA : EnnemyIA
             Getter.GetComponent<CharacterThings>().Inventory.Add(content);
             HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
         }
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

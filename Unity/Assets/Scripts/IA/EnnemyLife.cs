@@ -24,6 +24,6 @@ public class EnnemyLife : MonoBehaviour
         if(IA.IsElite) PhotonNetwork.Instantiate("PhotonPrefabs/Chest", transform.position, Quaternion.identity);
         if(IA is BlobIA ia) ia.Deathrattle();
         else if(IA is MimiqueIA ia2) ia2.Deathrattle();
-        else Destroy(gameObject);
+        else PhotonNetwork.Destroy(gameObject);
     }
 }
