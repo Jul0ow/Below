@@ -40,7 +40,7 @@ public class Effect : MonoBehaviour
             {
                 content.Joueur = Joueur;
                 content.AppliedEffect();
-                Joueur.GetComponent<CharacterThings>().Inventory.Add(content);
+                //Joueur.GetComponent<CharacterThings>().Inventory.Add(content);
             }
             else
             {

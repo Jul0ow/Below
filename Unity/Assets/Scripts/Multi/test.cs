@@ -23,7 +23,7 @@ public class test : MonoBehaviour
         else rarity = 3;
         
         refer = Random.Range(0, Classes.AllItem[rarity].Count);
-        chest1.GetComponent<PhotonView>().RPC("Start_chest", RpcTarget.All,rarity, refer);
+        chest1.GetComponent<PhotonView>().RPC("Start_chest", RpcTarget.All,3, 0);
     }
 
     // Update is called once per frame

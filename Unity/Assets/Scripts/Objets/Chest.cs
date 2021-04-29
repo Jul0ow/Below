@@ -36,6 +36,7 @@ public class Chest : MonoBehaviour
     {
         GameObject player = PhotonView.Find(view).gameObject;
         Opened = true;
+        anim.SetBool("IsOpened",true);
         int IsMimique = Random.Range(1, 100);
         if(IsMimique > 6)
         {
@@ -68,7 +69,6 @@ public class Chest : MonoBehaviour
             for (int i = 0; i < getters.Length; i++)
                 if (getters[i].GetComponent<CharacterThings>() && Input.GetKeyDown("e"))
                 {
-                    anim.SetBool("IsOpened",true);
                     GetComponent<PhotonView>().RPC("OpeningChest", RpcTarget.All, getters[i].GetComponent<PhotonView>().ViewID);
                     HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
                     getters[i].GetComponent<CharacterThings>().Inventory.Add(content);

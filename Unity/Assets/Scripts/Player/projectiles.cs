@@ -99,7 +99,7 @@ public class projectiles : MonoBehaviour
     }
     private void Delay()
     {
-        PhotonNetwork.Destroy(gameObject);
+        Destroy(gameObject);
     }
     
     private void OnTriggerEnter(Collider other)
