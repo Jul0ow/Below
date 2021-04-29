@@ -6,12 +6,13 @@ using System.IO;
 public class PlayerManager : MonoBehaviour
 {
     private PhotonView PV;
-
+    private Vector3 pos;
+    
     void Awake()
     {
         PV = GetComponent<PhotonView>();
+        pos = GetComponent<Transform>().position;
     }
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,9 @@ public class PlayerManager : MonoBehaviour
 
     void CreateController()
     { 
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "MaleDummy"), Vector3.zero, Quaternion.identity); //vector3 => position spawn
+        //Debug.Log(pos);
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "MaleDummy"), pos , Quaternion.identity);
+        
         //Instantiate our player controller
     }
 }
