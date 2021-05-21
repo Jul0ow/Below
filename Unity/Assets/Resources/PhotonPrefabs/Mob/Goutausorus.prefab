@@ -162,7 +162,6 @@ MonoBehaviour:
   playerInAttackRange: 0
   attack: {fileID: 0}
   lifes: 3.1
-  death: {fileID: 4985937889247518747}
 --- !u!82 &4985937889247518747
 AudioSource:
   m_ObjectHideFlags: 0
@@ -176,7 +175,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 70786e1d93ecbc44786f7ba9643e728d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.504
   m_Pitch: 1
   Loop: 0
   Mute: 0
