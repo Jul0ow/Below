@@ -8,6 +8,9 @@ public class Attack : MonoBehaviour
     public int Damage;
     public float power;
     public Animator animator;
+    public float nextHit;
+    public float attackRate = 0.4f;
+    public AudioSource woosh;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +25,11 @@ public class Attack : MonoBehaviour
         {
             return;
         }
-        if (Input.GetButtonDown("Fire2"))
+        
+        if (Time.time > nextHit && Input.GetButtonDown("Fire2"))
         {
+            woosh.Play();
+            nextHit = Time.time + attackRate;
             Collider[] enemies = Physics.OverlapSphere(transform.position, range);
             int tmp = Damage;
             if (GetComponentInParent<CharacterThings>().dard)

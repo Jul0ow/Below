@@ -16,6 +16,7 @@ public class NewShoot : MonoBehaviour
     public Camera cam;
     public Transform attackpoint;
     private PhotonView PV;
+    public AudioSource fireballSound;
 
 
 
@@ -52,7 +53,7 @@ public class NewShoot : MonoBehaviour
                 Rigidbody body = bullet.GetComponent<Rigidbody>();
                 shootFrom.transform.forward = directionWithoutSpread;
                 body.AddForce(shootFrom.transform.forward * coeffForce);
-                GetComponent<AudioSource>().Play();
+                fireballSound.Play();
             }
         }
     }

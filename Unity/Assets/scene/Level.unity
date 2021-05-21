@@ -1145,6 +1145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforOpeningThedoor: 50
+  sound: {fileID: 0}
 --- !u!114 &455459950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,6 +1868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforOpeningThedoor: 50
+  sound: {fileID: 0}
 --- !u!1 &590165014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6667736788719375106, guid: c57cc0265a51c4443820f60ddb2c7bd6,
@@ -6757,6 +6759,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 275984769142498172, guid: f5e4cf5af47ee60418f92554c028a4ce,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 107.01639
+      objectReference: {fileID: 0}
     - target: {fileID: 6322556187633127282, guid: f5e4cf5af47ee60418f92554c028a4ce,
         type: 3}
       propertyPath: m_RootOrder

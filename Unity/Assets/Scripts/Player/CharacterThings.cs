@@ -41,6 +41,7 @@ public class CharacterThings : MonoBehaviour
     public PhotonView PV;
     private float invisibilityTime = 2f;
     private float invinciblityTime = 0.25f;
+    public AudioSource hurt;
     
     
     void Awake()
@@ -64,6 +65,7 @@ public class CharacterThings : MonoBehaviour
     {
         if (!invulnerable)
         {
+            hurt.Play();
             if (bloodLove)
             {
                 damage *= 2;

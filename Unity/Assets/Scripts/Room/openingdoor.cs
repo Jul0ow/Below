@@ -9,6 +9,7 @@ public class openingdoor : MonoBehaviour
     public float timeBeforOpeningThedoor;
     private float startTime;
     private Animator animator;
+    public AudioSource sound;
 
     private bool opened;
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class openingdoor : MonoBehaviour
         {
             if (Time.time >= startTime + timeBeforOpeningThedoor)
             {
+                sound.Play();
                 //PhotonNetwork.Destroy(theDoor);
                 animator.SetBool("open",true);
                 opened = true;

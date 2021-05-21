@@ -10,6 +10,7 @@ public class EnnemyAttack : MonoBehaviour
     public int shootForce;
     private EnnemyIA IA;
     public int damage;
+    public AudioSource fireball;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class EnnemyAttack : MonoBehaviour
     public void Shoot()
     {
         if(victim==null) return;
+        fireball.Play();
         gameObject.transform.LookAt(victim.transform);
         Rigidbody currentbullet =
             PhotonNetwork.Instantiate("PhotonPrefabs/" + bullet.name, transform.position, Quaternion.identity).GetComponent<Rigidbody>();

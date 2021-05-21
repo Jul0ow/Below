@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5666642740888264234}
   - component: {fileID: -4552605821014291051}
   - component: {fileID: 5259220845003062184}
-  - component: {fileID: -5851057441847196720}
+  - component: {fileID: 4985937889247518747}
   m_Layer: 11
   m_Name: Goutausorus
   m_TagString: Ennemy
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IA: {fileID: 5259220845003062184}
   Health: 800
+  death: {fileID: 4985937889247518747}
 --- !u!114 &5259220845003062184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,8 @@ MonoBehaviour:
   playerInAttackRange: 0
   attack: {fileID: 0}
   lifes: 3.1
---- !u!82 &-5851057441847196720
+  death: {fileID: 4985937889247518747}
+--- !u!82 &4985937889247518747
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +174,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3212006092240202757, guid: 2376c55b0b77de94487f2b9a3413ce32,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 98056c9dd94fcdb4f9641bc594d5f8b3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70786e1d93ecbc44786f7ba9643e728d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -183,9 +185,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 25
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -218,7 +220,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

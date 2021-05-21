@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IA: {fileID: 3815379548353459997}
   Health: 750
+  death: {fileID: -8031000337752765942}
 --- !u!114 &3815379548353459997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 98056c9dd94fcdb4f9641bc594d5f8b3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: -0.13
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -184,9 +185,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 25
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -219,7 +220,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -305,6 +306,7 @@ MonoBehaviour:
   bullet: {fileID: 3092848859993577290, guid: 1909c227320f0f742abd4f7e20212666, type: 3}
   shootForce: 15
   damage: 0
+  fireball: {fileID: 0}
 --- !u!1 &7646771007842219929
 GameObject:
   m_ObjectHideFlags: 0

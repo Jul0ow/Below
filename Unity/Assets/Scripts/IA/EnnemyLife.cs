@@ -7,13 +7,14 @@ public class EnnemyLife : MonoBehaviour
 {
     public EnnemyIA IA;
     public int Health;
+    public AudioSource death;
     
     public virtual void TakeDamage(int damage)
     {
         Health -= damage;
         if (Health <= 0)
         {
-            GetComponent<AudioSource>().Play();
+            death.Play();
             DestroyEnemy();
         }
     }
