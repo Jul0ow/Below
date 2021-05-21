@@ -12,6 +12,8 @@ public class Locomotion : MonoBehaviour
     Movement movement;
     Jump jump;
     private PhotonView PV;
+    public float nextHit;
+    public float attackRate = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +54,11 @@ public class Locomotion : MonoBehaviour
         animator.SetBool("Grounded", jump.IsGrounded);
         animator.SetBool("Falling", jump.Falling);
         animator.SetBool("Jumping", jump.jumping);
-        if (Input.GetButton("Fire2"))
+        if (Time.time > nextHit && Input.GetButton("Fire2"))
+        {
+            nextHit = Time.time + attackRate;
             animator.SetBool("Attacking", true);
+        }
         else
             animator.SetBool("Attacking", false);
     }

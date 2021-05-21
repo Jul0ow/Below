@@ -6,15 +6,15 @@ using UnityEngine;
 public class EnnemyLife : MonoBehaviour
 {
     public EnnemyIA IA;
-    public AudioClip death;
     public int Health;
+    public AudioSource death;
     
     public virtual void TakeDamage(int damage)
     {
         Health -= damage;
         if (Health <= 0)
         {
-            AudioSource.PlayClipAtPoint(death, GetComponent<Transform>().position);
+            death.Play();
             DestroyEnemy();
         }
     }
