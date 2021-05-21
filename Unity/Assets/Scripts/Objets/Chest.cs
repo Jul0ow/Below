@@ -37,6 +37,7 @@ public class Chest : MonoBehaviour
         GameObject player = PhotonView.Find(view).gameObject;
         Opened = true;
         anim.SetBool("IsOpened",true);
+        GetComponent<AudioSource>().Play();
         int IsMimique = Random.Range(1, 100);
         if(IsMimique > 6)
         {

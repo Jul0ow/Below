@@ -75,6 +75,14 @@ public class OptionsEnJeu : MonoBehaviour
     {
         master.SetFloat("Master", volume);
     }
+    public void SetMusic(float volume)
+    {
+        master.SetFloat("Music", volume);
+    }
+    public void SetEffect(float volume)
+    {
+        master.SetFloat("Effect", volume);
+    }
 
     public void SetFullscreen(bool isFullscreen)
     {

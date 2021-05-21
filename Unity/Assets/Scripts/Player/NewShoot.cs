@@ -52,6 +52,7 @@ public class NewShoot : MonoBehaviour
                 Rigidbody body = bullet.GetComponent<Rigidbody>();
                 shootFrom.transform.forward = directionWithoutSpread;
                 body.AddForce(shootFrom.transform.forward * coeffForce);
+                GetComponent<AudioSource>().Play();
             }
         }
     }
