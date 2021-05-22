@@ -26,6 +26,13 @@ public class Movement : MonoBehaviour
         PV = GetComponent<PhotonView>();
 
     }
+
+    public void setToDeathPosition(Vector3 deathPosition)
+    {
+        controller.Move(deathPosition);
+    }
+    
+    
     // Update is called once per frame
     void Update()
     {

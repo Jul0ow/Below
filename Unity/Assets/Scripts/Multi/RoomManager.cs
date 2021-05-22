@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
     public GameObject Summoner;
-    private enum Team
+    public enum Team
     {
         Red,
         Blue,

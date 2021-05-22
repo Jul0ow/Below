@@ -41,11 +41,27 @@ public class CharacterThings : MonoBehaviour
     public PhotonView PV;
     private float invisibilityTime = 2f;
     private float invinciblityTime = 0.25f;
+    //for death
+    
+    public float deathTime;
+    private float timeofDeath;
+    private RoomManager.Team myTeam;
+    private Vector3 myspawn;
+    
     
     
     void Awake()
     {
         PV = GetComponent<PhotonView>();
+        myspawn= GetComponent<Transform>().position;
+        if (myspawn.x == -13.10f && myspawn.y == 0.16f && myspawn.z ==-1027f) //set the team by looking of the first spawn position
+        {
+            myTeam = RoomManager.Team.Blue;
+        }
+        else
+        {
+            myTeam = RoomManager.Team.Red;
+        }
         if(!PV.IsMine) return;
         LifeBarFab = GameObject.Find("Health");
         HealthRef = GameObject.Find("HealthRef");
@@ -84,7 +100,7 @@ public class CharacterThings : MonoBehaviour
             {
                 HP -= 1;
             }
-            if(HP<=0) Destroy(gameObject);
+            //if(HP<=0) Destroy(gameObject);
             if (basketpeg && !runningInThe90s)
             {
                 runningInThe90s = true;
@@ -108,9 +124,30 @@ public class CharacterThings : MonoBehaviour
             LifeBar.HP = 0;
         }
         LifeBar.HP = HP;
-        if (HP <= 0)
+       if (!Alive)
         {
-            Time.timeScale = 0;
+            if (!isdead())
+            {
+                //Debug.Log("end death");
+                transform.position = myspawn;
+                deathTime *= 1.15f; //increase by 15% the death time
+                Alive = true;
+                HP = MaxHP;
+            }  
+        }
+        if (HP <= 0 && Alive)
+        {
+            //Time.timeScale = 0;
+            timeofDeath = Time.time;
+            Alive = false;
+            if (myTeam == RoomManager.Team.Red)
+                transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
+            else
+            {
+                transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
+            }
+            //Debug.Log(player.transform.position);
+            
         }
 
         if (Time.time > tookDamage + invinciblityTime)
@@ -148,5 +185,11 @@ public class CharacterThings : MonoBehaviour
         int rnd = Random.Range(0, 6);
         if (rnd == 2) tox = false;
         yield return new WaitForSeconds(1);
+    }
+
+    private bool isdead()
+    {
+        //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
+        return Time.time < deathTime + timeofDeath;
     }
 }
