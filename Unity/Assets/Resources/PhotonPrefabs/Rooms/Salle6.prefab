@@ -3698,6 +3698,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ground (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 6400824753212838285, guid: e702a1f658f10f740bd2ea378d86dcba,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e702a1f658f10f740bd2ea378d86dcba, type: 3}
 --- !u!4 &5694678668613948152 stripped
@@ -3872,6 +3877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ground (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400824753212838285, guid: e702a1f658f10f740bd2ea378d86dcba,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e702a1f658f10f740bd2ea378d86dcba, type: 3}
