@@ -103,7 +103,6 @@ public class CharacterThings : MonoBehaviour
                 HP -= 1;
             }
             //if(HP<=0) Destroy(gameObject);
-            if(HP<=0) PhotonNetwork.Destroy(gameObject);
             if (basketpeg && !runningInThe90s)
             {
                 runningInThe90s = true;
