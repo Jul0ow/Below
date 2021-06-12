@@ -9,7 +9,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
     public GameObject Summoner;
+    public enum Team
+    {
+        Red,
+        Blue,
+    }
 
+    private Team myTeam;
     void Awake()
     { //Make sure that there is only one roomManager
         if (Instance) //check if another RoomManager exists
@@ -19,6 +25,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
         DontDestroyOnLoad(gameObject);
         Instance = this;
+    }
+
+    public void ChooseRed()
+    {
+        myTeam = Team.Red;
+    }
+
+    public void ChooseBlue()
+    {
+        myTeam = Team.Blue;
     }
 
     public override void OnEnable()
@@ -37,8 +53,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if (scene.buildIndex == 1) // we are in game scene (because scene game ==1)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
-                Quaternion.identity);
+            if (myTeam == Team.Blue)
+            {
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), new Vector3(-13.10f,0.16f,-1027),
+                    Quaternion.identity);
+            }
+            else
+            {
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
+                    Quaternion.identity); 
+            }
             foreach (var x in scene.GetRootGameObjects())
                 foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
                     summoner.Summon();
