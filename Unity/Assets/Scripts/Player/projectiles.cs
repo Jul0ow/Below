@@ -101,19 +101,53 @@ public class projectiles : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (owner.GetComponent<NewShoot>().Infini)
+        {
+            float speed = rb.velocity.magnitude;
+            Vector3 direction = Vector3.Reflect(rb.velocity.normalized, other.contacts[0].normal);
+
+            rb.velocity = direction * Mathf.Max(speed, 0f);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(awake)
         {
             if (other.gameObject != owner)
+            {
+                if (owner.GetComponent<NewShoot>().Infini)
+                {
+                    if (other.TryGetComponent(typeof(CharacterThings), out _))
+                    {
+                        Explode();
+                    }
+                    else
+                    {
+                        float speed = rb.velocity.magnitude;
+                        Vector3 direction = Vector3.Reflect(rb.velocity.normalized, transform.position - other.ClosestPoint(transform.position));
+
+                        rb.velocity = direction * Mathf.Max(speed, 0f);
+                    }
+                    
+                    
+                }
                 //Physics.IgnoreCollision(other, GetComponent<Collider>(), true);
-                Explode();
+                else
+                    Explode();
+            }
         }
     }
     
     private void Setup()
     {
+        if (owner.GetComponent<NewShoot>().Infini)
+        {
+            bouciness = 1;
+        }
         physics_mat = new PhysicMaterial();
         physics_mat.bounciness = bouciness;
         physics_mat.frictionCombine = PhysicMaterialCombine.Minimum;

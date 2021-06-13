@@ -27,6 +27,14 @@ public class Classes : MonoBehaviour
     public Sprite Maille;
     public Sprite Poulet;
     public Sprite Vampire;
+    public Sprite pilule;
+    public Sprite snipe;
+    public Sprite LaitSoj;
+    public Sprite Pyro;
+    public Sprite Arcanes;
+    public Sprite poing;
+    public Sprite Infi;
+    public Sprite Snipe;
 
 
 
@@ -143,6 +151,7 @@ public class Classes : MonoBehaviour
         AllItem[0].Add(4,Item.CreateItem("Chaussures en savon", "Si je t'attrape toi...",CommonImage, savon,Effect.savon,  true,  false));
         AllItem[0].Add(5,Item.CreateItem("Poulet rôti", "Saura séduire chauves-souris, gorgones, momies et vampires",CommonImage, Poulet, Effect.poulet,true,  false));
         AllItem[0].Add(6,Item.CreateItem("Plume de vent",  "Vous vouliez une plume de Phœnix ? Dommage",CommonImage, plume, Effect.plume,true, false));
+        AllItem[0].Add(7, Item.CreateItem("Infinité","Il n'y a que de choses infinies, l'univers et mes balles !", CommonImage, Infi,Effect.Infinity, true, false));
 
 
         AllItem[1].Add(0,Item.CreateItem("Amour du Sang",   "Le sang, tu l'aimes ou tu le quittes",RareImage, bloodLove,Effect.BloodLove,  true,  false));

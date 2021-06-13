@@ -17,6 +17,7 @@ public class NewShoot : MonoBehaviour
     public Transform attackpoint;
     private PhotonView PV;
     public AudioSource fireballSound;
+    public bool Infini;
 
 
 

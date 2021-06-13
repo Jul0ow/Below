@@ -1351,10 +1351,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3576280361886078584}
     m_Modifications:
+    - target: {fileID: 97644043711329834, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 238148980031062362, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492204918555140385, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1468769881015690269, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767098471406068837, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980983041952539892, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118466606585351857, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2235439403794504788, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
@@ -1386,6 +1416,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 13.3282
       objectReference: {fileID: 0}
+    - target: {fileID: 2434061941182255138, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2470636498830477441, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1395,6 +1430,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -11.940011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745815191142424208, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141422150960027119, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289947370914202946, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486291864356305247, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495745873905224202, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569988581093658193, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4273742583459423116, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
@@ -1410,6 +1475,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 15.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365849115224688543, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939448773730470126, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5063639903005922396, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
@@ -1526,10 +1601,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: salle7
       objectReference: {fileID: 0}
+    - target: {fileID: 6465100068824902937, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022919248722713360, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317733636295226813, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7329837730856375661, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -5.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513809154002219156, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7945021618154267141, guid: 39e91ef17300d424eb8c6642e690545f,
         type: 3}
@@ -1540,6 +1635,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508812093555305513, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551724491969984456, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669153939021847546, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838307496157330928, guid: 39e91ef17300d424eb8c6642e690545f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39e91ef17300d424eb8c6642e690545f, type: 3}
