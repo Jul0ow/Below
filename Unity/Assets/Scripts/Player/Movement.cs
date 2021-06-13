@@ -40,7 +40,11 @@ public class Movement : MonoBehaviour
             return;
         if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
                 return;
-        
+        var CharacterRotation = cam.transform.rotation;
+                 CharacterRotation.x = 0;
+                 CharacterRotation.z = 0;
+                 transform.rotation = CharacterRotation;
+         
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {
             freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
