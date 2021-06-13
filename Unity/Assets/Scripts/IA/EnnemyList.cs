@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
@@ -6,12 +7,17 @@ using static System.Random;
 
 public class EnnemyList : MonoBehaviour
 {
-    private List<string> MonsterList = new List<string>();
+    
+    List<string> MonsterList;
 
-    private List<string> EliteList = new List<string>();
+    List<string> EliteList;
+    
 
     public void Creat()
     {
+        MonsterList = new List<string>();
+        EliteList = new List<string>();
+        
         MonsterList.Add("Lice");
         MonsterList.Add("Buried Lice");
         MonsterList.Add("Splitter");

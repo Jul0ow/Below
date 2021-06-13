@@ -15,7 +15,7 @@ public class SummonEnnemy : MonoBehaviour
     
     public void Summon()
     {
-        EnnemyList list = new EnnemyList();
+        EnnemyList list = gameObject.AddComponent<EnnemyList>();
         list = GetComponent<EnnemyList>();
         list.Creat();
         if (elite)

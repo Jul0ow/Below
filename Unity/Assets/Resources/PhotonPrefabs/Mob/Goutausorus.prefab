@@ -161,6 +161,9 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   attack: {fileID: 0}
+  blockedTime: 0
+  blockedPosition: {x: 0, y: 0, z: 0}
+  blocked: 0
   lifes: 3.1
 --- !u!82 &4985937889247518747
 AudioSource:
