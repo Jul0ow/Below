@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class EnnemyIA : MonoBehaviour
@@ -23,6 +24,9 @@ public class EnnemyIA : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
     public (int,char) Room;
     public EnnemyAttack attack;
+    public float blockedTime;
+    public Vector3 blockedPosition;
+    public bool blocked = false;
 
 
     protected virtual void Awake()
@@ -46,17 +50,36 @@ public class EnnemyIA : MonoBehaviour
         agent.speed = speed;
         playerInSightRange = !player.GetComponentInParent<CharacterThings>().ring && Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = !player.GetComponentInParent<CharacterThings>().ring && Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
-        if(!playerInSightRange && !playerInAttackRange) Patroling();
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
-        if(playerInAttackRange && playerInSightRange) Attackplayer();
+        else if(playerInAttackRange && playerInSightRange) Attackplayer();
+        else Patroling();
     }
 
 
     protected virtual void Patroling()
     {
         if (!walkpointSet) SearchWalkpoint();
-        if(walkpointSet)
+        if (walkpointSet)
+        {
             agent.SetDestination(walkpoint);
+            if (!blocked)
+            {
+                blocked = true;
+                blockedTime = Time.time;
+                blockedPosition = transform.position;
+            }
+            
+        }
+
+        if (blocked && blockedTime+3 <= Time.time)
+        {
+            if (blockedPosition == transform.position)
+            {
+                walkpointSet = false;
+            }
+            blocked = false;
+        }
+        
 
         Vector3 distanceToWalkpoint = transform.position - walkpoint;
         if (distanceToWalkpoint.magnitude < 1f)
@@ -68,8 +91,7 @@ public class EnnemyIA : MonoBehaviour
         float randomZ = Random.Range(-walkpointrange, walkpointrange);
         float randomX = Random.Range(-walkpointrange, walkpointrange);
         walkpoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-        if (Physics.Raycast(walkpoint, -transform.up, 2f, whatIsGround))
-            walkpointSet = true;
+        walkpointSet = true;
     }
 
     protected virtual void Chaseplayer()

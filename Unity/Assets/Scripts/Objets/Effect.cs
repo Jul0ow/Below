@@ -136,4 +136,10 @@ public class Effect : MonoBehaviour
         return 1;
     }
 
+    public static int Infinity(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().Infini = true;
+        return 1;
+    }
+
 }

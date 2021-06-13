@@ -29,9 +29,9 @@ public class BoomIA : RushIA
         agent.speed = speed;
         playerInSightRange = !player.GetComponentInParent<CharacterThings>().ring && Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = !player.GetComponentInParent<CharacterThings>().ring && Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
-        if(!playerInSightRange && !playerInAttackRange) Patroling();
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
-        if(playerInAttackRange && playerInSightRange) Attackplayer();
+        else if(playerInAttackRange && playerInSightRange) Attackplayer();
+        else Patroling();
     }
 
     protected override void SearchWalkpoint()
@@ -39,7 +39,7 @@ public class BoomIA : RushIA
         float randomZ = Random.Range(-walkpointrange, walkpointrange);
         float randomX = Random.Range(-walkpointrange, walkpointrange);
         walkpoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-        if (Physics.Raycast(walkpoint, -transform.up, 2f, whatIsGround))
+        //if (Physics.Raycast(walkpoint, -transform.up, 2f, whatIsGround))
             walkpointSet = true;
     }
 
