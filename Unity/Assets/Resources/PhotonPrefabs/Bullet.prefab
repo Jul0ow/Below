@@ -108,14 +108,16 @@ MonoBehaviour:
   rb: {fileID: 1742921456624939136}
   explosion: {fileID: 6496343108181880183, guid: 51969b3f0ab3020418c424cd09c5cd6d,
     type: 3}
+  bulletprefab: {fileID: 1742921456624939142}
   bouciness: 0
   useGravity: 0
-  Damage: 100
+  Damage: 70
   explosionRange: 5
   explosionForce: 30
   maxCollisions: 0
   maxLifeTime: 1000
   owner: {fileID: 0}
+  isSplit: 0
 --- !u!114 &8736138535951152483
 MonoBehaviour:
   m_ObjectHideFlags: 0

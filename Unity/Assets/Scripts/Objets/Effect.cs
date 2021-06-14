@@ -142,4 +142,34 @@ public class Effect : MonoBehaviour
         return 1;
     }
 
+    public static int Snipe(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().Snipe = true;
+        return 1;
+    }
+
+    public static int Point(GameObject Joueur)
+    {
+        Joueur.GetComponentInChildren<Attack>().Damage += 40;
+        return 1;
+    }
+
+    public static int Pyro(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().Pyro = true;
+        return 1;
+    }
+
+    public static int Arcanes(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().Arcanes = true;
+        return 1;
+    }
+
+    public static int Prot(GameObject Joueur)
+    {
+        Joueur.GetComponentInChildren<Attack>().Prot = true;
+        return 1;
+    }
+
 }

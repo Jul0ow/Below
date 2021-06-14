@@ -73,7 +73,7 @@ public class EnnemyIA : MonoBehaviour
 
         if (blocked && blockedTime+3 <= Time.time)
         {
-            if (blockedPosition == transform.position)
+            if (transform.position.x <= blockedPosition.x+1 && transform.position.x >= blockedPosition.x-1 && transform.position.y <= blockedPosition.y+1 && transform.position.y >= blockedPosition.y-1 && transform.position.z <= blockedPosition.z+1 && transform.position.z >= blockedPosition.z-1)
             {
                 walkpointSet = false;
             }
