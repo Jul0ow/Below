@@ -33,15 +33,13 @@ public class NewShoot : MonoBehaviour
 
     public void fire()
     {
-        
         if (Time.time > nextfire)
         {
             shootFrom = GameObject.Find("ShootFrom");
             nextfire = Time.time + fireRate;
             GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/" + bulletprefab.name, shootFrom.transform.position,
                 Quaternion.identity, 0);
-            bullet.GetComponent<projectiles>().owner = player;
-            bullet.GetComponent<projectiles>().awake = true;
+            GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID);
 
             if (cam != null)
             {
@@ -65,6 +63,14 @@ public class NewShoot : MonoBehaviour
                 }
             }
         }
+    }
+
+    [PunRPC]
+    public void AppliedOwner(int owner, int bulletview)
+    {
+        GameObject bullet =  PhotonView.Find(bulletview).gameObject;
+        bullet.GetComponent<projectiles>().owner = PhotonView.Find(owner).gameObject;
+        bullet.GetComponent<projectiles>().awake = true;
     }
     
 

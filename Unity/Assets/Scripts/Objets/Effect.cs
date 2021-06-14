@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Effect : MonoBehaviour
 {
@@ -77,7 +78,7 @@ public class Effect : MonoBehaviour
 
     public static int cécité(GameObject Joueur)
     {
-        Screen.brightness -= 0.3f;
+        Joueur.GetComponentInChildren<PostProcessVolume>().enabled = true;
         return 1;
     }
 

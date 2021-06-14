@@ -12,6 +12,8 @@ public class EnnemyList : MonoBehaviour
 
     List<string> EliteList;
     
+    System.Random random = new System.Random();
+    
 
     public void Creat()
     {
@@ -31,7 +33,6 @@ public class EnnemyList : MonoBehaviour
 
     public string pickennemy()
     {
-        System.Random random = new System.Random();
         int x = random.Next(MonsterList.Count);
         return MonsterList[x];
     }
@@ -43,7 +44,6 @@ public class EnnemyList : MonoBehaviour
     
     public string pickelite()
     {
-        System.Random random = new System.Random();
         int x = random.Next(EliteList.Count);
         return EliteList[x];
     }
