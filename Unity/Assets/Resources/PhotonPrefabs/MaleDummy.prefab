@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  Damage: 30
+  Damage: 100
   power: 1600
   animator: {fileID: 2256975887899826775}
   nextHit: 0
   attackRate: 0.2
   woosh: {fileID: 1616322962545975920}
+  Prot: 0
 --- !u!82 &1616322962545975920
 AudioSource:
   m_ObjectHideFlags: 0
@@ -172,8 +173,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.078887686, y: -0.5665492, z: 0.054609563, w: 0.8184233}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.078887686, y: -0.5665492, z: 0.054609567, w: 0.8184233}
+  m_LocalPosition: {x: -0.00000024199068, y: -0.000000083745384, z: -0.00000016370036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908590128430}
@@ -249,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -0.9999999, y: -0.19999999, z: 0.14999996}
+  m_LocalPosition: {x: -1, y: -0.19999999, z: 0.14999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -554,7 +555,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.05695341, y: -0.5678079, z: 0.039425686, w: 0.8202416}
+  m_LocalRotation: {x: 0.056953415, y: -0.56780785, z: 0.03942571, w: 0.82024163}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -770,7 +771,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.067918755, y: -0.56722975, z: 0.047016375, w: 0.8194064}
+  m_LocalRotation: {x: 0.06791877, y: -0.56722975, z: 0.04701641, w: 0.81940645}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

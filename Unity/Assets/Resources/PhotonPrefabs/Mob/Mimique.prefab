@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4705075329465959305}
   - component: {fileID: 1485920305364645076}
   - component: {fileID: 2846123966285638584}
+  - component: {fileID: 7774802414085347513}
   m_Layer: 11
   m_Name: Mimique
   m_TagString: Ennemy
@@ -161,6 +162,9 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   attack: {fileID: 0}
+  blockedTime: 0
+  blockedPosition: {x: 0, y: 0, z: 0}
+  blocked: 0
   Getter: {fileID: 0}
   Rarity: 0
   ItemReference: 0
@@ -261,6 +265,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &7774802414085347513
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849246153576093302}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 16
+  m_CollisionDetection: 1
 --- !u!1 &8907087360738781649
 GameObject:
   m_ObjectHideFlags: 0

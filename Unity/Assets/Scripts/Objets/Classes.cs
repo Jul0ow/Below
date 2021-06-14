@@ -155,6 +155,7 @@ public class Classes : MonoBehaviour
         AllItem[0].Add(6,Item.CreateItem("Plume de vent",  "Vous vouliez une plume de Phœnix ? Dommage",CommonImage, plume, Effect.plume,true, false));
         AllItem[0].Add(7,Item.CreateItem("Infinité","Il n'y a que de choses infinies, l'univers et mes balles !", CommonImage, Infi,Effect.Infinity, true, false));
         AllItem[0].Add(8,Item.CreateItem("Gant de puissance", "Pour faire des ricochets et claquer des doigts", CommonImage, poing, Effect.Point, true, false));
+        AllItem[0].Add(9,Item.CreateItem("Protéine", "Ah oui ?", CommonImage, CommonImage, Effect.Prot, true, false));
 
 
         AllItem[1].Add(0,Item.CreateItem("Amour du Sang",   "Le sang, tu l'aimes ou tu le quittes",RareImage, bloodLove,Effect.BloodLove,  true,  false));

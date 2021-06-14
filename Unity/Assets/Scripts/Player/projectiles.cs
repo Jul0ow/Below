@@ -95,7 +95,7 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Player"))
                     if (enemies[i].gameObject != owner)
                         enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp);
-                if(enemies[i].GetComponent<Rigidbody>())
+                if(enemies[i].GetComponent<Rigidbody>() && !enemies[i].CompareTag("Player") && !enemies[i].CompareTag("Ennemy"))
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
             }
             Invoke("Delay", 0.05f);

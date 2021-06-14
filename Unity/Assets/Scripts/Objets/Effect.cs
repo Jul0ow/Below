@@ -166,4 +166,10 @@ public class Effect : MonoBehaviour
         return 1;
     }
 
+    public static int Prot(GameObject Joueur)
+    {
+        Joueur.GetComponentInChildren<Attack>().Prot = true;
+        return 1;
+    }
+
 }
