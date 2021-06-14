@@ -11,6 +11,7 @@ public class projectiles : MonoBehaviour
     public bool awake = false;
     public Rigidbody rb;
     public GameObject explosion;
+    public GameObject bulletprefab;
     [Range(0f,1f)]
     public float bouciness;
 
@@ -26,6 +27,8 @@ public class projectiles : MonoBehaviour
     private int collisions;
     private PhysicMaterial physics_mat;
     public GameObject owner;
+    private float coeffForce = 4000f;
+    public bool isSplit = false;
 
 
     private void Start()
@@ -64,6 +67,17 @@ public class projectiles : MonoBehaviour
             {
                 tmp *= 2;
             }
+
+            if (owner.GetComponent<NewShoot>().Snipe)
+            {
+                tmp *= 1 + (int) (Time.time - owner.GetComponent<NewShoot>().timeSniped);
+            }
+
+            if (owner.GetComponent<NewShoot>().Pyro)
+            {
+                tmp += 50;
+            }
+            
             GameObject currentexplosion;
             currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
@@ -89,6 +103,34 @@ public class projectiles : MonoBehaviour
             if (owner.GetComponent<CharacterThings>().dard)
             {
                 owner.GetComponent<CharacterThings>().dard = false;
+            }
+
+            if (owner.GetComponent<NewShoot>().Arcanes && !isSplit)
+            {
+                GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
+                    Quaternion.identity, 0);
+                bullet.GetComponent<projectiles>().owner = owner;
+                bullet.GetComponent<projectiles>().awake = true;
+                bullet.GetComponent<projectiles>().isSplit = true;
+                bullet.GetComponent<projectiles>().Damage /= 2;
+
+                Vector3 direction = owner.transform.position - transform.position;
+                
+                Rigidbody body = bullet.GetComponent<Rigidbody>();
+                transform.forward = direction;
+                body.AddForce(transform.right * coeffForce);
+                
+                //------------------------------------------------------------------------------------
+                bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
+                    Quaternion.identity, 0);
+                bullet.GetComponent<projectiles>().owner = owner;
+                bullet.GetComponent<projectiles>().awake = true;
+                bullet.GetComponent<projectiles>().isSplit = true;
+                bullet.GetComponent<projectiles>().Damage /= 2;
+
+                body = bullet.GetComponent<Rigidbody>();
+                transform.forward = direction;
+                body.AddForce(-transform.right * coeffForce);
             }
         }
     }

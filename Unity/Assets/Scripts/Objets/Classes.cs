@@ -34,7 +34,9 @@ public class Classes : MonoBehaviour
     public Sprite Arcanes;
     public Sprite poing;
     public Sprite Infi;
-    public Sprite Snipe;
+    public Sprite Klepto;
+    public Sprite bloodDrink;
+    public Sprite ventricule;
 
 
 
@@ -151,7 +153,8 @@ public class Classes : MonoBehaviour
         AllItem[0].Add(4,Item.CreateItem("Chaussures en savon", "Si je t'attrape toi...",CommonImage, savon,Effect.savon,  true,  false));
         AllItem[0].Add(5,Item.CreateItem("Poulet rôti", "Saura séduire chauves-souris, gorgones, momies et vampires",CommonImage, Poulet, Effect.poulet,true,  false));
         AllItem[0].Add(6,Item.CreateItem("Plume de vent",  "Vous vouliez une plume de Phœnix ? Dommage",CommonImage, plume, Effect.plume,true, false));
-        AllItem[0].Add(7, Item.CreateItem("Infinité","Il n'y a que de choses infinies, l'univers et mes balles !", CommonImage, Infi,Effect.Infinity, true, false));
+        AllItem[0].Add(7,Item.CreateItem("Infinité","Il n'y a que de choses infinies, l'univers et mes balles !", CommonImage, Infi,Effect.Infinity, true, false));
+        AllItem[0].Add(8,Item.CreateItem("Gant de puissance", "Pour faire des ricochets et claquer des doigts", CommonImage, poing, Effect.Point, true, false));
 
 
         AllItem[1].Add(0,Item.CreateItem("Amour du Sang",   "Le sang, tu l'aimes ou tu le quittes",RareImage, bloodLove,Effect.BloodLove,  true,  false));
@@ -159,16 +162,19 @@ public class Classes : MonoBehaviour
         AllItem[1].Add(2,Item.CreateItem("Elixir de vie",  "Vous ne voulez pas savoir de quoi c'est fait, croyez-moi",RareImage, elixir, Effect.OneUp,true, false));
         AllItem[1].Add(3,Item.CreateItem("Maille", "Il n'y a que la maille qui m'aille",RareImage,Maille, Effect.Maille, true, false));
         AllItem[1].Add(4,Item.CreateItem("Vampirisme", "Il ne vous manque plus que les poulets rôtis", RareImage,Vampire, Effect.Vampirisme,true, false));
+        AllItem[1].Add(5,Item.CreateItem("Lunette de visé", "C'est l'effet boule de neige !", RareImage, snipe, Effect.Snipe, true, false));
 
 
         AllItem[2].Add(0,Item.CreateItem("L'anneau unique",  "Attention à ne pas attirer le mauvais œil",EpicImage, theRing, Effect.theRing,  true,  false));
         AllItem[2].Add(1,Item.CreateItem("Dard","Il ne le sait pas encore mais il est déjà mort",EpicImage, Dard,Effect.Dard,  true,  false));
         AllItem[2].Add(2,Item.CreateItem("Dernier rempart", "la meilleure défense c'est la défense", EpicImage, Bouclier, Effect.Bouclier, true, false));
         AllItem[2].Add(3,Item.CreateItem("Cape", "Tu es invisible Harry",EpicImage, Cape, Effect.Cape, true, false));
+        AllItem[2].Add(4,Item.CreateItem("Pyromancie", "A tenir hors de portée des enfants",EpicImage, Pyro, Effect.Pyro, true ,false));
 
         
         AllItem[3].Add(0,Item.CreateItem("Ticket de loterie",  "Beaucoup d'espoir, peu de résultats",ReliqueImage, ticket, Effect.Ticket,true, false));
         AllItem[3].Add(1,Item.CreateItem("Instinct de Tueur",  "Tu permets que je te tue toi ?",ReliqueImage, killer, Effect.KillerInstinct,true, false));
+        AllItem[3].Add(2, Item.CreateItem("Maitrise des Arcanes", "Si seulement je savais lire...", ReliqueImage, Arcanes, Effect.Arcanes, true, false));
 
     }
     

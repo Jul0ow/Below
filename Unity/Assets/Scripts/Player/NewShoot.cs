@@ -18,6 +18,10 @@ public class NewShoot : MonoBehaviour
     private PhotonView PV;
     public AudioSource fireballSound;
     public bool Infini;
+    public bool Snipe;
+    public float timeSniped;
+    public bool Pyro;
+    public bool Arcanes;
 
 
 
@@ -55,6 +59,10 @@ public class NewShoot : MonoBehaviour
                 shootFrom.transform.forward = directionWithoutSpread;
                 body.AddForce(shootFrom.transform.forward * coeffForce);
                 fireballSound.Play();
+                if (Snipe)
+                {
+                    timeSniped = Time.time;
+                }
             }
         }
     }

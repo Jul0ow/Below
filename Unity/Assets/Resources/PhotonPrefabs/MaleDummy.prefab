@@ -1305,6 +1305,10 @@ MonoBehaviour:
   attackpoint: {fileID: 4233860907775482701}
   fireballSound: {fileID: 6574213820181640766}
   Infini: 0
+  Snipe: 0
+  timeSniped: 0
+  Pyro: 0
+  Arcanes: 0
 --- !u!82 &6574213820181640766
 AudioSource:
   m_ObjectHideFlags: 0
