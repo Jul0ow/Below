@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.972549, g: 0.47445893, b: 0, a: 1}
-  m_Intensity: 10
+  m_Intensity: 15
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -103,11 +103,10 @@ GameObject:
   - component: {fileID: 8382790091955795198}
   - component: {fileID: 8404693316313943776}
   - component: {fileID: 6182233465269140823}
-  - component: {fileID: 29954585776876650}
-  - component: {fileID: 5290226349135818696}
+  - component: {fileID: 9043589102669385012}
   m_Layer: 0
   m_Name: Lava
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +173,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &29954585776876650
+--- !u!64 &9043589102669385012
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,15 +187,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5290226349135818696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6823654404706325811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9d5a0b38c76ef4cbdc5133735af563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

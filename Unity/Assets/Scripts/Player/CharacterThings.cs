@@ -181,7 +181,12 @@ public class CharacterThings : MonoBehaviour
             tox = 0;
         }
     }
-    
+
+    void OnTriggerStay(Collider collider)
+    {
+        if (collider.gameObject.tag == "Lava")
+            TakeDamage(100);
+    }
 
     private bool isdead()
     {
