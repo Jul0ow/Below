@@ -9,6 +9,7 @@ public class EnnemyLife : MonoBehaviour
     public int Health;
     public AudioSource death;
     
+    [PunRPC]
     public virtual void TakeDamage(int damage)
     {
         Health -= damage;

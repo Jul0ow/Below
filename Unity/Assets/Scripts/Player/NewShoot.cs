@@ -20,8 +20,8 @@ public class NewShoot : MonoBehaviour
     public bool Infini;
     public bool Snipe;
     public float timeSniped;
-    public bool Pyro;
     public bool Arcanes;
+    public int BonusDamage;
 
 
 
@@ -39,7 +39,7 @@ public class NewShoot : MonoBehaviour
             nextfire = Time.time + fireRate;
             GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/" + bulletprefab.name, shootFrom.transform.position,
                 Quaternion.identity, 0);
-            GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID);
+            GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, false, 1);
 
             if (cam != null)
             {
@@ -66,11 +66,13 @@ public class NewShoot : MonoBehaviour
     }
 
     [PunRPC]
-    public void AppliedOwner(int owner, int bulletview)
+    public void AppliedOwner(int owner, int bulletview, bool isSplit, int division)
     {
         GameObject bullet =  PhotonView.Find(bulletview).gameObject;
         bullet.GetComponent<projectiles>().owner = PhotonView.Find(owner).gameObject;
         bullet.GetComponent<projectiles>().awake = true;
+        bullet.GetComponent<projectiles>().isSplit = isSplit;
+        bullet.GetComponent<projectiles>().Damage /= division;
     }
     
 

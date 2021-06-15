@@ -90,7 +90,7 @@ public class BlobIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage);
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
                 }
             }
             alreadyAttacked = true;

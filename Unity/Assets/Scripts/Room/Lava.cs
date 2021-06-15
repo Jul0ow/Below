@@ -7,6 +7,6 @@ public class Lava : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-                other.gameObject.GetComponent<CharacterThings>().TakeDamage(80);
+                other.gameObject.GetComponent<CharacterThings>().TakeDamage(80, false, false);
     }
 }

@@ -35,6 +35,10 @@ public class Chest : MonoBehaviour
     void OpeningChest(int view)
     {
         GameObject player = PhotonView.Find(view).gameObject;
+        if (player.GetComponent<CharacterThings>().klepto)
+        {
+            player.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All,10);
+        }
         Opened = true;
         anim.SetBool("IsOpened",true);
         GetComponent<AudioSource>().Play();

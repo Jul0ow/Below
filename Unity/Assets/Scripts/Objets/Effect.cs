@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -34,9 +35,8 @@ public class Effect : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            Classes.Item content;
             int ItemReference = Random.Range(0, Classes.AllItem[i].Count);
-            content = Classes.AllItem[i][ItemReference];
+            Classes.Item content = Classes.AllItem[i][ItemReference];
             if (content is Classes.passive)
             {
                 content.Joueur = Joueur;
@@ -157,7 +157,7 @@ public class Effect : MonoBehaviour
 
     public static int Pyro(GameObject Joueur)
     {
-        Joueur.GetComponent<NewShoot>().Pyro = true;
+        Joueur.GetComponent<NewShoot>().BonusDamage += 50;
         return 1;
     }
 
@@ -170,6 +170,72 @@ public class Effect : MonoBehaviour
     public static int Prot(GameObject Joueur)
     {
         Joueur.GetComponentInChildren<Attack>().Prot = true;
+        return 1;
+    }
+
+    public static int Toile(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().toile = true;
+        return 1;
+    }
+
+    public static int Polypheme(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().fireRate += 0.20f;
+        Joueur.GetComponent<NewShoot>().BonusDamage += 75;
+        return 1;
+    }
+
+    public static int Soja(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().fireRate -= 0.30f;
+        Joueur.GetComponent<NewShoot>().BonusDamage -= 50;
+        return 1;
+    }
+
+    public static int Purulence(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().purulence = true;
+        return 1;
+    }
+
+    public static int BloodDrink(GameObject Joueur)
+    {
+        Joueur.GetComponent<NewShoot>().fireRate -= 0.30f;
+        return 1;
+    }
+
+    public static int Folie(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().MaxHP -= 20;
+        int ItemReference = Random.Range(0, Classes.AllItem[3].Count);
+        Classes.Item content = Classes.AllItem[3][ItemReference];
+        content.Joueur = Joueur;
+        content.AppliedEffect();
+        return 1;
+    }
+
+    public static int Souffrance(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().Souffrance = true;
+        return 1;
+    }
+
+    public static int Ventricule(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().ventricule = true;
+        return 1;
+    }
+
+    public static int Klepto(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().klepto = true;
+        return 1;
+    }
+
+    public static int Pastille(GameObject Joueur)
+    {
+        Joueur.GetComponent<CharacterThings>().Pastille = true;
         return 1;
     }
 

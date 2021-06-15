@@ -1209,6 +1209,9 @@ MonoBehaviour:
   cam: {fileID: 4233860907641024816}
   WalkSpeed: 4
   RunSpeed: 13
+  SlowedRunSpeed: 7
+  slowed: 0
+  slowedTime: 0
   speed: 6
   turnSmoothTime: 0.1
   freeLook: {fileID: 4233860906616770539}
@@ -1285,6 +1288,7 @@ MonoBehaviour:
   luck: 0
   vampire: 0
   bloodLove: 0
+  toile: 0
   invulnerable: 0
   PV: {fileID: 0}
   hurt: {fileID: 7805498110147504894}

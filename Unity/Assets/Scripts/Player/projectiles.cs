@@ -29,6 +29,7 @@ public class projectiles : MonoBehaviour
     public GameObject owner;
     private float coeffForce = 4000f;
     public bool isSplit = false;
+    public bool Slowing = false;
 
 
     private void Start()
@@ -54,6 +55,14 @@ public class projectiles : MonoBehaviour
         if (explosion != null)
         {
             int tmp = Damage;
+            
+            if (owner.GetComponent<CharacterThings>().Souffrance)
+            {
+                tmp += owner.GetComponent<CharacterThings>().MaxHP - owner.GetComponent<CharacterThings>().HP;
+            }
+            
+            tmp += owner.GetComponent<NewShoot>().BonusDamage;
+            
             if (owner.GetComponent<CharacterThings>().dard)
             {
                 tmp = 9999;
@@ -73,10 +82,7 @@ public class projectiles : MonoBehaviour
                 tmp *= 1 + (int) (Time.time - owner.GetComponent<NewShoot>().timeSniped);
             }
 
-            if (owner.GetComponent<NewShoot>().Pyro)
-            {
-                tmp += 50;
-            }
+            Slowing = owner.GetComponent<CharacterThings>().toile;
             
             GameObject currentexplosion;
             currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
@@ -86,15 +92,17 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.TakeDamage(tmp);
+                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp);
                     if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
                     {
-                        owner.GetComponent<CharacterThings>().HP += 10;
+                        owner.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 10);
                     }
                 }
                 if (enemies[i].CompareTag("Player"))
                     if (enemies[i].gameObject != owner)
-                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp);
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, Slowing, owner.GetComponent<CharacterThings>().purulence);
+                    }
                 if(enemies[i].GetComponent<Rigidbody>() && !enemies[i].CompareTag("Player") && !enemies[i].CompareTag("Ennemy"))
                     enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
             }
@@ -109,10 +117,7 @@ public class projectiles : MonoBehaviour
             {
                 GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
                     Quaternion.identity, 0);
-                bullet.GetComponent<projectiles>().owner = owner;
-                bullet.GetComponent<projectiles>().awake = true;
-                bullet.GetComponent<projectiles>().isSplit = true;
-                bullet.GetComponent<projectiles>().Damage /= 2;
+                GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
 
                 Vector3 direction = owner.transform.position - transform.position;
                 
@@ -123,10 +128,8 @@ public class projectiles : MonoBehaviour
                 //------------------------------------------------------------------------------------
                 bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
                     Quaternion.identity, 0);
-                bullet.GetComponent<projectiles>().owner = owner;
-                bullet.GetComponent<projectiles>().awake = true;
-                bullet.GetComponent<projectiles>().isSplit = true;
-                bullet.GetComponent<projectiles>().Damage /= 2;
+                GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All,
+                    gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
 
                 body = bullet.GetComponent<Rigidbody>();
                 transform.forward = direction;
