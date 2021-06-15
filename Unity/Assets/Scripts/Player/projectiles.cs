@@ -75,7 +75,7 @@ public class projectiles : MonoBehaviour
 
             if (owner.GetComponent<NewShoot>().Pyro)
             {
-                tmp += 50;
+                tmp += tmp/2;
             }
             
             GameObject currentexplosion;
