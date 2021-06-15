@@ -19,7 +19,7 @@ public class CharacterThings : MonoBehaviour
     public int MaxHP = 100;
     public int HP;
     public bool poisoned = false;
-    private bool tox = false;
+    private int tox = 0;
     public bool Alive = true;
     public int armor = 0;
     public bool ring;
@@ -170,23 +170,18 @@ public class CharacterThings : MonoBehaviour
 
     }
 
+    [PunRPC]
     private void poison()
     {
-        poisoned = false;
-        tox = true;
-        while (tox)
+        tox++;
+        if(tox%100==0) TakeDamage(1);
+        if (tox >= 5000)
         {
-            StartCoroutine(waitpoison());
+            poisoned = false;
+            tox = 0;
         }
     }
-
-    private IEnumerator waitpoison()
-    {
-        TakeDamage(5);
-        int rnd = Random.Range(0, 6);
-        if (rnd == 2) tox = false;
-        yield return new WaitForSeconds(1);
-    }
+    
 
     private bool isdead()
     {

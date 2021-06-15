@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 2918
+  controlID: 6463
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 2863
+  controlID: 6407
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 2827
+  controlID: 6408
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1c2efdff50e302006ee30200
+      m_ExpandedIDs: 1cc9f7ff2658040044580400
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -312,9 +312,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.1058989, y: 2.4457836, z: -2.5672839}
+    m_Target: {x: -3.6750975, y: 1.1791458, z: 2.1917062}
     speed: 2
-    m_Value: {x: -3.1058989, y: 2.4457836, z: -2.5672839}
+    m_Value: {x: -3.6750975, y: 1.1791458, z: 2.1917062}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -360,13 +360,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.043339055, y: 0.9351303, z: -0.12302643, w: -0.32942212}
+    m_Target: {x: -0.17297117, y: 0.6873544, z: -0.1739076, w: -0.6836542}
     speed: 2
-    m_Value: {x: -0.043339025, y: 0.93512964, z: -0.12302634, w: -0.32942188}
+    m_Value: {x: -0.17297101, y: 0.68735373, z: -0.17390743, w: -0.68365353}
   m_Size:
-    m_Target: 2.7073948
+    m_Target: 7.54305
     speed: 2
-    m_Value: 2.7073948
+    m_Value: 7.54305
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -483,19 +483,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/PhotonPrefabs
+    - Assets/Resources/PhotonPrefabs/Mob
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/PhotonPrefabs
+  - Assets/Resources/PhotonPrefabs/Mob
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Edgar\Desktop\Below\Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 003c0000
-    m_LastClickedID: 15360
+    scrollPos: {x: 0, y: 121}
+    m_SelectedIDs: 383c0000
+    m_LastClickedID: 15416
     m_ExpandedIDs: 00000000fa3b0000fc3b0000fe3b0000003c0000023c0000043c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

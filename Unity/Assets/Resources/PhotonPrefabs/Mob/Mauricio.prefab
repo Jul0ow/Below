@@ -154,7 +154,7 @@ MonoBehaviour:
   walkpoint: {x: 0, y: 0, z: 0}
   walkpointSet: 0
   walkpointrange: 10
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 4
   speed: 8
   damage: 1
   alreadyAttacked: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   bullet: {fileID: 3092848859993577290, guid: 19cc8056ad1322647b1e3283d53ad35c, type: 3}
   shootForce: 10
   damage: 1
-  fireball: {fileID: 0}
+  fireball: {fileID: 6245537796928936684}
 --- !u!1 &8907087360738781649
 GameObject:
   m_ObjectHideFlags: 0
