@@ -173,8 +173,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.07819232, y: -0.5665954, z: 0.054128222, w: 0.81848997}
-  m_LocalPosition: {x: 0.000000795501, y: -0.0000000696901, z: 0.00000071967554}
+  m_LocalRotation: {x: 0.07888767, y: -0.56654924, z: 0.054609556, w: 0.8184232}
+  m_LocalPosition: {x: -0.00000010513276, y: 0.000000060749656, z: -0.0000005972749}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908590128430}
@@ -250,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -1.0999999, y: -0.000000084750354, z: 0.00000035762787}
+  m_LocalPosition: {x: -1.1000001, y: -0.000000007450581, z: 0.00000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -295,7 +295,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.031759184
+    Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 4
     m_AccelTime: 0.02
@@ -319,7 +319,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 95.66097
+    Value: -67.88293
     m_SpeedMode: 0
     m_MaxSpeed: 600
     m_AccelTime: 0.02
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 1.0465888, z: -2.0296693}
+  m_FollowOffset: {x: 0, y: 1, z: -2}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 95.66097
+    Value: -67.88293
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -555,8 +555,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.056256507, y: -0.5678411, z: 0.03894329, w: 0.8202896}
-  m_LocalPosition: {x: 0.00000008418326, y: -0.0000000018447744, z: 0.00000022306205}
+  m_LocalRotation: {x: 0.056953415, y: -0.5678079, z: 0.039425682, w: 0.8202416}
+  m_LocalPosition: {x: -0.000000299171, y: -0.00000007722478, z: -0.0000001421911}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860907184745145}
@@ -633,8 +633,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: -0.075706705, y: 0.7159315, z: 0.07859873, w: 0.6895889}
-  m_LocalPosition: {x: -2.0609894, y: 1.0465889, z: -0.8990168}
+  m_LocalRotation: {x: -0.099470966, y: -0.5329471, z: -0.0632689, w: 0.83789617}
+  m_LocalPosition: {x: 2.3191547, y: 1, z: 0.24326438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906616770539}
@@ -832,8 +832,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.06722257, y: -0.5672695, z: 0.04653448, w: 0.8194638}
-  m_LocalPosition: {x: 0.00000008418326, y: -0.0000000018447744, z: 0.00000022306205}
+  m_LocalRotation: {x: 0.067918755, y: -0.5672298, z: 0.04701637, w: 0.8194064}
+  m_LocalPosition: {x: -0.000000299171, y: -0.00000007722478, z: -0.0000001421911}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908060833104}
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 1.0465888, z: -2.0296693}
+  m_FollowOffset: {x: 0, y: 1, z: -2}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 95.66097
+    Value: -67.88293
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1153,7 +1153,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860908194137075}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 33e15f4141d3c254c87650ad981c2fc8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.35
@@ -1289,6 +1289,11 @@ MonoBehaviour:
   vampire: 0
   bloodLove: 0
   toile: 0
+  purulence: 0
+  Souffrance: 0
+  ventricule: 0
+  klepto: 0
+  Pastille: 0
   invulnerable: 0
   PV: {fileID: 0}
   hurt: {fileID: 7805498110147504894}
@@ -1370,8 +1375,8 @@ MonoBehaviour:
   Infini: 0
   Snipe: 0
   timeSniped: 0
-  Pyro: 0
   Arcanes: 0
+  BonusDamage: 0
 --- !u!82 &6574213820181640766
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1624,7 +1629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 1.0465888, z: -2.0296693}
+  m_FollowOffset: {x: 0, y: 1, z: -2}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -1644,7 +1649,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 95.66097
+    Value: -67.88293
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -2000,7 +2005,7 @@ GameObject:
   - component: {fileID: 2638014208923660008}
   - component: {fileID: 8734963212977938500}
   m_Layer: 9
-  m_Name: GameObject
+  m_Name: noir et blanc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

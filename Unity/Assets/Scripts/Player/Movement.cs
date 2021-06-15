@@ -18,7 +18,6 @@ public class Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     public Component freeLook;
-    public bool savon = false;
 
 
     private PhotonView PV;
@@ -27,7 +26,6 @@ public class Movement : MonoBehaviour
         animator = GetComponent<Animator>();
         float speed = WalkSpeed;
         PV = GetComponent<PhotonView>();
-
     }
 
     public void setToDeathPosition(Vector3 deathPosition)

@@ -90,7 +90,7 @@ public class Effect : MonoBehaviour
 
     public static int savon(GameObject Joueur)
     {
-        Joueur.GetComponent<Movement>().savon = true;
+        Joueur.GetComponent<CharacterThings>().savon = true;
         return 1;
     }
 

@@ -41,6 +41,8 @@ public class Classes : MonoBehaviour
     public Sprite Toile;
     public Sprite Folie;
     public Sprite Purulence;
+    public Sprite Poly;
+    public Sprite prot;
 
 
 
@@ -159,7 +161,7 @@ public class Classes : MonoBehaviour
         AllItem[0].Add(6,Item.CreateItem("Plume de vent",  "Vous vouliez une plume de Phœnix ? Dommage",CommonImage, plume, Effect.plume,true, false));
         AllItem[0].Add(7,Item.CreateItem("Infinité","Il n'y a que de choses infinies, l'univers et mes balles !", CommonImage, Infi,Effect.Infinity, true, false));
         AllItem[0].Add(8,Item.CreateItem("Gant de puissance", "Pour faire des ricochets et claquer des doigts", CommonImage, poing, Effect.Point, true, false));
-        AllItem[0].Add(9,Item.CreateItem("Protéine", "Ah oui ?", CommonImage, CommonImage, Effect.Prot, true, false));
+        AllItem[0].Add(9,Item.CreateItem("Protéine", "Ah oui ?", CommonImage, prot, Effect.Prot, true, false));
         AllItem[0].Add(10,Item.CreateItem("Toile d'araignées", "Très utile, en soie", Toile, CommonImage, Effect.Toile, true, false));
         AllItem[0].Add(11,Item.CreateItem("Lait de Soja", "On a pas dit que c'était bon !", CommonImage, LaitSoj, Effect.Soja, true, false));
         AllItem[0].Add(12,Item.CreateItem("Souffrance délicieuse", "Y'a que ça de vrai", CommonImage, souffrance, Effect.Souffrance, true, false));
@@ -172,7 +174,7 @@ public class Classes : MonoBehaviour
         AllItem[1].Add(3,Item.CreateItem("Maille", "Il n'y a que la maille qui m'aille",RareImage,Maille, Effect.Maille, true, false));
         AllItem[1].Add(4,Item.CreateItem("Vampirisme", "Il ne vous manque plus que les poulets rôtis", RareImage,Vampire, Effect.Vampirisme,true, false));
         AllItem[1].Add(5,Item.CreateItem("Lunette de visé", "C'est l'effet boule de neige !", RareImage, snipe, Effect.Snipe, true, false));
-        AllItem[1].Add(6,Item.CreateItem("Polypheme", "Attention à ne pas attirer le troisième oeil", RareImage, RareImage, Effect.Polypheme, true, false));
+        AllItem[1].Add(6,Item.CreateItem("Polypheme", "Attention à ne pas attirer le troisième oeil", RareImage, Poly, Effect.Polypheme, true, false));
         AllItem[1].Add(7,Item.CreateItem("Purulence", "La lèpre, indémodable", RareImage, Purulence, Effect.Purulence, true, false));
         AllItem[1].Add(8,Item.CreateItem("Sombrer dans la folie","Enfin...", RareImage,Folie, Effect.Folie, true, false));
         AllItem[1].Add(9, Item.CreateItem("Pastille anti-douleur", "Déposez-la sur votre langue et fermez les yeux", RareImage, pilule, Effect.Pastille, true, false));

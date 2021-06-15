@@ -37,7 +37,7 @@ public class Attack : MonoBehaviour
             {
                 tmp = 9999;
             }
-            if (GetComponent<CharacterThings>().Souffrance)
+            if (GetComponentInParent<CharacterThings>().Souffrance)
             {
                 tmp += GetComponent<CharacterThings>().MaxHP - GetComponent<CharacterThings>().HP;
             }
