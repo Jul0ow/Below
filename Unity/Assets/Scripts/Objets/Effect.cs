@@ -78,7 +78,7 @@ public class Effect : MonoBehaviour
 
     public static int cécité(GameObject Joueur)
     {
-        Joueur.GetComponentInChildren<PostProcessVolume>().enabled = true;
+        Joueur.transform.Find("noir et blanc").gameObject.SetActive(true);
         return 1;
     }
 
