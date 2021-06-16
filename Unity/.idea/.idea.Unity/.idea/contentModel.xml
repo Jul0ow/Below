@@ -274,6 +274,11 @@
               <e p="fruits_tester.cs" t="Include" />
             </e>
           </e>
+          <e p="Low Poly Graveyard" t="Include">
+            <e p="Materials" t="Include">
+              <e p="vertexcolorsstandard.shader" t="Include" />
+            </e>
+          </e>
           <e p="PhotonPrefabs" t="Include">
             <e p="particles" t="Include">
               <e p="Assets" t="Include">
@@ -333,7 +338,6 @@
           <e p="Player" t="Include">
             <e p="Attack.cs" t="Include" />
             <e p="CharacterThings.cs" t="Include" />
-            <e p="DeathTimer.cs" t="Include" />
             <e p="Jump.cs" t="Include" />
             <e p="LifeScript.cs" t="Include" />
             <e p="Locomotion.cs" t="Include" />
@@ -341,6 +345,7 @@
             <e p="NewShoot.cs" t="Include" />
             <e p="projectiles.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
+            <e p="Timer.cs" t="Include" />
           </e>
           <e p="Room" t="Include">
             <e p="openingdoor.cs" t="Include" />
