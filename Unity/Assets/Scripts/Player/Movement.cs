@@ -11,11 +11,13 @@ public class Movement : MonoBehaviour
     Animator animator;
     public float WalkSpeed = 6f;
     public float RunSpeed = 16f;
+    public float SlowedRunSpeed = 7f;
+    public bool slowed;
+    public float slowedTime;
     public float speed;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     public Component freeLook;
-    public bool savon = false;
 
 
     private PhotonView PV;
@@ -24,7 +26,6 @@ public class Movement : MonoBehaviour
         animator = GetComponent<Animator>();
         float speed = WalkSpeed;
         PV = GetComponent<PhotonView>();
-
     }
 
     public void setToDeathPosition(Vector3 deathPosition)
@@ -38,6 +39,20 @@ public class Movement : MonoBehaviour
     {
         if (!PV.IsMine)
             return;
+        if (slowed)
+        {
+            if (slowedTime + 1.5f <= Time.time)
+            {
+                slowed = false;
+                RunSpeed = 16;
+            }
+            else
+            {
+                RunSpeed = 7;
+            }
+            
+            
+        }
         if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
                 return;
         var CharacterRotation = cam.transform.rotation;

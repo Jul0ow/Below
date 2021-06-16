@@ -37,7 +37,7 @@ public class MimiqueIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(2);
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
                 }
             }
             alreadyAttacked = true;

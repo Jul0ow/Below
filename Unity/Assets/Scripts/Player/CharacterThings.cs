@@ -24,15 +24,21 @@ public class CharacterThings : MonoBehaviour
     public int armor = 0;
     public bool ring;
     public bool killer;
-    public bool cape = false;
-    public bool dard = false;
-    public bool basketpeg = false;
+    public bool cape;
+    public bool dard;
+    public bool basketpeg;
     public bool runningInThe90s;
     public float basket = 3f;
-    public bool OneUp = false;
+    public bool OneUp;
     public int luck = 0;
-    public bool vampire = false;
+    public bool vampire;
     public bool bloodLove;
+    public bool toile;
+    public bool purulence;
+    public bool Souffrance;
+    public bool ventricule;
+    public bool klepto;
+    public bool Pastille;
     public (int, char) Room;
     private GameObject lifeBarObjetct;
     private LifeScript LifeBar;
@@ -75,13 +81,28 @@ public class CharacterThings : MonoBehaviour
         Inventory = new List<Classes.Item>();
 
     }
+
+    [PunRPC]
+    public void Heal(int healing)
+    {
+        HP += healing;
+    }
     
     [PunRPC]
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool slowed, bool poison)
     {
+        GetComponent<Movement>().slowed = slowed;
+        if (slowed)
+        {
+            GetComponent<Movement>().slowedTime = Time.time;
+        }
         if (!invulnerable)
         {
             hurt.Play();
+            if (poisoned && !Pastille)
+            {
+                poisoned = poison;
+            }
             if (bloodLove)
             {
                 damage *= 2;
@@ -166,6 +187,11 @@ public class CharacterThings : MonoBehaviour
             GetComponent<Movement>().WalkSpeed -= 15;
             GetComponent<Movement>().RunSpeed -= 15;
             runningInThe90s = false;
+        }
+        
+        if (ventricule)
+        {
+            HP += 1;
         }
 
     }

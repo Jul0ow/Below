@@ -37,6 +37,10 @@ public class Attack : MonoBehaviour
             {
                 tmp = 9999;
             }
+            if (GetComponentInParent<CharacterThings>().Souffrance)
+            {
+                tmp += GetComponent<CharacterThings>().MaxHP - GetComponent<CharacterThings>().HP;
+            }
             if (GetComponentInParent<CharacterThings>().killer)
             {
                 tmp *= 3;
@@ -70,7 +74,8 @@ public class Attack : MonoBehaviour
                         {
                             enemies[i].attachedRigidbody.AddExplosionForce(4000f, transform.position, range);
                         }
-                        victim.TakeDamage(tmp);
+
+                        victim.TakeDamage(tmp,GetComponentInParent<CharacterThings>().toile, GetComponentInParent<CharacterThings>().purulence); 
                     }
                     
                     
