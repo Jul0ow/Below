@@ -90,7 +90,7 @@ public class Effect : MonoBehaviour
 
     public static int savon(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().savon = true;
+        Joueur.transform.Find("Savon").gameObject.SetActive(true);
         return 1;
     }
 

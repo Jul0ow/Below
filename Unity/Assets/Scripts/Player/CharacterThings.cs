@@ -39,7 +39,6 @@ public class CharacterThings : MonoBehaviour
     public bool ventricule;
     public bool klepto;
     public bool Pastille;
-    public bool savon;
     public (int, char) Room;
     private GameObject lifeBarObjetct;
     private LifeScript LifeBar;
