@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,7 +46,8 @@ public class CharacterThings : MonoBehaviour
     public AudioSource hurt;
     
     public float deathTime;
-    private float timeofDeath;
+    public GameObject DeathTimer;
+    public float timeofDeath;
     private RoomManager.Team myTeam;
     private Vector3 myspawn;
     
@@ -72,6 +74,9 @@ public class CharacterThings : MonoBehaviour
         LifeBar.SetMaxHealth(HP);
         LifeBar.MaxHP = MaxHP;
         LifeBar.HP = HP;
+        DeathTimer = Instantiate(DeathTimer, new Vector3(Screen.width *0.6f, Screen.height *0.5f, 0),
+            Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
         Inventory = new List<Classes.Item>();
 
     }
@@ -129,7 +134,8 @@ public class CharacterThings : MonoBehaviour
         {
             LifeBar.HP = 0;
         }
-        LifeBar.HP = HP;
+        LifeBar.HP = HP; 
+        if(Input.GetKey("k")) TakeDamage(99999);
        if (!Alive)
         {
             if (!isdead())
@@ -139,6 +145,7 @@ public class CharacterThings : MonoBehaviour
                 deathTime *= 1.15f; //increase by 15% the death time
                 Alive = true;
                 HP = MaxHP;
+                DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
             }  
         }
         if (HP <= 0 && Alive)
@@ -188,9 +195,11 @@ public class CharacterThings : MonoBehaviour
             TakeDamage(100);
     }
 
-    private bool isdead()
+    public bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));
+        
         return Time.time < deathTime + timeofDeath;
     }
 }
