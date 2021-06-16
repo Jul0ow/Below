@@ -89,7 +89,7 @@ public class CharacterThings : MonoBehaviour
     }
     
     [PunRPC]
-    public void TakeDamage(int damage, bool slowed, bool poison)
+    public void TakeDamage(int damage, bool slowed = false, bool poison = false)
     {
         GetComponent<Movement>().slowed = slowed;
         if (slowed)
@@ -99,9 +99,9 @@ public class CharacterThings : MonoBehaviour
         if (!invulnerable)
         {
             hurt.Play();
-            if (poisoned && !Pastille)
+            if (poison && !Pastille)
             {
-                poisoned = poison;
+                poisoned = true;
             }
             if (bloodLove)
             {
@@ -199,8 +199,12 @@ public class CharacterThings : MonoBehaviour
     [PunRPC]
     private void poison()
     {
+        if (Pastille)
+        {
+            return;
+        }
         tox++;
-        if(tox%100==0) TakeDamage(1);
+        if(tox%100==0) TakeDamage(1, false, false);
         if (tox >= 5000)
         {
             poisoned = false;
@@ -211,7 +215,7 @@ public class CharacterThings : MonoBehaviour
     void OnTriggerStay(Collider collider)
     {
         if (collider.gameObject.tag == "Lava")
-            TakeDamage(100);
+            TakeDamage(100, false, false);
     }
 
     private bool isdead()
