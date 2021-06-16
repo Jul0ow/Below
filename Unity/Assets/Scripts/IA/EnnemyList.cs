@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using static System.Random;
+using Random = UnityEngine.Random;
 
 public class EnnemyList : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EnnemyList : MonoBehaviour
 
     List<string> EliteList;
     
-    System.Random random = new System.Random();
+    
     
 
     public void Creat()
@@ -33,7 +34,7 @@ public class EnnemyList : MonoBehaviour
 
     public string pickennemy()
     {
-        int x = random.Next(MonsterList.Count);
+        int x = Random.Range(0, MonsterList.Count);
         return MonsterList[x];
     }
     
@@ -44,7 +45,7 @@ public class EnnemyList : MonoBehaviour
     
     public string pickelite()
     {
-        int x = random.Next(EliteList.Count);
+        int x = Random.Range(0, EliteList.Count);
         return EliteList[x];
     }
     

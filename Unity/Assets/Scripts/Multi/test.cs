@@ -16,10 +16,11 @@ public class test : MonoBehaviour
         }
         Chest chest1 = PhotonNetwork.Instantiate("PhotonPrefabs/" + mob.name, transform.position, Quaternion.identity).GetComponent<Chest>();
         int rarity, refer;
-        int RarityGenerator = Random.Range(1, 100);
-        if (RarityGenerator <= 49) rarity = 0;
-        else if (RarityGenerator <= 88) rarity = 1;
-        else if (RarityGenerator <= 99) rarity = 2;
+        Random random = new Random();
+        int RarityGenerator = Random.Range(0, 100);
+        if (RarityGenerator <= 48) rarity = 0;
+        else if (RarityGenerator <= 87) rarity = 1;
+        else if (RarityGenerator <= 98) rarity = 2;
         else rarity = 3;
         
         refer = Random.Range(0, Classes.AllItem[rarity].Count);
