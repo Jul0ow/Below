@@ -145,7 +145,11 @@ public class CharacterThings : MonoBehaviour
         if(!PV.IsMine) return;
         LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
         if (HP > MaxHP) HP = MaxHP;
-        if (poisoned) poison();
+        if (poisoned)
+        {
+            poison();
+            gameObject.transform.Find("flou artistique").gameObject.SetActive(true);
+        }
         if (rb.position.y < -10f)
         {
             LifeBar.HP = 0;
@@ -209,6 +213,7 @@ public class CharacterThings : MonoBehaviour
         {
             poisoned = false;
             tox = 0;
+            gameObject.transform.Find("flou artistique").gameObject.SetActive(false);
         }
     }
 
