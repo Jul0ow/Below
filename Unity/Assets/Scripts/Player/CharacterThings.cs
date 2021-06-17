@@ -179,10 +179,10 @@ public class CharacterThings : MonoBehaviour
         if (timeAtStartOfTheGame + timeTofinalFight<time)
         {
             if (myTeam == RoomManager.Team.Red)
-                transform.position = new Vector3(-19.3f, 5.43f, -507.28f);//RED arene spawn
+                transform.position = new Vector3(-19.3f, 1.43f, -507.28f);//RED arene spawn
             else
             {
-                transform.position = new Vector3(-11.06f, 5.43f, -533.3f);//blue arene spawn
+                transform.position = new Vector3(-11.06f, 1.43f, -533.3f);//blue arene spawn
             }
         }
         if (cape && Time.time > tookDamage + invisibilityTime)
