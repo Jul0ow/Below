@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9023585589231977698}
   - component: {fileID: 3158475795646298717}
   - component: {fileID: 6595032954012072577}
-  - component: {fileID: 1980983041952539892}
+  - component: {fileID: 1585706239948134068}
   m_Layer: 0
   m_Name: salle7 (9)
   m_TagString: Untagged
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1980983041952539892
-MeshCollider:
+--- !u!65 &1585706239948134068
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,10 +90,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &487783225559006980
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +400,7 @@ GameObject:
   - component: {fileID: 4482046554477931823}
   - component: {fileID: 7657197784777088816}
   - component: {fileID: 8462605733878623808}
-  - component: {fileID: 8508812093555305513}
+  - component: {fileID: 7342010679495395211}
   m_Layer: 0
   m_Name: salle7 (8)
   m_TagString: Untagged
@@ -470,8 +469,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8508812093555305513
-MeshCollider:
+--- !u!65 &7342010679495395211
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -480,10 +479,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: -0.0000038146973, y: 0, z: -0.0000009536743}
 --- !u!64 &3729283699677066638
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -509,7 +507,7 @@ GameObject:
   - component: {fileID: 997762544704892211}
   - component: {fileID: 1886422233117563735}
   - component: {fileID: 8561890964087333668}
-  - component: {fileID: 7317733636295226813}
+  - component: {fileID: 992991099755466611}
   m_Layer: 0
   m_Name: salle7 (1)
   m_TagString: Untagged
@@ -578,8 +576,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7317733636295226813
-MeshCollider:
+--- !u!65 &992991099755466611
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -588,10 +586,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2040475481465601698
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +600,7 @@ GameObject:
   - component: {fileID: 1305531458700239268}
   - component: {fileID: 4892394617333789579}
   - component: {fileID: 2352145340388629448}
-  - component: {fileID: 8669153939021847546}
+  - component: {fileID: 2455047864669677766}
   m_Layer: 0
   m_Name: salle7 (7)
   m_TagString: Untagged
@@ -672,8 +669,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8669153939021847546
-MeshCollider:
+--- !u!65 &2455047864669677766
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -682,10 +679,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000038146973, y: 0, z: -0.0000009536743}
 --- !u!1 &3950141384498538804
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +830,7 @@ GameObject:
   - component: {fileID: 3579447193511692403}
   - component: {fileID: 1294215613506087028}
   - component: {fileID: 446424556131901281}
-  - component: {fileID: 97644043711329834}
+  - component: {fileID: 1774064834274583328}
   m_Layer: 0
   m_Name: salle7 (3)
   m_TagString: Untagged
@@ -903,8 +899,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &97644043711329834
-MeshCollider:
+--- !u!65 &1774064834274583328
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -913,10 +909,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: -0.0000009536743}
 --- !u!1 &5550968707658653997
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +923,7 @@ GameObject:
   - component: {fileID: 695278907820929578}
   - component: {fileID: 2735341441026321366}
   - component: {fileID: 7771590273845456606}
-  - component: {fileID: 2745815191142424208}
+  - component: {fileID: 4043839940297414937}
   m_Layer: 0
   m_Name: salle7 (4)
   m_TagString: Untagged
@@ -997,8 +992,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2745815191142424208
-MeshCollider:
+--- !u!65 &4043839940297414937
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1007,10 +1002,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000014305115, y: 0, z: -0.0000009536743}
 --- !u!64 &2585686478424104913
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1036,7 +1030,7 @@ GameObject:
   - component: {fileID: 4575395662420861317}
   - component: {fileID: 7988772641131455940}
   - component: {fileID: 5681274559257958410}
-  - component: {fileID: 7513809154002219156}
+  - component: {fileID: 7039308259052447098}
   m_Layer: 0
   m_Name: salle7 (9)
   m_TagString: Untagged
@@ -1105,8 +1099,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7513809154002219156
-MeshCollider:
+--- !u!65 &7039308259052447098
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1115,10 +1109,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
 --- !u!1 &5846180481043671487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1123,7 @@ GameObject:
   - component: {fileID: 7333213261566759377}
   - component: {fileID: 7084506259026790092}
   - component: {fileID: 117489462996001207}
-  - component: {fileID: 2434061941182255138}
+  - component: {fileID: 5655873034899652367}
   m_Layer: 0
   m_Name: salle7 (10)
   m_TagString: Untagged
@@ -1199,8 +1192,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2434061941182255138
-MeshCollider:
+--- !u!65 &5655873034899652367
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1209,10 +1202,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6252700446041955117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1216,7 @@ GameObject:
   - component: {fileID: 189189335601280100}
   - component: {fileID: 2378358093554294699}
   - component: {fileID: 4741306297286504957}
-  - component: {fileID: 6465100068824902937}
+  - component: {fileID: 5981544967808894026}
   m_Layer: 0
   m_Name: salle7 (5)
   m_TagString: Untagged
@@ -1293,8 +1285,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6465100068824902937
-MeshCollider:
+--- !u!65 &5981544967808894026
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1303,10 +1295,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: -0.0000038146973, y: 0, z: -0.0000009536743}
 --- !u!1 &6360727473779131220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,7 +1309,7 @@ GameObject:
   - component: {fileID: 1898772022781607135}
   - component: {fileID: 4707580425144623849}
   - component: {fileID: 2632044952133585083}
-  - component: {fileID: 3495745873905224202}
+  - component: {fileID: 5983745091924274487}
   m_Layer: 0
   m_Name: salle7 (1)
   m_TagString: Untagged
@@ -1387,8 +1378,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3495745873905224202
-MeshCollider:
+--- !u!65 &5983745091924274487
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1397,10 +1388,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
 --- !u!1 &6400824753212838285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,7 +1402,7 @@ GameObject:
   - component: {fileID: 5063639903005922396}
   - component: {fileID: 2586806295023798358}
   - component: {fileID: 5098273421861098394}
-  - component: {fileID: 5177122386139337780}
+  - component: {fileID: 5574000520558153640}
   m_Layer: 0
   m_Name: salle7
   m_TagString: Untagged
@@ -1567,8 +1557,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5177122386139337780
-MeshCollider:
+--- !u!65 &5574000520558153640
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1577,10 +1567,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6431527181487820353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1581,7 @@ GameObject:
   - component: {fileID: 3793786241242822756}
   - component: {fileID: 4388542434159973900}
   - component: {fileID: 2348023670836092600}
-  - component: {fileID: 2118466606585351857}
+  - component: {fileID: 2547883278205938241}
   m_Layer: 0
   m_Name: salle7
   m_TagString: Untagged
@@ -1661,8 +1650,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2118466606585351857
-MeshCollider:
+--- !u!65 &2547883278205938241
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1671,10 +1660,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
 --- !u!1 &6446500439454768567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1674,7 @@ GameObject:
   - component: {fileID: 2981440144672803983}
   - component: {fileID: 854356655041923184}
   - component: {fileID: 5740744510105239161}
-  - component: {fileID: 492204918555140385}
+  - component: {fileID: 3940218127210610972}
   m_Layer: 0
   m_Name: salle7 (2)
   m_TagString: Untagged
@@ -1755,8 +1743,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &492204918555140385
-MeshCollider:
+--- !u!65 &3940218127210610972
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1765,10 +1753,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6682880220937269826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1767,7 @@ GameObject:
   - component: {fileID: 8902692534815525501}
   - component: {fileID: 919496802430314368}
   - component: {fileID: 5068909203486570692}
-  - component: {fileID: 7022919248722713360}
+  - component: {fileID: 5508326207696015565}
   m_Layer: 0
   m_Name: salle7 (5)
   m_TagString: Untagged
@@ -1849,8 +1836,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7022919248722713360
-MeshCollider:
+--- !u!65 &5508326207696015565
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1859,10 +1846,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000009536743, y: 0, z: -0.0000009536743}
 --- !u!1 &6706835743822448564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1860,7 @@ GameObject:
   - component: {fileID: 7185653545603773637}
   - component: {fileID: 6833218126854396007}
   - component: {fileID: 1475925035055156393}
-  - component: {fileID: 1767098471406068837}
+  - component: {fileID: 7690782095290675406}
   m_Layer: 0
   m_Name: salle7 (12)
   m_TagString: Untagged
@@ -1943,8 +1929,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1767098471406068837
-MeshCollider:
+--- !u!65 &7690782095290675406
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1953,10 +1939,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000076293945, y: 0, z: 0}
 --- !u!1 &6737239167969720193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +1988,7 @@ GameObject:
   - component: {fileID: 8949957217511813862}
   - component: {fileID: 1181900766875350726}
   - component: {fileID: 1163376469981728604}
-  - component: {fileID: 8551724491969984456}
+  - component: {fileID: 9199869134189155196}
   m_Layer: 0
   m_Name: salle7 (8)
   m_TagString: Untagged
@@ -2072,8 +2057,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8551724491969984456
-MeshCollider:
+--- !u!65 &9199869134189155196
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2082,10 +2067,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000009536743, y: 0, z: -0.0000009536743}
 --- !u!1 &7626020184107286726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2081,7 @@ GameObject:
   - component: {fileID: 6383206791246869019}
   - component: {fileID: 698815937776167460}
   - component: {fileID: 7152058747478810704}
-  - component: {fileID: 4365849115224688543}
+  - component: {fileID: 1739680056467584657}
   m_Layer: 0
   m_Name: salle7 (3)
   m_TagString: Untagged
@@ -2166,8 +2150,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4365849115224688543
-MeshCollider:
+--- !u!65 &1739680056467584657
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2176,10 +2160,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: -0.0000009536743}
 --- !u!1 &7658247162895352276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,7 +2174,7 @@ GameObject:
   - component: {fileID: 3356161871145470494}
   - component: {fileID: 8952714209698585489}
   - component: {fileID: 5895410441920467537}
-  - component: {fileID: 4939448773730470126}
+  - component: {fileID: 5613926736045155446}
   m_Layer: 0
   m_Name: salle7 (6)
   m_TagString: Untagged
@@ -2260,8 +2243,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4939448773730470126
-MeshCollider:
+--- !u!65 &5613926736045155446
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2270,10 +2253,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: -0.0000009536743}
 --- !u!1 &8666635085080705855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,7 +2267,7 @@ GameObject:
   - component: {fileID: 4803010245132246069}
   - component: {fileID: 1274534273936276193}
   - component: {fileID: 2527113636738737877}
-  - component: {fileID: 3569988581093658193}
+  - component: {fileID: 2898138656316419023}
   m_Layer: 0
   m_Name: salle7 (6)
   m_TagString: Untagged
@@ -2354,8 +2336,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3569988581093658193
-MeshCollider:
+--- !u!65 &2898138656316419023
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2364,10 +2346,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: -0.0000009536743}
 --- !u!1 &8739791585247243229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,7 +2390,7 @@ GameObject:
   - component: {fileID: 117776239061410746}
   - component: {fileID: 2935766441854702432}
   - component: {fileID: 6094878762398974890}
-  - component: {fileID: 8838307496157330928}
+  - component: {fileID: 3308684776602319519}
   m_Layer: 0
   m_Name: salle7
   m_TagString: Untagged
@@ -2478,8 +2459,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8838307496157330928
-MeshCollider:
+--- !u!65 &3308684776602319519
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2488,10 +2469,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9042198448315881931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,7 +2483,7 @@ GameObject:
   - component: {fileID: 5516687865327769427}
   - component: {fileID: 1895716938476607617}
   - component: {fileID: 5593433181039599736}
-  - component: {fileID: 3141422150960027119}
+  - component: {fileID: 7945053745238978659}
   m_Layer: 0
   m_Name: salle7 (4)
   m_TagString: Untagged
@@ -2572,8 +2552,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3141422150960027119
-MeshCollider:
+--- !u!65 &7945053745238978659
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2582,10 +2562,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000038146973, y: 0, z: -0.0000009536743}
 --- !u!1 &9111112343954996890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,7 +2576,7 @@ GameObject:
   - component: {fileID: 8552957330230729146}
   - component: {fileID: 2313958670891669073}
   - component: {fileID: 6634063287505734488}
-  - component: {fileID: 238148980031062362}
+  - component: {fileID: 5605086365110817854}
   m_Layer: 0
   m_Name: salle7 (2)
   m_TagString: Untagged
@@ -2666,8 +2645,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &238148980031062362
-MeshCollider:
+--- !u!65 &5605086365110817854
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2676,10 +2655,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9195382559195983402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,7 +2669,7 @@ GameObject:
   - component: {fileID: 8924727682305014163}
   - component: {fileID: 3429624772909728232}
   - component: {fileID: 9031553400199288303}
-  - component: {fileID: 3486291864356305247}
+  - component: {fileID: 5125029060018249706}
   m_Layer: 0
   m_Name: salle7 (11)
   m_TagString: Untagged
@@ -2760,8 +2738,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3486291864356305247
-MeshCollider:
+--- !u!65 &5125029060018249706
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2770,10 +2748,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0000076293945, y: 0, z: 0}
 --- !u!1001 &25610908640133653
 PrefabInstance:
   m_ObjectHideFlags: 0

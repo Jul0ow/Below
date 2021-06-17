@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -121,7 +122,18 @@ public class CharacterThings : MonoBehaviour
             invulnerable = true;
             tookDamage = Time.time;
         }
-    } 
+    }
+
+
+    [PunRPC]
+    public void EndGame()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+        GameObject.Find("écran de fin").transform.Find("Ecran victoire").gameObject.SetActive(true);
+        //GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -158,9 +170,12 @@ public class CharacterThings : MonoBehaviour
             if (timeAtStartOfTheGame + lastTimeBeforeDeath< time)
             {
                 Alive = false;
-                //PhotonNetwork.Disconnect();
-                PhotonNetwork.LoadLevel(0);
-                //PhotonNetwork.Destroy(gameObject);
+                GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
                 return;
             }
             

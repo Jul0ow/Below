@@ -55,7 +55,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if (scene.buildIndex == 1) // we are in game scene (because scene game ==1)
         {
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
             if (myTeam == Team.Blue)
             {
                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), new Vector3(-13.10f,0.16f,-1027),

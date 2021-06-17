@@ -146,6 +146,10 @@ public class Classes : MonoBehaviour
     
     void Awake()
     {
+        if (AllItem[0].Count != 0)
+        {
+            return;
+        }
         AllItem[0].Add(0,Item.CreateItem("Botte de Pegaz", "À fonds les gaz, ça me botte !",CommonImage, BottePeg,Effect.Peg,  true,  false));
         AllItem[0].Add(1,Item.CreateItem("Baskets de Pegase", "Il parait que Pégase ne les à jamais misent lui-même, ça ne lui va pas au teint",CommonImage, basketPeg,Effect.Basket,  true,  false));
         AllItem[0].Add(2,Item.CreateItem("Oeil de Lynx", "L'oeil du lynx, la grâce du chamoix et la force de la loutre",CommonImage, lynx,Effect.Lynx,  true,  false));

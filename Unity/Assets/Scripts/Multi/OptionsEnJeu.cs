@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -30,6 +32,7 @@ public class OptionsEnJeu : MonoBehaviour
         menuOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
         principalOptions.SetActive(false);
         graphicOptions.SetActive(false);
         soundOptions.SetActive(false);
