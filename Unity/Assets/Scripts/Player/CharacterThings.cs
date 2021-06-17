@@ -48,13 +48,16 @@ public class CharacterThings : MonoBehaviour
     public float deathTime;
     public GameObject DeathTimer;
     public float timeofDeath;
+    public float lastTimeBeforeDeath;
+    public float timeTofinalFight;
     private RoomManager.Team myTeam;
     private Vector3 myspawn;
-    
+    private float timeAtStartOfTheGame;
     
     
     void Awake()
     {
+        
         PV = GetComponent<PhotonView>();
         myspawn= GetComponent<Transform>().position;
         if (myspawn.x == -13.10f && myspawn.y == 0.16f && myspawn.z ==-1027f) //set the team by looking of the first spawn position
@@ -78,6 +81,7 @@ public class CharacterThings : MonoBehaviour
             Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
         DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
         Inventory = new List<Classes.Item>();
+        timeAtStartOfTheGame = Time.time;
 
     }
     
@@ -121,7 +125,8 @@ public class CharacterThings : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {  
+        float time = Time.time;
         if (Time.time > tookDamage + invinciblityTime)
         {
             invulnerable = false;
@@ -136,7 +141,7 @@ public class CharacterThings : MonoBehaviour
         }
         LifeBar.HP = HP; 
         if(Input.GetKey("k")) TakeDamage(99999);
-       if (!Alive)
+        if (!Alive)
         {
             if (!isdead())
             {
@@ -150,6 +155,15 @@ public class CharacterThings : MonoBehaviour
         }
         if (HP <= 0 && Alive)
         {
+            if (timeAtStartOfTheGame + lastTimeBeforeDeath< time)
+            {
+                Alive = false;
+                //PhotonNetwork.Disconnect();
+                PhotonNetwork.LoadLevel(0);
+                //PhotonNetwork.Destroy(gameObject);
+                return;
+            }
+            
             //Time.timeScale = 0;
             timeofDeath = Time.time;
             Alive = false;
@@ -162,7 +176,15 @@ public class CharacterThings : MonoBehaviour
             //Debug.Log(player.transform.position);
             
         }
-
+        if (timeAtStartOfTheGame + timeTofinalFight<time)
+        {
+            if (myTeam == RoomManager.Team.Red)
+                transform.position = new Vector3(-19.3f, 5.43f, -507.28f);//RED arene spawn
+            else
+            {
+                transform.position = new Vector3(-11.06f, 5.43f, -533.3f);//blue arene spawn
+            }
+        }
         if (cape && Time.time > tookDamage + invisibilityTime)
         {
             GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;

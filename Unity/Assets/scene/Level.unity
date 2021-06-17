@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4339ea7c762814aa5aef462a8f1473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforOpeningThedoor: 50
+  timeBeforOpeningThedoor: 180
   sound: {fileID: 197308384}
 --- !u!95 &197308383
 Animator:
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4339ea7c762814aa5aef462a8f1473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforOpeningThedoor: 50
+  timeBeforOpeningThedoor: 300
   sound: {fileID: 455459946}
 --- !u!82 &455459946 stripped
 AudioSource:
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4339ea7c762814aa5aef462a8f1473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforOpeningThedoor: 50
+  timeBeforOpeningThedoor: 300
   sound: {fileID: 588464454}
 --- !u!1 &631322075
 GameObject:
@@ -4780,8 +4780,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 1076170500}
   - {fileID: 1076170499}
+  - {fileID: 1076170500}
   viewIdField: 71
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -4834,7 +4834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4339ea7c762814aa5aef462a8f1473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforOpeningThedoor: 50
+  timeBeforOpeningThedoor: 300
   sound: {fileID: 1076170497}
 --- !u!95 &1076170502
 Animator:
@@ -7299,7 +7299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4339ea7c762814aa5aef462a8f1473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforOpeningThedoor: 50
+  timeBeforOpeningThedoor: 300
   sound: {fileID: 1543878271}
 --- !u!95 &1543878273
 Animator:
@@ -8063,7 +8063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4339ea7c762814aa5aef462a8f1473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforOpeningThedoor: 50
+  timeBeforOpeningThedoor: 180
   sound: {fileID: 1807104015}
 --- !u!95 &1807104014
 Animator:
