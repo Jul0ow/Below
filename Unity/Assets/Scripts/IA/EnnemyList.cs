@@ -26,6 +26,7 @@ public class EnnemyList : MonoBehaviour
         MonsterList.Add("Splitter");
         MonsterList.Add("Gout");
         MonsterList.Add("Kamikaze Splitter");
+        MonsterList.Add("Knight Mare");
         
         EliteList.Add("QueenLice");
         EliteList.Add("Goutausorus");
