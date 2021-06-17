@@ -14,6 +14,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = Convert.ToString(Convert.ToInt32(Time.time));
+        int time = Convert.ToInt32(UnityEngine.Time.timeSinceLevelLoad);
+        string minutes = Convert.ToString(time / 60);
+        string secondes = Convert.ToString(time % 60);
+        text.text = minutes + ":" + secondes;
     }
 }

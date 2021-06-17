@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Vous \xEAtes mort\n     00"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fbc5895dae1e83846a9f4fe2cee266fd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2141925458456206932, guid: fbc5895dae1e83846a9f4fe2cee266fd,
     type: 2}
   m_fontSharedMaterials: []
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 800
+  m_fontSizeBase: 800
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
