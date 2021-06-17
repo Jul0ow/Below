@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -51,14 +53,18 @@ public class CharacterThings : MonoBehaviour
     public AudioSource hurt;
     
     public float deathTime;
-    private float timeofDeath;
+    public GameObject DeathTimer;
+    public float timeofDeath;
+    public float lastTimeBeforeDeath;
+    public float timeTofinalFight;
     private RoomManager.Team myTeam;
     private Vector3 myspawn;
-    
+    private float timeAtStartOfTheGame;
     
     
     void Awake()
     {
+        
         PV = GetComponent<PhotonView>();
         myspawn= GetComponent<Transform>().position;
         if (myspawn.x == -13.10f && myspawn.y == 0.16f && myspawn.z ==-1027f) //set the team by looking of the first spawn position
@@ -78,7 +84,11 @@ public class CharacterThings : MonoBehaviour
         LifeBar.SetMaxHealth(HP);
         LifeBar.MaxHP = MaxHP;
         LifeBar.HP = HP;
+        DeathTimer = Instantiate(DeathTimer, new Vector3(Screen.width *0.6f, Screen.height *0.5f, 0),
+            Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
         Inventory = new List<Classes.Item>();
+        timeAtStartOfTheGame = Time.time;
 
     }
 
@@ -133,11 +143,23 @@ public class CharacterThings : MonoBehaviour
             invulnerable = true;
             tookDamage = Time.time;
         }
-    } 
+    }
+
+
+    [PunRPC]
+    public void EndGame()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+        GameObject.Find("écran de fin").transform.Find("Ecran victoire").gameObject.SetActive(true);
+        //GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
-    {
+    {  
+        float time = Time.time;
         if (Time.time > tookDamage + invinciblityTime)
         {
             invulnerable = false;
@@ -154,8 +176,9 @@ public class CharacterThings : MonoBehaviour
         {
             LifeBar.HP = 0;
         }
-        LifeBar.HP = HP;
-       if (!Alive)
+        LifeBar.HP = HP; 
+        if(Input.GetKey("k")) TakeDamage(99999);
+        if (!Alive)
         {
             if (!isdead())
             {
@@ -164,10 +187,23 @@ public class CharacterThings : MonoBehaviour
                 deathTime *= 1.15f; //increase by 15% the death time
                 Alive = true;
                 HP = MaxHP;
+                DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
             }  
         }
         if (HP <= 0 && Alive)
         {
+            if (timeAtStartOfTheGame + lastTimeBeforeDeath< time)
+            {
+                Alive = false;
+                GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
+                return;
+            }
+            
             //Time.timeScale = 0;
             timeofDeath = Time.time;
             Alive = false;
@@ -180,7 +216,15 @@ public class CharacterThings : MonoBehaviour
             //Debug.Log(player.transform.position);
             
         }
-
+        if (timeAtStartOfTheGame + timeTofinalFight<time)
+        {
+            if (myTeam == RoomManager.Team.Red)
+                transform.position = new Vector3(-19.3f, 1.43f, -507.28f);//RED arene spawn
+            else
+            {
+                transform.position = new Vector3(-11.06f, 1.43f, -533.3f);//blue arene spawn
+            }
+        }
         if (cape && Time.time > tookDamage + invisibilityTime)
         {
             GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
@@ -223,9 +267,11 @@ public class CharacterThings : MonoBehaviour
             TakeDamage(100, false, false);
     }
 
-    private bool isdead()
+    public bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));
+        
         return Time.time < deathTime + timeofDeath;
     }
 }

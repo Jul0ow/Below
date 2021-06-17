@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - Chest
     - Classes
     - DebugChest
+    - EndGame
     - EnnemyAttack
     - EnnemyIA
     - EnnemyLife
@@ -42,6 +43,7 @@ ScriptsOnlyBuild:
     - SummonDebug
     - SummonEnnemy
     - SuperCharacterController
+    - Timer
     - TourelleIA
     - WarriorAnimsFREE.GUIControlsFREE
     - WarriorAnimsFREE.IKHands
@@ -167,6 +169,7 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11340}
     - Class: 114
       Script: {instanceID: 11342}
@@ -175,10 +178,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11360}
     - Class: 114
+=======
+      Script: {instanceID: 11338}
+    - Class: 114
+      Script: {instanceID: 11340}
+    - Class: 114
+      Script: {instanceID: 11360}
+    - Class: 114
+>>>>>>> Phases_De_Jeu
       Script: {instanceID: 11376}
     - Class: 114
       Script: {instanceID: 11378}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11406}
     - Class: 114
       Script: {instanceID: 11414}
@@ -190,8 +202,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11510}
     - Class: 114
       Script: {instanceID: 11530}
+=======
+      Script: {instanceID: 11414}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11448}
+    - Class: 114
+      Script: {instanceID: 11492}
+>>>>>>> Phases_De_Jeu
+    - Class: 114
+      Script: {instanceID: 11510}
     - Class: 114
       Script: {instanceID: 11576}
     - Class: 114
@@ -210,12 +229,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11730}
     - Class: 114
       Script: {instanceID: 11796}
+<<<<<<< HEAD
     - Class: 114
       Script: {instanceID: 11822}
     - Class: 114
       Script: {instanceID: 11834}
     - Class: 114
       Script: {instanceID: 11838}
+=======
+    - Class: 114
+      Script: {instanceID: 11822}
+    - Class: 114
+      Script: {instanceID: 11834}
+>>>>>>> Phases_De_Jeu
     - Class: 114
       Script: {instanceID: 11850}
     - Class: 114
@@ -223,6 +249,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11854}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11880}
     - Class: 114
       Script: {instanceID: 11884}
@@ -235,11 +262,24 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12108}
     - Class: 114
+=======
+      Script: {instanceID: 11884}
+    - Class: 114
+      Script: {instanceID: 11974}
+    - Class: 114
+      Script: {instanceID: 12052}
+    - Class: 114
+      Script: {instanceID: 12072}
+    - Class: 114
+      Script: {instanceID: 12108}
+    - Class: 114
+>>>>>>> Phases_De_Jeu
       Script: {instanceID: 12130}
     - Class: 114
       Script: {instanceID: 12164}
     - Class: 114
       Script: {instanceID: 12194}
+<<<<<<< HEAD
     - Class: 114
       Script: {instanceID: 12236}
     - Class: 114
@@ -268,9 +308,30 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12638}
     - Class: 114
       Script: {instanceID: 12640}
+=======
+    - Class: 114
+      Script: {instanceID: 12236}
+    - Class: 114
+      Script: {instanceID: 12250}
+    - Class: 114
+      Script: {instanceID: 12252}
+    - Class: 114
+      Script: {instanceID: 12270}
+    - Class: 114
+      Script: {instanceID: 12294}
+    - Class: 114
+      Script: {instanceID: 12450}
+    - Class: 114
+      Script: {instanceID: 12492}
+    - Class: 114
+      Script: {instanceID: 12518}
+    - Class: 114
+      Script: {instanceID: 12540}
+>>>>>>> Phases_De_Jeu
     - Class: 114
       Script: {instanceID: 12670}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 12696}
     - Class: 114
       Script: {instanceID: 12738}
@@ -318,9 +379,61 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13556}
     - Class: 114
       Script: {instanceID: 13728}
+=======
+      Script: {instanceID: 12594}
+    - Class: 114
+      Script: {instanceID: 12618}
+    - Class: 114
+      Script: {instanceID: 12640}
+    - Class: 114
+      Script: {instanceID: 12672}
+    - Class: 114
+      Script: {instanceID: 12698}
+    - Class: 114
+      Script: {instanceID: 12740}
+    - Class: 114
+      Script: {instanceID: 12850}
+    - Class: 114
+      Script: {instanceID: 12906}
+    - Class: 114
+      Script: {instanceID: 12964}
+    - Class: 114
+      Script: {instanceID: 12978}
+    - Class: 114
+      Script: {instanceID: 13108}
+    - Class: 114
+      Script: {instanceID: 13150}
+    - Class: 114
+      Script: {instanceID: 13166}
+    - Class: 114
+      Script: {instanceID: 13178}
+    - Class: 114
+      Script: {instanceID: 13184}
+    - Class: 114
+      Script: {instanceID: 13250}
+    - Class: 114
+      Script: {instanceID: 13286}
+    - Class: 114
+      Script: {instanceID: 13298}
+    - Class: 114
+      Script: {instanceID: 13304}
+    - Class: 114
+      Script: {instanceID: 13372}
+    - Class: 114
+      Script: {instanceID: 13390}
+    - Class: 114
+      Script: {instanceID: 13464}
+    - Class: 114
+      Script: {instanceID: 13480}
+    - Class: 114
+      Script: {instanceID: 13518}
+    - Class: 114
+      Script: {instanceID: 13526}
+>>>>>>> Phases_De_Jeu
     - Class: 114
       Script: {instanceID: 13758}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 13774}
     - Class: 114
       Script: {instanceID: 13882}
@@ -354,6 +467,45 @@ ScriptsOnlyBuild:
       Script: {instanceID: 200618}
     - Class: 114
       Script: {instanceID: 201038}
+=======
+      Script: {instanceID: 13560}
+    - Class: 114
+      Script: {instanceID: 13732}
+    - Class: 114
+      Script: {instanceID: 13762}
+    - Class: 114
+      Script: {instanceID: 13778}
+    - Class: 114
+      Script: {instanceID: 13896}
+    - Class: 114
+      Script: {instanceID: 13944}
+    - Class: 114
+      Script: {instanceID: 13946}
+    - Class: 114
+      Script: {instanceID: 13952}
+    - Class: 114
+      Script: {instanceID: 13976}
+    - Class: 114
+      Script: {instanceID: 14004}
+    - Class: 114
+      Script: {instanceID: 14010}
+    - Class: 114
+      Script: {instanceID: 14022}
+    - Class: 114
+      Script: {instanceID: 14040}
+    - Class: 114
+      Script: {instanceID: 14044}
+    - Class: 114
+      Script: {instanceID: 14064}
+    - Class: 114
+      Script: {instanceID: 14096}
+    - Class: 114
+      Script: {instanceID: 288984}
+    - Class: 114
+      Script: {instanceID: 288988}
+    - Class: 114
+      Script: {instanceID: 289408}
+>>>>>>> Phases_De_Jeu
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -452,6 +604,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11340}
     - Class: 114
       Script: {instanceID: 11342}
@@ -473,9 +626,29 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11510}
     - Class: 114
       Script: {instanceID: 11530}
+=======
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11340}
     - Class: 114
+      Script: {instanceID: 11360}
+    - Class: 114
+      Script: {instanceID: 11370}
+    - Class: 114
+      Script: {instanceID: 11376}
+    - Class: 114
+      Script: {instanceID: 11378}
+    - Class: 114
+      Script: {instanceID: 11414}
+    - Class: 114
+      Script: {instanceID: 11510}
+    - Class: 114
+      Script: {instanceID: 11576}
+>>>>>>> Phases_De_Jeu
+    - Class: 114
+      Script: {instanceID: 11626}
+    - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 11576}
     - Class: 114
       Script: {instanceID: 11626}
@@ -565,6 +738,89 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14060}
     - Class: 114
       Script: {instanceID: 14092}
+=======
+      Script: {instanceID: 11628}
+    - Class: 114
+      Script: {instanceID: 11648}
+    - Class: 114
+      Script: {instanceID: 11682}
+    - Class: 114
+      Script: {instanceID: 11854}
+    - Class: 114
+      Script: {instanceID: 11884}
+    - Class: 114
+      Script: {instanceID: 12072}
+    - Class: 114
+      Script: {instanceID: 12108}
+    - Class: 114
+      Script: {instanceID: 12130}
+    - Class: 114
+      Script: {instanceID: 12232}
+    - Class: 114
+      Script: {instanceID: 12250}
+    - Class: 114
+      Script: {instanceID: 12450}
+    - Class: 114
+      Script: {instanceID: 12492}
+    - Class: 114
+      Script: {instanceID: 12510}
+    - Class: 114
+      Script: {instanceID: 12518}
+    - Class: 114
+      Script: {instanceID: 12528}
+    - Class: 114
+      Script: {instanceID: 12568}
+    - Class: 114
+      Script: {instanceID: 12594}
+    - Class: 114
+      Script: {instanceID: 12618}
+    - Class: 114
+      Script: {instanceID: 12640}
+    - Class: 114
+      Script: {instanceID: 12672}
+    - Class: 114
+      Script: {instanceID: 12680}
+    - Class: 114
+      Script: {instanceID: 12698}
+    - Class: 114
+      Script: {instanceID: 13108}
+    - Class: 114
+      Script: {instanceID: 13122}
+    - Class: 114
+      Script: {instanceID: 13150}
+    - Class: 114
+      Script: {instanceID: 13178}
+    - Class: 114
+      Script: {instanceID: 13250}
+    - Class: 114
+      Script: {instanceID: 13286}
+    - Class: 114
+      Script: {instanceID: 13304}
+    - Class: 114
+      Script: {instanceID: 13390}
+    - Class: 114
+      Script: {instanceID: 13464}
+    - Class: 114
+      Script: {instanceID: 13554}
+    - Class: 114
+      Script: {instanceID: 13896}
+    - Class: 114
+      Script: {instanceID: 13944}
+    - Class: 114
+      Script: {instanceID: 13976}
+    - Class: 114
+      Script: {instanceID: 14004}
+    - Class: 114
+      Script: {instanceID: 14010}
+    - Class: 114
+      Script: {instanceID: 14022}
+    - Class: 114
+      Script: {instanceID: 14040}
+    - Class: 114
+      Script: {instanceID: 14064}
+    - Class: 114
+      Script: {instanceID: 14096}
+>>>>>>> Phases_De_Jeu
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -577,10 +833,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
-    - Class: 154
-      Script: {instanceID: 0}
-    - Class: 156
-      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 195
@@ -592,6 +844,8 @@ ScriptsOnlyBuild:
     - Class: 199
       Script: {instanceID: 0}
     - Class: 205
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -630,19 +884,49 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 13940}
+=======
+      Script: {instanceID: 11648}
+    - Class: 114
+      Script: {instanceID: 12618}
+    - Class: 114
+      Script: {instanceID: 12672}
+    - Class: 114
+      Script: {instanceID: 13304}
+    - Class: 114
+      Script: {instanceID: 13944}
+    - Class: 114
+      Script: {instanceID: 14010}
+>>>>>>> Phases_De_Jeu
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -669,6 +953,15 @@ ScriptsOnlyBuild:
     className: PostProcessLayer
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
+=======
+      Hash: a1f19ad47d3094e235f21b74dfc423a8
+    assemblyName: Unity.Postprocessing.Runtime.dll
+    namespaceName: UnityEngine.Rendering.PostProcessing
+    className: PostProcessLayer
+  - hash:
+      serializedVersion: 2
+>>>>>>> Phases_De_Jeu
       Hash: 7f505302a8d41eb01ced74cd9e9b86b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -783,7 +1076,11 @@ ScriptsOnlyBuild:
     className: PhotonStatsGui
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: cdb2b649e04dbce64013921a08b4b9b1
+=======
+      Hash: 070315ea5f3864cdad81a56ecfd23e6f
+>>>>>>> Phases_De_Jeu
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewShoot
@@ -1305,7 +1602,11 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: c1f2a0ed4dd5c7b735f60a5eee22e75e
+=======
+      Hash: 3482e095c0d7495df612c29b60443ba4
+>>>>>>> Phases_De_Jeu
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterThings
@@ -1323,7 +1624,11 @@ ScriptsOnlyBuild:
     className: CinemachineOrbitalTransposer
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: a5f7ddfdcb247d12f77962dc4ff2a3c8
+=======
+      Hash: a5cbbcdbe74086114572c12353259655
+>>>>>>> Phases_De_Jeu
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Classes
@@ -1339,6 +1644,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: ee98729079998eb63435f99f41b30b9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1581,7 +1892,11 @@ ScriptsOnlyBuild:
     className: InputField
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: a132d0a9f13ff99cf793a23dafa59f80
+=======
+      Hash: cccd5da80270234bb4e37afe199a094e
+>>>>>>> Phases_De_Jeu
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: projectiles
@@ -1597,6 +1912,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineMixingCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 07a6084a93c943b44ce771d76fde51c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndGame
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -2130,4 +2451,8 @@ ScriptsOnlyBuild:
   - Assets/scene/BeauMenu.unity
   - Assets/scene/Level.unity
   - Assets/scene/LevelMulti.unity
+<<<<<<< HEAD
   playerPath: D:/BuildBelow/Below.exe
+=======
+  playerPath: D:/BuildBelow/New Unity Project.exe
+>>>>>>> Phases_De_Jeu

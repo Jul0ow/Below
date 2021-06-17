@@ -1348,6 +1348,11 @@ MonoBehaviour:
   PV: {fileID: 0}
   hurt: {fileID: 7805498110147504894}
   deathTime: 15
+  DeathTimer: {fileID: 6836185136089635041, guid: 6bd5c86923db50549b20e49640c24d6b,
+    type: 3}
+  timeofDeath: 0
+  lastTimeBeforeDeath: 0
+  timeTofinalFight: 600
 --- !u!114 &-7410615817413464383
 MonoBehaviour:
   m_ObjectHideFlags: 0
