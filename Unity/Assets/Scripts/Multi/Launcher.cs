@@ -11,6 +11,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public static Launcher Instance;
     
     [SerializeField] TMP_InputField roomNameInputField;
+    [SerializeField] TMP_InputField playerNameInputField;
 
     [SerializeField]  TMP_Text errorText;
     [SerializeField]  TMP_Text roomNameText;
@@ -55,6 +56,16 @@ public class Launcher : MonoBehaviourPunCallbacks
        
         Debug.Log("joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //donne un pseudo aléatoire de type "Player xxxx"
+    }
+
+    public void changeName()
+    {
+        if (string.IsNullOrEmpty(playerNameInputField.text))
+        {
+            return;
+        }
+
+        PhotonNetwork.NickName = playerNameInputField.text;
     }
     
     // Update is called once per frame
