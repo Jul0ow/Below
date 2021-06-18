@@ -9,6 +9,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
     public GameObject Summoner;
+
+    public GameObject redTemoin;
+    public GameObject blueTemoin;
     //public static bool firstLoad = false;
     public enum Team
     {
@@ -32,11 +35,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void ChooseRed()
     {
         myTeam = Team.Red;
+        blueTemoin.SetActive(false);
+        redTemoin.SetActive(true);
     }
 
     public void ChooseBlue()
     {
         myTeam = Team.Blue;
+        redTemoin.SetActive(false);
+        blueTemoin.SetActive(true);
     }
 
     public override void OnEnable()
