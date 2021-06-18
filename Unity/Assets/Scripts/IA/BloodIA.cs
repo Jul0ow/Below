@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BloodIA : MonoBehaviour
+public class BloodIA : EnnemyIA
 {
-    public NavMeshAgent agent;
     public GameObject Boss;
-    public int speed;
-    
-    protected virtual void Awake()
+
+    protected override void Awake()
     {
         agent.speed = speed;
         agent = GetComponent<NavMeshAgent>();
     }
     
-    protected void Update()
+    protected override void Update()
     {
         agent.SetDestination(Boss.transform.position);
         transform.LookAt(Boss.transform);
