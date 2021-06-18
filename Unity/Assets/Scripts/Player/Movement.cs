@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
     Animator animator;
+    public bool torched = false;
+    public GameObject torch;
     public float WalkSpeed = 6f;
     public float RunSpeed = 16f;
     public float SlowedRunSpeed = 7f;
@@ -39,6 +41,19 @@ public class Movement : MonoBehaviour
     {
         if (!PV.IsMine)
             return;
+        if (Input.GetKeyDown("f"))
+        {
+            if (torched)
+            {
+                torch.SetActive(false);
+                torched = false;
+            }
+            else
+            {
+                torch.SetActive(true);
+                torched = true;
+            }
+        }
         if (slowed)
         {
             if (slowedTime + 1.5f <= Time.time)

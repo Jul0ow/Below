@@ -82,7 +82,7 @@ public class NewShoot : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0)&& PV.IsMine)
+        if (Input.GetKeyDown(KeyCode.Mouse0)&& PV.IsMine && !player.GetComponent<Movement>().torched)
         {
             fire();
         }

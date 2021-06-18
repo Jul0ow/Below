@@ -12,6 +12,7 @@ public class Attack : MonoBehaviour
     public float attackRate = 0.4f;
     public AudioSource woosh;
     public bool Prot;
+    public Movement movement;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,8 @@ public class Attack : MonoBehaviour
         {
             return;
         }
-        
-        if (Time.time > nextHit && Input.GetButtonDown("Fire2"))
+
+        if (Time.time > nextHit && Input.GetButtonDown("Fire2") && !movement.torched) 
         {
             woosh.Play();
             nextHit = Time.time + attackRate;
