@@ -54,7 +54,7 @@ public class Locomotion : MonoBehaviour
         animator.SetBool("Grounded", jump.IsGrounded);
         animator.SetBool("Falling", jump.Falling);
         animator.SetBool("Jumping", jump.jumping);
-        if (Time.time > nextHit && Input.GetButton("Fire2"))
+        if (Time.time > nextHit && Input.GetButton("Fire2") && !movement.torched) 
         {
             nextHit = Time.time + attackRate;
             animator.SetBool("Attacking", true);
