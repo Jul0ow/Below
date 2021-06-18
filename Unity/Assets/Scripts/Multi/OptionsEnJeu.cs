@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using Cinemachine;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -90,6 +92,14 @@ public class OptionsEnJeu : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetSensi(float sens)
+    {
+        foreach (var camera in FindObjectsOfType<CinemachineFreeLook>())
+        {
+            camera.m_XAxis.m_MaxSpeed = sens;
+        }
     }
 
     void Start()
