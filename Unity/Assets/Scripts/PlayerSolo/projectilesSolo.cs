@@ -5,39 +5,15 @@ using ExitGames.Client.Photon.Encryption;
 using UnityEngine;
 using TMPro;
 
-public class projectilesSolo : MonoBehaviour
+public class projectilesSolo : projectiles
 {
-    public bool awake = false;
-    public Rigidbody rb;
-    public GameObject explosion;
-    public GameObject bulletprefab;
-    [Range(0f,1f)]
-    public float bouciness;
-
-    public bool useGravity;
-
-    public int Damage;
-    public float explosionRange;
-    public float explosionForce;
-    
-    public int maxCollisions;
-    public float maxLifeTime;
-
-    private int collisions;
-    private PhysicMaterial physics_mat;
-    public GameObject owner;
-    private float coeffForce = 4000f;
-    public bool isSplit = false;
-    public bool Slowing = false;
-
-
-    private void Start()
+    protected override void Start()
     {
         Setup();
         //PV = GetComponent<PhotonView>();
     }
 
-    private void Update()
+    protected override void Update()
     {
         if(awake)
         {
@@ -49,7 +25,7 @@ public class projectilesSolo : MonoBehaviour
         }
     }
 
-    void Explode()
+    protected override void Explode()
     {
         if (explosion != null)
         {
@@ -84,7 +60,7 @@ public class projectilesSolo : MonoBehaviour
             Slowing = owner.GetComponent<CharacterThings>().toile;
             
             GameObject currentexplosion;
-            currentexplosion = Instantiate(GameObject.Find("PhotonPrefabs/" + explosion.name), transform.position, Quaternion.identity);
+            currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
             Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {
@@ -109,7 +85,7 @@ public class projectilesSolo : MonoBehaviour
 
             if (owner.GetComponent<NewShoot>().Arcanes && !isSplit)
             {
-                GameObject bullet = Instantiate(GameObject.Find("PhotonPrefabs/Bullet"), transform.position, Quaternion.identity);
+                GameObject bullet = Instantiate(bulletprefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<projectilesSolo>().owner = gameObject;
                 bullet.GetComponent<projectilesSolo>().awake = true;
                 bullet.GetComponent<projectilesSolo>().isSplit = true;
@@ -121,7 +97,7 @@ public class projectilesSolo : MonoBehaviour
                 body.AddForce(transform.right * coeffForce);
                 
                 //------------------------------------------------------------------------------------
-                bullet = Instantiate(GameObject.Find("PhotonPrefabs/Bullet"), transform.position, Quaternion.identity);
+                bullet = Instantiate(bulletprefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<projectilesSolo>().owner = gameObject;
                 bullet.GetComponent<projectilesSolo>().awake = true;
                 bullet.GetComponent<projectilesSolo>().isSplit = true;
@@ -133,7 +109,7 @@ public class projectilesSolo : MonoBehaviour
         }
     }
     
-    private void DelayBoom(GameObject boom)
+    protected override void DelayBoom(GameObject boom)
     {
         Destroy(boom);
     }
@@ -142,7 +118,7 @@ public class projectilesSolo : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision other)
+    protected override void OnCollisionEnter(Collision other)
     {
         if (owner.GetComponent<NewShoot>().Infini)
         {
@@ -153,7 +129,7 @@ public class projectilesSolo : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         if(awake)
         {
@@ -182,7 +158,7 @@ public class projectilesSolo : MonoBehaviour
         }
     }
     
-    private void Setup()
+    protected override void Setup()
     {
         if (owner.GetComponent<NewShootSolo>().Infini)
         {
@@ -196,7 +172,7 @@ public class projectilesSolo : MonoBehaviour
         rb.useGravity = useGravity;
     }
 
-    private void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRange);

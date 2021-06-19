@@ -222,8 +222,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906524597434}
-  m_LocalRotation: {x: 0.12990768, y: -0.87304235, z: -0.072019994, w: 0.4644721}
-  m_LocalPosition: {x: -0.3368646, y: -0.6227402, z: 3.7982757}
+  m_LocalRotation: {x: 0.09079327, y: -0.5656942, z: 0.06285113, w: 0.8171881}
+  m_LocalPosition: {x: -0.00000051201744, y: -0.000000050110245, z: -0.0000009536767}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860908590128430}
@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860906616770541}
   m_LocalRotation: {x: -0.056953397, y: 0.5678079, z: -0.039425682, w: 0.8202416}
-  m_LocalPosition: {x: -1.1000001, y: 0.000000029802322, z: -0.00000023841858}
+  m_LocalPosition: {x: -1.1000001, y: 0.000000014901161, z: -0.00000017881393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906524597432}
@@ -604,7 +604,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907420771514}
-  m_LocalRotation: {x: 0.05695339, y: -0.5678079, z: 0.039425682, w: 0.8202416}
+  m_LocalRotation: {x: 0.0569534, y: -0.5678079, z: 0.03942568, w: 0.8202416}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -682,8 +682,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907641024820}
-  m_LocalRotation: {x: -0.13076104, y: 0.46488556, z: 0.06964115, w: 0.87288785}
-  m_LocalPosition: {x: -2.769343, y: 0.5, z: -3.0467596}
+  m_LocalRotation: {x: -0.13076101, y: 0.4648855, z: 0.06964113, w: 0.87288785}
+  m_LocalPosition: {x: -2.7693424, y: 0.5, z: -3.0467596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233860906616770539}
@@ -881,7 +881,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233860907770663527}
-  m_LocalRotation: {x: 0.07386016, y: -0.5668739, z: 0.05112928, w: 0.8188922}
+  m_LocalRotation: {x: 0.073860146, y: -0.5668739, z: 0.051129278, w: 0.81889224}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1242,7 +1242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bafc9b1c3e8d524385baf3925712bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   rb: {fileID: 4233860908194137036}
+  controller: {fileID: 4233860908194137038}
+  input: {x: 0, y: 0}
+  movement: {fileID: 6093952674217891615}
+  jump: {fileID: 4233860908194137034}
+  PV: {fileID: 5223354545073206812}
   nextHit: 0
   attackRate: 0.2
 --- !u!114 &6093952674217891615
@@ -1259,6 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4233860908194137038}
   cam: {fileID: 4233860907641024816}
+  animator: {fileID: 2256975887899826775}
   torched: 0
   torch: {fileID: 2083633409172239904}
   WalkSpeed: 4
@@ -1268,6 +1275,7 @@ MonoBehaviour:
   slowedTime: 0
   speed: 6
   turnSmoothTime: 0.1
+  turnSmoothVelocity: 0
   freeLook: {fileID: 4233860906616770539}
 --- !u!114 &4233860908194137034
 MonoBehaviour:
@@ -1281,6 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef8c40b3d76ab04291682fa2a8623c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2256975887899826775}
   jumpHeight: 1
   IsGrounded: 0
   Falling: 0
@@ -1288,6 +1297,9 @@ MonoBehaviour:
   rb: {fileID: 4233860908194137036}
   JumpCount: 20
   controller: {fileID: 4233860908194137038}
+  PV: {fileID: 5223354545073206812}
+  fallspeed: 0
+  jumpheightref: 0
 --- !u!114 &5223354545073206812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,9 +1337,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4233860908194137036}
+  LifeBarFab: {fileID: 0}
+  LifeBarObject: {fileID: 0}
+  HealthRef: {fileID: 0}
   MaxHP: 100
   HP: 100
   poisoned: 0
+  tox: 0
   Alive: 1
   armor: 0
   ring: 0
@@ -1347,8 +1363,13 @@ MonoBehaviour:
   ventricule: 0
   klepto: 0
   Pastille: 0
+  lifeBarObjetct: {fileID: 0}
+  LifeBar: {fileID: 0}
   invulnerable: 0
+  tookDamage: 0
   PV: {fileID: 0}
+  invisibilityTime: 2
+  invinciblityTime: 0.25
   hurt: {fileID: 7805498110147504894}
   deathTime: 15
   DeathTimer: {fileID: 6836185136089635041, guid: 6bd5c86923db50549b20e49640c24d6b,
@@ -1356,6 +1377,9 @@ MonoBehaviour:
   timeofDeath: 0
   lastTimeBeforeDeath: 480
   timeTofinalFight: 600
+  myTeam: 0
+  myspawn: {x: 0, y: 0, z: 0}
+  timeAtStartOfTheGame: 0
 --- !u!114 &-7410615817413464383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,11 +1448,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4233860908194137075}
+  shootFrom: {fileID: 0}
   bulletprefab: {fileID: 1742921456624939142, guid: fbf9ae6b7d17a874690d0adf8cb309bd,
     type: 3}
+  coeffForce: 4000
   fireRate: 0.45
+  nextfire: 0
   cam: {fileID: 4233860907641024819}
   attackpoint: {fileID: 4233860907775482701}
+  PV: {fileID: 5223354545073206812}
   fireballSound: {fileID: 6574213820181640766}
   Infini: 0
   Snipe: 0

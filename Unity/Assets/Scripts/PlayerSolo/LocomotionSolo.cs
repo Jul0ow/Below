@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocomotionSolo : MonoBehaviour
+public class LocomotionSolo : Locomotion
 {
     Animator animator;
     public Rigidbody rb;
@@ -14,7 +14,7 @@ public class LocomotionSolo : MonoBehaviour
     public float attackRate = 0.4f;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         animator = GetComponent<Animator>();
         movement = GetComponent<MovementSolo>();
@@ -22,7 +22,7 @@ public class LocomotionSolo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Current attack"))
             return;

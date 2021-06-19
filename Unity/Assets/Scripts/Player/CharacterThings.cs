@@ -14,14 +14,14 @@ public class CharacterThings : MonoBehaviour
 
     public Rigidbody rb;
     public List<Classes.Item> Inventory;
-    private GameObject LifeBarFab;
-    private GameObject LifeBarObject;
+    public GameObject LifeBarFab;
+    public GameObject LifeBarObject;
     //public Vector3 LifeBarposition;
-    private GameObject HealthRef;
+    public GameObject HealthRef;
     public int MaxHP = 100;
     public int HP;
     public bool poisoned = false;
-    private int tox = 0;
+    public int tox = 0;
     public bool Alive = true;
     public int armor = 0;
     public bool ring;
@@ -42,13 +42,13 @@ public class CharacterThings : MonoBehaviour
     public bool klepto;
     public bool Pastille;
     public (int, char) Room;
-    private GameObject lifeBarObjetct;
-    private LifeScript LifeBar;
+    public GameObject lifeBarObjetct;
+    public LifeScript LifeBar;
     public bool invulnerable;
-    private float tookDamage;
+    public float tookDamage;
     public PhotonView PV;
-    private float invisibilityTime = 2f;
-    private float invinciblityTime = 0.25f;
+    public float invisibilityTime = 2f;
+    public float invinciblityTime = 0.25f;
     //for death
     public AudioSource hurt;
     
@@ -57,12 +57,12 @@ public class CharacterThings : MonoBehaviour
     public float timeofDeath;
     public float lastTimeBeforeDeath;
     public float timeTofinalFight;
-    private RoomManager.Team myTeam;
-    private Vector3 myspawn;
-    private float timeAtStartOfTheGame;
+    public RoomManager.Team myTeam;
+    public Vector3 myspawn;
+    public float timeAtStartOfTheGame;
     
     
-    void Awake()
+    public virtual void Awake()
     {
         
         PV = GetComponent<PhotonView>();
@@ -93,13 +93,13 @@ public class CharacterThings : MonoBehaviour
     }
 
     [PunRPC]
-    public void Heal(int healing)
+    public virtual void Heal(int healing)
     {
         HP += healing;
     }
     
     [PunRPC]
-    public void TakeDamage(int damage, bool slowed = false, bool poison = false)
+    public virtual void TakeDamage(int damage, bool slowed = false, bool poison = false)
     {
         GetComponent<Movement>().slowed = slowed;
         if (slowed)
@@ -147,7 +147,7 @@ public class CharacterThings : MonoBehaviour
 
 
     [PunRPC]
-    public void EndGame()
+    public virtual void EndGame()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -157,7 +157,7 @@ public class CharacterThings : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {  
         float time = Time.time;
         if (Time.time > tookDamage + invinciblityTime)
@@ -245,7 +245,7 @@ public class CharacterThings : MonoBehaviour
     }
 
     [PunRPC]
-    private void poison()
+    protected virtual void poison()
     {
         if (Pastille)
         {
@@ -261,13 +261,13 @@ public class CharacterThings : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider collider)
+    protected virtual void OnTriggerStay(Collider collider)
     {
         if (collider.gameObject.tag == "Lava")
             TakeDamage(100, false, false);
     }
 
-    public bool isdead()
+    public virtual bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
         DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));

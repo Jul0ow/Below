@@ -4,31 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NewShootSolo : MonoBehaviour
+public class NewShootSolo : NewShoot
 {
-    public GameObject player;
-    private GameObject shootFrom;
-    public GameObject bulletprefab;
-    private float coeffForce = 4000f;
-    public float fireRate;
-    private float nextfire;
-    public Camera cam;
-    public Transform attackpoint;
-    public AudioSource fireballSound;
-    public bool Infini;
-    public bool Snipe;
-    public float timeSniped;
-    public bool Arcanes;
-    public int BonusDamage;
-
-
-
-    private void Start()
+    protected override void Start()
     {
         player = gameObject;
     }
 
-    public void fire()
+    public override void fire()
     {
         if (Time.time > nextfire)
         {
@@ -64,7 +47,7 @@ public class NewShootSolo : MonoBehaviour
     }
 
 
-    private void Update()
+    protected override void Update()
     {
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {

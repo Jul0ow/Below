@@ -92,7 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awake: 1
   rb: {fileID: 1742921456624939136}
-  explosion: {fileID: 0}
+  explosion: {fileID: 6496343108181880183, guid: 51969b3f0ab3020418c424cd09c5cd6d,
+    type: 3}
   bulletprefab: {fileID: 1742921456624939142}
   bouciness: 0
   useGravity: 0
@@ -101,7 +102,10 @@ MonoBehaviour:
   explosionForce: 30
   maxCollisions: 0
   maxLifeTime: 1000
+  collisions: 0
+  physics_mat: {fileID: 0}
   owner: {fileID: 0}
+  coeffForce: 4000
   isSplit: 0
   Slowing: 0
 --- !u!1 &6543127669611616854

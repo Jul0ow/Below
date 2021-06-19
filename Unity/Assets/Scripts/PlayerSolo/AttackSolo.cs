@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackSolo : MonoBehaviour
+public class AttackSolo : Attack
 {
-    public float range;
-    public int Damage;
-    public float power;
-    public Animator animator;
-    public float nextHit;
-    public float attackRate = 0.4f;
-    public AudioSource woosh;
-    public bool Prot;
-    public MovementSolo movement;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +12,7 @@ public class AttackSolo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {

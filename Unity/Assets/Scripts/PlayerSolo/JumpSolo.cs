@@ -3,27 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class JumpSolo : MonoBehaviour
+public class JumpSolo : Jump
 {
-    Animator animator;
-    public float jumpHeight;
-    public bool IsGrounded = false;
-    public bool Falling = false;
-    public bool jumping = false;
-    public Rigidbody rb;
-    public int JumpCount;
-    public CharacterController controller;
-    private float fallspeed;
-    private float jumpheightref;
 
-    void Start()
+    protected override void Start()
     {
         animator = GetComponent<Animator>();
         fallspeed = 1;
         jumpheightref = jumpHeight;
     }
 
-    void Update()
+    protected override void Update()
     {
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {
@@ -66,7 +56,7 @@ public class JumpSolo : MonoBehaviour
         }
     }
 
-    public void ReduceFallSpeed()
+    public override void ReduceFallSpeed()
     {
         fallspeed /= 1.5f;
     }

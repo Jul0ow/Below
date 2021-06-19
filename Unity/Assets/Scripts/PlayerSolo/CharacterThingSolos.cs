@@ -8,59 +8,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class CharacterThingSolos : MonoBehaviour
+public class CharacterThingSolos : CharacterThings
 {
 
-    public Rigidbody rb;
-    public List<Classes.Item> Inventory;
-    private GameObject LifeBarFab;
-    private GameObject LifeBarObject;
-    //public Vector3 LifeBarposition;
-    private GameObject HealthRef;
-    public int MaxHP = 100;
-    public int HP;
-    public bool poisoned = false;
-    private int tox = 0;
-    public bool Alive = true;
-    public int armor = 0;
-    public bool ring;
-    public bool killer;
-    public bool cape;
-    public bool dard;
-    public bool basketpeg;
-    public bool runningInThe90s;
-    public float basket = 3f;
-    public bool OneUp;
-    public int luck = 0;
-    public bool vampire;
-    public bool bloodLove;
-    public bool toile;
-    public bool purulence;
-    public bool Souffrance;
-    public bool ventricule;
-    public bool klepto;
-    public bool Pastille;
-    public (int, char) Room;
-    private GameObject lifeBarObjetct;
-    private LifeScript LifeBar;
-    public bool invulnerable;
-    private float tookDamage;
-    private float invisibilityTime = 2f;
-    private float invinciblityTime = 0.25f;
-    //for death
-    public AudioSource hurt;
-    
-    public float deathTime;
-    public GameObject DeathTimer;
-    public float timeofDeath;
-    public float lastTimeBeforeDeath;
-    public float timeTofinalFight;
-    private RoomManager.Team myTeam;
-    private Vector3 myspawn;
-    private float timeAtStartOfTheGame;
-    
-    
-    void Awake()
+
+    public override void Awake()
     {
         
         myspawn= GetComponent<Transform>().position;
@@ -89,13 +41,13 @@ public class CharacterThingSolos : MonoBehaviour
     }
 
     
-    public void Heal(int healing)
+    public override void Heal(int healing)
     {
         HP += healing;
     }
     
     
-    public void TakeDamage(int damage, bool slowed = false, bool poison = false)
+    public override void TakeDamage(int damage, bool slowed = false, bool poison = false)
     {
         GetComponent<Movement>().slowed = slowed;
         if (slowed)
@@ -143,7 +95,7 @@ public class CharacterThingSolos : MonoBehaviour
 
 
     
-    public void EndGame()
+    public override void EndGame()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -153,7 +105,7 @@ public class CharacterThingSolos : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {  
         float time = Time.time;
         if (Time.time > tookDamage + invinciblityTime)
@@ -239,7 +191,7 @@ public class CharacterThingSolos : MonoBehaviour
     }
 
     
-    private void poison()
+    protected override void poison()
     {
         if (Pastille)
         {
@@ -255,13 +207,13 @@ public class CharacterThingSolos : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider collider)
+    protected override void OnTriggerStay(Collider collider)
     {
         if (collider.gameObject.tag == "Lava")
             TakeDamage(100, false, false);
     }
 
-    public bool isdead()
+    public override bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
         DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));

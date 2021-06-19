@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class Jump : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     public float jumpHeight;
     public bool IsGrounded = false;
     public bool Falling = false;
@@ -13,11 +13,11 @@ public class Jump : MonoBehaviour
     public Rigidbody rb;
     public int JumpCount;
     public CharacterController controller;
-    private PhotonView PV;
-    private float fallspeed;
-    private float jumpheightref;
+    public PhotonView PV;
+    public float fallspeed;
+    public float jumpheightref;
 
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         PV = GetComponent<PhotonView>();
@@ -25,7 +25,7 @@ public class Jump : MonoBehaviour
         jumpheightref = jumpHeight;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (!PV.IsMine)
         {
@@ -73,7 +73,7 @@ public class Jump : MonoBehaviour
         }
     }
 
-    public void ReduceFallSpeed()
+    public virtual void ReduceFallSpeed()
     {
         fallspeed /= 1.5f;
     }

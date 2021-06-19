@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class MovementSolo : MonoBehaviour
+public class MovementSolo : Movement
 {
     public CharacterController controller;
     public Transform cam;
@@ -21,20 +21,20 @@ public class MovementSolo : MonoBehaviour
     public Component freeLook;
 
     
-    void Start()
+    protected override void Start()
     {
         animator = GetComponent<Animator>();
         float speed = WalkSpeed;
     }
 
-    public void setToDeathPosition(Vector3 deathPosition)
+    public override void setToDeathPosition(Vector3 deathPosition)
     {
         controller.Move(deathPosition);
     }
     
     
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (Input.GetKeyDown("f"))
         {

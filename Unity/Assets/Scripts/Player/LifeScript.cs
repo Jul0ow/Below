@@ -11,18 +11,18 @@ public class LifeScript : MonoBehaviour
     public Slider slider;
     public GameObject owner;
 
-    public void SetMaxHealth(int health)
+    public virtual void SetMaxHealth(int health)
     {
         slider.maxValue = health;
         slider.value = health;
     }
 
-    public void SetHealth(int health)
+    public virtual void SetHealth(int health)
     {
         slider.value = health;
     }
     
-    void Update()
+    protected virtual void Update()
     {
         SetHealth(HP);
     }
