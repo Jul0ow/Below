@@ -927,14 +927,10 @@ PrefabInstance:
     - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
 --- !u!1 &6916262030311896595 stripped
 GameObject:
@@ -1128,22 +1124,6 @@ PrefabInstance:
     - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -8452686383891971122, guid: 8257fe5fd024e1640b84edb679463fd9,
-        type: 3}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1346,12 +1326,7 @@ PrefabInstance:
     - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
@@ -3130,14 +3105,10 @@ PrefabInstance:
     - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
 --- !u!4 &7500212795130698022 stripped
 Transform:
@@ -3337,14 +3308,10 @@ PrefabInstance:
     - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9152009896336452313, guid: e37d55d9adae8724c9dcf1dff5b67578,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
 --- !u!1 &1792096193240145054 stripped
 GameObject:
