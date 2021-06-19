@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class MenuManager : MonoBehaviour
 
     public void NewSolo2Solo()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
     public void Title2New()

@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     private PhotonView PV;
     private Vector3 pos;
+    public GameObject player;
     
     void Awake()
     {
@@ -22,11 +23,16 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void CreateController()
-    { 
-        //Debug.Log(pos);
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "MaleDummy"), pos , Quaternion.identity);
-        
-        //Instantiate our player controller
+    public void CreateController()
+         { 
+             //Debug.Log(pos);
+             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "MaleDummy"), pos , Quaternion.identity);
+             
+             //Instantiate our player controller
+         }
+    
+    public void CreateControllerSolo()
+    {
+        GameObject maledummy = Instantiate(player, pos , Quaternion.identity);
     }
 }
