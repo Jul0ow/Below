@@ -8,6 +8,7 @@ using System.IO;
 public class SummonEnnemy : MonoBehaviour
 {
     public bool elite = false;
+    public bool solo = false;
 
     void Awake()
     {
@@ -18,10 +19,21 @@ public class SummonEnnemy : MonoBehaviour
         EnnemyList list = gameObject.AddComponent<EnnemyList>();
         list = GetComponent<EnnemyList>();
         list.Creat();
-        if (elite)
-            PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickelite(), transform.position, Quaternion.identity);
+        if (solo)
+        {
+            if (elite)
+                Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickelite()) , transform.position, Quaternion.identity);
+            else
+                Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickennemy()), transform.position, Quaternion.identity);
+        }
         else
-            PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
+        {
+            if (elite)
+                PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickelite(), transform.position, Quaternion.identity);
+            else
+                PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
+        }
+        
         Destroy(gameObject);
     }
 }

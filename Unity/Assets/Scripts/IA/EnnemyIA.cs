@@ -27,6 +27,7 @@ public class EnnemyIA : MonoBehaviour
     public float blockedTime;
     public Vector3 blockedPosition;
     public bool blocked = false;
+    public bool solo = false;
 
 
     protected virtual void Awake()

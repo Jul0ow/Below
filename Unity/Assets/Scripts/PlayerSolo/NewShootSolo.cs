@@ -8,7 +8,7 @@ public class NewShootSolo : NewShoot
 {
     protected override void Start()
     {
-        player = gameObject;
+        //player = gameObject;
     }
 
     public override void fire()
@@ -53,7 +53,7 @@ public class NewShootSolo : NewShoot
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0)&& !player.GetComponent<MovementSolo>().torched)
+        if (Input.GetKeyDown(KeyCode.Mouse0)&& !GetComponent<MovementSolo>().torched)
         {
             fire();
         }

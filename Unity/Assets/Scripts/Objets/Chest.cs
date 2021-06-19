@@ -15,6 +15,7 @@ public class Chest : MonoBehaviour
     public Classes.Item content;
     public GameObject mimique;
     private Animator anim;
+    public bool solo;
     
     void Start()
     {
@@ -28,6 +29,7 @@ public class Chest : MonoBehaviour
         Rarity = rar;
         ItemReference = refer;
         content = Classes.AllItem[Rarity][ItemReference];
+        solo = false;
     }
     
 
@@ -74,7 +76,43 @@ public class Chest : MonoBehaviour
             for (int i = 0; i < getters.Length; i++)
                 if (getters[i].GetComponent<CharacterThings>() && Input.GetKeyDown("e"))
                 {
-                    GetComponent<PhotonView>().RPC("OpeningChest", RpcTarget.All, getters[i].GetComponent<PhotonView>().ViewID);
+                    if (!solo)
+                    {
+                        GetComponent<PhotonView>().RPC("OpeningChest", RpcTarget.All, getters[i].GetComponent<PhotonView>().ViewID);
+                    }
+                    else
+                    {
+                        if (getters[i].GetComponent<CharacterThings>().klepto)
+                        {
+                            getters[i].GetComponent<CharacterThings>().Heal(10);
+                        }
+                        Opened = true;
+                        anim.SetBool("IsOpened",true);
+                        GetComponent<AudioSource>().Play();
+                        int IsMimique = Random.Range(1, 100);
+                        if(IsMimique > 6)
+                        {
+                            if (getters[i].GetComponent<CharacterThings>().luck != 0 && Rarity < 3)
+                            {
+                                Rarity += 1;
+                                ItemReference = (int) Random.Range(0, Classes.AllItem[Rarity].Count);
+                                content = Classes.AllItem[Rarity][ItemReference];
+                            }
+                            content.Joueur = getters[i].gameObject;
+                            content.AppliedEffect();
+                        }
+                        else
+                        {
+                            GameObject Mimique = Instantiate(mimique, transform.position, Quaternion.identity);
+                            content.Joueur = getters[i].gameObject;
+                            Mimique.GetComponent<MimiqueIA>().content = content;
+                            Mimique.GetComponent<MimiqueIA>().Getter = getters[i].gameObject;
+                            Mimique.GetComponent<MimiqueIA>().Rarity = Rarity;
+                            Mimique.GetComponent<MimiqueIA>().ItemReference = ItemReference;
+                            Destroy(gameObject);
+                        }
+                    }
+                    
                     HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
                     getters[i].GetComponent<CharacterThings>().Inventory.Add(content);
                 }
