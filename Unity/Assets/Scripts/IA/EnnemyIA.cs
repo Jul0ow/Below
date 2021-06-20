@@ -74,6 +74,10 @@ public class EnnemyIA : MonoBehaviour
             }
             
         }
+        
+        Vector3 distanceToWalkpoint = transform.position - walkpoint;
+        if (distanceToWalkpoint.magnitude < 1f)
+            walkpointSet = false;
 
         if (blocked && blockedTime+3 <= Time.time)
         {
@@ -85,9 +89,7 @@ public class EnnemyIA : MonoBehaviour
         }
         
 
-        Vector3 distanceToWalkpoint = transform.position - walkpoint;
-        if (distanceToWalkpoint.magnitude < 1f)
-            walkpointSet = false;
+        
     }
 
     protected virtual void SearchWalkpoint()

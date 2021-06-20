@@ -67,7 +67,7 @@ public class projectilesSolo : projectiles
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.TakeDamage(tmp);
+                    IA.TakeDamage(tmp, Slowing);
                     if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
                     {
                         owner.GetComponent<CharacterThings>().Heal(10);

@@ -183,26 +183,39 @@ public class CharacterThings : MonoBehaviour
         {
             if (timeAtStartOfTheGame + lastTimeBeforeDeath < time)
             {
-                //Alive = false;
-                GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
-                GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
-                GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
-                return;
+                if (OneUp)
+                {
+                    OneUp = false;
+                    GetComponent<PhotonView>().RPC("Heal",RpcTarget.All, MaxHP);
+                }
+                else
+                {
+                    //Alive = false;
+                    GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                    GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                    GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
+                    return;
+                }
+                
+            }
+
+            if (!(timeAtStartOfTheGame + lastTimeBeforeDeath < time))
+            {
+                //Time.timeScale = 0;
+                timeofDeath = Time.time;
+                Alive = false;
+                if (myTeam == RoomManager.Team.Red)
+                    transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
+                else
+                {
+                    transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
+                }
+                //Debug.Log(player.transform.position);
             }
             
-            //Time.timeScale = 0;
-            timeofDeath = Time.time;
-            Alive = false;
-            if (myTeam == RoomManager.Team.Red)
-                transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
-            else
-            {
-                transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
-            }
-            //Debug.Log(player.transform.position);
             
         }
         if (!Alive)

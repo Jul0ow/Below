@@ -16,9 +16,13 @@ public class EnnemyLife : MonoBehaviour
     }
     
     [PunRPC]
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage, bool slowed = false)
     {
         Health -= damage;
+        if (slowed && GetComponent<EnnemyIA>().speed > 1)
+        {
+            GetComponent<EnnemyIA>().speed -= 1;
+        }
         if (Health <= 0)
         {
             death.Play();

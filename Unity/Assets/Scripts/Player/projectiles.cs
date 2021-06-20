@@ -92,7 +92,7 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp);
+                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, Slowing);
                     if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
                     {
                         owner.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 10);

@@ -19,7 +19,7 @@ public class Lava : MonoBehaviour
             }
             else
             {
-                collider.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, false, false);
+                collider.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 100);
             }
         }    
     }

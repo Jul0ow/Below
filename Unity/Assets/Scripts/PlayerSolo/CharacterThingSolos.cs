@@ -127,12 +127,21 @@ public class CharacterThingSolos : CharacterThings
         if(Input.GetKey("k")) TakeDamage(99999);
         if (HP <= 0 && Alive)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
-            GetComponent<MovementSolo>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
-            GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
-            return;
+            if (OneUp)
+            {
+                OneUp = false;
+                Heal(MaxHP);
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                GetComponent<MovementSolo>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
+                return;
+            }
+            
         }
         
         if (cape && Time.time > tookDamage + invisibilityTime)
