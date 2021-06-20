@@ -116,6 +116,8 @@ public class BlobIA : EnnemyIA
             {
                 blob1 = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/Mob/Gout"), transform.position, Quaternion.identity);
                 blob2 = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/Mob/Gout"), transform.position, Quaternion.identity);
+                blob1.GetComponent<BlobIA>().solo = true;
+                blob2.GetComponent<BlobIA>().solo = true;
             }
             else
             {
