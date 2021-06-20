@@ -18,9 +18,11 @@ public class portail : MonoBehaviour
     {
         Collider[] getters = Physics.OverlapSphere(transform.position, 5);
         for (int i = 0; i < getters.Length; i++)
-            if (getters[i].GetComponent<CharacterThingSolos>())
+            if (getters[i].GetComponent<CharacterThingSolos>() && Input.GetKeyDown(KeyCode.E))
             {
-                getters[i].transform.position = new Vector3(676, -96,-724);
+                getters[i].GetComponent<CharacterController>().enabled = false;
+                getters[i].transform.position = new Vector3(676f, -96f,-724f);
+                getters[i].GetComponent<CharacterController>().enabled = true;
                 //Boss.SetActive(true);
             }
     }
