@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IA: {fileID: 5259220845003062184}
-  Health: 800
+  Health: 900
   death: {fileID: 4985937889247518747}
 --- !u!114 &5259220845003062184
 MonoBehaviour:
@@ -156,7 +156,7 @@ MonoBehaviour:
   speed: 3
   damage: 20
   alreadyAttacked: 0
-  sightRange: 30
+  sightRange: 50
   attackRange: 20
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   blockedTime: 0
   blockedPosition: {x: 0, y: 0, z: 0}
   blocked: 0
+  solo: 0
   lifes: 3.1
 --- !u!82 &4985937889247518747
 AudioSource:

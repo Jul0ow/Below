@@ -32,7 +32,11 @@ public class MamaBouquetin : BouquetinIA
             invoqued = true;
             Skull.SetActive(false);
             if(solo)
-                Instantiate(Resources.Load("PhotonPrefabs/Mob/" + "Skull"), transform.position, Quaternion.identity);
+            {
+                Object crane;
+                crane = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + "Skull"), transform.position, Quaternion.identity);
+                ((GameObject) crane).GetComponent<EnnemyIA>().solo = true;
+            }
             else
                 PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + "Skull", transform.position, Quaternion.identity);
         }

@@ -157,7 +157,7 @@ MonoBehaviour:
   speed: 8
   damage: 1
   alreadyAttacked: 0
-  sightRange: 20
+  sightRange: 50
   attackRange: 30
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   blockedTime: 0
   blockedPosition: {x: 0, y: 0, z: 0}
   blocked: 0
+  solo: 0
 --- !u!82 &4700039314809323007
 AudioSource:
   m_ObjectHideFlags: 0
@@ -422,7 +423,8 @@ MonoBehaviour:
   bullet: {fileID: 3092848859993577290, guid: 19cc8056ad1322647b1e3283d53ad35c, type: 3}
   shootForce: 10
   damage: 1
-  fireball: {fileID: 0}
+  fireball: {fileID: 4700039314809323007}
+  solo: 0
 --- !u!82 &5198966884858916285
 AudioSource:
   m_ObjectHideFlags: 0

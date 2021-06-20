@@ -140,6 +140,7 @@ MonoBehaviour:
   shootForce: 30
   damage: 30
   fireball: {fileID: 2054744892061451260}
+  solo: 0
 --- !u!82 &2054744892061451260
 AudioSource:
   m_ObjectHideFlags: 0
@@ -342,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IA: {fileID: 8060721368423326817}
-  Health: 600
+  Health: 700
   death: {fileID: 4779095010418576377}
 --- !u!82 &4779095010418576377
 AudioSource:
@@ -516,6 +517,7 @@ MonoBehaviour:
   blockedTime: 0
   blockedPosition: {x: 0, y: 0, z: 0}
   blocked: 0
+  solo: 0
   _animator: {fileID: 6835560692628244473}
 --- !u!1001 &1132197437930895976
 PrefabInstance:
