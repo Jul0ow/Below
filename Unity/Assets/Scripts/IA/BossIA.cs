@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class BossIA : EnnemyIA
@@ -20,6 +21,11 @@ public class BossIA : EnnemyIA
         if(Dead)
         {
             animator.SetBool("Die",true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+            GameObject.FindWithTag("Player").GetComponent<MovementSolo>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+            GameObject.Find("écran de fin").transform.Find("Ecran victoire").gameObject.SetActive(true);
             return;
         }
         float distance = float.MaxValue;
