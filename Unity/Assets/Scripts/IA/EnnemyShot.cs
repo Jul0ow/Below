@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnnemyShot : MonoBehaviour
 {
+    public bool solo = false;
     public bool awake = false;
     public Rigidbody rb;
     public GameObject explosion;
@@ -28,9 +29,13 @@ public class EnnemyShot : MonoBehaviour
     {
         if (explosion != null)
         {
-            GameObject currentexplosion;
-            currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
-            Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
+            Object currentexplosion;
+            if (solo)
+                currentexplosion = Instantiate(Resources.Load("PhotonPrefabs/" + explosion.name), transform.position, Quaternion.identity);
+            else
+                currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
+            
+            Collider[] enemies = Physics.OverlapSphere(((GameObject) currentexplosion).transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);

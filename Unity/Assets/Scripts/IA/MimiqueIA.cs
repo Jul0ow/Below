@@ -53,6 +53,9 @@ public class MimiqueIA : EnnemyIA
             Getter.GetComponent<CharacterThings>().Inventory.Add(content);
             HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
         }
-        PhotonNetwork.Destroy(gameObject);
+        if(solo)
+            Destroy(gameObject);
+        else
+            PhotonNetwork.Destroy(gameObject);
     }
 }

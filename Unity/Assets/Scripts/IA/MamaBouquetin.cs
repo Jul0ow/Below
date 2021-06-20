@@ -31,7 +31,10 @@ public class MamaBouquetin : BouquetinIA
         {
             invoqued = true;
             Skull.SetActive(false);
-            PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + "Skull", transform.position, Quaternion.identity);
+            if(solo)
+                Instantiate(Resources.Load("PhotonPrefabs/Mob/" + "Skull"), transform.position, Quaternion.identity);
+            else
+                PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + "Skull", transform.position, Quaternion.identity);
         }
     }
 }
