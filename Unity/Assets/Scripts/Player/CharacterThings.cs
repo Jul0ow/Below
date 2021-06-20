@@ -49,6 +49,7 @@ public class CharacterThings : MonoBehaviour
     public PhotonView PV;
     public float invisibilityTime = 2f;
     public float invinciblityTime = 0.25f;
+    
     //for death
     public AudioSource hurt;
     
@@ -60,6 +61,7 @@ public class CharacterThings : MonoBehaviour
     public RoomManager.Team myTeam;
     public Vector3 myspawn;
     public float timeAtStartOfTheGame;
+    private bool isInArena = false;
     
     
     public virtual void Awake()
@@ -230,13 +232,19 @@ public class CharacterThings : MonoBehaviour
                 DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
             }  
         }
-        if (timeAtStartOfTheGame + timeTofinalFight<time)
+        if (timeAtStartOfTheGame + timeTofinalFight<time && !isInArena)
         {
             if (myTeam == RoomManager.Team.Red)
-                transform.position = new Vector3(-19.3f, 1.43f, -507.28f);//RED arene spawn
+            {
+                isInArena = true;
+                //GetComponent<CharacterController>().enabled = false;
+                transform.position = new Vector3(-21.85821f, 4.7f, -508.96f);//RED arene spawn
+                //GetComponent<CharacterController>().enabled = true;
+            }
             else
             {
-                transform.position = new Vector3(-11.06f, 1.43f, -533.3f);//blue arene spawn
+                isInArena = true;
+                transform.position = new Vector3(-11.06f, 1.43f, -533.3f); //blue arene spawn
             }
         }
         if (cape && Time.time > tookDamage + invisibilityTime)
