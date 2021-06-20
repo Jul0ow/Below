@@ -9,6 +9,7 @@ public class SummonEnnemy : MonoBehaviour
 {
     public bool elite = false;
     public bool solo = false;
+    private Object mob;
 
     void Awake()
     {
@@ -22,18 +23,18 @@ public class SummonEnnemy : MonoBehaviour
         if (solo)
         {
             if (elite)
-                Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickelite()) , transform.position, Quaternion.identity);
+                mob = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickelite()) , transform.position, Quaternion.identity);
             else
-                Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickennemy()), transform.position, Quaternion.identity);
+                mob = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickennemy()), transform.position, Quaternion.identity);
         }
         else
         {
             if (elite)
-                PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickelite(), transform.position, Quaternion.identity);
+                mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickelite(), transform.position, Quaternion.identity);
             else
-                PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
+                mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
         }
-        
+        ((GameObject) mob).GetComponent<EnnemyIA>().solo = solo;
         Destroy(gameObject);
     }
 }
