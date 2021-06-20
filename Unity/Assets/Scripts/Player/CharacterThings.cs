@@ -178,23 +178,12 @@ public class CharacterThings : MonoBehaviour
         }
         LifeBar.HP = HP; 
         if(Input.GetKey("k")) TakeDamage(99999);
-        if (!Alive)
-        {
-            if (!isdead())
-            {
-                //Debug.Log("end death");
-                transform.position = myspawn;
-                deathTime *= 1.15f; //increase by 15% the death time
-                Alive = true;
-                HP = MaxHP;
-                DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
-            }  
-        }
+        
         if (HP <= 0 && Alive)
         {
-            if (timeAtStartOfTheGame + lastTimeBeforeDeath< time)
+            if (timeAtStartOfTheGame + lastTimeBeforeDeath < time)
             {
-                Alive = false;
+                //Alive = false;
                 GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -215,6 +204,18 @@ public class CharacterThings : MonoBehaviour
             }
             //Debug.Log(player.transform.position);
             
+        }
+        if (!Alive)
+        {
+            if (!isdead())
+            {
+                //Debug.Log("end death");
+                transform.position = myspawn;
+                deathTime *= 1.15f; //increase by 15% the death time
+                Alive = true;
+                HP = MaxHP;
+                DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
+            }  
         }
         if (timeAtStartOfTheGame + timeTofinalFight<time)
         {
@@ -259,12 +260,6 @@ public class CharacterThings : MonoBehaviour
             tox = 0;
             gameObject.transform.Find("flou artistique").gameObject.SetActive(false);
         }
-    }
-
-    protected virtual void OnTriggerStay(Collider collider)
-    {
-        if (collider.gameObject.tag == "Lava")
-            TakeDamage(100, false, false);
     }
 
     public virtual bool isdead()

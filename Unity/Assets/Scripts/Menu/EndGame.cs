@@ -10,6 +10,8 @@ using UnityEditor;
 public class EndGame : MonoBehaviourPunCallbacks
 {
     public GameObject overlay;
+
+    public bool solo = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,15 @@ public class EndGame : MonoBehaviourPunCallbacks
 
     public void MenuPrincipal()
     {
-        PhotonNetwork.LeaveRoom();
+        if (solo)
+        {
+            SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        }
+        else
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+        
     }
 
     public override void OnLeftRoom()

@@ -125,21 +125,8 @@ public class CharacterThingSolos : CharacterThings
         }
         LifeBar.HP = HP; 
         if(Input.GetKey("k")) TakeDamage(99999);
-        if (!Alive)
-        {
-            if (!isdead())
-            {
-                //Debug.Log("end death");
-                transform.position = myspawn;
-                deathTime *= 1.15f; //increase by 15% the death time
-                Alive = true;
-                HP = MaxHP;
-                DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
-            }  
-        }
         if (HP <= 0 && Alive)
         {
-            Alive = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
@@ -183,13 +170,6 @@ public class CharacterThingSolos : CharacterThings
             gameObject.transform.Find("flou artistique").gameObject.SetActive(false);
         }
     }
-
-    protected override void OnTriggerStay(Collider collider)
-    {
-        if (collider.gameObject.tag == "Lava")
-            TakeDamage(100, false, false);
-    }
-
     public override bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
