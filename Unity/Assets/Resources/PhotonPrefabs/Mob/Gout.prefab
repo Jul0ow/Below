@@ -163,6 +163,7 @@ MonoBehaviour:
   blockedTime: 0
   blockedPosition: {x: 0, y: 0, z: 0}
   blocked: 0
+  solo: 0
   lifes: 2.1
 --- !u!82 &3349569168977839758
 AudioSource:
@@ -186,7 +187,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 46.9
+  MaxDistance: 25.89
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
