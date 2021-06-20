@@ -5,22 +5,6 @@ using UnityEngine;
 
 public class MovementSolo : Movement
 {
-    public CharacterController controller;
-    public Transform cam;
-    Animator animator;
-    public bool torched = false;
-    public GameObject torch;
-    public float WalkSpeed = 6f;
-    public float RunSpeed = 16f;
-    public float SlowedRunSpeed = 7f;
-    public bool slowed;
-    public float slowedTime;
-    public float speed;
-    public float turnSmoothTime = 0.1f;
-    private float turnSmoothVelocity;
-    public Component freeLook;
-
-    
     protected override void Start()
     {
         animator = GetComponent<Animator>();

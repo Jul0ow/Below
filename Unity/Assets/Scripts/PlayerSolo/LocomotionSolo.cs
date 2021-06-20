@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class LocomotionSolo : Locomotion
 {
-    Animator animator;
-    public Rigidbody rb;
-    CharacterController controller;
-    Vector2 input;
-    MovementSolo movement;
-    JumpSolo jump;
-    public float nextHit;
-    public float attackRate = 0.4f;
-
     // Start is called before the first frame update
     protected override void Start()
     {

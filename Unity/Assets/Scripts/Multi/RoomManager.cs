@@ -86,8 +86,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         if (scene.buildIndex == 3)
         {
-            Debug.Log("mabitte");
-            GameObject manager = Instantiate(player, new Vector3(0,0,0), Quaternion.identity);
+            GameObject manager = Instantiate(player, new Vector3(-777,33,-495), Quaternion.identity);
             manager.GetComponent<PlayerManager>().CreateControllerSolo();
             foreach (var x in scene.GetRootGameObjects())
             foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
