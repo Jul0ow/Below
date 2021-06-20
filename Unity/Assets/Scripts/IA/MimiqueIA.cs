@@ -26,6 +26,9 @@ public class MimiqueIA : EnnemyIA
         Chaseplayer();
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
         if(playerInAttackRange) Attackplayer();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
     
     protected override void Attackplayer()

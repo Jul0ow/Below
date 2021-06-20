@@ -13,6 +13,7 @@ public class RushIA : EnnemyIA
     
     protected override void Update()
     {
+        
         float distance = float.MaxValue;
         foreach (var joueur in GameObject.FindGameObjectsWithTag("Cible"))
         {
@@ -29,6 +30,9 @@ public class RushIA : EnnemyIA
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         else if(playerInAttackRange && playerInSightRange) Attackplayer();
         else Patroling();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 
     protected override void SearchWalkpoint()

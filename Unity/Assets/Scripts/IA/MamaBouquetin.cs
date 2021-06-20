@@ -36,5 +36,8 @@ public class MamaBouquetin : BouquetinIA
             else
                 PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + "Skull", transform.position, Quaternion.identity);
         }
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 }

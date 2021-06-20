@@ -108,5 +108,8 @@ public class BossIA : EnnemyIA
             if (Life.Health < 1000) Life.Health += 500;
             Attackplayer();
         }
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 }

@@ -32,6 +32,9 @@ public class BoomIA : RushIA
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         else if(playerInAttackRange && playerInSightRange) Attackplayer();
         else Patroling();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 
     protected override void SearchWalkpoint()

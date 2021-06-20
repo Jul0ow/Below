@@ -140,6 +140,7 @@ MonoBehaviour:
   shootForce: 30
   damage: 30
   fireball: {fileID: 2054744892061451260}
+  solo: 0
 --- !u!82 &2054744892061451260
 AudioSource:
   m_ObjectHideFlags: 0
@@ -516,6 +517,7 @@ MonoBehaviour:
   blockedTime: 0
   blockedPosition: {x: 0, y: 0, z: 0}
   blocked: 0
+  solo: 0
   _animator: {fileID: 6835560692628244473}
   Life: {fileID: -5419061402527261588}
   Skull: {fileID: 2932387905564692723}
