@@ -31,7 +31,7 @@ public class AttackSolo : Attack
             }
             if (GetComponentInParent<CharacterThings>().Souffrance)
             {
-                tmp += GetComponent<CharacterThings>().MaxHP - GetComponent<CharacterThings>().HP;
+                tmp += GetComponentInParent<CharacterThings>().MaxHP - GetComponentInParent<CharacterThings>().HP;
             }
             if (GetComponentInParent<CharacterThings>().killer)
             {

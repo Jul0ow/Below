@@ -90,7 +90,7 @@ public class BlobIA : EnnemyIA
     {
         if(!alreadyAttacked)
         {
-            Collider[] enemies = Physics.OverlapSphere(transform.position, 2);
+            Collider[] enemies = Physics.OverlapSphere(transform.position, 6);
             for (int i = 0; i < enemies.Length; i++)
             {
                 if (enemies[i].CompareTag("Player"))

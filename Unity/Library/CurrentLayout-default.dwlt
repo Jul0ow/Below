@@ -112,6 +112,7 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
@@ -127,6 +128,12 @@ MonoBehaviour:
   vertical: 0
   controlID: 10112
 >>>>>>> Solo
+=======
+  m_MinSize: {x: 678, y: 342}
+  m_MaxSize: {x: 12003, y: 8042}
+  vertical: 0
+  controlID: 6955
+>>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,9 +155,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 947
-  m_MinSize: {x: 403, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+  m_MinSize: {x: 402, y: 342}
+  m_MaxSize: {x: 8002, y: 8042}
   vertical: 1
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
   controlID: 6025
@@ -160,6 +168,9 @@ MonoBehaviour:
 =======
   controlID: 10086
 >>>>>>> Solo
+=======
+  controlID: 6905
+>>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,11 +203,15 @@ MonoBehaviour:
 >>>>>>> Solo
 =======
     height: 573
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 10087
 >>>>>>> Solo
+=======
+  controlID: 6858
+>>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -262,7 +277,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -270,15 +285,22 @@ MonoBehaviour:
     x: 0
     y: 676
     width: 1531
+<<<<<<< Updated upstream
     height: 271
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 17}
+=======
+    height: 374
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+>>>>>>> Stashed changes
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -366,7 +388,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -376,15 +398,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1150
+<<<<<<< Updated upstream
       height: 634
     m_Scale: {x: 0.2935185, y: 0.2935185}
     m_Translation: {x: 575, y: 317}
+=======
+      height: 531
+    m_Scale: {x: 0.24583335, y: 0.24583334}
+    m_Translation: {x: 575, y: 265.5}
+>>>>>>> Stashed changes
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< Updated upstream
       x: -1958.9906
       y: -1080
       width: 3917.9812
@@ -392,6 +421,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.2935185
   m_LastWindowPixelSize: {x: 1150, y: 655}
+=======
+      x: -2338.983
+      y: -1080
+      width: 4677.966
+      height: 2160
+    m_MinimalGUI: 1
+  m_defaultScale: 0.24583334
+  m_LastWindowPixelSize: {x: 1150, y: 552}
+>>>>>>> Stashed changes
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -426,8 +464,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 78720100
       m_LastClickedID: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
       m_ExpandedIDs: ea4bedff4c4eedffb2f1edffbaf1edff56f7edff4cfdedffe4a6eeff4ca9eeffa6f5efff0800f1ff72b7f1ffa694f2ff4667f3ff04c4f7ff20710b0046710b0022720b00c2730b002e9e0b00749e0b0076a00b00aca00b003eaf0b0040b10b00f2b10b000eb30b00
@@ -437,6 +476,9 @@ MonoBehaviour:
 =======
       m_ExpandedIDs: cebef1ff8ab6f3fff8b6f3ffe85ff4ff9a7ff5ff0234f6ff72fffeffb002ffff04f4ffff3afbffffb61a0200
 >>>>>>> Solo
+=======
+      m_ExpandedIDs: 06c8daff74c8daff5e71dbff3e77dbff02c4f8ffa0c4f8ffb0cbf8ff269df9ff884bfaffc850faffbafafaff46fbfaff9afdfaffd070fcff260ffdffa018fdff9e1dfdffae24fdff14ecfdff9093feff0a9dfeff08a2feff18a9feffa051ffff3afbffff7c8c0100e2c00100
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -496,6 +538,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 443.86023, y: 95.512596, z: -1710.5977}
@@ -511,6 +554,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 690.9721, y: -109.87606, z: -834.61444}
 >>>>>>> Solo
+=======
+    m_Target: {x: -33.033825, y: -2.1346946, z: -289.85852}
+    speed: 2
+    m_Value: {x: -33.033825, y: -2.1346946, z: -289.85852}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -556,6 +604,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0, w: 1}
@@ -570,17 +619,24 @@ MonoBehaviour:
 =======
     m_Target: {x: 0.021857752, y: 0.9186117, z: -0.051319532, w: 0.39121553}
 >>>>>>> Solo
+=======
+    m_Target: {x: -0.010435784, y: 0.95716685, z: -0.03476903, w: -0.28727028}
+>>>>>>> Stashed changes
     speed: 2
-    m_Value: {x: 0.020683939, y: 0.9187577, z: -0.04856326, w: 0.3912777}
+    m_Value: {x: -0.010435731, y: 0.95716196, z: -0.03476885, w: -0.28726882}
   m_Size:
-    m_Target: 4.207145
+    m_Target: 2.6028888
     speed: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     m_Value: 2.1366756
 >>>>>>> Solo
 =======
     m_Value: 4.5071454
 >>>>>>> Solo
+=======
+    m_Value: 2.6028888
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -762,6 +818,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     - Assets/Scripts/Multi
@@ -783,11 +840,19 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Resources/PhotonPrefabs
 >>>>>>> Solo
+=======
+    - Assets/scene
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/scene
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\belwo\Below\Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     scrollPos: {x: 0, y: 474}
@@ -806,6 +871,12 @@ MonoBehaviour:
     m_LastClickedID: 17362
     m_ExpandedIDs: 00000000ce430000d0430000d2430000d4430000d6430000d8430000da430000dc43000000ca9a3b
 >>>>>>> Solo
+=======
+    scrollPos: {x: 0, y: 307}
+    m_SelectedIDs: 12720100
+    m_LastClickedID: 94738
+    m_ExpandedIDs: 00000000bc710100be710100c0710100c2710100c4710100c6710100c8710100ca71010000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -833,6 +904,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_ExpandedIDs: 00000000702a0a00722a0a00742a0a00762a0a00782a0a007a2a0a007c2a0a007e2a0a0000ca9a3b
@@ -842,6 +914,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000ce430000d0430000d2430000d4430000d6430000d8430000da430000dc43000000ca9a3b
 >>>>>>> Solo
+=======
+    m_ExpandedIDs: 00000000bc710100be710100c0710100c2710100c4710100c6710100c8710100ca71010000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -866,9 +941,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 78720100
+    m_LastClickedInstanceID: 94840
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000f4d90100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -960,4 +1035,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
