@@ -39,7 +39,10 @@ public class Chest : MonoBehaviour
         GameObject player = PhotonView.Find(view).gameObject;
         if (player.GetComponent<CharacterThings>().klepto)
         {
-            player.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All,10);
+            if(solo)
+                player.GetComponent<CharacterThings>().Heal(10);
+            else
+                player.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All,10);
         }
         Opened = true;
         anim.SetBool("IsOpened",true);
@@ -58,7 +61,14 @@ public class Chest : MonoBehaviour
         }
         else
         {
-            GameObject Mimique = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + mimique.name, transform.position, Quaternion.identity);
+            GameObject Mimique;
+            if (solo)
+            {
+                Mimique = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/Mob/" + mimique.name), transform.position, Quaternion.identity);
+                Mimique.GetComponent<MimiqueIA>().solo = true;
+            }
+            else
+                Mimique = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + mimique.name, transform.position, Quaternion.identity);
             content.Joueur = player.gameObject;
             Mimique.GetComponent<MimiqueIA>().content = content;
             Mimique.GetComponent<MimiqueIA>().Getter = player.gameObject;
