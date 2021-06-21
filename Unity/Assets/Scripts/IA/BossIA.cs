@@ -20,12 +20,18 @@ public class BossIA : EnnemyIA
     {
         if(Dead)
         {
-            animator.SetBool("Die",true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
-            GameObject.FindWithTag("Player").GetComponent<MovementSolo>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
-            GameObject.Find("écran de fin").transform.Find("Ecran victoire").gameObject.SetActive(true);
+            if (animator.speed > 0)
+                animator.speed -= 0.01f;
+            Collider[] getters = Physics.OverlapSphere(transform.position, 10);
+            for (int i = 0; i < getters.Length; i++)
+                if (getters[i].GetComponent<CharacterThings>() && Input.GetKeyDown(KeyCode.E))
+                {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                    GameObject.FindWithTag("Player").GetComponent<MovementSolo>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                    GameObject.Find("écran de fin").transform.Find("Ecran victoire").gameObject.SetActive(true);
+                }
             return;
         }
         float distance = float.MaxValue;
@@ -46,52 +52,38 @@ public class BossIA : EnnemyIA
         {
             Attackplayer();
         }
-        
-        else if (Life.Health > 8000)
+        else if (Life.Health > 12000)
         {
+            animator.SetBool("Run Forward",true);
             Serie1.SetActive(false);
-            if (playerInAttackRange)
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
+            /*if(!playerInSightRange)
+                Attackplayer();
+            else*/
+                Chaseplayer();
+            if (!alreadyAttacked)
             {
-                animator.SetBool("Run forward",false);
-                agent.SetDestination(transform.position);
-                transform.LookAt(player.transform);
-                if (!alreadyAttacked)
-                {
-                    Collider[] enemies = Physics.OverlapSphere(transform.position, 2);
-                    for (int i = 0; i < enemies.Length; i++)
-                    {
-                        if (enemies[i].CompareTag("Player"))
-                        {
-                            enemies[i].GetComponent<CharacterThings>().TakeDamage(0, false, false);
-                            enemies[i].GetComponent<Rigidbody>().AddExplosionForce(Force, transform.position, 3);
-                        }
-                    }
-                    alreadyAttacked = true;
-                    Invoke(nameof(ResetAttack), timeBetweenAttacks);
-                }
-                else
-                {
-                    if (playerInSightRange)
-                    {
-                        animator.SetBool("Run forward",true);
-                        Chaseplayer();
-                    }
-                    else
-                    {
-                        animator.SetBool("Stab Attack",true);
-                        Attackplayer();
+                Collider[] enemies = Physics.OverlapSphere(transform.position, 12);
+                for (int i = 0; i < enemies.Length; i++)
+                { 
+                    if (enemies[i].CompareTag("Player"))
+                    { 
+                        animator.SetBool("Stab Attack", true);
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(50, false, false);
+                        enemies[i].GetComponent<Rigidbody>().AddExplosionForce(Force, transform.position, 12);
                     }
                 }
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
         
-        else if (Life.Health > 2000)
+        else if (Life.Health > 6000)
         {
-            animator.SetBool("Run forward",false);
-            animator.SetBool("Stab Attack",false);
-            animator.SetBool("Cast spell",true);
+            animator.SetBool("Run Forward",false);
+            animator.SetBool("Cast Spell",true);
             Summonner.SetActive(true);
-            Collider[] blood = Physics.OverlapSphere(transform.position, 3);
+            Collider[] blood = Physics.OverlapSphere(transform.position, 15);
             for (int i = 0; i < blood.Length; i++)
             {
                 if (blood[i].gameObject.GetComponent<BloodIA>())
@@ -105,13 +97,13 @@ public class BossIA : EnnemyIA
 
         else
         {
-            animator.SetBool("Cast spell",false);
+            animator.SetBool("Cast Spell",false);
             animator.SetBool("Jump",true);
             Summonner.SetActive(false);
             Serie2.SetActive(true);
             Light.SetActive(true);
-            Lava.transform.position += new Vector3(0,0.0001f,0);
-            if (Life.Health < 1000) Life.Health += 500;
+            Lava.transform.position += new Vector3(0,0.01f,0);
+            if (Life.Health < 3000) Life.Health += 500;
             Attackplayer();
         }
         var rotationVector = transform.rotation.eulerAngles;

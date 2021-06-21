@@ -21,9 +21,9 @@ public class portail : MonoBehaviour
             if (getters[i].GetComponent<CharacterThingSolos>() && Input.GetKeyDown(KeyCode.E))
             {
                 getters[i].GetComponent<CharacterController>().enabled = false;
-                getters[i].transform.position = new Vector3(676f, -96f,-724f);
+                getters[i].transform.position = new Vector3(676f, -100f,-724f);
                 getters[i].GetComponent<CharacterController>().enabled = true;
-                //Boss.SetActive(true);
+                Boss.SetActive(true);
             }
     }
 }
