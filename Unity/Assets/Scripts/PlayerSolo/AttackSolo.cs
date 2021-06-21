@@ -25,20 +25,20 @@ public class AttackSolo : Attack
             nextHit = Time.time + attackRate;
             Collider[] enemies = Physics.OverlapSphere(transform.position, range);
             int tmp = Damage;
-            if (GetComponentInParent<CharacterThingSolos>().dard)
+            if (GetComponentInParent<CharacterThings>().dard)
             {
                 tmp = 9999;
             }
-            if (GetComponentInParent<CharacterThingSolos>().Souffrance)
+            if (GetComponentInParent<CharacterThings>().Souffrance)
             {
-                tmp += GetComponent<CharacterThingSolos>().MaxHP - GetComponent<CharacterThingSolos>().HP;
+                tmp += GetComponent<CharacterThings>().MaxHP - GetComponent<CharacterThings>().HP;
             }
-            if (GetComponentInParent<CharacterThingSolos>().killer)
+            if (GetComponentInParent<CharacterThings>().killer)
             {
                 tmp *= 3;
             }
 
-            if (GetComponentInParent<CharacterThingSolos>().bloodLove)
+            if (GetComponentInParent<CharacterThings>().bloodLove)
             {
                 tmp *= 2;
             }
