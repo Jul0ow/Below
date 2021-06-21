@@ -26,6 +26,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public GameObject createRoom;
     public GameObject error;
     public GameObject loading;
+    public GameObject loadingScreen;
     
 
     void Awake()
@@ -108,9 +109,11 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
+        loadingScreen.SetActive(true);
+        RoomMenu.SetActive(false);
         PhotonNetwork.LoadLevel(1); // we use 1 as parameter because 1 is the build index of the game scene set in the nuild settings
     }
-    
+
 
     public override void OnCreateRoomFailed(short returncode, string message)
     {

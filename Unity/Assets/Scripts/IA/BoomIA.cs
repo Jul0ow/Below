@@ -95,7 +95,14 @@ public class BoomIA : RushIA
             // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
             if (enemies[i].CompareTag("Player"))
             {
-                enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
+                if (solo)
+                {
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
+                }
+                else
+                {
+                    enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, false, false);
+                }
             }
             if(solo)
                 Destroy(gameObject);

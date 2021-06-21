@@ -49,7 +49,8 @@ public class CharacterThings : MonoBehaviour
     public PhotonView PV;
     public float invisibilityTime = 2f;
     public float invinciblityTime = 0.25f;
-    
+    public float ventriculeTime = 0;
+
     //for death
     public AudioSource hurt;
     
@@ -259,9 +260,10 @@ public class CharacterThings : MonoBehaviour
             runningInThe90s = false;
         }
         
-        if (ventricule)
+        if (ventricule && Time.time >= 3 + ventriculeTime)
         {
-            HP += 1;
+            Heal(1);
+            ventriculeTime = Time.time;
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -89,7 +90,14 @@ public class RushIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    if (solo)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    }
+                    else
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 2, false, false);
+                    }
                 }
             }
             alreadyAttacked = true;

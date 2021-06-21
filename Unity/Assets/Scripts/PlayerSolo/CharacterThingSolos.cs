@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -156,9 +157,10 @@ public class CharacterThingSolos : CharacterThings
             runningInThe90s = false;
         }
         
-        if (ventricule)
+        if (ventricule && Time.time >= 3 + ventriculeTime)
         {
-            HP += 1;
+            GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 1);
+            ventriculeTime = Time.time;
         }
 
     }

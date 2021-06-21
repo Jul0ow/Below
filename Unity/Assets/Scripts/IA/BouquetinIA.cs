@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class BouquetinIA : EnnemyIA
@@ -31,7 +32,14 @@ public class BouquetinIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(50, false, false);
+                    if (solo)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(50, false, false);
+                    }
+                    else
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 50, false, false);
+                    }
                 }
             }
             alreadyAttacked = true;

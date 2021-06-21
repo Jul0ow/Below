@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Findroom;
     public GameObject CreateRoom;
     public GameObject Errormenu;
+    public GameObject loadingScreen;
     void Awake()
     {
         Instance = this;
@@ -82,6 +83,8 @@ public class MenuManager : MonoBehaviour
 
     public void NewSolo2Solo()
     {
+        loadingScreen.SetActive(true);
+        NewgameMenu.SetActive(false);
         SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
