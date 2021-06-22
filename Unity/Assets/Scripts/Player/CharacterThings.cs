@@ -277,7 +277,7 @@ public class CharacterThings : MonoBehaviour
         }
         tox++;
         if(tox%100==0) TakeDamage(1, false, false);
-        if (tox >= 5000)
+        if (tox >= 20000)
         {
             poisoned = false;
             tox = 0;
