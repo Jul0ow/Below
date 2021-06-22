@@ -137,7 +137,7 @@ public class projectilesSolo : projectiles
             {
                 if (owner.GetComponent<NewShootSolo>().Infini)
                 {
-                    if (other.TryGetComponent(typeof(CharacterThingSolos), out _))
+                    if (other.TryGetComponent(typeof(CharacterThingSolos), out _) || other.TryGetComponent(typeof(EnnemyIA), out _))
                     {
                         Explode();
                     }

@@ -166,7 +166,7 @@ public class projectiles : MonoBehaviour
             {
                 if (owner.GetComponent<NewShoot>().Infini)
                 {
-                    if (other.TryGetComponent(typeof(CharacterThings), out _))
+                    if (other.TryGetComponent(typeof(CharacterThings), out _) || other.TryGetComponent(typeof(EnnemyIA), out _))
                     {
                         Explode();
                     }
