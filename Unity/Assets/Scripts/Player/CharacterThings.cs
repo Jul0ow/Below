@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,40 +14,70 @@ public class CharacterThings : MonoBehaviour
 
     public Rigidbody rb;
     public List<Classes.Item> Inventory;
-    private GameObject LifeBarFab;
-    private GameObject LifeBarObject;
+    public GameObject LifeBarFab;
+    public GameObject LifeBarObject;
     //public Vector3 LifeBarposition;
-    private GameObject HealthRef;
+    public GameObject HealthRef;
     public int MaxHP = 100;
     public int HP;
     public bool poisoned = false;
-    private bool tox = false;
+    public int tox = 0;
     public bool Alive = true;
     public int armor = 0;
     public bool ring;
     public bool killer;
-    public bool cape = false;
-    public bool dard = false;
-    public bool basketpeg = false;
+    public bool cape;
+    public bool dard;
+    public bool basketpeg;
     public bool runningInThe90s;
     public float basket = 3f;
-    public bool OneUp = false;
+    public bool OneUp;
     public int luck = 0;
-    public bool vampire = false;
+    public bool vampire;
     public bool bloodLove;
+    public bool toile;
+    public bool purulence;
+    public bool Souffrance;
+    public bool ventricule;
+    public bool klepto;
+    public bool Pastille;
     public (int, char) Room;
-    private GameObject lifeBarObjetct;
-    private LifeScript LifeBar;
-    private bool invulnerable;
-    private float tookDamage;
+    public GameObject lifeBarObjetct;
+    public LifeScript LifeBar;
+    public bool invulnerable;
+    public float tookDamage;
     public PhotonView PV;
-    private float invisibilityTime = 2f;
-    private float invinciblityTime = 0.25f;
+    public float invisibilityTime = 2f;
+    public float invinciblityTime = 0.25f;
+    public float ventriculeTime = 0;
+
+    //for death
+    public AudioSource hurt;
+    
+    public float deathTime;
+    public GameObject DeathTimer;
+    public float timeofDeath;
+    public float lastTimeBeforeDeath;
+    public float timeTofinalFight;
+    public RoomManager.Team myTeam;
+    public Vector3 myspawn;
+    public float timeAtStartOfTheGame;
+    private bool isInArena = false;
     
     
-    void Awake()
+    public virtual void Awake()
     {
+        
         PV = GetComponent<PhotonView>();
+        myspawn= GetComponent<Transform>().position;
+        if (myspawn.x == -13.10f && myspawn.y == 0.16f && myspawn.z ==-1027f) //set the team by looking of the first spawn position
+        {
+            myTeam = RoomManager.Team.Blue;
+        }
+        else
+        {
+            myTeam = RoomManager.Team.Red;
+        }
         if(!PV.IsMine) return;
         LifeBarFab = GameObject.Find("Health");
         HealthRef = GameObject.Find("HealthRef");
@@ -55,15 +87,35 @@ public class CharacterThings : MonoBehaviour
         LifeBar.SetMaxHealth(HP);
         LifeBar.MaxHP = MaxHP;
         LifeBar.HP = HP;
+        DeathTimer = Instantiate(DeathTimer, new Vector3(Screen.width *0.6f, Screen.height *0.5f, 0),
+            Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
         Inventory = new List<Classes.Item>();
+        timeAtStartOfTheGame = Time.time;
 
     }
-    
-    public void TakeDamage(int damage)
+
+    [PunRPC]
+    public virtual void Heal(int healing)
     {
-        if(!PV.IsMine) return;
+        HP += healing;
+    }
+    
+    [PunRPC]
+    public virtual void TakeDamage(int damage, bool slowed = false, bool poison = false)
+    {
+        GetComponent<Movement>().slowed = slowed;
+        if (slowed)
+        {
+            GetComponent<Movement>().slowedTime = Time.time;
+        }
         if (!invulnerable)
         {
+            hurt.Play();
+            if (poison && !Pastille)
+            {
+                poisoned = true;
+            }
             if (bloodLove)
             {
                 damage *= 2;
@@ -71,7 +123,7 @@ public class CharacterThings : MonoBehaviour
 
             if (cape)
             {
-                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+                transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(false);
             }
             
             
@@ -84,7 +136,7 @@ public class CharacterThings : MonoBehaviour
             {
                 HP -= 1;
             }
-            if(HP<=0) Destroy(gameObject);
+            //if(HP<=0) Destroy(gameObject);
             if (basketpeg && !runningInThe90s)
             {
                 runningInThe90s = true;
@@ -94,33 +146,111 @@ public class CharacterThings : MonoBehaviour
             invulnerable = true;
             tookDamage = Time.time;
         }
-    } 
+    }
+
+
+    [PunRPC]
+    public virtual void EndGame()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+        GameObject.Find("écran de fin").transform.Find("Ecran victoire").gameObject.SetActive(true);
+        //GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+    }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(!PV.IsMine) return;
-        LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
-        if (HP > MaxHP) HP = MaxHP;
-        if (poisoned) poison();
-        if (rb.position.y < -10f)
-        {
-            LifeBar.HP = 0;
-        }
-        LifeBar.HP = HP;
-        if (HP <= 0)
-        {
-            Time.timeScale = 0;
-        }
-
+    protected virtual void Update()
+    {  
+        float time = Time.time;
         if (Time.time > tookDamage + invinciblityTime)
         {
             invulnerable = false;
         }
+        if(!PV.IsMine) return;
+        LifeBar = lifeBarObjetct.GetComponent<LifeScript>();
+        if (HP > MaxHP) HP = MaxHP;
+        if (poisoned)
+        {
+            poison();
+            gameObject.transform.Find("flou artistique").gameObject.SetActive(true);
+        }
+        if (rb.position.y < -10f)
+        {
+            LifeBar.HP = 0;
+        }
+        LifeBar.HP = HP; 
+        if(Input.GetKey("k")) TakeDamage(99999);
+        
+        if (HP <= 0 && Alive)
+        {
+            if (timeAtStartOfTheGame + lastTimeBeforeDeath < time)
+            {
+                if (OneUp)
+                {
+                    OneUp = false;
+                    GetComponent<PhotonView>().RPC("Heal",RpcTarget.All, MaxHP);
+                }
+                else
+                {
+                    //Alive = false;
+                    GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                    GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                    GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
+                    return;
+                }
+                
+            }
 
+            if (!(timeAtStartOfTheGame + lastTimeBeforeDeath < time))
+            {
+                //Time.timeScale = 0;
+                timeofDeath = Time.time;
+                Alive = false;
+                if (myTeam == RoomManager.Team.Red)
+                    transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
+                else
+                {
+                    transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
+                }
+                //Debug.Log(player.transform.position);
+            }
+            
+            
+        }
+        if (!Alive)
+        {
+            if (!isdead())
+            {
+                //Debug.Log("end death");
+                transform.position = myspawn;
+                deathTime *= 1.15f; //increase by 15% the death time
+                Alive = true;
+                HP = MaxHP;
+                DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
+            }  
+        }
+        if (timeAtStartOfTheGame + timeTofinalFight<time && !isInArena)
+        {
+            if (myTeam == RoomManager.Team.Red)
+            {
+                isInArena = true;
+                //GetComponent<CharacterController>().enabled = false;
+                transform.position = new Vector3(-21.85821f, 4.7f, -508.96f);//RED arene spawn
+                //GetComponent<CharacterController>().enabled = true;
+            }
+            else
+            {
+                isInArena = true;
+                transform.position = new Vector3(-11.06f, 1.43f, -533.3f); //blue arene spawn
+            }
+        }
         if (cape && Time.time > tookDamage + invisibilityTime)
         {
-            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+            transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(true);
         }
 
         if (runningInThe90s && Time.time > tookDamage + basket)
@@ -129,24 +259,37 @@ public class CharacterThings : MonoBehaviour
             GetComponent<Movement>().RunSpeed -= 15;
             runningInThe90s = false;
         }
+        
+        if (ventricule && Time.time >= 3 + ventriculeTime)
+        {
+            Heal(1);
+            ventriculeTime = Time.time;
+        }
 
     }
 
-    private void poison()
+    [PunRPC]
+    protected virtual void poison()
     {
-        poisoned = false;
-        tox = true;
-        while (tox)
+        if (Pastille)
         {
-            StartCoroutine(waitpoison());
+            return;
+        }
+        tox++;
+        if(tox%100==0) TakeDamage(1, false, false);
+        if (tox >= 5000)
+        {
+            poisoned = false;
+            tox = 0;
+            gameObject.transform.Find("flou artistique").gameObject.SetActive(false);
         }
     }
 
-    private IEnumerator waitpoison()
+    public virtual bool isdead()
     {
-        TakeDamage(5);
-        int rnd = Random.Range(0, 6);
-        if (rnd == 2) tox = false;
-        yield return new WaitForSeconds(1);
+        //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));
+        
+        return Time.time < deathTime + timeofDeath;
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -5666642740888264234}
   - component: {fileID: -4552605821014291051}
   - component: {fileID: 5259220845003062184}
+  - component: {fileID: 3349569168977839758}
   m_Layer: 11
   m_Name: Gout
   m_TagString: Ennemy
@@ -46,7 +47,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3849246153576093302}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 5
+  m_Radius: 3.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -70,7 +71,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 3.5
   m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!114 &7772124901102552400
 MonoBehaviour:
@@ -124,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IA: {fileID: 5259220845003062184}
-  death: {fileID: 8300000, guid: 98056c9dd94fcdb4f9641bc594d5f8b3, type: 3}
-  Health: 300
+  Health: 600
+  death: {fileID: 3349569168977839758}
 --- !u!114 &5259220845003062184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,56 +155,30 @@ MonoBehaviour:
   speed: 3
   damage: 20
   alreadyAttacked: 0
-  sightRange: 30
-  attackRange: 10
+  sightRange: 40
+  attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
   attack: {fileID: 0}
+  blockedTime: 0
+  blockedPosition: {x: 0, y: 0, z: 0}
+  blocked: 0
+  solo: 0
   lifes: 2.1
---- !u!1 &8907087360738781649
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1937258729058596087}
-  - component: {fileID: 6245537796928936684}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1937258729058596087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907087360738781649}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.58, y: 1.22, z: -0.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7052506438474442368}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6245537796928936684
+--- !u!82 &3349569168977839758
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907087360738781649}
+  m_GameObject: {fileID: 3849246153576093302}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  OutputAudioMixerGroup: {fileID: 3212006092240202757, guid: 2376c55b0b77de94487f2b9a3413ce32,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 70786e1d93ecbc44786f7ba9643e728d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.491
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -212,9 +187,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 25.89
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -247,7 +222,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -362,6 +337,16 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: acc22a4aa137a3f4fa127033cf1652fe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2308422598993874269, guid: acc22a4aa137a3f4fa127033cf1652fe,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2308422598993874269, guid: acc22a4aa137a3f4fa127033cf1652fe,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2308422598993874269, guid: acc22a4aa137a3f4fa127033cf1652fe,

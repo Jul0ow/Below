@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class EnnemyShot : MonoBehaviour
 {
+    public bool solo = false;
     public bool awake = false;
     public Rigidbody rb;
     public GameObject explosion;
@@ -27,15 +29,19 @@ public class EnnemyShot : MonoBehaviour
     {
         if (explosion != null)
         {
-            GameObject currentexplosion;
-            currentexplosion = Instantiate(explosion, transform.position, Quaternion.identity);
-            Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
+            Object currentexplosion;
+            if (solo)
+                currentexplosion = Instantiate(Resources.Load("PhotonPrefabs/" + explosion.name), transform.position, Quaternion.identity);
+            else
+                currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
+            
+            Collider[] enemies = Physics.OverlapSphere(((GameObject) currentexplosion).transform.position, explosionRange);
             for (int i = 0; i < enemies.Length; i++)
             {
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage);
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
                 }
             }
             Invoke("Delay", 0.05f);

@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using Cinemachine;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -30,6 +34,7 @@ public class OptionsEnJeu : MonoBehaviour
         menuOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
         principalOptions.SetActive(false);
         graphicOptions.SetActive(false);
         soundOptions.SetActive(false);
@@ -75,10 +80,26 @@ public class OptionsEnJeu : MonoBehaviour
     {
         master.SetFloat("Master", volume);
     }
+    public void SetMusic(float volume)
+    {
+        master.SetFloat("Music", volume);
+    }
+    public void SetEffect(float volume)
+    {
+        master.SetFloat("Effect", volume);
+    }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetSensi(float sens)
+    {
+        foreach (var camera in FindObjectsOfType<CinemachineFreeLook>())
+        {
+            camera.m_XAxis.m_MaxSpeed = sens;
+        }
     }
 
     void Start()

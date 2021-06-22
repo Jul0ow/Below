@@ -4,12 +4,14 @@ using UnityEngine;
 using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public static Launcher Instance;
     
     [SerializeField] TMP_InputField roomNameInputField;
+    [SerializeField] TMP_InputField playerNameInputField;
 
     [SerializeField]  TMP_Text errorText;
     [SerializeField]  TMP_Text roomNameText;
@@ -24,6 +26,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public GameObject createRoom;
     public GameObject error;
     public GameObject loading;
+    public GameObject loadingScreen;
     
 
     void Awake()
@@ -34,7 +37,12 @@ public class Launcher : MonoBehaviourPunCallbacks
     void Start()
     {
         Debug.Log("Connecting To Master");
-        PhotonNetwork.ConnectUsingSettings();
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();    
+        }
+        titlemenu.SetActive(true);
+        loading.SetActive(false);
     }
 
     public override void OnConnectedToMaster()
@@ -46,10 +54,19 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        titlemenu.SetActive(true);
-        loading.SetActive(false);
+       
         Debug.Log("joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //donne un pseudo aléatoire de type "Player xxxx"
+    }
+
+    public void changeName()
+    {
+        if (string.IsNullOrEmpty(playerNameInputField.text))
+        {
+            return;
+        }
+
+        PhotonNetwork.NickName = playerNameInputField.text;
     }
     
     // Update is called once per frame
@@ -92,9 +109,11 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
+        loadingScreen.SetActive(true);
+        RoomMenu.SetActive(false);
         PhotonNetwork.LoadLevel(1); // we use 1 as parameter because 1 is the build index of the game scene set in the nuild settings
     }
-    
+
 
     public override void OnCreateRoomFailed(short returncode, string message)
     {
@@ -108,6 +127,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LeaveRoom();
         loading.SetActive(true);
+        titlemenu.SetActive(true);
+        loading.SetActive(false);
         //MenuManager.Instance.OpenMenu("loading");
     }
 

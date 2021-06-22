@@ -8,32 +8,78 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    Animator animator;
+    public Animator animator;
+    public bool torched = false;
+    public GameObject torch;
     public float WalkSpeed = 6f;
     public float RunSpeed = 16f;
+    public float SlowedRunSpeed = 7f;
+    public bool slowed;
+    public float slowedTime;
     public float speed;
     public float turnSmoothTime = 0.1f;
-    private float turnSmoothVelocity;
+    public float turnSmoothVelocity;
     public Component freeLook;
-    public bool savon = false;
 
 
     private PhotonView PV;
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         float speed = WalkSpeed;
         PV = GetComponent<PhotonView>();
-
     }
+
+    public virtual void setToDeathPosition(Vector3 deathPosition)
+    {
+        controller.Move(deathPosition);
+    }
+    
+    [PunRPC]
+    public void Torch()
+    {
+        if (torched)
+        {
+            torch.SetActive(false);
+            torched = false;
+        }
+        else
+        {
+            torch.SetActive(true);
+            torched = true;
+        }
+    }
+    
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (!PV.IsMine)
             return;
+        if (Input.GetKeyDown("f"))
+        {
+            GetComponent<PhotonView>().RPC("Torch", RpcTarget.All);
+        }
+        if (slowed)
+        {
+            if (slowedTime + 1.5f <= Time.time)
+            {
+                slowed = false;
+                RunSpeed = 16;
+            }
+            else
+            {
+                RunSpeed = 7;
+            }
+            
+            
+        }
         if((animator.GetCurrentAnimatorStateInfo(0).IsName("Contact attack")))
                 return;
-        
+        var CharacterRotation = cam.transform.rotation;
+                 CharacterRotation.x = 0;
+                 CharacterRotation.z = 0;
+                 transform.rotation = CharacterRotation;
+         
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {
             freeLook.GetComponent<CinemachineFreeLook>().enabled = false;

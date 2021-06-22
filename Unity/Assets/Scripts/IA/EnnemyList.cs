@@ -1,32 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using static System.Random;
+using Random = UnityEngine.Random;
 
 public class EnnemyList : MonoBehaviour
 {
-    private List<string> MonsterList = new List<string>();
+    
+    List<string> MonsterList;
 
-    private List<string> EliteList = new List<string>();
+    List<string> EliteList;
+    
+    
+    
 
     public void Creat()
     {
+        MonsterList = new List<string>();
+        EliteList = new List<string>();
+        
         MonsterList.Add("Lice");
         MonsterList.Add("Buried Lice");
         MonsterList.Add("Splitter");
         MonsterList.Add("Gout");
         MonsterList.Add("Kamikaze Splitter");
+        MonsterList.Add("Knight Mare");
         
         EliteList.Add("QueenLice");
         EliteList.Add("Goutausorus");
         EliteList.Add("Mauricio");
+        EliteList.Add("BigBouquetin");
     }
 
     public string pickennemy()
     {
-        System.Random random = new System.Random();
-        int x = random.Next(MonsterList.Count);
+        int x = Random.Range(0, MonsterList.Count);
         return MonsterList[x];
     }
     
@@ -37,8 +47,7 @@ public class EnnemyList : MonoBehaviour
     
     public string pickelite()
     {
-        System.Random random = new System.Random();
-        int x = random.Next(EliteList.Count);
+        int x = Random.Range(0, EliteList.Count);
         return EliteList[x];
     }
     

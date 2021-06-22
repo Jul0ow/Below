@@ -1,12 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public bool solo = false;
+
+    
+    void OnTriggerStay(Collider collider)
     {
-        if (other.gameObject.CompareTag("Player"))
-                other.gameObject.GetComponent<CharacterThings>().TakeDamage(80);
+        if (collider.gameObject.CompareTag("Player") && !collider.gameObject.GetComponent<CharacterThings>().Pastille)
+        {
+            if (solo)
+            {
+                collider.GetComponent<CharacterThings>().TakeDamage(100);
+            }
+            else
+            {
+                collider.gameObject.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 100, false, false);
+            }
+        }    
     }
+    
 }

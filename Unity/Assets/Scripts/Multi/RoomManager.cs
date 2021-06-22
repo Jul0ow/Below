@@ -8,10 +8,27 @@ using System.IO;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
-    public GameObject monster;
+    public GameObject Summoner;
+    public GameObject player;
 
+    public GameObject redTemoin;
+    public GameObject blueTemoin;
+    //public static bool firstLoad = false;
+
+    public void Start()
+    {
+        
+    }
+    public enum Team
+    {
+        Red,
+        Blue,
+    }
+
+    private Team myTeam;
     void Awake()
     { //Make sure that there is only one roomManager
+        //firstLoad = true;
         if (Instance) //check if another RoomManager exists
         {
             Destroy(gameObject);
@@ -19,6 +36,20 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
         DontDestroyOnLoad(gameObject);
         Instance = this;
+    }
+
+    public void ChooseRed()
+    {
+        myTeam = Team.Red;
+        blueTemoin.SetActive(false);
+        redTemoin.SetActive(true);
+    }
+
+    public void ChooseBlue()
+    {
+        myTeam = Team.Blue;
+        redTemoin.SetActive(false);
+        blueTemoin.SetActive(true);
     }
 
     public override void OnEnable()
@@ -37,8 +68,31 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if (scene.buildIndex == 1) // we are in game scene (because scene game ==1)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
-                Quaternion.identity);
+            Destroy(gameObject);
+            if (myTeam == Team.Blue)
+            {
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), new Vector3(-13.10f,0.16f,-1027),
+                    Quaternion.identity);
+            }
+            else
+            {
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero,
+                    Quaternion.identity); 
+            }
+            foreach (var x in scene.GetRootGameObjects())
+                foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
+                    summoner.Summon();
+        }
+
+        if (scene.buildIndex == 3)
+        {
+            Destroy(gameObject);
+            GameObject manager = Instantiate(player, new Vector3(0,0,0), Quaternion.identity);
+            manager.GetComponent<PlayerManager>().CreateControllerSolo();
+            foreach (var x in scene.GetRootGameObjects())
+            foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
+                summoner.Summon();
         }
     }
+    
 }

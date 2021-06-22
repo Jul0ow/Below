@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class MimiqueIA : EnnemyIA
@@ -7,7 +8,7 @@ public class MimiqueIA : EnnemyIA
     public Classes.Item content;
     public GameObject Getter;
     public int Rarity;
-    public uint ItemReference;
+    public int ItemReference;
     
     protected override void Update()
     {
@@ -25,6 +26,9 @@ public class MimiqueIA : EnnemyIA
         Chaseplayer();
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
         if(playerInAttackRange) Attackplayer();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
     
     protected override void Attackplayer()
@@ -36,7 +40,14 @@ public class MimiqueIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(2);
+                    if (solo)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    }
+                    else
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 2, false, false);
+                    }
                 }
             }
             alreadyAttacked = true;
@@ -52,6 +63,9 @@ public class MimiqueIA : EnnemyIA
             Getter.GetComponent<CharacterThings>().Inventory.Add(content);
             HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
         }
-        Destroy(gameObject);
+        if(solo)
+            Destroy(gameObject);
+        else
+            PhotonNetwork.Destroy(gameObject);
     }
 }

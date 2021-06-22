@@ -5,16 +5,18 @@ using  Photon.Pun;
 
 public class Locomotion : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     public Rigidbody rb;
-    CharacterController controller;
-    Vector2 input;
-    Movement movement;
-    Jump jump;
-    private PhotonView PV;
+    public CharacterController controller;
+    public Vector2 input;
+    public Movement movement;
+    public Jump jump;
+    public PhotonView PV;
+    public float nextHit;
+    public float attackRate = 0.4f;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
@@ -28,7 +30,7 @@ public class Locomotion : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (!PV.IsMine)
         {
@@ -52,8 +54,11 @@ public class Locomotion : MonoBehaviour
         animator.SetBool("Grounded", jump.IsGrounded);
         animator.SetBool("Falling", jump.Falling);
         animator.SetBool("Jumping", jump.jumping);
-        if (Input.GetButton("Fire2"))
+        if (Time.time > nextHit && Input.GetButton("Fire2") && !movement.torched) 
+        {
+            nextHit = Time.time + attackRate;
             animator.SetBool("Attacking", true);
+        }
         else
             animator.SetBool("Attacking", false);
     }

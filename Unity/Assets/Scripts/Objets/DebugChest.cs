@@ -6,7 +6,7 @@ public class DebugChest : MonoBehaviour
 {
     private bool Opened = false;
     public int Rarity;
-    public uint ItemReference;
+    public int ItemReference;
     public MeshRenderer OpenedChest;
     public MeshRenderer ClosedChest;
     public MeshRenderer ClosedChestTop;
