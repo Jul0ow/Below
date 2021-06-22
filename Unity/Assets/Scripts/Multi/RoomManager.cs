@@ -86,6 +86,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         if (scene.buildIndex == 3)
         {
+            Destroy(gameObject);
             GameObject manager = Instantiate(player, new Vector3(0,0,0), Quaternion.identity);
             manager.GetComponent<PlayerManager>().CreateControllerSolo();
             foreach (var x in scene.GetRootGameObjects())
