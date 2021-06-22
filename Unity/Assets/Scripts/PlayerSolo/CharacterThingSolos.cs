@@ -159,7 +159,7 @@ public class CharacterThingSolos : CharacterThings
         
         if (ventricule && Time.time >= 3 + ventriculeTime)
         {
-            GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 1);
+            Heal(1);
             ventriculeTime = Time.time;
         }
 
