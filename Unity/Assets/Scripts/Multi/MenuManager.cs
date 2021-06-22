@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
     public GameObject CreateRoom;
     public GameObject Errormenu;
     public GameObject loadingScreen;
+    public GameObject logo;
+    public GameObject loadingText;
     void Awake()
     {
         Instance = this;
@@ -85,9 +87,17 @@ public class MenuManager : MonoBehaviour
     {
         loadingScreen.SetActive(true);
         NewgameMenu.SetActive(false);
+        loadingScreen.SetActive(true);
+        loadingText.SetActive(true);
+        logo.SetActive(false);
+        StartCoroutine(wait1());
         SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
+    IEnumerator wait1()
+    {
+        yield return new WaitForSeconds(1);
+    }
     public void Title2New()
     {
         NewgameMenu.SetActive(true);

@@ -27,7 +27,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     public GameObject error;
     public GameObject loading;
     public GameObject loadingScreen;
-    
+    public GameObject logo;
+    public GameObject LoadingText;
+
 
     void Awake()
     {
@@ -111,7 +113,15 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         loadingScreen.SetActive(true);
         RoomMenu.SetActive(false);
+        LoadingText.SetActive(true);
+        logo.SetActive(false);
+        StartCoroutine(wait1());
         PhotonNetwork.LoadLevel(1); // we use 1 as parameter because 1 is the build index of the game scene set in the nuild settings
+    }
+
+    IEnumerator wait1()
+    {
+        yield return new WaitForSeconds(1);
     }
 
 
