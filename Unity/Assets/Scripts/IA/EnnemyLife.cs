@@ -37,8 +37,11 @@ public class EnnemyLife : MonoBehaviour
         {
             if(solo)
                 Instantiate(Resources.Load("PhotonPrefabs/chestInGame"), transform.position, Quaternion.identity);
-            else
+            else if (PhotonNetwork.IsMasterClient)
+            {
                 PhotonNetwork.Instantiate("PhotonPrefabs/chestInGame", transform.position, Quaternion.identity);
+            }
+                
         }
         if(IA is BlobIA ia) ia.Deathrattle();
         else if(IA is MimiqueIA ia2) ia2.Deathrattle();
@@ -46,8 +49,10 @@ public class EnnemyLife : MonoBehaviour
         {
             if(solo)
                 Destroy(gameObject);
-            else
+            else if (PhotonNetwork.IsMasterClient)
+            {
                 PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 }

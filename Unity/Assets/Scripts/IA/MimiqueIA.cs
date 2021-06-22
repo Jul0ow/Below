@@ -65,7 +65,9 @@ public class MimiqueIA : EnnemyIA
         }
         if(solo)
             Destroy(gameObject);
-        else
+        else if (PhotonNetwork.IsMasterClient)
+        {
             PhotonNetwork.Destroy(gameObject);
+        }
     }
 }

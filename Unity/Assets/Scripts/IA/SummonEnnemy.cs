@@ -29,12 +29,19 @@ public class SummonEnnemy : MonoBehaviour
         }
         else
         {
-            if (elite)
-                mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickelite(), transform.position, Quaternion.identity);
-            else
-                mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                if (elite)
+                    mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickelite(), transform.position, Quaternion.identity);
+                else
+                    mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
+            }
         }
         ((GameObject) mob).GetComponent<EnnemyIA>().solo = solo;
-        Destroy(gameObject);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+        
     }
 }
