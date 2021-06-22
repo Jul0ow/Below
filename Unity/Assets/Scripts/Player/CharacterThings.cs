@@ -123,7 +123,7 @@ public class CharacterThings : MonoBehaviour
 
             if (cape)
             {
-                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+                transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(false);
             }
             
             
@@ -250,7 +250,7 @@ public class CharacterThings : MonoBehaviour
         }
         if (cape && Time.time > tookDamage + invisibilityTime)
         {
-            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+            transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(true);
         }
 
         if (runningInThe90s && Time.time > tookDamage + basket)

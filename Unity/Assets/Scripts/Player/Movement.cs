@@ -35,6 +35,20 @@ public class Movement : MonoBehaviour
         controller.Move(deathPosition);
     }
     
+    [PunRPC]
+    public void Torch()
+    {
+        if (torched)
+        {
+            torch.SetActive(false);
+            torched = false;
+        }
+        else
+        {
+            torch.SetActive(true);
+            torched = true;
+        }
+    }
     
     // Update is called once per frame
     protected virtual void Update()
@@ -43,16 +57,7 @@ public class Movement : MonoBehaviour
             return;
         if (Input.GetKeyDown("f"))
         {
-            if (torched)
-            {
-                torch.SetActive(false);
-                torched = false;
-            }
-            else
-            {
-                torch.SetActive(true);
-                torched = true;
-            }
+            GetComponent<PhotonView>().RPC("Torch", RpcTarget.All);
         }
         if (slowed)
         {

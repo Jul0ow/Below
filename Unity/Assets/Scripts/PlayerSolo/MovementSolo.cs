@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Photon.Pun;
 using UnityEngine;
 
 public class MovementSolo : Movement
@@ -15,8 +16,7 @@ public class MovementSolo : Movement
     {
         controller.Move(deathPosition);
     }
-    
-    
+
     // Update is called once per frame
     protected override void Update()
     {
