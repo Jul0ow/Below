@@ -189,7 +189,7 @@ public class Effect : MonoBehaviour
     public static int Soja(GameObject Joueur)
     {
         Joueur.GetComponent<NewShoot>().fireRate -= 0.30f;
-        Joueur.GetComponent<NewShoot>().BonusDamage -= 50;
+        Joueur.GetComponent<NewShoot>().BonusDamage -= 30;
         return 1;
     }
 

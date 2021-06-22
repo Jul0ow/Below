@@ -23,8 +23,10 @@ public class QueenLiceIA : EnnemyIA
                         Quaternion.identity);
                     ((GameObject) cafard).GetComponent<EnnemyIA>().solo = true;
                 }
-                else
+                else if (PhotonNetwork.IsMasterClient)
+                {
                     PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + splitter.name, transform.position, Quaternion.identity);
+                }
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }

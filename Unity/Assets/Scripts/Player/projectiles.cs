@@ -117,7 +117,7 @@ public class projectiles : MonoBehaviour
             {
                 GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
                     Quaternion.identity, 0);
-                GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
+                GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, owner.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
 
                 Vector3 direction = owner.transform.position - transform.position;
                 
@@ -129,7 +129,7 @@ public class projectiles : MonoBehaviour
                 bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
                     Quaternion.identity, 0);
                 GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All,
-                    gameObject.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
+                    owner.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
 
                 body = bullet.GetComponent<Rigidbody>();
                 transform.forward = direction;

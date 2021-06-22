@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class EnnemyShotTox : EnnemyShot
 {
 
+    [PunRPC]
+    public void poison(int viewID)
+    {
+        GameObject player = PhotonView.Find(viewID).gameObject;
+        player.GetComponent<CharacterThings>().poisoned = true;
+        PhotonNetwork.Destroy(gameObject);
+    }
 
     public override void Explode()
     {
@@ -18,8 +26,18 @@ public class EnnemyShotTox : EnnemyShot
                 // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].gameObject.GetComponent<CharacterThings>().poisoned = true;
-                    Destroy(gameObject);
+                    if (solo)
+                    {
+                        enemies[i].gameObject.GetComponent<CharacterThings>().poisoned = true;
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        GetComponent<PhotonView>().RPC("poison", RpcTarget.All, enemies[i].gameObject.GetComponent<PhotonView>().ViewID);
+                    }
+
+                    
+                    
                 }
             }
             Invoke("Delay", 0.05f);

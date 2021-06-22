@@ -86,7 +86,7 @@ public class projectilesSolo : projectiles
             if (owner.GetComponent<NewShoot>().Arcanes && !isSplit)
             {
                 GameObject bullet = Instantiate(bulletprefab, transform.position, Quaternion.identity);
-                bullet.GetComponent<projectilesSolo>().owner = gameObject;
+                bullet.GetComponent<projectilesSolo>().owner = owner;
                 bullet.GetComponent<projectilesSolo>().awake = true;
                 bullet.GetComponent<projectilesSolo>().isSplit = true;
                 bullet.GetComponent<projectilesSolo>().Damage /= 2;
@@ -98,7 +98,7 @@ public class projectilesSolo : projectiles
                 
                 //------------------------------------------------------------------------------------
                 bullet = Instantiate(bulletprefab, transform.position, Quaternion.identity);
-                bullet.GetComponent<projectilesSolo>().owner = gameObject;
+                bullet.GetComponent<projectilesSolo>().owner = owner;
                 bullet.GetComponent<projectilesSolo>().awake = true;
                 bullet.GetComponent<projectilesSolo>().isSplit = true;
                 bullet.GetComponent<projectilesSolo>().Damage /= 2;

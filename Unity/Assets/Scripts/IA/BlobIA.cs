@@ -116,6 +116,15 @@ public class BlobIA : EnnemyIA
         alreadyAttacked = false;
     }
 
+    [PunRPC]
+    public void instanciateSon()
+    {
+        blob1 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
+        blob2 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
+        blob1.GetComponent<BlobIA>().lifes = lifes-0.5f;
+        blob2.GetComponent<BlobIA>().lifes = lifes-0.5f;
+    }
+
     public void Deathrattle()
     {
         if(lifes >= 1)
@@ -126,22 +135,19 @@ public class BlobIA : EnnemyIA
                 blob2 = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/Mob/Gout"), transform.position, Quaternion.identity);
                 blob1.GetComponent<BlobIA>().solo = true;
                 blob2.GetComponent<BlobIA>().solo = true;
+                blob1.GetComponent<BlobIA>().lifes = lifes-0.5f;
+                blob2.GetComponent<BlobIA>().lifes = lifes-0.5f;
             }
             else
             {
-                blob1 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
-                blob2 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
+                GetComponent<PhotonView>().RPC("instanciateSon", RpcTarget.All);
             }
-            blob1.GetComponent<BlobIA>().lifes = lifes-0.5f;
-            blob2.GetComponent<BlobIA>().lifes = lifes-0.5f;
-            if(solo)
-                Destroy(gameObject);
-            else
-                PhotonNetwork.Destroy(gameObject);
         }
         if(solo)
             Destroy(gameObject);
-        else
+        else if (PhotonNetwork.IsMasterClient)
+        {
             PhotonNetwork.Destroy(gameObject);
+        }
     }
 }
