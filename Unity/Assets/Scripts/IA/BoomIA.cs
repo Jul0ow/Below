@@ -32,6 +32,9 @@ public class BoomIA : RushIA
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         else if(playerInAttackRange && playerInSightRange) Attackplayer();
         else Patroling();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 
     protected override void SearchWalkpoint()
@@ -92,9 +95,19 @@ public class BoomIA : RushIA
             // enemies[i].GetComponent<ShootingAI>().TakeDamage(explosionDamage);
             if (enemies[i].CompareTag("Player"))
             {
-                enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
+                if (solo)
+                {
+                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
+                }
+                else
+                {
+                    enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, false, false);
+                }
             }
-            PhotonNetwork.Destroy(gameObject);
+            if(solo)
+                Destroy(gameObject);
+            else
+                PhotonNetwork.Destroy(gameObject);
         }
     }
 }

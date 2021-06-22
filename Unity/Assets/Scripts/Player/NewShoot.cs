@@ -8,14 +8,14 @@ using Random = UnityEngine.Random;
 public class NewShoot : MonoBehaviour
 {
     public GameObject player;
-    private GameObject shootFrom;
+    public GameObject shootFrom;
     public GameObject bulletprefab;
-    private float coeffForce = 4000f;
+    public float coeffForce = 4000f;
     public float fireRate;
-    private float nextfire;
+    public float nextfire;
     public Camera cam;
     public Transform attackpoint;
-    private PhotonView PV;
+    public PhotonView PV;
     public AudioSource fireballSound;
     public bool Infini;
     public bool Snipe;
@@ -25,13 +25,13 @@ public class NewShoot : MonoBehaviour
 
 
 
-    private void Start()
+    protected virtual void Start()
     {
         player = gameObject;
         PV = GetComponent<PhotonView>();
     }
 
-    public void fire()
+    public virtual void fire()
     {
         if (Time.time > nextfire)
         {
@@ -66,7 +66,7 @@ public class NewShoot : MonoBehaviour
     }
 
     [PunRPC]
-    public void AppliedOwner(int owner, int bulletview, bool isSplit, int division)
+    public virtual void AppliedOwner(int owner, int bulletview, bool isSplit, int division)
     {
         GameObject bullet =  PhotonView.Find(bulletview).gameObject;
         bullet.GetComponent<projectiles>().owner = PhotonView.Find(owner).gameObject;
@@ -76,7 +76,7 @@ public class NewShoot : MonoBehaviour
     }
     
 
-    private void Update()
+    protected virtual void Update()
     {
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {

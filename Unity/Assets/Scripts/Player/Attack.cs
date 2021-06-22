@@ -21,7 +21,7 @@ public class Attack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen)
         {

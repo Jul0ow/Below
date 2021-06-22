@@ -115,10 +115,13 @@ MonoBehaviour:
   useGravity: 0
   Damage: 70
   explosionRange: 5
-  explosionForce: 30
+  explosionForce: 1000
   maxCollisions: 0
   maxLifeTime: 1000
+  collisions: 0
+  physics_mat: {fileID: 0}
   owner: {fileID: 0}
+  coeffForce: 4000
   isSplit: 0
   Slowing: 0
 --- !u!114 &8736138535951152483

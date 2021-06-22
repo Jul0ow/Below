@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Findroom;
     public GameObject CreateRoom;
     public GameObject Errormenu;
+    public GameObject loadingScreen;
     void Awake()
     {
         Instance = this;
@@ -81,7 +83,9 @@ public class MenuManager : MonoBehaviour
 
     public void NewSolo2Solo()
     {
-        throw new NotImplementedException();
+        loadingScreen.SetActive(true);
+        NewgameMenu.SetActive(false);
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
     public void Title2New()

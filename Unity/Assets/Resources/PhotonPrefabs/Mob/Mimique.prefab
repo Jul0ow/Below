@@ -157,13 +157,14 @@ MonoBehaviour:
   damage: 40
   alreadyAttacked: 0
   sightRange: 40
-  attackRange: 15
+  attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
   attack: {fileID: 0}
   blockedTime: 0
   blockedPosition: {x: 0, y: 0, z: 0}
   blocked: 0
+  solo: 0
   Getter: {fileID: 0}
   Rarity: 0
   ItemReference: 0

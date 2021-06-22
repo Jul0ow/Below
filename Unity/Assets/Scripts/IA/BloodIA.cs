@@ -9,13 +9,13 @@ public class BloodIA : EnnemyIA
 
     protected override void Awake()
     {
+        Boss = GameObject.FindGameObjectWithTag("Ennemy");
         agent.speed = speed;
         agent = GetComponent<NavMeshAgent>();
     }
     
     protected override void Update()
     {
-        agent.SetDestination(Boss.transform.position);
-        transform.LookAt(Boss.transform);
+        Patroling();
     }
 }

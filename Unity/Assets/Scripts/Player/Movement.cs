@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    Animator animator;
+    public Animator animator;
     public bool torched = false;
     public GameObject torch;
     public float WalkSpeed = 6f;
@@ -18,41 +18,46 @@ public class Movement : MonoBehaviour
     public float slowedTime;
     public float speed;
     public float turnSmoothTime = 0.1f;
-    private float turnSmoothVelocity;
+    public float turnSmoothVelocity;
     public Component freeLook;
 
 
     private PhotonView PV;
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         float speed = WalkSpeed;
         PV = GetComponent<PhotonView>();
     }
 
-    public void setToDeathPosition(Vector3 deathPosition)
+    public virtual void setToDeathPosition(Vector3 deathPosition)
     {
         controller.Move(deathPosition);
     }
     
+    [PunRPC]
+    public void Torch()
+    {
+        if (torched)
+        {
+            torch.SetActive(false);
+            torched = false;
+        }
+        else
+        {
+            torch.SetActive(true);
+            torched = true;
+        }
+    }
     
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (!PV.IsMine)
             return;
         if (Input.GetKeyDown("f"))
         {
-            if (torched)
-            {
-                torch.SetActive(false);
-                torched = false;
-            }
-            else
-            {
-                torch.SetActive(true);
-                torched = true;
-            }
+            GetComponent<PhotonView>().RPC("Torch", RpcTarget.All);
         }
         if (slowed)
         {

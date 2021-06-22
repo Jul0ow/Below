@@ -7,6 +7,8 @@ using UnityEngine.AI;
 public class BlobIA : EnnemyIA
 {
     public float lifes;
+    private GameObject blob1;
+    private GameObject blob2;
 
     protected override void Awake()
     {
@@ -34,6 +36,9 @@ public class BlobIA : EnnemyIA
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         else if(playerInAttackRange && playerInSightRange) Attackplayer();
         else Patroling();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 
     protected override void SearchWalkpoint()
@@ -85,12 +90,20 @@ public class BlobIA : EnnemyIA
     {
         if(!alreadyAttacked)
         {
-            Collider[] enemies = Physics.OverlapSphere(transform.position, 2);
+            Collider[] enemies = Physics.OverlapSphere(transform.position, 6);
             for (int i = 0; i < enemies.Length; i++)
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
+                    if (solo)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(damage, false, false);
+                    }
+                    else
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, false, false);
+                    }
+
                 }
             }
             alreadyAttacked = true;
@@ -107,12 +120,28 @@ public class BlobIA : EnnemyIA
     {
         if(lifes >= 1)
         {
-            GameObject blob1 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
-            GameObject blob2 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
+            if (solo)
+            {
+                blob1 = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/Mob/Gout"), transform.position, Quaternion.identity);
+                blob2 = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/Mob/Gout"), transform.position, Quaternion.identity);
+                blob1.GetComponent<BlobIA>().solo = true;
+                blob2.GetComponent<BlobIA>().solo = true;
+            }
+            else
+            {
+                blob1 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
+                blob2 = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/Gout", transform.position, Quaternion.identity);
+            }
             blob1.GetComponent<BlobIA>().lifes = lifes-0.5f;
             blob2.GetComponent<BlobIA>().lifes = lifes-0.5f;
-            PhotonNetwork.Destroy(gameObject);
+            if(solo)
+                Destroy(gameObject);
+            else
+                PhotonNetwork.Destroy(gameObject);
         }
-        PhotonNetwork.Destroy(gameObject);
+        if(solo)
+            Destroy(gameObject);
+        else
+            PhotonNetwork.Destroy(gameObject);
     }
 }

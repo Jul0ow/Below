@@ -9,10 +9,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
     public GameObject Summoner;
+    public GameObject player;
 
     public GameObject redTemoin;
     public GameObject blueTemoin;
     //public static bool firstLoad = false;
+
+    public void Start()
+    {
+        
+    }
     public enum Team
     {
         Red,
@@ -77,7 +83,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
                     summoner.Summon();
         }
-        
+
+        if (scene.buildIndex == 3)
+        {
+            Destroy(gameObject);
+            GameObject manager = Instantiate(player, new Vector3(0,0,0), Quaternion.identity);
+            manager.GetComponent<PlayerManager>().CreateControllerSolo();
+            foreach (var x in scene.GetRootGameObjects())
+            foreach (var summoner in x.GetComponentsInChildren<SummonEnnemy>())
+                summoner.Summon();
+        }
     }
     
 }

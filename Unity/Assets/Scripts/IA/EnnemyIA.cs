@@ -27,6 +27,7 @@ public class EnnemyIA : MonoBehaviour
     public float blockedTime;
     public Vector3 blockedPosition;
     public bool blocked = false;
+    public bool solo = false;
 
 
     protected virtual void Awake()
@@ -53,6 +54,9 @@ public class EnnemyIA : MonoBehaviour
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         else if(playerInAttackRange && playerInSightRange) Attackplayer();
         else Patroling();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 
 
@@ -70,6 +74,10 @@ public class EnnemyIA : MonoBehaviour
             }
             
         }
+        
+        Vector3 distanceToWalkpoint = transform.position - walkpoint;
+        if (distanceToWalkpoint.magnitude < 1f)
+            walkpointSet = false;
 
         if (blocked && blockedTime+3 <= Time.time)
         {
@@ -81,9 +89,7 @@ public class EnnemyIA : MonoBehaviour
         }
         
 
-        Vector3 distanceToWalkpoint = transform.position - walkpoint;
-        if (distanceToWalkpoint.magnitude < 1f)
-            walkpointSet = false;
+        
     }
 
     protected virtual void SearchWalkpoint()

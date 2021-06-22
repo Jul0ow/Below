@@ -24,21 +24,21 @@ public class projectiles : MonoBehaviour
     public int maxCollisions;
     public float maxLifeTime;
 
-    private int collisions;
-    private PhysicMaterial physics_mat;
+    public int collisions;
+    public PhysicMaterial physics_mat;
     public GameObject owner;
-    private float coeffForce = 4000f;
+    public float coeffForce = 4000f;
     public bool isSplit = false;
     public bool Slowing = false;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         Setup();
         //PV = GetComponent<PhotonView>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if(awake)
         {
@@ -50,7 +50,7 @@ public class projectiles : MonoBehaviour
         }
     }
 
-    void Explode()
+    protected virtual void Explode()
     {
         if (explosion != null)
         {
@@ -92,7 +92,7 @@ public class projectiles : MonoBehaviour
                 if (enemies[i].CompareTag("Ennemy"))
                 {
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp);
+                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, Slowing);
                     if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
                     {
                         owner.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 10);
@@ -138,7 +138,7 @@ public class projectiles : MonoBehaviour
         }
     }
     
-    private void DelayBoom(GameObject boom)
+    protected virtual void DelayBoom(GameObject boom)
     {
         Destroy(boom);
     }
@@ -147,7 +147,7 @@ public class projectiles : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision other)
+    protected virtual void OnCollisionEnter(Collision other)
     {
         if (owner.GetComponent<NewShoot>().Infini)
         {
@@ -158,7 +158,7 @@ public class projectiles : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(awake)
         {
@@ -187,7 +187,7 @@ public class projectiles : MonoBehaviour
         }
     }
     
-    private void Setup()
+    protected virtual void Setup()
     {
         if (owner.GetComponent<NewShoot>().Infini)
         {
@@ -201,7 +201,7 @@ public class projectiles : MonoBehaviour
         rb.useGravity = useGravity;
     }
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRange);

@@ -16,7 +16,15 @@ public class QueenLiceIA : EnnemyIA
         if (!alreadyAttacked)
         {
             for (int i = 0; i < 5; i++)
-                PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + splitter.name, transform.position, Quaternion.identity);
+                if (solo)
+                {
+                    Object cafard;
+                    cafard = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + splitter.name), transform.position,
+                        Quaternion.identity);
+                    ((GameObject) cafard).GetComponent<EnnemyIA>().solo = true;
+                }
+                else
+                    PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + splitter.name, transform.position, Quaternion.identity);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }

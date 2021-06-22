@@ -14,14 +14,14 @@ public class CharacterThings : MonoBehaviour
 
     public Rigidbody rb;
     public List<Classes.Item> Inventory;
-    private GameObject LifeBarFab;
-    private GameObject LifeBarObject;
+    public GameObject LifeBarFab;
+    public GameObject LifeBarObject;
     //public Vector3 LifeBarposition;
-    private GameObject HealthRef;
+    public GameObject HealthRef;
     public int MaxHP = 100;
     public int HP;
     public bool poisoned = false;
-    private int tox = 0;
+    public int tox = 0;
     public bool Alive = true;
     public int armor = 0;
     public bool ring;
@@ -42,13 +42,15 @@ public class CharacterThings : MonoBehaviour
     public bool klepto;
     public bool Pastille;
     public (int, char) Room;
-    private GameObject lifeBarObjetct;
-    private LifeScript LifeBar;
+    public GameObject lifeBarObjetct;
+    public LifeScript LifeBar;
     public bool invulnerable;
-    private float tookDamage;
+    public float tookDamage;
     public PhotonView PV;
-    private float invisibilityTime = 2f;
-    private float invinciblityTime = 0.25f;
+    public float invisibilityTime = 2f;
+    public float invinciblityTime = 0.25f;
+    public float ventriculeTime = 0;
+
     //for death
     public AudioSource hurt;
     
@@ -57,12 +59,13 @@ public class CharacterThings : MonoBehaviour
     public float timeofDeath;
     public float lastTimeBeforeDeath;
     public float timeTofinalFight;
-    private RoomManager.Team myTeam;
-    private Vector3 myspawn;
-    private float timeAtStartOfTheGame;
+    public RoomManager.Team myTeam;
+    public Vector3 myspawn;
+    public float timeAtStartOfTheGame;
+    private bool isInArena = false;
     
     
-    void Awake()
+    public virtual void Awake()
     {
         
         PV = GetComponent<PhotonView>();
@@ -93,13 +96,13 @@ public class CharacterThings : MonoBehaviour
     }
 
     [PunRPC]
-    public void Heal(int healing)
+    public virtual void Heal(int healing)
     {
         HP += healing;
     }
     
     [PunRPC]
-    public void TakeDamage(int damage, bool slowed = false, bool poison = false)
+    public virtual void TakeDamage(int damage, bool slowed = false, bool poison = false)
     {
         GetComponent<Movement>().slowed = slowed;
         if (slowed)
@@ -120,7 +123,7 @@ public class CharacterThings : MonoBehaviour
 
             if (cape)
             {
-                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+                transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(false);
             }
             
             
@@ -147,7 +150,7 @@ public class CharacterThings : MonoBehaviour
 
 
     [PunRPC]
-    public void EndGame()
+    public virtual void EndGame()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -157,7 +160,7 @@ public class CharacterThings : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {  
         float time = Time.time;
         if (Time.time > tookDamage + invinciblityTime)
@@ -178,6 +181,46 @@ public class CharacterThings : MonoBehaviour
         }
         LifeBar.HP = HP; 
         if(Input.GetKey("k")) TakeDamage(99999);
+        
+        if (HP <= 0 && Alive)
+        {
+            if (timeAtStartOfTheGame + lastTimeBeforeDeath < time)
+            {
+                if (OneUp)
+                {
+                    OneUp = false;
+                    GetComponent<PhotonView>().RPC("Heal",RpcTarget.All, MaxHP);
+                }
+                else
+                {
+                    //Alive = false;
+                    GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
+                    GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
+                    GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
+                    return;
+                }
+                
+            }
+
+            if (!(timeAtStartOfTheGame + lastTimeBeforeDeath < time))
+            {
+                //Time.timeScale = 0;
+                timeofDeath = Time.time;
+                Alive = false;
+                if (myTeam == RoomManager.Team.Red)
+                    transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
+                else
+                {
+                    transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
+                }
+                //Debug.Log(player.transform.position);
+            }
+            
+            
+        }
         if (!Alive)
         {
             if (!isdead())
@@ -190,44 +233,24 @@ public class CharacterThings : MonoBehaviour
                 DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
             }  
         }
-        if (HP <= 0 && Alive)
-        {
-            if (timeAtStartOfTheGame + lastTimeBeforeDeath< time)
-            {
-                Alive = false;
-                GetComponent<PhotonView>().RPC("EndGame", RpcTarget.Others);
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                GameObject.Find("Options").GetComponent<OptionsEnJeu>().menuOpen = true;
-                GetComponent<Movement>().freeLook.GetComponent<CinemachineFreeLook>().enabled = false;
-                GameObject.Find("écran de fin").transform.Find("Ecran défaite").gameObject.SetActive(true);
-                return;
-            }
-            
-            //Time.timeScale = 0;
-            timeofDeath = Time.time;
-            Alive = false;
-            if (myTeam == RoomManager.Team.Red)
-                transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
-            else
-            {
-                transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
-            }
-            //Debug.Log(player.transform.position);
-            
-        }
-        if (timeAtStartOfTheGame + timeTofinalFight<time)
+        if (timeAtStartOfTheGame + timeTofinalFight<time && !isInArena)
         {
             if (myTeam == RoomManager.Team.Red)
-                transform.position = new Vector3(-19.3f, 1.43f, -507.28f);//RED arene spawn
+            {
+                isInArena = true;
+                //GetComponent<CharacterController>().enabled = false;
+                transform.position = new Vector3(-21.85821f, 4.7f, -508.96f);//RED arene spawn
+                //GetComponent<CharacterController>().enabled = true;
+            }
             else
             {
-                transform.position = new Vector3(-11.06f, 1.43f, -533.3f);//blue arene spawn
+                isInArena = true;
+                transform.position = new Vector3(-11.06f, 1.43f, -533.3f); //blue arene spawn
             }
         }
         if (cape && Time.time > tookDamage + invisibilityTime)
         {
-            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+            transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(true);
         }
 
         if (runningInThe90s && Time.time > tookDamage + basket)
@@ -237,15 +260,16 @@ public class CharacterThings : MonoBehaviour
             runningInThe90s = false;
         }
         
-        if (ventricule)
+        if (ventricule && Time.time >= 3 + ventriculeTime)
         {
-            HP += 1;
+            Heal(1);
+            ventriculeTime = Time.time;
         }
 
     }
 
     [PunRPC]
-    private void poison()
+    protected virtual void poison()
     {
         if (Pastille)
         {
@@ -261,13 +285,7 @@ public class CharacterThings : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider collider)
-    {
-        if (collider.gameObject.tag == "Lava")
-            TakeDamage(100, false, false);
-    }
-
-    public bool isdead()
+    public virtual bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
         DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));

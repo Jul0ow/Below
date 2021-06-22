@@ -26,6 +26,9 @@ public class MimiqueIA : EnnemyIA
         Chaseplayer();
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
         if(playerInAttackRange) Attackplayer();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
     
     protected override void Attackplayer()
@@ -37,7 +40,14 @@ public class MimiqueIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    if (solo)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    }
+                    else
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 2, false, false);
+                    }
                 }
             }
             alreadyAttacked = true;
@@ -53,6 +63,9 @@ public class MimiqueIA : EnnemyIA
             Getter.GetComponent<CharacterThings>().Inventory.Add(content);
             HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
         }
-        PhotonNetwork.Destroy(gameObject);
+        if(solo)
+            Destroy(gameObject);
+        else
+            PhotonNetwork.Destroy(gameObject);
     }
 }

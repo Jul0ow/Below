@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,7 @@ public class RushIA : EnnemyIA
     
     protected override void Update()
     {
+        
         float distance = float.MaxValue;
         foreach (var joueur in GameObject.FindGameObjectsWithTag("Cible"))
         {
@@ -29,6 +31,9 @@ public class RushIA : EnnemyIA
         if(playerInSightRange && !playerInAttackRange) Chaseplayer();
         else if(playerInAttackRange && playerInSightRange) Attackplayer();
         else Patroling();
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x = 0;
+        transform.rotation = Quaternion.Euler(rotationVector);
     }
 
     protected override void SearchWalkpoint()
@@ -85,7 +90,14 @@ public class RushIA : EnnemyIA
             {
                 if (enemies[i].CompareTag("Player"))
                 {
-                    enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    if (solo)
+                    {
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                    }
+                    else
+                    {
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 2, false, false);
+                    }
                 }
             }
             alreadyAttacked = true;
