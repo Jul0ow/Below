@@ -64,86 +64,99 @@ public class projectiles : MonoBehaviour
     {
         if (explosion != null)
         {
-            int tmp = Damage;
-            
-            if (owner.GetComponent<CharacterThings>().Souffrance)
+            if(PhotonNetwork.IsMasterClient)
             {
-                tmp += owner.GetComponent<CharacterThings>().MaxHP - owner.GetComponent<CharacterThings>().HP;
-            }
-            
-            tmp += owner.GetComponent<NewShoot>().BonusDamage;
-            
-            if (owner.GetComponent<CharacterThings>().dard)
-            {
-                tmp = 9999;
-            }
-            if (owner.GetComponent<CharacterThings>().killer)
-            {
-                tmp *= 3;
-            }
+                int tmp = Damage;
 
-            if (owner.GetComponent<CharacterThings>().bloodLove)
-            {
-                tmp *= 2;
-            }
-
-            if (owner.GetComponent<NewShoot>().Snipe)
-            {
-                tmp *= 1 + (int) (Time.time - owner.GetComponent<NewShoot>().timeSniped);
-            }
-
-            Slowing = owner.GetComponent<CharacterThings>().toile;
-            
-            GameObject currentexplosion;
-            currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position, Quaternion.identity);
-            Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                if (enemies[i].CompareTag("Ennemy"))
+                if (owner.GetComponent<CharacterThings>().Souffrance)
                 {
-                    EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, Slowing);
-                    if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
-                    {
-                        owner.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 10);
-                    }
+                    tmp += owner.GetComponent<CharacterThings>().MaxHP - owner.GetComponent<CharacterThings>().HP;
                 }
-                if (enemies[i].CompareTag("Player"))
-                    if (enemies[i].gameObject != owner)
+
+                tmp += owner.GetComponent<NewShoot>().BonusDamage;
+
+                if (owner.GetComponent<CharacterThings>().dard)
+                {
+                    tmp = 9999;
+                }
+
+                if (owner.GetComponent<CharacterThings>().killer)
+                {
+                    tmp *= 3;
+                }
+
+                if (owner.GetComponent<CharacterThings>().bloodLove)
+                {
+                    tmp *= 2;
+                }
+
+                if (owner.GetComponent<NewShoot>().Snipe)
+                {
+                    tmp *= 1 + (int) (Time.time - owner.GetComponent<NewShoot>().timeSniped);
+                }
+
+                Slowing = owner.GetComponent<CharacterThings>().toile;
+
+                GameObject currentexplosion;
+                currentexplosion = PhotonNetwork.Instantiate("PhotonPrefabs/" + explosion.name, transform.position,
+                    Quaternion.identity);
+                Collider[] enemies = Physics.OverlapSphere(currentexplosion.transform.position, explosionRange);
+                for (int i = 0; i < enemies.Length; i++)
+                {
+                    if (enemies[i].CompareTag("Ennemy"))
                     {
-                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, Slowing, owner.GetComponent<CharacterThings>().purulence);
+                        EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
+                        IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, Slowing);
+                        if (owner.GetComponent<CharacterThings>().vampire && IA.Health <= 0)
+                        {
+                            owner.GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, 10);
+                        }
                     }
-                if(enemies[i].GetComponent<Rigidbody>() && !enemies[i].CompareTag("Player") && !enemies[i].CompareTag("Ennemy"))
-                    enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
+
+                    if (enemies[i].CompareTag("Player"))
+                        if (enemies[i].gameObject != owner)
+                        {
+                            enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage",
+                                RpcTarget.All, tmp, Slowing, owner.GetComponent<CharacterThings>().purulence);
+                        }
+
+                    if (enemies[i].GetComponent<Rigidbody>() && !enemies[i].CompareTag("Player") &&
+                        !enemies[i].CompareTag("Ennemy"))
+                        enemies[i].GetComponent<Rigidbody>()
+                            .AddExplosionForce(explosionForce, transform.position, explosionRange);
+                }
+
+
+                if (owner.GetComponent<NewShoot>().Arcanes && !isSplit)
+                {
+                    GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
+                        Quaternion.identity, 0);
+                    GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, owner.GetComponent<PhotonView>().ViewID,
+                        bullet.GetComponent<PhotonView>().ViewID, true, 2);
+
+                    Vector3 direction = owner.transform.position - transform.position;
+
+                    Rigidbody body = bullet.GetComponent<Rigidbody>();
+                    transform.forward = direction;
+                    body.AddForce(transform.right * coeffForce);
+
+                    //------------------------------------------------------------------------------------
+                    bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
+                        Quaternion.identity, 0);
+                    GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All,
+                        owner.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
+
+                    body = bullet.GetComponent<Rigidbody>();
+                    transform.forward = direction;
+                    body.AddForce(-transform.right * coeffForce);
+                }
             }
+
             Invoke("Delay", 0.05f);
             Invoke("DelayBoom(currentexplosion)", 0.5f);
             if (owner.GetComponent<CharacterThings>().dard)
             {
                 owner.GetComponent<CharacterThings>().dard = false;
-            }
-
-            if (owner.GetComponent<NewShoot>().Arcanes && !isSplit)
-            {
-                GameObject bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
-                    Quaternion.identity, 0);
-                GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All, owner.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
-
-                Vector3 direction = owner.transform.position - transform.position;
-                
-                Rigidbody body = bullet.GetComponent<Rigidbody>();
-                transform.forward = direction;
-                body.AddForce(transform.right * coeffForce);
-                
-                //------------------------------------------------------------------------------------
-                bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
-                    Quaternion.identity, 0);
-                GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All,
-                    owner.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
-
-                body = bullet.GetComponent<Rigidbody>();
-                transform.forward = direction;
-                body.AddForce(-transform.right * coeffForce);
             }
         }
     }

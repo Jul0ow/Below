@@ -30,18 +30,18 @@ public class EnnemyShotTox : EnnemyShot
                     {
                         enemies[i].gameObject.GetComponent<CharacterThings>().poisoned = true;
                         Destroy(gameObject);
+                        Invoke("Delay", 0.05f);
+                        Invoke("DelayBoom(currentexplosion)", 0.5f);
                     }
-                    else
+                    else if (PhotonNetwork.IsMasterClient)
                     {
                         GetComponent<PhotonView>().RPC("poison", RpcTarget.All, enemies[i].gameObject.GetComponent<PhotonView>().ViewID);
+                        Invoke("Delay", 0.05f);
+                        Invoke("DelayBoom(currentexplosion)", 0.5f);
                     }
-
-                    
-                    
                 }
             }
-            Invoke("Delay", 0.05f);
-            Invoke("DelayBoom(currentexplosion)", 0.5f);
+            
         }
     }
     

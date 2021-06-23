@@ -37,8 +37,11 @@ public class MamaBouquetin : BouquetinIA
                 crane = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + "Skull"), transform.position, Quaternion.identity);
                 ((GameObject) crane).GetComponent<EnnemyIA>().solo = true;
             }
-            else
+            else if (PhotonNetwork.IsMasterClient)
+            {
                 PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + "Skull", transform.position, Quaternion.identity);
+            }
+                
         }
         var rotationVector = transform.rotation.eulerAngles;
         rotationVector.x = 0;

@@ -27,6 +27,15 @@ public class EnnemyAttack : MonoBehaviour
         solo = IA.gameObject.GetComponent<EnnemyIA>().solo;
         if(IA!=null) victim = IA.player;
     }
+
+
+    [PunRPC]
+    public void shooting(int view)
+    {
+        GameObject tir = PhotonView.Find(view).gameObject;
+        tir.GetComponent<EnnemyShot>().solo = false;
+        tir.GetComponent<EnnemyShot>().damage = damage;
+    }
     
     public void Shoot()
     {
@@ -38,14 +47,17 @@ public class EnnemyAttack : MonoBehaviour
             object bulletinstance = Instantiate(Resources.Load("PhotonPrefabs/" + bullet.name), transform.position,
                 Quaternion.identity);
             currentbullet = ((GameObject) bulletinstance).GetComponent<Rigidbody>();
+            currentbullet.gameObject.GetComponent<EnnemyShot>().solo = solo;
+            currentbullet.GetComponent<EnnemyShot>().damage = damage;
+            currentbullet.AddForce(transform.forward * shootForce,ForceMode.Impulse);
         }
-        else
+        else if (PhotonNetwork.IsMasterClient)
         {
             currentbullet = PhotonNetwork.Instantiate("PhotonPrefabs/" + bullet.name, transform.position, Quaternion.identity)
                 .GetComponent<Rigidbody>();
+            gameObject.GetComponent<PhotonView>().RPC("shooting", RpcTarget.All, currentbullet.GetComponent<PhotonView>().ViewID);
+            currentbullet.AddForce(transform.forward * shootForce,ForceMode.Impulse);
         }
-        currentbullet.gameObject.GetComponent<EnnemyShot>().solo = solo;
-        currentbullet.GetComponent<EnnemyShot>().damage = damage;
-        currentbullet.AddForce(transform.forward * shootForce,ForceMode.Impulse);
+        
     }
 }

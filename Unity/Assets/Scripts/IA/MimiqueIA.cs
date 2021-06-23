@@ -44,7 +44,7 @@ public class MimiqueIA : EnnemyIA
                     {
                         enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
                     }
-                    else
+                    else if(PhotonNetwork.IsMasterClient)
                     {
                         enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 2, false, false);
                     }

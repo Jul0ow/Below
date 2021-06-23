@@ -26,6 +26,7 @@ public class SummonEnnemy : MonoBehaviour
                 mob = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickelite()) , transform.position, Quaternion.identity);
             else
                 mob = Instantiate(Resources.Load("PhotonPrefabs/Mob/" + list.pickennemy()), transform.position, Quaternion.identity);
+            ((GameObject) mob).GetComponent<EnnemyIA>().solo = solo;
         }
         else
         {
@@ -37,7 +38,7 @@ public class SummonEnnemy : MonoBehaviour
                     mob = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + list.pickennemy(), transform.position, Quaternion.identity);
             }
         }
-        ((GameObject) mob).GetComponent<EnnemyIA>().solo = solo;
+       
         if (!solo && PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.Destroy(gameObject);
