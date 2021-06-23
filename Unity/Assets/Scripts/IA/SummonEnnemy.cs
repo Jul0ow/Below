@@ -48,6 +48,5 @@ public class SummonEnnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 }

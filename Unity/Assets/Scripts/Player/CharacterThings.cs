@@ -180,7 +180,7 @@ public class CharacterThings : MonoBehaviour
             LifeBar.HP = 0;
         }
         LifeBar.HP = HP; 
-        if(Input.GetKey("k")) TakeDamage(99999);
+        if(Input.GetKey(KeyCode.K) && Input.GetKey(KeyCode.LeftControl)) TakeDamage(99999);
         
         if (HP <= 0 && Alive)
         {

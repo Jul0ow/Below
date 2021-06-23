@@ -48,11 +48,11 @@ public class BossIA : EnnemyIA
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsplayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsplayer);
 
-        if (Life.Health > 18000)
+        if (Life.Health > 16000)
         {
             Attackplayer();
         }
-        else if (Life.Health > 14000)
+        else if (Life.Health > 12000)
         {
             animator.SetBool("Run Forward",true);
             Serie1.SetActive(false);
@@ -78,7 +78,7 @@ public class BossIA : EnnemyIA
             }
         }
         
-        else if (Life.Health > 8000)
+        else if (Life.Health > 5000)
         {
             animator.SetBool("Run Forward",false);
             animator.SetBool("Cast Spell",true);
@@ -103,7 +103,8 @@ public class BossIA : EnnemyIA
             Serie2.SetActive(true);
             Light.SetActive(true);
             Lava.transform.position += new Vector3(0,0.0075f,0);
-            if (Life.Health < 4000) Life.Health += 500;
+            if(Lava.transform.position.y >= 35) player.GetComponent<CharacterThings>().TakeDamage(99999);
+            if (Life.Health < 4000) Life.Health += 1000;
             Attackplayer();
         }
         var rotationVector = transform.rotation.eulerAngles;
