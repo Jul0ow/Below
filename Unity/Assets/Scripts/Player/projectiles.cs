@@ -49,6 +49,16 @@ public class projectiles : MonoBehaviour
             if (maxLifeTime <= 0) Explode();
         }
     }
+    
+    [PunRPC]
+    public void AppliedOwner(int owner, int bulletview, bool isSplit, int division)
+    {
+        GameObject bullet =  PhotonView.Find(bulletview).gameObject;
+        bullet.GetComponent<projectiles>().owner = PhotonView.Find(owner).gameObject;
+        bullet.GetComponent<projectiles>().awake = true;
+        bullet.GetComponent<projectiles>().isSplit = isSplit;
+        bullet.GetComponent<projectiles>().Damage /= division;
+    }
 
     protected virtual void Explode()
     {

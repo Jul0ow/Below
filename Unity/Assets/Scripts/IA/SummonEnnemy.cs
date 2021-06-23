@@ -38,9 +38,14 @@ public class SummonEnnemy : MonoBehaviour
             }
         }
         ((GameObject) mob).GetComponent<EnnemyIA>().solo = solo;
-        if (PhotonNetwork.IsMasterClient)
+        if (!solo && PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.Destroy(gameObject);
+        }
+
+        if (solo)
+        {
+            Destroy(gameObject);
         }
         
     }

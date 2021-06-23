@@ -66,7 +66,7 @@ public class NewShoot : MonoBehaviour
     }
 
     [PunRPC]
-    public virtual void AppliedOwner(int owner, int bulletview, bool isSplit, int division)
+    public void AppliedOwner(int owner, int bulletview, bool isSplit, int division)
     {
         GameObject bullet =  PhotonView.Find(bulletview).gameObject;
         bullet.GetComponent<projectiles>().owner = PhotonView.Find(owner).gameObject;

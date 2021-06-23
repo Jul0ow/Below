@@ -35,8 +35,12 @@ public class EnnemyLife : MonoBehaviour
         solo = gameObject.GetComponent<EnnemyIA>().solo;
         if(IA.IsElite)
         {
-            if(solo)
-                Instantiate(Resources.Load("PhotonPrefabs/chestInGame"), transform.position, Quaternion.identity);
+            if (solo)
+            {
+                 GameObject chest = (GameObject) Instantiate(Resources.Load("PhotonPrefabs/chestInGame"), transform.position, Quaternion.identity);
+                 chest.GetComponent<test>().solo = true;
+            }
+                
             else if (PhotonNetwork.IsMasterClient)
             {
                 PhotonNetwork.Instantiate("PhotonPrefabs/chestInGame", transform.position, Quaternion.identity);
