@@ -35,18 +35,18 @@ public class MimiqueIA : EnnemyIA
     {
         if(!alreadyAttacked)
         {
-            Collider[] enemies = Physics.OverlapSphere(transform.position, 2);
+            Collider[] enemies = Physics.OverlapSphere(transform.position, 4);
             for (int i = 0; i < enemies.Length; i++)
             {
                 if (enemies[i].CompareTag("Player"))
                 {
                     if (solo)
                     {
-                        enemies[i].GetComponent<CharacterThings>().TakeDamage(2, false, false);
+                        enemies[i].GetComponent<CharacterThings>().TakeDamage(30, false, false);
                     }
                     else if(PhotonNetwork.IsMasterClient)
                     {
-                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 2, false, false);
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 30, false, false);
                     }
                 }
             }
@@ -54,7 +54,6 @@ public class MimiqueIA : EnnemyIA
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
-    
     public void Deathrattle()
     {
         if(content != null)

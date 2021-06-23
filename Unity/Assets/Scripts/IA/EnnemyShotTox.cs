@@ -11,7 +11,11 @@ public class EnnemyShotTox : EnnemyShot
     {
         GameObject player = PhotonView.Find(viewID).gameObject;
         player.GetComponent<CharacterThings>().poisoned = true;
-        PhotonNetwork.Destroy(gameObject);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+        
     }
 
     public override void Explode()

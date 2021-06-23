@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
@@ -40,7 +41,7 @@ public class Attack : MonoBehaviour
             }
             if (GetComponentInParent<CharacterThings>().Souffrance)
             {
-                tmp += GetComponent<CharacterThings>().MaxHP - GetComponent<CharacterThings>().HP;
+                tmp += GetComponentInParent<CharacterThings>().MaxHP - GetComponentInParent<CharacterThings>().HP;
             }
             if (GetComponentInParent<CharacterThings>().killer)
             {
@@ -63,7 +64,7 @@ public class Attack : MonoBehaviour
                         enemies[i].attachedRigidbody.AddExplosionForce(4000f, transform.position, range);
                     }
                     EnnemyLife IA = enemies[i].GetComponent<EnnemyLife>();
-                    IA.TakeDamage(tmp);
+                    IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, GetComponentInParent<CharacterThings>().toile);
                 }
                 if (enemies[i].CompareTag("Player"))
                 {
@@ -75,8 +76,7 @@ public class Attack : MonoBehaviour
                         {
                             enemies[i].attachedRigidbody.AddExplosionForce(4000f, transform.position, range);
                         }
-
-                        victim.TakeDamage(tmp,GetComponentInParent<CharacterThings>().toile, GetComponentInParent<CharacterThings>().purulence); 
+                        victim.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All,GetComponentInParent<CharacterThings>().toile, GetComponentInParent<CharacterThings>().purulence);
                     }
                     
                     

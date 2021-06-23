@@ -65,7 +65,10 @@ public class Chest : MonoBehaviour
             Mimique.GetComponent<MimiqueIA>().Getter = player.gameObject;
             Mimique.GetComponent<MimiqueIA>().Rarity = Rarity;
             Mimique.GetComponent<MimiqueIA>().ItemReference = ItemReference;
-            PhotonNetwork.Destroy(gameObject);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
     
