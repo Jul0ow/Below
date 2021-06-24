@@ -67,19 +67,17 @@ public class Attack : MonoBehaviour
                     IA.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp, GetComponentInParent<CharacterThings>().toile);
                 }
                 if (enemies[i].CompareTag("Player"))
-                {
-                    CharacterThings victim = enemies[i].GetComponent<CharacterThings>();
-                    
-                    if (victim != enemies[i].GetComponentInParent<CharacterThings>())
+                { 
+                    if (!enemies[i].GetComponent<PhotonView>().IsMine)
                     {
                         if (Prot)
                         {
                             enemies[i].attachedRigidbody.AddExplosionForce(4000f, transform.position, range);
                         }
-                        victim.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All,GetComponentInParent<CharacterThings>().toile, GetComponentInParent<CharacterThings>().purulence);
+
+                        enemies[i].GetComponent<CharacterThings>().GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, tmp,GetComponentInParent<CharacterThings>().toile, GetComponentInParent<CharacterThings>().purulence);
+                        
                     }
-                    
-                    
                 }
             }
         }
