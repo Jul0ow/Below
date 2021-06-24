@@ -56,7 +56,7 @@ public class Chest : MonoBehaviour
         anim.SetBool("IsOpened",true);
         GetComponent<AudioSource>().Play();
         int IsMimique = Random.Range(1, 100);
-        if(IsMimique > 100)
+        if(IsMimique > 6)
         {
             if (player.GetComponent<CharacterThings>().luck != 0 && Rarity < 3)
             {
