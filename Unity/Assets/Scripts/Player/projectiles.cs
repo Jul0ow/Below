@@ -143,7 +143,7 @@ public class projectiles : MonoBehaviour
                     //------------------------------------------------------------------------------------
                     bullet = PhotonNetwork.Instantiate("PhotonPrefabs/Bullet", transform.position,
                         Quaternion.identity, 0);
-                    GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All,
+                    gameObject.GetComponent<PhotonView>().RPC("AppliedOwner", RpcTarget.All,
                         owner.GetComponent<PhotonView>().ViewID, bullet.GetComponent<PhotonView>().ViewID, true, 2);
 
                     body = bullet.GetComponent<Rigidbody>();
@@ -196,9 +196,17 @@ public class projectiles : MonoBehaviour
                     else
                     {
                         float speed = rb.velocity.magnitude;
-                        Vector3 direction = Vector3.Reflect(rb.velocity.normalized, transform.position - other.ClosestPoint(transform.position));
+                        try
+                        {
+                            Vector3 direction = Vector3.Reflect(rb.velocity.normalized, transform.position - other.ClosestPoint(transform.position));
 
-                        rb.velocity = direction * Mathf.Max(speed, 0f);
+                            rb.velocity = direction * Mathf.Max(speed, 0f);
+                        }
+                        catch (Exception e)
+                        {
+                            Explode();
+                        }
+                        
                     }
                     
                     

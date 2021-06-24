@@ -39,7 +39,7 @@ public class EnnemyShotTox : EnnemyShot
                     }
                     else if (PhotonNetwork.IsMasterClient)
                     {
-                        GetComponent<PhotonView>().RPC("poison", RpcTarget.All, enemies[i].gameObject.GetComponent<PhotonView>().ViewID);
+                        gameObject.GetComponent<PhotonView>().RPC("poison", RpcTarget.All, enemies[i].gameObject.GetComponent<PhotonView>().ViewID);
                         Invoke("Delay", 0.05f);
                         Invoke("DelayBoom(currentexplosion)", 0.5f);
                     }

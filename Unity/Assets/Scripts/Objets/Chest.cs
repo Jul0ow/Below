@@ -16,7 +16,7 @@ public class Chest : MonoBehaviour
     public GameObject mimique;
     private Animator anim;
     public bool solo;
-    
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -31,9 +31,20 @@ public class Chest : MonoBehaviour
         content = Classes.AllItem[Rarity][ItemReference];
         solo = false;
     }
-    
 
     [PunRPC]
+    public void Set_Mimique(int view1, int view)
+    {
+        GameObject player = PhotonView.Find(view).gameObject;
+        GameObject Mimique = PhotonView.Find(view1).gameObject;
+        Mimique.GetComponent<MimiqueIA>().content = content;
+        Mimique.GetComponent<MimiqueIA>().Getter = player.gameObject;
+        Mimique.GetComponent<MimiqueIA>().Rarity = Rarity;
+        Mimique.GetComponent<MimiqueIA>().ItemReference = ItemReference;
+    }
+
+
+[PunRPC]
     void OpeningChest(int view)
     {
         GameObject player = PhotonView.Find(view).gameObject;
@@ -45,7 +56,7 @@ public class Chest : MonoBehaviour
         anim.SetBool("IsOpened",true);
         GetComponent<AudioSource>().Play();
         int IsMimique = Random.Range(1, 100);
-        if(IsMimique > 6)
+        if(IsMimique > 100)
         {
             if (player.GetComponent<CharacterThings>().luck != 0 && Rarity < 3)
             {
@@ -58,13 +69,13 @@ public class Chest : MonoBehaviour
         }
         else
         {
-            GameObject Mimique;
-            Mimique = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + mimique.name, transform.position, Quaternion.identity);
+            
+            if (PhotonNetwork.IsMasterClient)
+            {
+                GameObject mimi = PhotonNetwork.Instantiate("PhotonPrefabs/Mob/" + mimique.name, transform.position, Quaternion.identity);
+                GetComponent<PhotonView>().RPC("Set_Mimique", RpcTarget.All, mimi.GetComponent<PhotonView>().ViewID, view);
+            }
             content.Joueur = player.gameObject;
-            Mimique.GetComponent<MimiqueIA>().content = content;
-            Mimique.GetComponent<MimiqueIA>().Getter = player.gameObject;
-            Mimique.GetComponent<MimiqueIA>().Rarity = Rarity;
-            Mimique.GetComponent<MimiqueIA>().ItemReference = ItemReference;
             if (PhotonNetwork.IsMasterClient)
             {
                 PhotonNetwork.Destroy(gameObject);

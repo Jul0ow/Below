@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mob: {fileID: 969521309505710154, guid: 309671fb60067624f80554c31c7caa2d, type: 3}
+  solo: 0
 --- !u!114 &8768098939705602196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +65,8 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -619222811710626740}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

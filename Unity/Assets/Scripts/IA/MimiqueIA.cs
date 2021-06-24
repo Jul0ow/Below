@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
@@ -59,8 +60,14 @@ public class MimiqueIA : EnnemyIA
         if(content != null)
         {
             content.AppliedEffect();
-            Getter.GetComponent<CharacterThings>().Inventory.Add(content);
-            HideMenu.Print(Classes.AllItem[Rarity][ItemReference]);
+            try
+            {
+                Getter.GetComponent<CharacterThings>().Inventory.Add(content);
+            }
+            catch (Exception e)
+            {
+                // ignored
+            }
         }
         if(solo)
             Destroy(gameObject);
