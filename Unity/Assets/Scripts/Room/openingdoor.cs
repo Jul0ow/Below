@@ -15,7 +15,7 @@ public class openingdoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startTime = Time.time;
+        startTime = Time.timeSinceLevelLoad;
         opened = false;
         animator = gameObject.GetComponent<Animator>();
         /* Vector3 spawnPosition = spawner.transform.position;
@@ -30,7 +30,7 @@ public class openingdoor : MonoBehaviour
     {
         if (!opened)
         {
-            if (Time.time >= startTime + timeBeforOpeningThedoor)
+            if (Time.timeSinceLevelLoad >= startTime + timeBeforOpeningThedoor)
             {
                 sound.Play();
                 //PhotonNetwork.Destroy(theDoor);

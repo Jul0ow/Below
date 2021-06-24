@@ -162,8 +162,8 @@ public class CharacterThings : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {  
-        float time = Time.time;
-        if (Time.time > tookDamage + invinciblityTime)
+        float time = Time.timeSinceLevelLoad;
+        if (Time.timeSinceLevelLoad > tookDamage + invinciblityTime)
         {
             invulnerable = false;
         }
@@ -208,13 +208,19 @@ public class CharacterThings : MonoBehaviour
             if (!(timeAtStartOfTheGame + lastTimeBeforeDeath < time))
             {
                 //Time.timeScale = 0;
-                timeofDeath = Time.time;
+                timeofDeath = Time.timeSinceLevelLoad;
                 Alive = false;
                 if (myTeam == RoomManager.Team.Red)
-                    transform.position = new Vector3(-234.41f, 19.04f, -10.26f);//RED death zone
+                {
+                    GetComponent<CharacterController>().enabled = false;
+                    transform.position = new Vector3(-234.41f, 19.04f, -10.26f); //RED death zone
+                    GetComponent<CharacterController>().enabled = true;
+                }
                 else
                 {
+                    GetComponent<CharacterController>().enabled = false;
                     transform.position = new Vector3(-234.41f, 19.04f, -55.66f);//blue death zone
+                    GetComponent<CharacterController>().enabled = true;
                 }
                 //Debug.Log(player.transform.position);
             }
@@ -226,7 +232,9 @@ public class CharacterThings : MonoBehaviour
             if (!isdead())
             {
                 //Debug.Log("end death");
+                GetComponent<CharacterController>().enabled = false;
                 transform.position = myspawn;
+                GetComponent<CharacterController>().enabled = true;
                 deathTime *= 1.15f; //increase by 15% the death time
                 Alive = true;
                 HP = MaxHP;
@@ -238,32 +246,34 @@ public class CharacterThings : MonoBehaviour
             if (myTeam == RoomManager.Team.Red)
             {
                 isInArena = true;
-                //GetComponent<CharacterController>().enabled = false;
+                GetComponent<CharacterController>().enabled = false;
                 transform.position = new Vector3(-21.85821f, 4.7f, -508.96f);//RED arene spawn
-                //GetComponent<CharacterController>().enabled = true;
+                GetComponent<CharacterController>().enabled = true;
             }
             else
             {
                 isInArena = true;
+                GetComponent<CharacterController>().enabled = false;
                 transform.position = new Vector3(-11.06f, 1.43f, -533.3f); //blue arene spawn
+                GetComponent<CharacterController>().enabled = true;
             }
         }
-        if (cape && Time.time > tookDamage + invisibilityTime)
+        if (cape && Time.timeSinceLevelLoad > tookDamage + invisibilityTime)
         {
             transform.Find("Personnage").Find("SkinPerso").gameObject.SetActive(true);
         }
 
-        if (runningInThe90s && Time.time > tookDamage + basket)
+        if (runningInThe90s && Time.timeSinceLevelLoad > tookDamage + basket)
         {
             GetComponent<Movement>().WalkSpeed -= 15;
             GetComponent<Movement>().RunSpeed -= 15;
             runningInThe90s = false;
         }
         
-        if (ventricule && Time.time >= 3 + ventriculeTime)
+        if (ventricule && Time.timeSinceLevelLoad >= 3 + ventriculeTime)
         {
             Heal(1);
-            ventriculeTime = Time.time;
+            ventriculeTime = Time.timeSinceLevelLoad;
         }
 
     }
@@ -290,6 +300,6 @@ public class CharacterThings : MonoBehaviour
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
         DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));
         
-        return Time.time < deathTime + timeofDeath;
+        return Time.timeSinceLevelLoad < deathTime + timeofDeath;
     }
 }
