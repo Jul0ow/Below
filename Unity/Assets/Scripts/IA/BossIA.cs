@@ -83,13 +83,13 @@ public class BossIA : EnnemyIA
             animator.SetBool("Run Forward",false);
             animator.SetBool("Cast Spell",true);
             Summonner.SetActive(true);
-            Collider[] blood = Physics.OverlapSphere(transform.position, 15);
+            Collider[] blood = Physics.OverlapSphere(transform.position, 13);
             for (int i = 0; i < blood.Length; i++)
             {
                 if (blood[i].gameObject.GetComponent<BloodIA>())
                 {
-                    Destroy(blood[i]);
-                    Life.Health += 750;
+                    Destroy(blood[i].gameObject);
+                    Life.Health += 500;
                 }
             }
             Attackplayer();

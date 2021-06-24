@@ -115,13 +115,13 @@ public class Effect : MonoBehaviour
 
     public static int Maille(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().armor += 5;
+        Joueur.GetComponent<CharacterThings>().armor += 2;
         return 1;
     }
 
     public static int Bouclier(GameObject Joueur)
     {
-        Joueur.GetComponent<CharacterThings>().armor += 10;
+        Joueur.GetComponent<CharacterThings>().armor += 4;
         return 1;
     }
 
@@ -151,13 +151,13 @@ public class Effect : MonoBehaviour
 
     public static int Point(GameObject Joueur)
     {
-        Joueur.GetComponentInChildren<Attack>().Damage += 40;
+        Joueur.GetComponentInChildren<Attack>().Damage += 50;
         return 1;
     }
 
     public static int Pyro(GameObject Joueur)
     {
-        Joueur.GetComponent<NewShoot>().BonusDamage += 50;
+        Joueur.GetComponent<NewShoot>().BonusDamage += 30;
         return 1;
     }
 
