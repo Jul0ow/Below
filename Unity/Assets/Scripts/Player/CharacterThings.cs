@@ -91,7 +91,7 @@ public class CharacterThings : MonoBehaviour
             Quaternion.identity,GameObject.FindGameObjectWithTag("Canvas").transform);
         DeathTimer.GetComponent<TextMeshProUGUI>().text = "";
         Inventory = new List<Classes.Item>();
-        timeAtStartOfTheGame = Time.time;
+        timeAtStartOfTheGame = Time.timeSinceLevelLoad;
 
     }
 
@@ -107,7 +107,7 @@ public class CharacterThings : MonoBehaviour
         GetComponent<Movement>().slowed = slowed;
         if (slowed)
         {
-            GetComponent<Movement>().slowedTime = Time.time;
+            GetComponent<Movement>().slowedTime = Time.timeSinceLevelLoad;
         }
         if (!invulnerable)
         {
@@ -144,7 +144,7 @@ public class CharacterThings : MonoBehaviour
                 GetComponent<Movement>().RunSpeed += 15;
             }
             invulnerable = true;
-            tookDamage = Time.time;
+            tookDamage = Time.timeSinceLevelLoad;
         }
     }
 
@@ -298,7 +298,7 @@ public class CharacterThings : MonoBehaviour
     public virtual bool isdead()
     {
         //Debug.Log("date : "+Time.time + " death Time: " + deathTime + " time of death :" + timeofDeath);
-        DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.time));
+        DeathTimer.GetComponent<TextMeshProUGUI>().text = "Vous etes mort." + "\n" + "     " + Convert.ToString(Convert.ToInt32(deathTime + timeofDeath - Time.timeSinceLevelLoad));
         
         return Time.timeSinceLevelLoad < deathTime + timeofDeath;
     }
