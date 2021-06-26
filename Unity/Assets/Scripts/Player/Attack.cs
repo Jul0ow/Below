@@ -29,7 +29,7 @@ public class Attack : MonoBehaviour
             return;
         }
 
-        if (Time.time > nextHit && Input.GetButtonDown("Fire2") && !movement.torched) 
+        if (GetComponent<PhotonView>().IsMine && Time.time > nextHit && Input.GetButtonDown("Fire2") && !movement.torched) 
         {
             woosh.Play();
             nextHit = Time.time + attackRate;
